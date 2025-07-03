@@ -1,3 +1,14 @@
+/* Make the Mister project calculation link yellow in the project modal */
+/* Ensure the mister calculation link and its states are yellow in the project modal */
+.project-modal .mister-calculation-link,
+.project-modal .mister-calculation-link:visited,
+.project-modal .mister-calculation-link:active,
+.project-modal .mister-calculation-link:hover,
+.project-modal .mister-calculation-link:focus {
+  color: #FFD600 !important;
+  font-weight: bold;
+  text-decoration: underline;
+}
 /* Prevent layout shift when scrollbar appears/disappears */
 html {
   overflow-y: scroll;

@@ -361,10 +361,10 @@ document.querySelectorAll('.project-img').forEach(img => {
 document.addEventListener('click', function(e) {
   // Support both <img class="project-img"> and <a><img class="project-img"></a> in .project-modal
   let img = null;
-  // If clicked element is an <a> with a child <img class="project-img">
+  // If clicked element is an <a> with a child <img class="project-img"> or <img class="hepa-img">
   if (e.target.matches('.project-modal .image-row a')) {
-    img = e.target.querySelector('img.project-img');
-  } else if (e.target.matches('.project-modal img.project-img')) {
+    img = e.target.querySelector('img.project-img, img.hepa-img');
+  } else if (e.target.matches('.project-modal img.project-img, .project-modal img.hepa-img')) {
     img = e.target;
   }
   if (img) {

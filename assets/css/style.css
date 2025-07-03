@@ -1,3 +1,13 @@
+/* Prevent layout shift when scrollbar appears/disappears */
+html {
+  overflow-y: scroll;
+}
+
+body {
+  /* Optionally, ensure body always takes full width minus scrollbar */
+  width: 100vw;
+  box-sizing: border-box;
+}
 /* Custom button style for Project and Resume sections */
 .btn {
   padding: 16px 32px; /* 16px top/bottom for height, 32px left/right for width */
@@ -1042,7 +1052,6 @@ main {
   scroll-behavior: smooth;
   overscroll-behavior-inline: contain;
   scroll-snap-type: inline mandatory;
-  scroll-padding-inline: 25px;
 }
 
 .clients-item {
@@ -1492,6 +1501,14 @@ main {
   justify-content: space-between;
   gap: 1em;
   margin-top: 1.2em;
+}
+
+/* Utility classes for single button alignment */
+.project-modal-footer.only-next {
+  justify-content: flex-end !important;
+}
+.project-modal-footer.only-prev {
+  justify-content: flex-start;
 }
 .project-modal-footer button {
   background: #ffd600;

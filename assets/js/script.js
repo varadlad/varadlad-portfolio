@@ -79,20 +79,20 @@ filterBtns.forEach(btn => {
 
 // --- Filtering function ---
 function filterFunc(selectedValue) {
-  // Multi-category filter logic
+  // Remove .active from all first, and force reflow to retrigger animation
+  filterItems.forEach(item => {
+    item.classList.remove("active");
+    void item.offsetWidth; // Force reflow
+  });
   if (selectedValue === "all") {
-    // Show each project only once
     filterItems.forEach(item => {
       item.classList.add("active");
     });
   } else {
     filterItems.forEach(item => {
-      // Split data-category by space and check if any matches selectedValue
       const categories = (item.dataset.category || "").split(" ");
       if (categories.includes(selectedValue)) {
         item.classList.add("active");
-      } else {
-        item.classList.remove("active");
       }
     });
   }
@@ -105,7 +105,6 @@ if (select) {
     elementToggleFunc(select);
   });
 }
-
 
 getSelectItems().forEach(item => {
   item.addEventListener("click", function (e) {
@@ -139,17 +138,21 @@ if (filterSelect && selectList) {
       selectList.classList.remove('open');
       // Multi-category filter logic for mobile dropdown
       projectItems.forEach(function(item) {
-        if (category === "all") {
+        item.classList.remove("active");
+        void item.offsetWidth; // Force reflow
+      });
+      if (category === "all") {
+        projectItems.forEach(function(item) {
           item.classList.add("active");
-        } else {
+        });
+      } else {
+        projectItems.forEach(function(item) {
           const categories = (item.dataset.category || "").split(" ");
           if (categories.includes(category)) {
             item.classList.add("active");
-          } else {
-            item.classList.remove("active");
           }
-        }
-      });
+        });
+      }
     });
   });
 }
@@ -228,6 +231,7 @@ navigationLinks.forEach(link => {
     const modalImg = document.getElementById('project-modal-image');
     const btnPrev = document.getElementById('modal-prev-btn');
     const btnNext = document.getElementById('modal-next-btn');
+    const modalFooter = modal.querySelector('.project-modal-footer');
 
     let currentPages = [];
     let currentPage = 0;
@@ -241,8 +245,32 @@ navigationLinks.forEach(link => {
           el.style.display = 'none';
         }
       });
-      btnPrev.disabled = (pageIdx === 0);
-      btnNext.disabled = (pageIdx === currentPages.length - 1);
+      // Hide/show prev/next buttons as needed
+      if (btnPrev) {
+        if (pageIdx === 0) {
+          btnPrev.style.display = 'none';
+        } else {
+          btnPrev.style.display = '';
+        }
+      }
+      if (btnNext) {
+        if (pageIdx === currentPages.length - 1) {
+          btnNext.style.display = 'none';
+        } else {
+          btnNext.style.display = '';
+        }
+      }
+      // Alignment logic for modal footer
+      if (modalFooter) {
+        modalFooter.classList.remove('only-next', 'only-prev');
+        const prevVisible = btnPrev && btnPrev.style.display !== 'none';
+        const nextVisible = btnNext && btnNext.style.display !== 'none';
+        if (!prevVisible && nextVisible) {
+          modalFooter.classList.add('only-next');
+        } else if (prevVisible && !nextVisible) {
+          modalFooter.classList.add('only-prev');
+        }
+      }
       // Scroll modal body to top on page change
       if (modalBody) {
         modalBody.scrollTop = 0;

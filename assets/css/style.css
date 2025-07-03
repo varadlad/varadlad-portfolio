@@ -1,3 +1,8 @@
+/* Prevent layout shift when vertical scrollbar appears/disappears */
+html {
+  overflow-y: scroll;
+}
+
 /* Custom button style for Project and Resume sections */
 .btn {
   padding: 16px 32px; /* 16px top/bottom for height, 32px left/right for width */

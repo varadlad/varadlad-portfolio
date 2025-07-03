@@ -81,15 +81,18 @@ filterBtns.forEach(btn => {
 function filterFunc(selectedValue) {
   // Multi-category filter logic
   if (selectedValue === "all") {
-    // Show each project only once
     filterItems.forEach(item => {
+      item.classList.remove("active");
+      // Force reflow to restart animation
+      void item.offsetWidth;
       item.classList.add("active");
     });
   } else {
     filterItems.forEach(item => {
-      // Split data-category by space and check if any matches selectedValue
       const categories = (item.dataset.category || "").split(" ");
       if (categories.includes(selectedValue)) {
+        item.classList.remove("active");
+        void item.offsetWidth;
         item.classList.add("active");
       } else {
         item.classList.remove("active");

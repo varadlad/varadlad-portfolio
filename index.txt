@@ -1,0 +1,140 @@
+vCard - Varad Lad Personal Portfolio
+
+# sidebar
+
+alt = Varad Lad
+Varad Lad
+Mechanical Engineer
+
+Show Contacts
+
+Email
+vlad3@asu.edu
+
+Phone
++1 (602) 388-6861
+
+LinkedIn
+https://www.linkedin.com/in/varadlad/
+
+Location
+Arizona, USA
+
+# navbar
+
+About
+Resume
+Projects
+Contact
+
+# about
+
+About me
+
+I’m a mechanical fanatic who loves turning big ideas into real hardware—from advanced machines and robotics to facility-utility layouts. From aerospace R&D to the food industry, with stops in semiconductor and data-center worlds, turning sci-fi into real life.
+
+I carry a concept from paper to CAD to production: running CFD & FEA, prototyping, and steering cross-functional teams until everything hums. Hands-on tests plus clear, jargon-free dashboards keep techs, executives, and stakeholders in sync. The result is a system that runs cooler, safer, and smarter, cuts downtime and energy bills, and leaves a lighter footprint—every time.
+
+## service
+
+What I'm Doing
+
+alt = build icon
+Mechanical Design
+High-precision machines, actuators & custom parts engineered for strength, cost, and easy manufacture.
+
+alt = business icon
+Critical Facility Utility
+Code ready HVAC, MEP & abatement that keep fabs and data-centres clean, cool, and N+1 resilient.
+
+alt = thermometer icon
+Thermal & Simulation
+CFD/FEA-led cooling strategies that erase hotspots and trim energy use before metal is cut.
+
+alt = flask icon
+Process & Materials Engineering
+CVD/PVD/ALD recipe tuning—validated by SEM/TEM—to boost film uniformity and slash waste.
+
+alt = hardware-chip icon
+Hardware Testing & Troubleshooting
+Rapid root-cause fixes for motors, robotics, and semiconductor tools with data-rich diagnostics.
+
+alt = analytics icon
+Data-Driven Project Management
+Power BI & Tableau dashboards, DOE insights, and green cost-savings that bring projects in under budget.
+
+## recommendations
+
+Recommendations
+
+alt = Nicole Ray
+Nicole Ray
+Founder & CEO, Rayn Innovations, LLC
+"I mentored and supervised Varad Lad during his R&D internship at Rayn Innovations. He was diligent, safety-minded, and eager to tackle new challenges—whether running routine chemical analyses, keeping a meticulous lab notebook, or troubleshooting process issues. Varad’s main charge was a DOE on aluminum-doped ZnO thin films: he planned the experiments, carried out SEM/TEM characterization, and delivered a working deposition process while drafting prototypes and proposals. He collaborated smoothly with our senior engineer and never hesitated to suggest improvements. Varad’s mix of problem-solving, initiative, and clear communication will be an asset to any team."
+
+alt = Travis Hand
+Travis Hand
+Project Manager at MICU
+"During his internship at Marketech International Corp, Varad excelled in multiple capacities. He demonstrated significant expertise in tool installation and construction, strictly adhering to standards such as OSHA, ASTM, NFPA, and IMC, thereby ensuring project safety and quality. Varad also showed a thorough understanding and adherence to contract documents and architectural plans, reflecting his keen attention to detail. His collaborative efforts were instrumental in keeping projects both within budget and on schedule, which attests to his strong project management skills. Furthermore, Varad's ability to communicate effectively stood out, as he consistently kept all stakeholders informed of project statuses and swiftly addressed challenges that arose. Varad is a dedicated and adaptable professional, fully capable of meeting the challenges of the ever-evolving fields of project engineering and semiconductor. His blend of technical and managerial skills makes him an invaluable asset to any organization."
+
+# resume
+
+Resume
+
+Education
+
+Arizona State University
+2022 — 2024
+M.S. Mechanical Engineering (Thermal/Fluids, Manufacturing, Data Science)
+
+University of Mumbai
+2017 — 2021
+B.E. Mechanical Engineering
+
+Experience
+
+R&D Intern, Rayn Innovations
+2024
+• Developed and optimized thin film deposition processes (CVD/PVD/ALD)
+• Led SEM/TEM characterization and process validation
+
+Project Engineer Intern, MICU
+2023
+• Managed tool installation and construction for semiconductor fabs
+• Ensured compliance with OSHA, ASTM, NFPA, IMC standards
+
+Mechanical Design Intern, Various
+2021 — 2022
+• Designed and prototyped custom machines and automation systems
+
+Skills
+
+Mechanical Design
+Thermal Analysis (CFD/FEA)
+Process Engineering
+Data Analytics (Python, MATLAB, JMP)
+Project Management
+CAD (SolidWorks, Fusion 360, CATIA)
+
+# projects
+
+Projects
+
+Data Center Advanced Thermal Optimization
+Land-Based Cooling Pod Data Center (Microsoft Inspired)
+Thin-Film PV Efficiency & Manufacturing Roadmap
+Deposition Rate Optimization for Semiconductor Materials
+Industrial-Grade Brick-Making Machine
+Sustainable 3 Stage HEPA Air Filter
+Hydraulic Ram Pump for Rural Water Supply
+Advanced PLC-Controlled Automatic Packaging Machine
+Mister-Enhanced Vapor-Compression System
+DOE-Driven Pour-Over Coffee Optimisation (JMP)
+
+# contact
+
+Contact
+
+Email: vlad3@asu.edu
+LinkedIn: https://www.linkedin.com/in/varadlad/
+Location: Arizona, USA

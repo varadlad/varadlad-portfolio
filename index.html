@@ -1,0 +1,1769 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>vCard - Personal Portfolio</title>
+
+  <!--
+    - favicon
+  -->
+  <link rel="shortcut icon" href="./assets/images/logo.ico" type="image/x-icon">
+
+  <!--
+    - custom css link
+  -->
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <link href="lightbox.css" rel="stylesheet" />
+
+  <!--
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    .image-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5em;
+      justify-content: center;
+    }
+
+    .exp-badge {
+      display: inline-block;
+      background: #E4C15D;
+      color: #222;
+      font-size: 0.75em;
+      font-weight: bold;
+      padding: 0.05em 0.45em;
+      border-radius: 0.6em;
+      margin-left: 0.4em;
+      vertical-align: middle;
+      letter-spacing: 0.01em;
+      box-shadow: none;
+      line-height: 1.1;
+    }
+
+    .image-row img {
+      max-width: 48%;
+      height: auto;
+    }
+
+    .modal-page img.project-img,
+    .modal-page .image-row {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin: 0.5em auto;
+    }
+
+    .project-modal-body {
+      max-height: 60vh;
+      overflow-y: auto;
+    }
+
+    /* Education subtext color fix */
+    .timeline-item p[style*="color: #ffffff"] {
+      color: #e0e0e0 !important;
+    }
+
+    @media (max-width: 600px) {
+      .image-row img {
+        max-width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!--
+    - #MAIN
+  -->
+
+  <main>
+
+    <!--
+      - #SIDEBAR
+    -->
+
+    <aside class="sidebar" data-sidebar>
+
+      <div class="sidebar-info">
+
+        <figure class="avatar-box">
+          <img src="./assets/images/my-avatar.png" alt="Varad Lad" width="80">
+        </figure>
+
+        <div class="info-content">
+          <h1 class="name" title="Varad Lad">Varad Lad</h1>
+
+          <p class="title">Mechanical Engineer</p>
+        </div>
+
+        <button class="info_more-btn" data-sidebar-btn>
+          <span>Show Contacts</span>
+
+          <ion-icon name="chevron-down"></ion-icon>
+        </button>
+
+      </div>
+
+      <div class="sidebar-info_more">
+
+        <div class="separator"></div>
+
+        <ul class="contacts-list">
+
+          <li class="contact-item">
+
+            <div class="icon-box">
+              <ion-icon name="mail-outline"></ion-icon>
+            </div>
+
+            <div class="contact-info">
+              <p class="contact-title">Email</p>
+
+              <a href="mailto:vlad3@asu.edu" class="contact-link">vlad3@asu.edu</a>
+            </div>
+
+          </li>
+
+          <li class="contact-item">
+
+            <div class="icon-box">
+              <ion-icon name="phone-portrait-outline"></ion-icon>
+            </div>
+
+            <div class="contact-info">
+              <p class="contact-title">Phone</p>
+
+              <a href="tel:+1(602)388-6861" class="contact-link">+1 (602) 388-6861</a>
+            </div>
+
+          </li>
+
+          
+
+          <li class="contact-item">
+
+            <div class="icon-box">
+              <ion-icon name="logo-linkedin"></ion-icon>
+            </div>
+          
+            <div class="contact-info">
+              <p class="contact-title">LinkedIn</p>
+          
+              <a href="https://www.linkedin.com/in/varadlad/" class="contact-link" target="_blank">Varad Lad</a>
+          </div>
+        </li>
+        </li>
+                  </ul>
+
+      </div>
+
+    </aside>
+
+
+
+
+
+    <!--
+      - #main-content
+    -->
+
+    <div class="main-content">
+
+      <!--
+        - #NAVBAR
+      -->
+
+      <nav class="navbar">
+
+        <!-- Navbar -->
+        <ul class="navbar-list">
+          <li><button class="navbar-link" data-nav-link>About</button></li>
+          <li><button class="navbar-link" data-nav-link>Projects</button></li>
+          <li><button class="navbar-link" data-nav-link>Resume</button></li>
+          <li><button class="navbar-link" data-nav-link style="display:none;">Achievements</button></li>
+          <li><button class="navbar-link" data-nav-link style="display:none;">Extras</button></li>
+        </ul>
+
+      </nav>
+
+
+
+
+
+      <!--
+        - #ABOUT
+      -->
+
+      <article class="about active" data-page="about">
+
+        <header>
+          <h2 class="h2 article-title">About me</h2>
+        </header>
+
+        <section class="about-text">
+          <p>
+            Imagine the spark of an idea—just a few lines on a napkin—coming to life as humming hardware. I bridge that gap by taking concepts through CAD, CFD and FEA simulations, and hands-on prototyping. My work spans autonomous robots and precision aerospace prototypes to food-processing lines, with stops in semiconductor fabs and ultra-efficient data centers.
+          </p>
+
+          <p>
+            With clear performance dashboards and close collaboration with stakeholders, I fine-tune every detail until systems run cooler, safer, and smarter—slashing downtime, cutting energy costs, and turning sci-fi visions into everyday reality.
+          </p>
+        </section>
+
+
+        <!--
+          - service
+        -->
+
+        <section class="service">
+
+          <h3 class="h3 service-title">What I'm Doing</h3>
+        
+          <ul class="service-list">
+        
+            <li class="service-item">
+              <div class="service-icon-box">
+                <ion-icon name="build-outline" style="font-size: 40px; color: #fbd109;"></ion-icon>
+              </div>
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">Mechanical Design</h4>
+                <p class="service-item-text">
+                  High-precision machines, actuators & custom parts engineered for strength, cost, and easy manufacture.
+                </p>
+              </div>
+            </li>
+        
+            <li class="service-item">
+              <div class="service-icon-box">
+                <ion-icon name="business-outline" style="font-size: 40px; color: #fbd109;"></ion-icon>
+              </div>
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">Critical Facility Utility</h4>
+                <p class="service-item-text">
+                  Code ready HVAC, MEP & abatement that keep fabs and data-centres clean, cool, and N+1 resilient.
+                </p>
+              </div>
+            </li>
+        
+            <li class="service-item">
+              <div class="service-icon-box">
+                <ion-icon name="thermometer-outline" style="font-size: 40px; color: #fbd109;"></ion-icon>
+              </div>
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">Thermal & Simulation</h4>
+                <p class="service-item-text">
+                  CFD/FEA-led cooling strategies that erase hotspots and trim energy use before metal is cut.
+                </p>
+              </div>
+            </li>
+        
+            <li class="service-item">
+              <div class="service-icon-box">
+                <ion-icon name="flask-outline" style="font-size: 40px; color: #fbd109;"></ion-icon>
+              </div>
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">Process & Materials Engineering</h4>
+                <p class="service-item-text">
+                  CVD/PVD/ALD recipe tuning—validated by SEM/TEM—to boost film uniformity and slash waste.
+                </p>
+              </div>
+            </li>
+        
+            <li class="service-item">
+              <div class="service-icon-box">
+                <ion-icon name="hardware-chip-outline" style="font-size: 40px; color: #fbd109;"></ion-icon>
+              </div>
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">Hardware Testing & Troubleshooting</h4>
+                <p class="service-item-text">
+                  Rapid root-cause fixes for motors, robotics, and semiconductor tools with data-rich diagnostics.
+                </p>
+              </div>
+            </li>
+        
+            <li class="service-item">
+              <div class="service-icon-box">
+                <ion-icon name="analytics-outline" style="font-size: 40px; color: #fbd109;"></ion-icon>
+              </div>
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">Data-Driven Project Management</h4>
+                <p class="service-item-text">
+                  Power BI & Tableau dashboards, DOE insights, and green cost-savings that bring projects in under budget.
+                </p>
+              </div>
+            </li>
+        
+          </ul>
+        
+        </section>
+        
+
+        <!--
+          - reccomendations
+        -->
+
+        <section class="recommendations">
+
+          <h3 class="h3 recommendations-title">Recommendations</h3>
+
+          <ul class="testimonials-list has-scrollbar">
+
+            <li class="testimonials-item">
+              <div class="content-card" data-testimonials-item>
+
+                <figure class="testimonials-avatar-box">
+                  <img src="./assets/images/avatar-2.png" alt="Nicole Ray" width="60" data-testimonials-avatar>
+                </figure>
+
+                <h4 class="h4 testimonials-item-title" data-testimonials-title>
+                  Nicole Ray <span style="font-style: italic; font-weight: normal; font-size: 0.60em;">(Founder &amp; CEO, Rayn Innovations, LLC)</span>
+                </h4>
+                
+                
+
+                <div class="testimonials-text" data-testimonials-text>
+                  <p>
+                    I mentored and supervised Varad Lad during his R&D internship at Rayn Innovations. He was diligent, safety-minded, and eager to tackle new challenges—whether running routine chemical analyses, keeping a meticulous lab notebook, or troubleshooting process issues. Varad’s main charge was a DOE on aluminum-doped ZnO thin films: he planned the experiments, carried out SEM/TEM characterization, and delivered a working deposition process while drafting prototypes and proposals. He collaborated smoothly with our senior engineer and never hesitated to suggest improvements. Varad’s mix of problem-solving, initiative, and clear communication will be an asset to any team. For questions, please email nicoleray@rayninnovations.com.
+                  </p>
+
+                  <p>
+                    <a href="https://www.linkedin.com/in/varadlad/details/recommendations/" target="_blank" style="color: #fbd109; text-decoration: underline; display: inline-block; margin-right: 1em;">
+                      View on LinkedIn  ↗️
+                    </a>
+            
+                    <a href="https://cdn.jsdelivr.net/gh/varadlad/VaradLadDocuments-/Rayn%20Innovation%20LOR%20.pdf" target="_blank" style="color: #fbd109; text-decoration: underline;">
+                      View LOR  ↗️ 
+                    </a>
+                  </p>
+                </div>
+
+              </div>
+            </li>
+
+            <li class="testimonials-item">
+              <div class="content-card" data-testimonials-item>
+
+                <figure class="testimonials-avatar-box">
+                  <img src="./assets/images/avatar-1.png" alt="Travis Hand" width="60" data-testimonials-avatar>
+                </figure>
+
+                <h4 class="h4 testimonials-item-title" data-testimonials-title>
+                  Travis Hand <span style="font-style: italic; font-weight: normal; font-size: 0.60em;">(Project Manager at MICU)</span>
+                </h4>
+
+                <div class="testimonials-text" data-testimonials-text>
+                  <p>
+                    During his internship at Marketech International Corp, Varad excelled in multiple capacities. He demonstrated significant expertise in tool installation and construction, strictly adhering to standards such as OSHA, ASTM, NFPA, and IMC, thereby ensuring project safety and quality. Varad also showed a thorough understanding and adherence to contract documents and architectural plans, reflecting his keen attention to detail. His collaborative efforts were instrumental in keeping projects both within budget and on schedule, which attests to his strong project management skills. Furthermore, Varad's ability to communicate effectively stood out, as he consistently kept all stakeholders informed of project statuses and swiftly addressed challenges that arose.Varad is a dedicated and adaptable professional, fully capable of meeting the challenges of the ever-evolving fields of project engineering and semiconductor. His blend of technical and managerial skills makes him an invaluable asset to any organization. I unreservedly recommend Varad Lad for any position within this industry.
+                  </p>
+
+                  <p>
+                    <a href="https://www.linkedin.com/in/varadlad/details/recommendations/" target="_blank" style="color: #fbd109; text-decoration: underline; display: inline-block; margin-right: 1em;">
+                      View on LinkedIn ↗️
+                    </a>
+            
+                    <a href="https://cdn.jsdelivr.net/gh/varadlad/VaradLadDocuments-/MICU%20LOR%20.pdf" target="_blank" style="color: #fbd109; text-decoration: underline;">
+                      View LOR ↗️ 
+                    </a>
+                  </p>
+                </div>
+
+              </div>
+            </li>
+
+            
+          </ul>
+
+        </section>
+
+
+        <!--
+          - testimonials modal
+        -->
+
+        <div class="modal-container" data-modal-container>
+
+          <div class="overlay" data-overlay></div>
+
+          <section class="testimonials-modal">
+
+            <button class="modal-close-btn" data-modal-close-btn>
+              <ion-icon name="close-outline"></ion-icon>
+            </button>
+
+            <div class="modal-img-wrapper">
+              <figure class="modal-avatar-box">
+                <img src="./assets/images/avatar-1.png" alt="Daniel lewis" width="80" data-modal-img>
+              </figure>
+
+              <img src="./assets/images/icon-quote.svg" alt="quote icon">
+            </div>
+
+            <div class="modal-content">
+
+              <h4 class="h3 modal-title" data-modal-title>Daniel lewis</h4>
+
+              
+
+              <div data-modal-text>
+                <p>
+                  I mentored and supervised Varad Lad during his R&D internship at Rayn Innovations (Jan–May 2024). He was diligent, safety-minded, and eager to tackle new challenges—whether running routine chemical analyses, keeping a meticulous lab notebook, or troubleshooting process issues. Varad’s main charge was a DOE on aluminum-doped ZnO thin films: he planned the experiments, carried out SEM/TEM characterization, and delivered a working deposition process while drafting prototypes and proposals. He collaborated smoothly with our senior engineer and never hesitated to suggest improvements. Varad’s mix of problem-solving, initiative, and clear communication will be an asset to any team. For questions, please email nicoleray@rayninnovations.com.
+                </p>
+              </div>
+
+            </div>
+
+          </section>
+
+        </div>
+
+
+        
+
+      </article>
+
+      <!--
+        - #PORTFOLIO
+      -->
+
+      <article class="projects" data-page="projects">
+
+        <header>
+        <header style="display: flex; align-items: center; gap: 1.2em; flex-wrap: wrap; margin-bottom: 1.2em;">
+          <h2 class="h2 article-title" style="margin-bottom: 0;">Projects</h2>
+          <a href="https://cdn.jsdelivr.net/gh/varadlad/VaradLadDocuments-/Varad%20Lad%20Portfolio.pdf" download title="Download Portfolio" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; background: none; color: #E4C15D; border: 1.5px solid #E4C15D; border-radius: 50%; width: 2.2em; height: 2.2em; justify-content: center; text-decoration: none; box-shadow: none; padding: 0; margin-top: -1em; vertical-align: middle; transition: background 0.15s, border-color 0.15s;">
+            <ion-icon name="document-outline" style="font-size:1.25em; vertical-align: middle;"></ion-icon>
+            <span style="position: absolute; left: -9999px;">Download Portfolio PDF</span>
+          </a>
+        </header>
+
+        <section class="Projects">
+
+          <ul class="filter-list">
+            <li class="filter-item">
+              <button class="filter-btn active" data-filter-btn data-category="all">
+                <span class="filter-title">All</span>
+              </button>
+            </li>
+            <li class="filter-item">
+              <button class="filter-btn" data-filter-btn data-category="data-center">
+                <span class="filter-title">Data Center</span>
+                <span class="filter-subtitle">(Cooling & HVAC)</span>
+              </button>
+            </li>
+            <li class="filter-item">
+              <button class="filter-btn" data-filter-btn data-category="semiconductor">
+                <span class="filter-title">Semiconductor</span>
+                <span class="filter-subtitle">(Thin Film & Materials)</span>
+              </button>
+            </li>
+            <li class="filter-item">
+              <button class="filter-btn" data-filter-btn data-category="cad-cfd-fea">
+                <span class="filter-title">CAD CFD & FEA</span>
+                <span class="filter-subtitle">(Design & Simulation)</span>
+              </button>
+            </li>
+            <li class="filter-item">
+              <button class="filter-btn" data-filter-btn data-category="robotics">
+                <span class="filter-title">Robotics</span>
+                <span class="filter-subtitle">(Automation)</span>
+              </button>
+            </li>
+            <li class="filter-item">
+              <button class="filter-btn" data-filter-btn data-category="data-analytics">
+                <span class="filter-title">Data Analytics & Coding</span>
+                <span class="filter-subtitle">(DOE, Python, MATLAB, JMP)</span>
+              </button>
+            </li>
+            <li class="filter-item">
+              <button class="filter-btn" data-filter-btn data-category="portfolio">
+                <span class="filter-title">Portfolio</span>
+                <span class="filter-subtitle">(Websites)</span>
+              </button>
+            </li>
+          </ul>
+
+          <div class="filter-select-box">
+
+            <button class="filter-select" data-select>
+              <div class="select-value" data-select-value>Select category</div>
+              <div class="select-icon">
+                <ion-icon name="chevron-down"></ion-icon>
+              </div>
+            </button>
+            <ul class="select-list">
+              <li class="select-item">
+                <button data-select-item data-category="all">All</button>
+              </li>
+              <li class="select-item">
+                <button data-select-item data-category="data-center">Data Center</button>
+              </li>
+              <li class="select-item">
+                <button data-select-item data-category="semiconductor">Semiconductor R&D</button>
+              </li>
+              <li class="select-item">
+                <button data-select-item data-category="cad-cfd-fea">CAD CFD & FEA</button>
+              </li>
+              <li class="select-item">
+                <button data-select-item data-category="robotics">Robotics</button>
+              </li>
+              <li class="select-item">
+                <button data-select-item data-category="data-analytics">Data Analytics & Coding</button>
+              </li>
+              <li class="select-item">
+                <button data-select-item data-category="portfolio">Portfolio</button>
+              </li>
+            </ul>
+          </div>
+
+          <ul class="project-list">
+            <!-- Data Center Projects -->
+            <li class="project-item active" data-filter-item data-category="data-center cad-cfd-fea">
+              <a href="#">
+                <!-- Wrap each project image in a .project-card container -->
+                <figure class="project-card">
+                  <img src="project-images/DC-thumbnail.png" alt="Data Center Thermal Management System" loading="lazy">
+                  <div class="project-overlay">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+                </figure>
+                <h3 class="project-title">Data Center Advanced Thermal Optimization</h3>
+                <p class="project-category">Data Center</p>
+              </a>
+              <!-- Modal pages for project details -->
+              <div class="modal-page" data-page="0" style="display:none;">
+                <h4>What?</h4>
+                <ul style="list-style-type: '👉 '; margin-left: 0; padding-left: 1.2em;">
+                  <li>•  Data center cooling consumes nearly 50% of total energy, making efficiency critical.</li>
+                  <li>•  Traditional air cooling struggles with hotspots and thermal stratification in high-density racks.</li>
+                  <li>•  Liquid cooling offers the potential to remove heat at the source, reducing energy use and improving temperature uniformity.</li>
+                  <li>•  The project aimed to compare air vs. liquid cooling to identify scalable, cost-effective thermal strategies.</li>
+                  <li>•  Real-world conditions were simulated to benchmark methods for modern data center loads (~10 kW per rack).</li>
+                </ul>
+              </div>
+              <div class="modal-page" data-page="1" style="display:none;">
+                <h4>How?</h4>
+                <ul style="list-style-type: '👉 '; margin-left: 0; padding-left: 1.2em;">
+                  <li>•  Developed a detailed 3D model of a data center rack and environment in Fusion 360, including modular air and liquid cooling features.</li>
+                  <li>•  Ran CFD simulations in SimScale to analyze heat transfer and airflow under realistic load conditions.</li>
+                  <li>•  Implemented hot aisle containment and adaptive fan control to enhance air cooling performance.</li>
+                  <li>•  Analyzed simulation results in Python, computing metrics like rack temperatures and cooling energy needs.</li>
+                  <li>•  Visualized outcomes via an interactive Streamlit dashboard for clear comparison of cooling methods.</li>
+                </ul>
+              </div>
+              <div class="modal-page" data-page="2" style="display:none;">
+                <h4>Results?</h4>
+                <ul style="list-style-type: '👉 '; margin-left: 0; padding-left: 1.2em;">
+                  <li>•  Improved cooling performance by 27% and reduced hotspots by 32% with optimized design.</li>
+                  <li>•  Liquid cooling kept inlet temperatures up to 15°C cooler than air cooling at the same load.</li>
+                  <li>•  Hot aisle containment lowered upper-rack temperatures and enhanced airflow efficiency.</li>
+                  <li>•  Projected PUE improved from ~1.5 (air-cooled) to ~1.1 (liquid-cooled hybrid system).</li>
+                  <li>•  Demonstrated a scalable, low-cost approach to guide future smart thermal management strategies.</li>
+                </ul>
+              </div>
+            </li>
+            <li class="project-item active" data-filter-item data-category="data-center cad-cfd-fea">
+              <a href="#">
+                <figure class="project-card">
+                  <img src="project-images/underwater-dc-thumbnail.png" alt="Land-Based Cooling Pod (Natick-Inspired)" loading="lazy">
+                  <div class="project-overlay">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+                </figure>
+                <h3 class="project-title">Land-Based Cooling Pod Data Center (Microsoft Inspired)</h3>
+                <p class="project-category">Data Center</p>
+              </a>
+              <!-- Modal pages for project details -->
+              <div class="modal-page" data-page="0" style="display:none;">
+                <h4>What?</h4>
+                <ul style="list-style-type: '👉 '; margin-left: 0; padding-left: 1.2em;">
+                  <li>•  Conventional data centers face high failure rates and energy costs due to thermal cycling and corrosion.</li>
+                  <li>•  Project Natick showed that sealed nitrogen pods underwater cut failure rates by 8× and achieved PUE ~1.07.</li>
+                  <li>•  The project explored adapting Natick’s sealed, nitrogen-filled pod concept for land-based data centers.</li>
+                  <li>•  The goal was to quantify reliability, thermal stability, and energy efficiency gains.</li>
+                  <li>•  Aimed to provide a practical design blueprint for land deployment.</li>
+                </ul>
+              </div>
+              <div class="modal-page" data-page="1" style="display:none;">
+                <h4>How?</h4>
+                <ul style="list-style-type: '👉 '; margin-left: 0; padding-left: 1.2em;">
+                  <li>•  Designed two CAD models: a standard open rack and a sealed nitrogen pod with integrated cooling.</li>
+                  <li>•  Conducted CFD simulations in SimScale to compare thermal profiles and cooling demands.</li>
+                  <li>•  Tested variations in nitrogen concentration, insulation, and coolant temperature for optimization.</li>
+                  <li>•  Applied species transport models to track nitrogen levels and oxygen exclusion in the sealed pod.</li>
+                  <li>•  Used corrosion and thermal cycling models to project reliability benefits.</li>
+                </ul>
+              </div>
+              <div class="modal-page" data-page="2" style="display:none;">
+                <h4>Result?</h4>
+                <ul style="list-style-type: '👉 '; margin-left: 0; padding-left: 1.2em;">
+                  <li>•  The sealed pod improved thermal reliability by 25% and cut thermal stratification by ~50%.</li>
+                  <li>•  Projected hardware failure rates dropped by 35–40% compared to standard racks.</li>
+                  <li>•  Daily temperature swings reduced to ±1°C in the pod, enhancing component longevity.</li>
+                  <li>•  Cooling energy demand decreased ~10%, with PUE improving to ~1.1 in optimized configurations.</li>
+                  <li>•  Delivered a scalable design concept for high-efficiency, high-reliability land-based data centers.</li>
+                </ul>
+              </div>
+            </li>
+
+            <!-- Semiconductor Projects -->
+            <li class="project-item active" data-filter-item data-category="semiconductor data-analytics all">
+              <a href="#">
+                <figure class="project-card">
+                  <img src="project-images/thin-film-thumbnail.png" alt="Thin-Film PV Efficiency & Manufacturing Roadmap" loading="lazy">
+                  <div class="project-overlay">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+                </figure>
+                <h3 class="project-title">Thin-Film PV Efficiency & Manufacturing Roadmap</h3>
+                <p class="project-category">Semiconductor R&D</p>
+              </a>
+              <!-- Modal pages for project details -->
+              <div class="modal-page" data-page="0" style="display:none;">
+                <h4>What?</h4>
+                <ul style="list-style-type: none; margin-left: 0; padding-left: 1.2em;">
+                  <li>•  Investigation into the potential of thin-film solar photovoltaic technologies to achieve over 30% cell efficiency and large-scale manufacturing by 2035.</li>
+                  <li>•  Focus on advances in semiconductor materials, device engineering, and fabrication processes to enable scaled manufacturing of high-tech solar devices.</li>
+                  <li>•  The 30% efficiency target is significant as it doubles the efficiency of current commercial panels and approaches the theoretical limits for single-junction solar cells.</li>
+                  <li>•  Global scope aligns with energy agencies’ 2035 renewable energy cost reduction milestones.</li>
+                </ul>
+                <div class="image-row">
+                  <img src="project-images/thin-film-pv-efficiency-img-1.png" alt="Thin-Film PV Efficiency - What?" class="project-img">
+                </div>
+              </div>
+              <div class="modal-page" data-page="1" style="display:none;">
+                <h4>How?</h4>
+                <ul style="list-style-type: none; margin-left: 0; padding-left: 1.2em;">
+                  <li>•  Multidisciplinary systems modeling combining engineering assessments and market trends.</li>
+                  <li>•  Engineering models estimate efficiency potential via quantum dot configurations, defect suppression, and bandgap optimizations.</li>
+                  <li>•  Economic models forecast manufacturing expansion and cost learning under various policy scenarios.</li>
+                  <li>•  Techno-economic simulations project adoption rates and R&D sensitivity.</li>
+                </ul>
+              </div>
+              <div class="modal-page" data-page="2" style="display:none;">
+                <h4>Results?</h4>
+                <ul style="list-style-type: none; margin-left: 0; padding-left: 1.2em;">
+                  <li>•  Provides probability distributions for thin-film solar cells surpassing 30% efficiency and production forecasts by 2035.</li>
+                  <li>•  Projects major impact on solar PV capacity expansion and fossil fuel displacement.</li>
+                  <li>•  Offers insights for solar firms, policymakers, and research priorities in manufacturing and semiconductor synthesis.</li>
+                  <li>•  Contributes to global decarbonization trajectories.</li>
+                </ul>
+                <div class="image-row">
+                  <img src="project-images/thin-film-pv-efficiency-img-2.png" alt="Thin-Film PV Efficiency - Results" class="project-img">
+                </div>
+              </div>
+            </li>
+            <li class="project-item active" data-filter-item data-category="semiconductor data-analytics all">
+              <a href="#">
+                <figure class="project-card">
+                  <img src="project-images/deposition-thumbnail.png" alt="Deposition Rate Optimization For Semiconductor Materials" loading="lazy">
+                  <div class="project-overlay">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+                </figure>
+                <h3 class="project-title"> Deposition Rate Optimization for Semiconductor Materials </h3>
+                <p class="project-category">Semiconductor R&D</p>
+              </a>
+              <!-- Modal pages for project details -->
+              <div class="modal-page" data-page="0" style="display:none;">
+                <h4>What?</h4>
+                <ul style="list-style-type: none; margin-left: 0; padding-left: 1.2em;">
+                  <li>•  Optimization of the semiconductor deposition rate is critical for improving quality and reducing manufacturing costs.</li>
+                  <li>•  The deposition rate affects properties like film thickness, uniformity, and purity that impact device performance and yield.</li>
+                  <li>•  Faster deposition can increase production throughput and lower capital costs.</li>
+                  <li>•  There is a complex relationship between process parameters like temperature and deposition rate that is difficult to optimize manually.</li>
+                  <li>•  Bayesian optimization is an advanced machine learning technique to efficiently search high-dimensional parameter spaces.</li>
+                  <li>•  It constructs a probabilistic model to represent belief over the objective function.</li>
+                  <li>•  The model is used to determine informative sample locations to evaluate.</li>
+                  <li>•  It balances exploration to improve the model and exploitation to find the optimum.</li>
+                </ul>
+              </div>
+              <div class="modal-page" data-page="1" style="display:none;">
+                <h4>How?</h4>
+                <ul style="list-style-type: none; margin-left: 0; padding-left: 1.2em;">
+                  <li>•  An empirical deposition rate model was defined as a function of temperature and plasma power.</li>
+                  <li>•  The model has a quadratic relationship between temperature and deposition rate.</li>
+                  <li>•  Deposition rate increases linearly with higher plasma power.</li>
+                  <li>•  The model allows evaluating deposition rate at different parameter settings.</li>
+                  <li>•  A Gaussian process probabilistic model was constructed to represent belief over the deposition rate.</li>
+                  <li>•  Gaussian processes can capture complex nonlinear functions.</li>
+                  <li>•  The GP model is iteratively updated to improve accuracy.</li>
+                  <li>•  The model guides the selection of optimal parameters to evaluate next.</li>
+                </ul>
+                <div class="image-row">
+                  <a href="project-images/deposition-rate-optimization-img-1.png" data-lightbox="Deposition-Rate-Optimization">
+                    <img src="project-images/deposition-rate-optimization-img-1.png" alt="deposition-rate-optimization-img-1.png" class="project-img">
+                  </a>
+                </div>
+              </div>
+              <div class="modal-page" data-page="2" style="display:none;">
+                <h4>Results?</h4>
+                <div class="image-row">
+                  <a href="project-images/deposition-rate-optimization-img-2.png" data-lightbox="Deposition-Rate-Optimization">
+                    <img src="project-images/deposition-rate-optimization-img-2.png" alt="deposition-rate-optimization-img-2.png" class="project-img">
+                  </a>
+                </div>
+                <ul style="list-style-type: none; margin-left: 0; padding-left: 1.2em;">
+                  <li>•  The optimized deposition rate was 65.25 Aǒ/s, a 30% improvement over the baseline.</li>
+                  <li>•  The higher deposition rate can enable faster production and lower costs.</li>
+                  <li>•  Film quality will also benefit from the optimized parameters.</li>
+                  <li>•  Bayesian optimization efficiently searched the parameter space to determine the optimal configuration.</li>
+                  <li>•  Only nine evaluations of the deposition model were required.</li>
+                  <li>•  The algorithm quickly converged despite the small data requirement.</li>
+                  <li>•  Bayesian optimization successfully maximized the deposition rate in the model by 30%.</li>
+                  <li>•  Significant benefits in terms of throughput, quality, and cost reduction are expected.</li>
+                  <li>•  This methodology provides an automated, efficient way to optimize complex manufacturing processes.</li>
+                  <li>•  The optimization framework is flexible to other processes and objective functions.</li>
+                  <li>•  Bayesian optimization accelerates parameter optimization compared to conventional methods.</li>
+                </ul>
+              </div>
+            </li>
+            <li class="project-item active" data-filter-item data-category="cad-cfd-fea">
+              <a href="#">
+                <figure class="project-card">
+                  <img src="project-images/brick-making-machine-thumbnail.png" alt="Industrial-Grade Brick-Making Machine" loading="lazy">
+                  <div class="project-overlay">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+                </figure>
+                <h3 class="project-title">Industrial-Grade Brick-Making Machine</h3>
+                <p class="project-category">CAD CFD & FEA</p>
+              </a>
+              <!-- Modal pages for project details -->
+              <div class="modal-page" data-page="0" style="display:none;">
+                <h4>What?</h4>
+                <ul style="list-style-type: none; margin-left: 0; padding-left: 1.2em;">
+                  <li>•  For this Diploma major project, we wanted to develop something which is sustainable for small manufacturers.</li>
+                  <li>•  Small manufacturers used conventional processes which had drawbacks such as it required more time for production, a greater number of workers, and hence more space for production.</li>
+                  <li>•  The “Brick Making Machine” (Sold as “Paving Block Making Machine”) was made for small-scale industries to manufacture bricks and paving blocks at a lesser time with qualitative production in less effort.</li>
+                  <li>•  The goal was to make Brick Making Machine in a minimum cost so that it can be afforded to small-scale industries.</li>
+                  <li>•  The design of each part was also especially important, the design should be such that the machine can withstand continuous operations. We used CATIA V5-R2019 for part designing purposes.</li>
+                  <li>•  Knowledge of the Theory of Machines, Heat and Mass transfer, testing and measurements, and strength of the material was used while developing ‘Brick Making Machine’.</li>
+                </ul>
+                <div class="image-row">
+                  <a href="project-images/brick-making-machine-img-1.png" data-lightbox="Brick-Making-Machine">
+                    <img src="project-images/brick-making-machine-img-1.png" alt="brick-making-machine-img-1.png" class="project-img">
+                  </a>
+                </div>
+              </div>
+              <div class="modal-page" data-page="1" style="display:none;">
+                <h4>How?</h4>
+                <ul style="list-style-type: none; margin-left: 0; padding-left: 1.2em;">
+                  <li>•  While selecting the material we considered the following factors: Availability of Material, Suitability of Material for working conditions, and the cost of the material.</li>
+                  <li>•  After considering all the factors we decided to use Mild Steel as it is a type of steel alloy that contains a high amount of carbon.</li>
+                  <li>•  For the manufacturing process we used Lathe Machine, Grinding Machine, Drilling Machine, and Welding Machine, etc.</li>
+                  <li>•  The Brick making machine has four main parts: hopper, slider box, mold box, and pressing mechanism.</li>
+                  <li>•  The hopper is designed for easy pouring of raw material into the slider box and to prevent any residue from remaining in the hopper.</li>
+                  <li>•  The slider box collects the raw material from the hopper and transfers it to the mold box.</li>
+                  <li>•  The pressing mechanism, consisting of the mold box, long lever, and sliding mechanism, applies pressure to the raw material in the mold box to shape it.</li>
+                  <li>•  Pulling back the lever and pressing down again removes the paving block from the mold box.</li>
+                </ul>
+                <div class="image-row">
+                  <a href="project-images/brick-making-machine-img-2.png" data-lightbox="Brick-Making-Machine">
+                    <img src="project-images/brick-making-machine-img-2.png" alt="brick-making-machine-img-2.png" class="project-img">
+                  </a>
+                  <a href="project-images/brick-making-machine-img-3.png" data-lightbox="Brick-Making-Machine">
+                    <img src="project-images/brick-making-machine-img-3.png" alt="brick-making-machine-img-3.png" class="project-img">
+                  </a>
+                </div>
+              </div>
+              <div class="modal-page" data-page="2" style="display:none;">
+                <h4>Results?</h4>
+                <ul style="list-style-type: none; margin-left: 0; padding-left: 1.2em;">
+                  <li>•  The main important thing is that the number of skilled workers required for the production of brick and paving blocks was less than the number of semiskilled and unskilled workers required to use this machine.</li>
+                  <li>•  In the conventional method six skilled workers were required for production of brick and paving blocks whereas in this machine maximum of 2 workers, efforts required by the worker are also reduced.</li>
+                  <li>•  The time required for a single brick in the conventional method is about 15-18 minutes which is reduced to less than 5 minutes per brick.</li>
+                  <li>•  The initial investment of the machine is slightly higher than the conventional method, but this investment is a one-time investment, not paid monthly or yearly.</li>
+                  <li>•  Machine saves the monthly worker expenses at the same output. The only thing required is the small maintenance of the machine.</li>
+                  <li>•  The Brick Making Machine (Sold as: ‘Paving Block Making Machine’) was sold to the same industry for 11,540Rs (INR).</li>
+                </ul>
+                <div class="image-row">
+                  <a href="project-images/brick-making-machine-img-4.png" data-lightbox="Brick-Making-Machine">
+                    <img src="project-images/brick-making-machine-img-4.png" alt="brick-making-machine-img-4.png" class="project-img">
+                  </a>
+                </div>
+              </div>
+            </li>
+            <!-- HEPA Filter -->
+            <li class="project-item active" data-filter-item data-category="cad-cfd-fea">
+              <a href="#">
+                <figure class="project-card">
+                  <img src="project-images/hepa-filter-thumbnail.png" alt="Sustainable 3 Stage HEPA Air Filter" loading="lazy">
+                  <div class="project-overlay">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+                </figure>
+                <h3 class="project-title">Sustainable 3 Stage HEPA Air Filter</h3>
+                <p class="project-category">CAD CFD & FEA</p>
+              </a>
+               <div class="modal-page" data-page="0" style="display:none;">
+    <h4>What?</h4>
+    <ul style="list-style-type: disc; margin-left: 0; padding-left: 1.2em;">
+      <li>➤  Environmental pollution was recognized as one of the major problems of the modern world.</li>
+      <li>➤  After visiting small-scale industries such as foundry, jaggery industries, and textile industries we found that the small black color particles are present everywhere near these industries. These are the solid pollutants emitted from the chimneys of small-scale industries.</li>
+      <li>➤  Air pollution can cause long-term damage to people’s nerves, brain, kidneys, liver, and other organs.</li>
+      <li>➤  Considering all these issues we can use air filtration technology in these industries to reduce the emission of solid pollutants and achieve a sustainable and healthy environment.</li>
+    </ul>
+    <div class="hepa-image-row">
+      <img src="project-images/hepa-filter-img-3.png" alt="HEPA Filter Design 3" class="hepa-img">
+    </div>
+  </div> 
+  <div class="modal-page" data-page="1" style="display:none;">
+    <h4>Design Features</h4>
+        <!-- DESIGN FEATURES images before text -->
+    <div class="hepa-image-row">
+      <img src="project-images/hepa-filter-img-1.png" alt="HEPA Filter Design 1" class="hepa-img">
+    </div>
+    <ul style="list-style-type: disc; margin-left: 0; padding-left: 1.2em;">
+      <li>➤  We used Mild Steel because it has a melting point of 1350 to 1500 degrees Celsius.</li>
+      <li>➤  We provided a door on one side of the air filter for maintenance purposes to easily access over the replacement of the HEPA/ MANN filter and clean the filter from the inside.</li>
+      <li>➤  Packing material on joints and doors of the air filter to minimize air leakages.</li>
+      <li>➤  We used high-temperature packing material (Champion Sheet). A high-temperature packing sheet is used because in case the temperature of flue gas is high it should be sustained at that temperature for a longer period.</li>
+      <li>➤  Zinc chromate yellow primer coating is used. It is an odorless chemical compound primarily used as an industrial paint coating. The compound is a beneficial coating because it is an anti-corrosive and an anti-rust primer.</li>
+      <li>➤  HEPA filter is used which stands for high-efficiency particulate air. A HEPA filter is a type of mechanical air filter; it works by forcing air through a fine mesh that traps harmful particles such as pollen, pet dander, dust mites, and tobacco smoke.</li>
+      <li>➤  Maximum continuous operating temperature 350°C, efficiency 99.99% at 0.3 μm.</li>
+    </ul>
+    <div class="hepa-image-row">
+      <img src="project-images/hepa-filter-img-2.png" alt="HEPA Filter Design 1" class="hepa-img">
+    </div>
+
+  <div class="modal-page" data-page="2" style="display:none;">
+    <h4>How?</h4>
+    <ul style="list-style-type: disc; margin-left: 0; padding-left: 1.2em;">
+      <li>➤  Firstly, we are done with all the dimensions on the M.S sheet and cut down all required sides.</li>
+      <li>➤  Then we formed a structure by using an L angle & welded all the sides on it.</li>
+      <li>➤  Thereafter we made the inlet portion by using a 5-inch M.S pipe mounted on an M.S sheet.</li>
+      <li>➤  Then we built the first chamber and placed the 1st HEPA/ MANN air Filter with a range of 10 microns.</li>
+      <li>➤  In the Second chamber we arranged 12 MS pipes with a diameter of 1 inch each.</li>
+      <li>➤  In the third chamber, we have arranged HEPA air Filter with a range of 2.5 microns on its outlet.</li>
+      <li>➤  After that we set the outlet portion on it then we provide a door fully sealed to prevent air leakages by using a high-temperature packing sheet.</li>
+    </ul>
+        <!-- HOW? image after text -->
+    <div class="hepa-image-row">
+      <img src="project-images/hepa-filter-img-5.png" alt="HEPA Filter Assembly 5" class="hepa-img">
+    </div>
+    <div class="hepa-image-row">
+      <img src="project-images/hepa-filter-img-6.png" alt="HEPA Filter Assembly 4" class="hepa-img">
+    </div>
+        <!-- HOW? image below img-4 -->
+  </div>
+  <div class="modal-page" data-page="3" style="display:none;">
+    <h4>Result?</h4>
+        <!-- RESULTS? images before text -->
+    <div class="hepa-image-row">
+      <img src="project-images/hepa-filter-img-7.png" alt="HEPA Filter Result 9" class="hepa-img">
+      <img src="project-images/hepa-filter-img-8.png" alt="HEPA Filter Result 8" class="hepa-img">
+    </div>
+    <ul style="list-style-type: disc; margin-left: 0; padding-left: 1.2em;">
+      <li>➤  After doing an Experiment for 8 hours per day we trapped soot, dusty particles, and PM (particulate matter) which will expose us to air and harm the environment around us.</li>
+      <li>➤  The amount of collected solid pollutants on 1st day is 382.5 gm. On the 2nd day, the amount is 370.29 gm and on the 3rd day, the amount is 389.43 gm.</li>
+      <li>➤  The PM concentration on the 1st day was 20 mg/m3, on the 2nd day it was 19.3 mg/m3 and on the 3rd day it was 20.36 mg/m3. Thus, the average PM concentration is 19.88 mg/m3.</li>
+      <li>➤  The Project was designed and analyzed and satisfies all the necessary conditions for an efficient, economical air filter. The different layers of filters used are quite simple and easily available materials (filtrates). The three-layer filtration makes an effective filtration process.</li>
+    </ul>
+        <!-- RESULTS? images after text -->
+    <div class="hepa-image-row">
+  
+      <img src="project-images/hepa-filter-img-9.png" alt="HEPA Filter Result 9" class="hepa-img">
+    </div>
+  </div>
+            </li>
+            <!-- Hydraulic Ram Pump -->
+            <li class="project-item active" data-filter-item data-category="cad-cfd-fea data-center">
+              <a href="#">
+                <figure class="project-card">
+                  <img src="project-images/ram-pump-thumbnail.png" alt="Hydraulic Ram Pump for Rural Water Supply" loading="lazy">
+                  <div class="project-overlay">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+                </figure>
+                <h3 class="project-title">Hydraulic Ram Pump for Rural Water Supply</h3>
+                <p class="project-category">CAD CFD & FEA</p>
+              </a>
+              <div class="modal-page" data-page="0" style="display:none;">
+                <h4>What?</h4>
+                <ul style="list-style-type: none; margin-left: 0; padding-left: 1.2em;">
+                  <li>➤  A hydraulic ram pump is a water pump powered by water with a height difference.</li>
+                  <li>➤  In areas where natural flows exist with a height difference of the water over a small distance, hydraulic ram pumps can be used to transport water to higher grounds without using electricity or fuel in places without a constant electricity supply (Rural areas/Villages).</li>
+                  <li>➤  The goal was to provide a sustainable solution for water pumping and transportation, especially in areas with natural water flows with a height difference.</li>
+                </ul>
+               </div>
+                            <!-- ...existing code... -->
+              <div class="modal-page" data-page="1" style="display:none;">
+                <h4>How?</h4>
+                <ul style="list-style-type: none; margin-left: 0; padding-left: 1.2em;">
+                  <li>➤  To make this project, we conducted extensive research on the concept and design of hydraulic ram pumps.</li>
+                  <li>➤  We studied the various components and materials that would be suitable for the construction of the pump.</li>
+                  <li>➤  After considering the customer's requirements, we decided to use lightweight materials such as aluminum, PVC, and stainless steel, to keep the pump light, in weight and low in cost.</li>
+                  <li>➤  To make the pump easy to use, we designed it to have a simple mechanism with only a few moving parts.</li>
+                  <li>➤  The pump was designed with a closed-loop system that would prevent water from entering the pump's internal components, making it durable and long-lasting.</li>
+                </ul>
+                <img src="project-images/ram-pump-img-1.png" alt="ram-pump-img-1.png" class="project-img">
+              </div>
+              <div class="modal-page" data-page="2" style="display:none;">
+                <h4>Result?</h4>
+                <ul style="list-style-type: none; margin-left: 0; padding-left: 1.2em;">
+                  <li>➤  The results of this project were successful. We were able to design and develop a hydraulic ram pump that met the customer's requirements.</li>
+                  <li>➤  The pump was simple in mechanism, light in weight, low in cost, easy to use, and strong enough to withstand the demands of pumping water in rural areas and villages.</li>
+                  <li>➤  The pump was assessed in different environments and performed well, proving to be an effective and sustainable solution for water pumping and transportation in areas without a constant electricity supply.</li>
+                </ul>
+                <div class="image-row">
+                  <img src="project-images/ram-pump-img-3.png" alt="ram-pump-img-3.png" class="project-img">
+                  <img src="project-images/ram-pump-img-2.png" alt="ram-pump-img-2.png" class="project-img">
+                </div>
+              </div>
+              <!-- ...existing code... -->
+            </li>
+            <!-- Packaging Machine -->
+            <li class="project-item active" data-filter-item data-category="robotics cad-cfd-fea">
+              <a href="#">
+                <figure class="project-card">
+                  <img src="project-images/packaging-machine-thumbnail.png" alt="Advanced PLC-Controlled Automatic Packaging Machine" loading="lazy">
+                  <div class="project-overlay">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+                </figure>
+                <h3 class="project-title">Advanced PLC-Controlled Automatic Packaging Machine</h3>
+                <p class="project-category">Robotics</p>
+              </a>
+              <!-- Insert the following modal pages here -->
+              <div class="modal-page" data-page="0" style="display:none;">
+                <h4>What?</h4>
+                <ul style="list-style-type: disc; margin-left: 0; padding-left: 1.2em;">
+                  <li>➤  The automatic packaging machine project was initiated to address the pressing needs in the packaging industry for improved efficiency, safety, and cost savings.</li>
+                  <li>➤  The primary aim was to reduce the manual labor requirements in the packaging process and minimize the risk of injury to employees.</li>
+                  <li>➤  The increasing demand for faster and more efficient packaging methods also contributed to the development of this project.</li>
+                </ul>
+              </div>
+              <div class="modal-page" data-page="1" style="display:none;">
+                <h4>How?</h4>
+                <ul style="list-style-type: disc; margin-left: 0; padding-left: 1.2em;">
+                  <li>➤  The project was executed with the guidance of a team of engineers and technicians who have experience in the packaging industry.</li>
+                  <li>➤  Designed with SolidWorks and developed three prototypes of cutting-edge automatic packaging machine with a PLC system that is equipped to manage a wide range of goods, including fragile and heavy items.</li>
+                  <li>➤  The machine is designed to ensure maximum load containment and consistency in wrapping, which leads to cost savings in the use of stretch film.</li>
+                  <li>➤  (Prototypes of the project for easy understanding of workers, cannot display the SolidWorks model because of the contract with the industry)</li>
+                </ul>
+              <!-- HOW? images after text -->
+                <div class="image-row">
+                  <img src="project-images/packaging-machine-img-1.png" alt="Packaging Machine Prototype 1" class="project-img">
+                </div>
+              </div>
+              <div class="modal-page" data-page="2" style="display:none;">
+                <h4>Results?</h4>
+                <ul style="list-style-type: disc; margin-left: 0; padding-left: 1.2em;">
+                  <li>➤  The automatic packaging machine was a highly efficient tool in the packaging process, as it can wrap pallets much faster than manual methods which reduced manual labor by 70%.</li>
+                  <li>➤  The machine has also improved safety conditions in the workplace by reducing the risk of manual handling injuries. Moreover, the machine has enabled labor reallocation, freeing up employees to be more productive in other areas.</li>
+                  <li>➤  The film cost savings was significant, as the consistency of wrapping and the ability to use less stretch film has resulted in 60% cost reductions and waste reduction by 75%.</li>
+                  <li>➤  In conclusion, the automatic packaging machine project has successfully addressed the challenges faced by the packaging industry and provided a highly efficient, safe, and cost-effective solution.</li>
+                  <li>➤  The project was sold to the industry for 18,000Rs (INR) and it became a valuable tool for businesses in the packaging industry.</li>
+                </ul>
+              </div>
+              <!-- ...existing code for images or other modal content if needed... -->
+            </li>
+            </li>
+            <!-- Mister-Enhanced Vapor-Compression -->
+            <li class="project-item active" data-filter-item data-category="data-center cad-cfd-fea">
+              <a href="#">
+                <figure class="project-card">
+                  <img src="project-images/miste-thumbnail.png" alt="Mister-Enhanced Vapor-Compression System to Improve Cooling Capacity" loading="lazy">
+                  <div class="project-overlay">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+                </figure>
+                <h3 class="project-title">Mister-Enhanced Vapor-Compression System to Improve Cooling Capacity</h3>
+                <p class="project-category">Data Center</p>
+              </a>
+              <div class="modal-page" data-page="0" style="display:none;">
+                <h4>What?</h4>
+                <ul style="list-style-type: '👉 '; margin-left: 0; padding-left: 1.2em;">
+                  <li>•  The performance of the central AC system will decrease when the outdoor temperature increases.</li>
+                  <li>•  This is the case in Arizona where the ambient temperature increases up to 41°C with low humidity.</li>
+                  <li>•  The chart below shows how the AC cooling capacity gets derated when the outdoor temperature gets high, which is the case of the weather in Arizona State during the summer season.</li>
+                </ul>
+                <div style="margin-top: 1.2em; text-align: left;">
+                  <a 
+                    href="https://docs.google.com/spreadsheets/d/17DaBa-_J5uWVXE-AHNjWGL1Dc0JFo-2pum-m_9PsnII/edit?usp=sharing" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    class="mister-link"
+                  >
+                    Project Calculation Link (Excel Sheet) ↗️
+                  </a>
+                </div>
+                <div class="image-row">
+                  <img src="project-images/mister-img-1.png" alt="Mister System Schematic" class="project-img">
+                </div>
+              <div class="modal-page" data-page="1" style="display:none;">
+                <h4>How?</h4>
+                <ul style="list-style-type: '👉 '; margin-left: 0; padding-left: 1.2em;">
+                  <li>•  The table shows the operation pressure of R-410A at different ambient temperatures.</li>
+                  <li>•  It is clear that the AC compressor needs to work harder and longer to achieve higher operating pressure which derates the cooling capacity of the system.</li>
+                  <li>•  Adding a mist system in front of the condenser will decrease the ambient temperature around the condenser and improve its performance.</li>
+                  <li>•  The psychrometric chart below shows how adding water to the air can reduce its temperature.</li>
+                </ul>
+                <div class="image-row">
+                  <img src="project-images/mister-img-2.png" alt="Mister System Installation" class="project-img">
+                <div class="image-row">
+                  <img src="project-images/mister-img-3.png" alt="Mister System Detail 1" class="project-img">
+                </div>
+                </div>
+              </div>
+              </div>
+              <div class="modal-page" data-page="2" style="display:none;">
+                <h4>Results?</h4>
+                <ul style="list-style-type: '👉 '; margin-left: 0; padding-left: 1.2em;">
+                  <li>•  Based on United States Census there are 3,138,871 houses in Arizona as of July 1st, 2021.</li>
+                  <li>•  We considered only 70% of that falls in our assumption of house size of 1900 SQFT and AC size of 4 Ton unit. We have 2,197,209.70 houses.</li>
+                  <li>•  The energy saving is 540,290,302 KWh per month which is a cost saving of $69,319,245.77 per month.</li>
+                </ul>
+                <div class="image-row">
+                  <img src="project-images/mister-img-5.png" alt="Mister System Results 1" class="project-img">
+                </div>
+                <div class="image-row">
+                  <img src="project-images/mister-img-6.png" alt="Mister System Results 2" class="project-img">
+                </div>
+              </div>
+            </li>
+            <!-- DOE-Driven Pour-Over Coffee Optimisation (JMP) -->
+            <li class="project-item active" data-filter-item data-category="data-analytics">
+              <a href="#">
+                <figure class="project-card">
+                  <img src="project-images/coffee-thumbnail.png" alt="DOE-Driven Pour-Over Coffee Optimisation (JMP)" loading="lazy">
+                  <div class="project-overlay">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+                </figure>
+                <h3 class="project-title">DOE-Driven Pour-Over Coffee Optimisation (JMP)</h3>
+                <p class="project-category">Data Analytics & Coding</p>
+              </a>
+              <!-- WHAT? -->
+              <div class="modal-page" data-page="0" style="display:none;">
+                <h4>What?</h4>
+                <ul style="list-style-type: disc; margin-left: 0; padding-left: 1.2em;">
+                  <li>•  Coffee is, and remains, one of the world’s most popular beverages with an estimated 66% of Americans enjoying the drink daily.</li>
+                  <li>•  There is then a need to understand what makes good coffee to best understand how to leverage both the size of the market and the potential revenue one would enjoy by perfecting the process. It is also important to note the consumer benefits of optimizing the coffee brewing process.</li>
+                  <li>•  Thus, the aims of this experiment were to determine which factors and their levels in the brewing of pour-over coffee lead to both greater satisfaction from consumers and lie closest to an optimal pH value.</li>
+                </ul>
+                <!-- WHAT? image after text -->
+                <img src="project-images/coffee-project-img-1.png" alt="DOE Coffee Project Design Factors Table" class="project-img">
+                <p>Table 1. Design Factors for Coffee Optimization Experiment</p>
+              </div>
+              <!-- HOW? -->
+              <div class="modal-page" data-page="1" style="display:none;">
+                <h4>How?</h4>
+                <!-- HOW? image before text -->
+                <img src="project-images/coffee-project-img-2.png" alt="Coffee Experiment Response Tool" class="project-img">
+                <ul style="list-style-type: disc; margin-left: 0; padding-left: 1.2em;">
+                  <li>•  Jars of coffee grounds were pre-weighed (10 g) for each of the three grind-time settings defined in the design, ensuring every treatment started with the correct grind size and dose.</li>
+                  <li>•  A calibrated scale and timers governed all water/coffee ratios, grind times, bloom intervals, and total brew times; all containers were washed between trials to prevent cross-contamination.</li>
+                  <li>•  After brewing, each cup cooled exactly five minutes before tasting; pH was measured after tasting to reflect coffee at a consistent, drinkable temperature.</li>
+                  <li>•  Testers received equal portions, rated each sample privately with a six-question scoring tool, and force-ranked the day’s 11 treatments from best to worst.</li>
+                  <li>•  All scores, ranks, and pH readings were logged immediately in both the JMP experiment file and a backup Excel sheet for later DOE analysis.</li>
+                </ul>
+                <!-- HOW? image after text -->
+                <img src="project-images/coffee-project-img-3.png" alt="Experiment Data Table" class="project-img">
+                <p>Figure 4. Experiment Data Table</p>
+              </div>
+              <!-- RESULTS? -->
+              <div class="modal-page" data-page="2" style="display:none;">
+                <h4>Results?</h4>
+                <!-- RESULTS? images before text (side-by-side) -->
+                <div class="image-row">
+                  <img src="project-images/coffee-project-img-4.png" alt="Coffee Results Graph 1" class="project-img">
+                  <img src="project-images/coffee-project-img-5.png" alt="Coffee Results Graph 2" class="project-img">
+                </div>
+                <ul style="list-style-type: disc; margin-left: 0; padding-left: 1.2em;">
+                  <li>•  Running an analysis considering both the average Forced Rank data and the standard deviation for Forced Rank data, a predicted optimal cup of coffee is found.</li>
+                  <li>•  The treatment is as follows: Grind the beans for 16 seconds, use the low-level Water-to-Coffee Ratio of 16:1, brew for three minutes at the high-level temperature of 205 degrees Fahrenheit, and make sure to let the coffee brew bloom for 30 seconds.</li>
+                  <li>•  This prediction not only provides a desirable coffee, but a coffee that is robust to the subjectivity of the consumers.</li>
+                </ul>
+                <!-- RESULTS? images after text (side-by-side) -->
+                <div class="image-row">
+                  <img src="project-images/coffee-project-img-6.png" alt="Coffee Results Table 1" class="project-img">
+                  <img src="project-images/coffee-project-img-7.png" alt="Coffee Results Table 2" class="project-img">
+                </div>
+              </div>
+            </li>
+            <li class="project-item active" data-filter-item data-category="data-analytics">
+              <a href="#">
+                <figure class="project-card">
+                  <img src="project-images/matlab-thumbnail.png" alt="Image Compression via Singular-Value Decomposition (MATLAB)" loading="lazy">
+                  <div class="project-overlay">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+                </figure>
+                <h3 class="project-title">Image Compression via Singular-Value Decomposition (MATLAB)</h3>
+                <p class="project-category">Data Analytics & Coding</p>
+              </a>
+              <!-- WHAT? -->
+              <div class="modal-page" data-page="0" style="display:none;">
+                <h4>What?</h4>
+                <ul style="list-style-type: disc; margin-left: 0; padding-left: 1.2em;">
+                  <li>This project explores image compression using Singular Value Decomposition (SVD) in MATLAB.</li>
+                  <li>SVD is a mathematical technique that decomposes an image matrix into three simpler matrices, allowing for efficient data reduction.</li>
+                  <li>The goal is to significantly reduce image file size while preserving as much visual quality as possible.</li>
+                  <li>Applications include storage optimization, faster image transmission, and foundational understanding for advanced image processing tasks.</li>
+                </ul>
+              </div>
+              <!-- HOW? -->
+              <div class="modal-page" data-page="1" style="display:none;">
+                <h4>How?</h4>
+                <ul style="list-style-type: disc; margin-left: 0; padding-left: 1.2em;">
+                  <li>•  The original image is loaded into MATLAB and converted to a grayscale matrix for processing.</li>
+                  <li>•  Singular Value Decomposition (SVD) is applied to decompose the image matrix into U, S, and V matrices.</li>
+                  <li>•  By retaining only the largest singular values, a compressed approximation of the original image is reconstructed.</li>
+                  <li>•  The number of singular values kept determines the balance between compression ratio and image quality.</li>
+                  <li>•  Both the original and compressed images are displayed for visual comparison and analysis.</li>
+                </ul>
+                <img src="project-images/matlab-img-1.png" alt="Original grayscale image in MATLAB" class="project-img">
+                <p>Figure 1. Original grayscale image loaded in MATLAB</p>
+                <img src="project-images/matlab-img-2.png" alt="SVD decomposition and compression process" class="project-img">
+                <p>Figure 2. SVD decomposition and image compression process</p>
+              </div>
+              <!-- RESULTS? -->
+              <div class="modal-page" data-page="2" style="display:none;">
+                <h4>Results?</h4>
+                <ul style="list-style-type: disc; margin-left: 0; padding-left: 1.2em;">
+                  <li>•  The compressed image retains most visual features of the original, despite using far fewer singular values.</li>
+                  <li>•  File size is reduced substantially, demonstrating the effectiveness of SVD-based compression.</li>
+                  <li>•  Visual comparison shows minor loss of detail, which can be adjusted by varying the number of singular values retained.</li>
+                  <li>•  This approach provides a practical introduction to matrix-based image compression and its trade-offs.</li>
+                </ul>
+                <img src="project-images/matlab-img-3.png" alt="Compressed image using SVD" class="project-img">
+                <p>Figure 3. Compressed image reconstructed from limited singular values</p>
+                <img src="project-images/matlab-img-4.png" alt="Comparison of original and compressed images" class="project-img">
+                <p>Figure 4. Side-by-side comparison of original and compressed images</p>
+              </div>
+            </li>
+            <!-- Python Password Generator -->
+            <li class="project-item active" data-filter-item data-category="data-analytics">
+              <a href="#">
+                <figure class="project-card">
+                  <img src="project-images/password-thumbnail.png" alt="Automatic Password Generator with Python" loading="lazy">
+                  <div class="project-overlay">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+                </figure>
+                <h3 class="project-title">Automatic Password Generator with Python</h3>
+                <p class="project-category">Data Analytics & Coding</p>
+              </a>
+              <!-- WHAT? -->
+              <div class="modal-page" data-page="0" style="display:none;">
+                <h4>What?</h4>
+                <ul style="list-style-type: disc; margin-left: 0; padding-left: 1.2em;">
+                  <li>•  In today's digital age, having a strong and secure password is more important than ever. However, remembering a strong and unique password for each of your online accounts can be a challenge.</li>
+                  <li>•  That is where a password generator comes in handy. This project aims to provide a simple and efficient solution to generate random and secure passwords that can be used for various online accounts.</li>
+                </ul>
+              </div>
+              <!-- HOW? -->
+              <div class="modal-page" data-page="1" style="display:none;">
+                <h4>How?</h4>
+                <ul style="list-style-type: disc; margin-left: 0; padding-left: 1.2em;">
+                  <li>•  The <code>import random</code> and <code>import string</code> statements import the necessary modules required for the password generator.</li>
+                  <li>•  The <code>password_generator</code> function takes an input length and generates a random password of the desired length.</li>
+                  <li>•  The <code>chars</code> variable holds a combination of ASCII letters, digits, and punctuation characters.</li>
+                  <li>•  The <code>return</code> statement uses the <code>join</code> function to concatenate the randomly generated characters from the <code>chars</code> variable to form a password.</li>
+                  <li>•  The <code>length</code> variable is initialized by taking the input from the user.</li>
+                  <li>•  The generated password is printed using the <code>print</code> function.</li>
+                </ul>
+                <div class="image-row">
+                  <img src="project-images/password-img-1.png" alt="Password Generator Python Code" class="project-img">
+                </div>
+              </div>
+              <!-- RESULTS? -->
+              <div class="modal-page" data-page="2" style="display:none;">
+                <h4>Result?</h4>
+                <ul style="list-style-type: disc; margin-left: 0; padding-left: 1.2em;">
+                  <li>•  The password generator is a simple and efficient solution for generating random and secure passwords.</li>
+                  <li>•  It can generate passwords of varying lengths and complexity, depending on the input provided by the user.</li>
+                <div class="image-row">
+                  <img src="project-images/password-img-2.png" alt="Password Generator Output Example 1" class="project-img">
+                  <img src="project-images/password-img-3.png" alt="Password Generator Output Example 2" class="project-img">
+                  <img src="project-images/password-img-4.png" alt="Password Generator Output Example 3" class="project-img">
+                </div>
+                  <li>•  The combination of letters, digits, and punctuation characters ensures that the generated passwords are strong and secure. </li>
+                  <li>•  The code can be easily modified to include additional characters or constraints, such as excluding similar characters or
+                </ul>
+              </div>
+            </li>
+            <li class="project-item active" data-filter-item data-category="portfolio data-analytics">
+              <a href="#">
+                <figure class="project-card">
+                  <img src="project-images/portfolio-thumbnail.png" alt="Portfolio Website" loading="lazy">
+                  <div class="project-overlay">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+                </figure>
+                <h3 class="project-title">Portfolio Website</h3>
+                <p class="project-category">Portfolio</p>
+              </a>
+  <div class="modal-page" data-page="0" style="display:none;">
+    <h4>What?</h4>
+    <ul style="list-style-type: disc; margin-left: 0; padding-left: 1.2em;">
+      <li>➤  The project goal was to build a personal portfolio website that showcases my engineering projects, resume, and achievements.</li>
+      <li>➤  I wanted the site to function as a dynamic interactive resume, with modal popups for detailed project views, category filtering, and smooth navigation.</li>
+      <li>➤  The site was designed to support &gt;15 projects, handle multiple categories, and remain usable on mobile via responsive design and horizontal scroll.</li>
+    </ul>
+  </div>
+  <div class="modal-page" data-page="1" style="display:none;">
+    <h4>How?</h4>
+    <ul style="list-style-type: disc; margin-left: 0; padding-left: 1.2em;">
+      <li>➤  Designed and implemented the site using HTML, CSS, and vanilla JS — no frameworks — for full control over styling and interactivity.</li>
+      <li>➤  Built dynamic modal popup logic with multi-page content (WHAT / HOW / RESULTS) that can scale to any number of projects without extra code.</li>
+      <li>➤  Added horizontal scroll for categories, accessibility features (keyboard nav, alt text), and optimized load speed (compressed assets, lazy loading) resulting in page load under 2s on desktop.</li>
+    </ul>
+  </div>
+  <div class="modal-page" data-page="2" style="display:none;">
+    <h4>Results?</h4>
+    <ul style="list-style-type: disc; margin-left: 0; padding-left: 1.2em;">
+      <li>➤  Developed interactive "About, Project & Resume" section on the website with animations.</li>
+      <li>➤  Successfully showcased 14 projects across 6 categories without layout breakage.</li>
+      <li>➤  Achieved a &gt;30% increase in recruiter engagement (measured via portfolio link clicks on LinkedIn profile).</li>
+      <li>➤  The site loads in &lt;2 seconds on desktop and &lt;3 seconds on mobile (measured via Google PageSpeed Insights).</li>
+    </ul>
+  </div>
+</li>
+          </ul>
+
+          <!-- Project Detail Modal -->
+          <div class="project-modal" data-project-modal>
+            <div class="project-modal-overlay" data-project-overlay></div>
+            <div class="project-modal-wrapper" role="dialog" aria-modal="true">
+              <button class="project-modal-close" data-project-close aria-label="Close">&times;</button>
+              <div class="project-modal-header">
+                <img src="" alt="" class="project-modal-image" data-project-image>
+                <h3 class="project-modal-title" data-project-title></h3>
+              </div>
+              <div class="project-modal-body">
+                <div class="modal-page" data-page="0"></div>
+                <div class="modal-page" data-page="1"></div>
+                <div class="modal-page" data-page="2"></div>
+              </div>
+              <div class="project-modal-footer">
+                <button class="modal-prev-btn" data-modal-prev disabled>Previous</button>
+                <button class="modal-next-btn" data-modal-next>Next</button>
+              </div>
+            </div>
+          </div>
+
+        </section>
+
+      </article>
+
+       <!--
+        - #RESUME
+      -->
+
+      <article class="resume" data-page="resume">
+
+        <header style="display: flex; align-items: center; gap: 1.2em; flex-wrap: wrap;">
+          <h2 class="h2 article-title" style="margin-bottom: 0;">Resume</h2>
+          <a href="https://cdn.jsdelivr.net/gh/varadlad/VaradLadDocuments-/Varad%20Lad%20Resume.pdf" download title="Download Resume" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; background: none; color: #E4C15D; border: 1.5px solid #E4C15D; border-radius: 50%; width: 2.2em; height: 2.2em; justify-content: center; text-decoration: none; box-shadow: none; padding: 0; margin-top: -1em; vertical-align: middle; transition: background 0.15s, border-color 0.15s;">
+            <ion-icon name="download-outline" style="font-size:1.25em; vertical-align: middle;"></ion-icon>
+            <span style="position: absolute; left: -9999px;">Download Resume PDF</span>
+          </a>
+          <a href="https://cdn.jsdelivr.net/gh/varadlad/VaradLadDocuments-/Varad%20Lad%20Cover%20Letter.pdf" download title="Download Cover Letter" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; background: none; color: #E4C15D; border: 1.5px solid #E4C15D; border-radius: 50%; width: 2.2em; height: 2.2em; justify-content: center; text-decoration: none; box-shadow: none; padding: 0; margin-top: -1em; vertical-align: middle; transition: background 0.15s, border-color 0.15s;">
+            <ion-icon name="document-outline" style="font-size:1.25em; vertical-align: middle;"></ion-icon>
+            <span style="position: absolute; left: -9999px;">Download Cover Letter PDF</span>
+          </a>
+        </header>
+
+        <section class="timeline">
+
+          <div class="title-wrapper">
+            <div class="icon-box">
+              <ion-icon name="book-outline"></ion-icon>
+            </div>
+            <h3 class="h3">Full-Time Experience <span class="exp-badge"><b>4 yrs</b></span></h3>
+          </div>
+          <ol class="timeline-list">
+            <li class="timeline-item">
+              <h4 class="h4 timeline-item-title"><span style="font-weight:bold;">TSMC</span> Mechanical Engineer, Critical Facilities Systems</h4>
+              <span>2024 — 2025</span>
+              <ul class="timeline-text" style="list-style-type: disc; list-style-position: inside; padding-left: 0; margin: 0;">
+                <li style="margin-bottom: 0.75em;">
+                  Designed & installed 4 nm/2 nm fab utilities; N+1 redundancy, ICC/IBC/NFPA compliance, 0 % re-work.
+                </li>
+                <li style="margin-bottom: 0.75em;">
+                  Cut downtime -25 % and future maintenance $120,000 by diagnosing HVAC/abatement failures and building Power BI / Tableau PM dashboards.
+                </li>
+              </ul>
+            </li>
+            <li class="timeline-item">
+              <h4 class="h4 timeline-item-title"><span style="font-weight:bold;">Chemtech Systems</span> Senior Mechanical Engineer, High-Volume Manufacturing</h4>
+              <span>2019 - 2022</span>
+              <ul class="timeline-text" style="list-style-type: disc; list-style-position: inside; padding-left: 0; margin: 0;">
+                <li style="margin-bottom: 0.75em;">
+                  Boosted blade cutting performance +80 % via self-sharpening redesign and FMEA-based process fixes.
+                </li>
+                <li style="margin-bottom: 0.75em;">
+                  Saved $48 k and cut tool downtime with predictive-maintenance outsourcing and third-party testing/commissioning.
+                </li>
+              </ul>
+            </li>
+          </ol>
+
+          <div class="title-wrapper" style="margin-top:2em;">
+            <div class="icon-box">
+              <ion-icon name="school-outline"></ion-icon>
+            </div>
+            <h3 class="h3">Internships & Co-ops <span class="exp-badge"><b>1 yr</b></span></h3>
+          </div>
+          <ol class="timeline-list">
+            <li class="timeline-item">
+              <h4 class="h4 timeline-item-title"><span style="font-weight:bold;">Rayn Innovation</span> Process Engineer Co-op, Opto-Mechanical & Semiconductor R&amp;D</h4>
+              <span>2024</span>
+              <ul class="timeline-text" style="list-style-type: disc; list-style-position: inside; padding-left: 0; margin: 0;">
+                <li style="margin-bottom: 0.75em;">
+                  DOE-driven CVD/PVD/ALD process lifted thin-film uniformity +12 %, slashed waste -40 %, and raised prototype yield +28 %.
+                </li>
+                <li style="margin-bottom: 0.75em;">
+                  Detected 90 % nano-defects (SEM/TEM/XRD) and improved AZO purity +15 %, boosting conductivity &amp; thermal reliability.
+                </li>
+              </ul>
+            </li>
+            <li class="timeline-item">
+              <h4 class="h4 timeline-item-title"><span style="font-weight:bold;">Marketech International</span> Mechanical Engineer Intern, Tool Interconnect</h4>
+              <span>2023</span>
+              <ul class="timeline-text" style="list-style-type: disc; list-style-position: inside; padding-left: 0; margin: 0;">
+                <li style="margin-bottom: 0.75em;">
+                  Pushed utility-hookup reliability 82 % → 94 % across 15 fab tools by resolving BIM clashes and redesigning interconnects.
+                </li>
+                <li style="margin-bottom: 0.75em;">
+                  Trimmed fab downtime -15 % through rapid troubleshooting of HVAC and mechanical subsystems in live cleanroom ops.
+                </li>
+              </ul>
+            </li>
+            <li class="timeline-item">
+              <h4 class="h4 timeline-item-title"><span style="font-weight:bold;">NASA</span> Mechanical Project Specialist Co-op, L'SPACE</h4>
+              <span>2022</span>
+              <ul class="timeline-text" style="list-style-type: disc; list-style-position: inside; padding-left: 0; margin: 0;">
+                <li style="margin-bottom: 0.75em;">
+                  Modeled 40 parts in Siemens NX, generating 7+ patentable concepts and meeting KPIs that drove 15 % project efficiency gain.
+                </li>
+                <li style="margin-bottom: 0.75em;">
+                  Co-developed mission-simulation hardware with cross-disciplinary team; delivered data-driven proposals adopted for next-phase review.
+                </li>
+              </ul>
+            </li>
+          </ol>
+
+        </section>
+
+        <section class="timeline">
+
+          <div class="title-wrapper">
+            <div class="icon-box">
+              <ion-icon name="book-outline"></ion-icon>
+            </div>
+
+            <h3 class="h3">Education</h3>
+          </div>
+
+          <ol class="timeline-list">
+
+            <li class="timeline-item">
+          
+              <h4 class="h4 timeline-item-title">Arizona State University</h4>
+              <p style="font-weight: normal; font-size: 0.95em; color: #ffffff; margin: 0.2em 0 0.5em 0;">
+                Master of Science in Mechanical Engineering
+              </p>
+              <span>May 2024</span>
+          
+            </li>
+          
+            <li class="timeline-item">
+          
+              <h4 class="h4 timeline-item-title">Sanjay Ghodawat University</h4>
+              <p style="font-weight: normal; font-size: 0.95em; color: #ffffff; margin: 0.2em 0 0.5em 0;">
+                Bachelor of Technology in Mechanical Engineering, Minor in Design &amp; Modeling
+              </p>
+              <span>May 2022</span>
+          
+            </li>
+          
+            <li class="timeline-item">
+          
+              <h4 class="h4 timeline-item-title">Latthe Education Society’s Polytechnic</h4>
+              <p style="font-weight: normal; font-size: 0.95em; color: #ffffff; margin: 0.2em 0 0.5em 0;">
+                Diploma of Engineering in Mechanical Engineering
+              </p>
+              <span>May 2019</span>
+          
+            </li>
+          
+          </ol>
+          
+          
+        </section>
+
+        <section class="skill">
+  <h3 class="h3 skills-title">Skills</h3>
+
+  <!-- CAD & Mechanical Design -->
+  <div style="margin-bottom: 1.5em;">
+    <h4 style="font-weight: bold; margin-bottom: 0.5em; color: #fff;">CAD & Mechanical Design</h4>
+    <div style="display: flex; flex-wrap: wrap; gap: 0.5em;">
+      <span style="background: #E4C15D; color: #000; padding: 0.3em 0.6em; border-radius: 0.6em;">Revit</span>
+      <span style="background: #E4C15D; color: #000; padding: 0.3em 0.6em; border-radius: 0.6em;">AutoCAD</span>
+      <span style="background: #E4C15D; color: #000; padding: 0.3em 0.6em; border-radius: 0.6em;">Siemens NX</span>
+      <span style="background: #E4C15D; color: #000; padding: 0.3em 0.6em; border-radius: 0.6em;">CATIA</span>
+      <span style="background: #E4C15D; color: #000; padding: 0.3em 0.6em; border-radius: 0.6em;">Creo</span>
+      <span style="background: #E4C15D; color: #000; padding: 0.3em 0.6em; border-radius: 0.6em;">SolidWorks</span>
+      <span style="background: #E4C15D; color: #000; padding: 0.3em 0.6em; border-radius: 0.6em;">Fusion 360</span>
+      <span style="background: #E4C15D; color: #000; padding: 0.3em 0.6em; border-radius: 0.6em;">Onshape</span>
+      <span style="background: #E4C15D; color: #000; padding: 0.3em 0.6em; border-radius: 0.6em;">SimScale</span>
+      <span style="background: #E4C15D; color: #000; padding: 0.3em 0.6em; border-radius: 0.6em;">GD&T</span>
+      <span style="background: #E4C15D; color: #000; padding: 0.3em 0.6em; border-radius: 0.6em;">ISO fits & tolerances</span>
+    </div>
+  </div>
+
+  <!-- Simulation & Thermal / Structural Analysis -->
+  <div style="margin-bottom: 1.5em;">
+    <h4 style="font-weight: bold; margin-bottom: 0.5em; color: #fff;">Simulation & Thermal / Structural Analysis</h4>
+    <div style="display: flex; flex-wrap: wrap; gap: 0.5em;">
+      <span style="background: #E4C15D; color: #000; padding: 0.3em 0.6em; border-radius: 0.6em;">ANSYS (CFD & FEA)</span>
+      <span style="background: #E4C15D; color: #000; padding: 0.3em 0.6em; border-radius: 0.6em;">SimScale cloud solver</span>
+      <span style="background: #E4C15D; color: #000; padding: 0.3em 0.6em; border-radius: 0.6em;">MATLAB</span>
+      <span style="background: #E4C15D; color: #000; padding: 0.3em 0.6em; border-radius: 0.6em;">Heat-transfer models</span>
+      <span style="background: #E4C15D; color: #000; padding: 0.3em 0.6em; border-radius: 0.6em;">Liquid- vs-air & nitrogen-pod cooling studies</span>
+      <span style="background: #E4C15D; color: #000; padding: 0.3em 0.6em; border-radius: 0.6em;">Load / vibration analysis</span>
+    </div>
+  </div>
+
+  <!-- Manufacturing, Prototyping & Process Engineering -->
+  <div style="margin-bottom: 1.5em;">
+    <h4 style="font-weight: bold; margin-bottom: 0.5em; color: #fff;">Manufacturing, Prototyping & Process Engineering</h4>
+    <div style="display: flex; flex-wrap: wrap; gap: 0.5em;">
+      <span style="background: #E4C15D; color: #000; padding: 0.3em 0.6em; border-radius: 0.6em;">CVD</span>
+      <span style="background: #E4C15D; color: #000; padding: 0.3em 0.6em; border-radius: 0.6em;">PVD</span>
+      <span style="background: #E4C15D; color: #000; padding: 0.3em 0.6em; border-radius: 0.6em;">ALD thin-film deposition</span>
+      <span style="background: #E4C15D; color: #000; padding: 0.3em 0.6em; border-radius: 0.6em;">CNC</span>
+      <span style="background: #E4C15D; color: #000; padding: 0.3em 0.6em; border-radius: 0.6em;">FDM</span>
+      <span style="background: #E4C15D; color: #000; padding: 0.3em 0.6em; border-radius: 0.6em;">SLS</span>
+      <span style="background: #E4C15D; color: #000; padding: 0.3em 0.6em; border-radius: 0.6em;">SLA</span>
+      <span style="background: #E4C15D; color: #000; padding: 0.3em 0.6em; border-radius: 0.6em;">DMLS</span>
+      <span style="background: #E4C15D; color: #000; padding: 0.3em 0.6em; border-radius: 0.6em;">PolyJet</span>
+      <span style="background: #E4C15D; color: #000; padding: 0.3em 0.6em; border-radius: 0.6em;">Vacuum casting</span>
+      <span style="background: #E4C15D; color: #000; padding: 0.3em 0.6em; border-radius: 0.6em;">Laser / Water-jet cutting</span>
+      <span style="background: #E4C15D; color: #000; padding: 0.3em 0.6em; border-radius: 0.6em;">PLC & HMI programming</span>
+      <span style="background: #E4C15D; color: #000; padding: 0.3em 0.6em; border-radius: 0.6em;">G-code</span>
+      <span style="background: #E4C15D; color: #000; padding: 0.3em 0.6em; border-radius: 0.6em;">SEM</span>
+      <span style="background: #E4C15D; color: #000; padding: 0.3em 0.6em; border-radius: 0.6em;">TEM</span>
+      <span style="background: #E4C15D; color: #000; padding: 0.3em 0.6em; border-radius: 0.6em;">XRD</span>
+      <span style="background: #E4C15D; color: #000; padding: 0.3em 0.6em; border-radius: 0.6em;">UV-Vis metrology</span>
+    </div>
+  </div>
+
+  <!-- Facilities, Utilities & Reliability -->
+  <div style="margin-bottom: 1.5em;">
+    <h4 style="font-weight: bold; margin-bottom: 0.5em; color: #fff;">Facilities, Utilities & Reliability</h4>
+    <div style="display: flex; flex-wrap: wrap; gap: 0.5em;">
+      <span style="background: #E4C15D; color: #000; padding: 0.3em 0.6em; border-radius: 0.6em;">HVAC, MEP & VRF zoning</span>
+      <span style="background: #E4C15D; color: #000; padding: 0.3em 0.6em; border-radius: 0.6em;">Air-abatement systems</span>
+      <span style="background: #E4C15D; color: #000; padding: 0.3em 0.6em; border-radius: 0.6em;">Cooling-tower & chiller sizing</span>
+      <span style="background: #E4C15D; color: #000; padding: 0.3em 0.6em; border-radius: 0.6em;">SCADA monitoring</span>
+      <span style="background: #E4C15D; color: #000; padding: 0.3em 0.6em; border-radius: 0.6em;">N+1 redundancy planning</span>
+      <span style="background: #E4C15D; color: #000; padding: 0.3em 0.6em; border-radius: 0.6em;">FMEA / PFMEA</span>
+      <span style="background: #E4C15D; color: #000; padding: 0.3em 0.6em; border-radius: 0.6em;">Predictive maintenance</span>
+      <span style="background: #E4C15D; color: #000; padding: 0.3em 0.6em; border-radius: 0.6em;">Root Cause Analysis</span>
+    </div>
+  </div>
+
+  <!-- Data, Analytics & Program Leadership -->
+  <div style="margin-bottom: 1.5em;">
+    <h4 style="font-weight: bold; margin-bottom: 0.5em; color: #fff;">Data, Analytics & Program Leadership</h4>
+    <div style="display: flex; flex-wrap: wrap; gap: 0.5em;">
+      <span style="background: #E4C15D; color: #000; padding: 0.3em 0.6em; border-radius: 0.6em;">Python</span>
+      <span style="background: #E4C15D; color: #000; padding: 0.3em 0.6em; border-radius: 0.6em;">SQL</span>
+      <span style="background: #E4C15D; color: #000; padding: 0.3em 0.6em; border-radius: 0.6em;">SAP HANA</span>
+      <span style="background: #E4C15D; color: #000; padding: 0.3em 0.6em; border-radius: 0.6em;">JMP (DOE & SPC)</span>
+      <span style="background: #E4C15D; color: #000; padding: 0.3em 0.6em; border-radius: 0.6em;">Six-Sigma tools</span>
+      <span style="background: #E4C15D; color: #000; padding: 0.3em 0.6em; border-radius: 0.6em;">Power BI & Tableau dashboards</span>
+      <span style="background: #E4C15D; color: #000; padding: 0.3em 0.6em; border-radius: 0.6em;">End-to-end project scheduling</span>
+      <span style="background: #E4C15D; color: #000; padding: 0.3em 0.6em; border-radius: 0.6em;">Cost-saving & sustainability focus</span>
+      <span style="background: #E4C15D; color: #000; padding: 0.3em 0.6em; border-radius: 0.6em;">Cross-functional team leadership</span>
+      <span style="background: #E4C15D; color: #000; padding: 0.3em 0.6em; border-radius: 0.6em;">NASA L’SPACE & STEM outreach</span>
+      <span style="background: #E4C15D; color: #000; padding: 0.3em 0.6em; border-radius: 0.6em;">TSMC Collaboration Club presidency</span>
+    </div>
+  </div>
+
+  <!-- Code Compliance & Industry Standards -->
+  <div style="margin-bottom: 1.5em;">
+    <h4 style="font-weight: bold; margin-bottom: 0.5em; color: #fff;">Code Compliance & Industry Standards</h4>
+    <div style="display: flex; flex-wrap: wrap; gap: 0.5em;">
+      <span style="background: #E4C15D; color: #000; padding: 0.3em 0.6em; border-radius: 0.6em;">ICC</span>
+      <span style="background: #E4C15D; color: #000; padding: 0.3em 0.6em; border-radius: 0.6em;">IBC</span>
+      <span style="background: #E4C15D; color: #000; padding: 0.3em 0.6em; border-radius: 0.6em;">IMC</span>
+      <span style="background: #E4C15D; color: #000; padding: 0.3em 0.6em; border-radius: 0.6em;">IFC</span>
+      <span style="background: #E4C15D; color: #000; padding: 0.3em 0.6em; border-radius: 0.6em;">NFPA (mechanical & fire-protection)</span>
+      <span style="background: #E4C15D; color: #000; padding: 0.3em 0.6em; border-radius: 0.6em;">ASHRAE (HVAC, cleanroom)</span>
+      <span style="background: #E4C15D; color: #000; padding: 0.3em 0.6em; border-radius: 0.6em;">ASME</span>
+      <span style="background: #E4C15D; color: #000; padding: 0.3em 0.6em; border-radius: 0.6em;">ISO (cleanrooms)</span>
+      <span style="background: #E4C15D; color: #000; padding: 0.3em 0.6em; border-radius: 0.6em;">ISO (quality & environmental)</span>
+      <span style="background: #E4C15D; color: #000; padding: 0.3em 0.6em; border-radius: 0.6em;">OSHA / EPA safety regulations</span>
+    </div>
+  </div>
+</section>       
+
+      </article>
+
+      <!--
+        - #BLOG
+      -->
+
+      <article class="achievements" data-page="achievements" style="display:none;">
+
+        <header>
+          <h2 class="h2 article-title">Achievements</h2>
+        </header>
+
+        <section class="blog-posts">
+
+          <ul class="blog-posts-list">
+
+            <li class="blog-post-item">
+              <a href="#">
+
+                <figure class="blog-banner-box">
+                  <img src="./assets/images/blog-1.jpg" alt="Design conferences in 2022" loading="lazy">
+                </figure>
+
+                <div class="blog-content">
+
+                  <div class="blog-meta">
+                    <p class="blog-category">Design</p>
+
+                    <span class="dot"></span>
+
+                    <time datetime="2022-02-23">Fab 23, 2022</time>
+                  </div>
+
+                  <h3 class="h3 blog-item-title">Design conferences in 2022</h3>
+
+                  <p class="blog-text">
+                    Veritatis et quasi architecto beatae vitae dicta sunt, explicabo.
+                  </p>
+
+                </div>
+
+              </a>
+            </li>
+
+            <li class="blog-post-item">
+              <a href="#">
+
+                <figure class="blog-banner-box">
+                  <img src="./assets/images/blog-2.jpg" alt="Best fonts every designer" loading="lazy">
+                </figure>
+
+                <div class="blog-content">
+
+                  <div class="blog-meta">
+                    <p class="blog-category">Design</p>
+
+                    <span class="dot"></span>
+
+                    <time datetime="2022-02-23">Fab 23, 2022</time>
+                  </div>
+
+                  <h3 class="h3 blog-item-title">Best fonts every designer</h3>
+
+                  <p class="blog-text">
+                    Sed ut perspiciatis, nam libero tempore, cum soluta nobis est eligendi.
+                  </p>
+
+                </div>
+
+              </a>
+            </li>
+
+            <li class="blog-post-item">
+              <a href="#">
+
+                <figure class="blog-banner-box">
+                  <img src="./assets/images/blog-3.jpg" alt="Design digest #80" loading="lazy">
+                </figure>
+
+                <div class="blog-content">
+
+                  <div class="blog-meta">
+                    <p class="blog-category">Design</p>
+
+                    <span class="dot"></span>
+
+                    <time datetime="2022-02-23">Fab 23, 2022</time>
+                  </div>
+
+                  <h3 class="h3 blog-item-title">Design digest #80</h3>
+
+                  <p class="blog-text">
+                    Excepteur sint occaecat cupidatat no proident, quis nostrum exercitationem ullam corporis suscipit.
+                  </p>
+
+                </div>
+
+              </a>
+            </li>
+
+            <li class="blog-post-item">
+              <a href="#">
+
+                <figure class="blog-banner-box">
+                  <img src="./assets/images/blog-4.jpg" alt="UI interactions of the week" loading="lazy">
+                </figure>
+
+                <div class="blog-content">
+
+                  <div class="blog-meta">
+                    <p class="blog-category">Design</p>
+
+                    <span class="dot"></span>
+
+                    <time datetime="2022-02-23">Fab 23, 2022</time>
+                  </div>
+
+                  <h3 class="h3 blog-item-title">UI interactions of the week</h3>
+
+                  <p class="blog-text">
+                    Enim ad minim veniam, consectetur adipiscing elit, quis nostrud exercitation ullamco laboris nisi.
+                  </p>
+
+                </div>
+
+              </a>
+            </li>
+
+            <li class="blog-post-item">
+              <a href="#">
+
+                <figure class="blog-banner-box">
+                  <img src="./assets/images/blog-5.jpg" alt="The forgotten art of spacing" loading="lazy">
+                </figure>
+
+                <div class="blog-content">
+
+                  <div class="blog-meta">
+                    <p class="blog-category">Design</p>
+
+                    <span class="dot"></span>
+
+                    <time datetime="2022-02-23">Fab 23, 2022</time>
+                  </div>
+
+                  <h3 class="h3 blog-item-title">The forgotten art of spacing</h3>
+
+                  <p class="blog-text">
+                    Maxime placeat, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  </p>
+
+                </div>
+
+              </a>
+            </li>
+
+            <li class="blog-post-item">
+              <a href="#">
+
+                <figure class="blog-banner-box">
+                  <img src="./assets/images/blog-6.jpg" alt="Design digest #79" loading="lazy">
+                </figure>
+
+                <div class="blog-content">
+
+                  <div class="blog-meta">
+                    <p class="blog-category">Design</p>
+
+                    <span class="dot"></span>
+
+                    <time datetime="2022-02-23">Fab 23, 2022</time>
+                                                    </div>
+
+                  <h3 class="h3 blog-item-title">Design digest #79</h3>
+
+                  <p class="blog-text">
+                    Optio cumque nihil impedit uo minus quod maxime placeat, velit esse cillum.
+                  </p>
+
+                </div>
+
+              </a>
+            </li>
+
+          </ul>
+
+        </section>
+
+      </article>
+
+
+
+
+
+      <!--
+        - #CONTACT
+      -->
+
+      <article class="contact" data-page="contact">
+
+        <header>
+          <h2 class="h2 article-title">Contact</h2>
+        </header>
+
+        <section class="mapbox" data-mapbox>
+          <figure>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d199666.5651251294!2d-121.58334177520186!3d38.56165006739519!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x809ac672b28397f9%3A0x921f6aaa74197fdb!2sSacramento%2C%20CA%2C%20USA!5e0!3m2!1sen!2sbd!4v1647608789441!5m2!1sen!2sbd"
+              width="400" height="300" loading="lazy"></iframe>
+          </figure>
+        </section>
+
+        <section class="contact-form">
+
+          <h3 class="h3 form-title">Contact Form</h3>
+
+          <form action="#" class="form" data-form>
+
+            <div class="input-wrapper">
+              <input type="text" name="fullname" class="form-input" placeholder="Full name" required data-form-input>
+
+              <input type="email" name="email" class="form-input" placeholder="Email address" required data-form-input>
+            </div>
+
+            <textarea name="message" class="form-input" placeholder="Your Message" required data-form-input></textarea>
+
+            <button class="form-btn" type="submit" disabled data-form-btn>
+              <ion-icon name="paper-plane"></ion-icon>
+              <span>Send Message</span>
+            </button>
+
+          </form>
+
+        </section>
+
+      </article>
+
+    </div>
+
+  </main>
+
+  <!--
+    - custom js link
+  -->
+  <script src="./assets/js/script.js"></script>
+  <script src="lightbox.js"></script>
+  <!--
+    - ionicon link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+</html>

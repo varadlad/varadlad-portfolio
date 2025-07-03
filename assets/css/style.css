@@ -2473,19 +2473,6 @@ textarea.form-input::-webkit-resizer { display: none; }
 
 }
 
-.mister-link,
-.mister-link:visited {
-  color: var(--orange-yellow-crayola) !important;
-  text-decoration: underline;
-  font-weight: 500;
-  font-size: 1em;
-}
-.mister-link:hover,
-.mister-link:active,
-.mister-link:focus {
-  color: var(--orange-yellow-crayola) !important;
-  text-decoration: underline;
-}
 /* Ensure filter list stays in a single row and scrolls horizontally if needed */
 
 /* Improved spacing for category titles in project filter list */
@@ -2626,4 +2613,37 @@ a:hover,
 a:focus,
 a:active {
   cursor: pointer;
+}
+
+/* Add spacing between vertically stacked images in project modals so they don't appear stuck together */
+.project-modal .image-row img.project-img,
+.project-modal .hepa-image-row img.hepa-img {
+  display: block;
+  margin-bottom: 1em;
+}
+
+/* Remove bottom margin for last image in a row */
+.project-modal .image-row img.project-img:last-child,
+.project-modal .hepa-image-row img.hepa-img:last-child {
+  margin-bottom: 0;
+}
+
+.project-modal .image-row,
+.project-modal .hepa-image-row {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.project-modal .image-row img.project-img,
+.project-modal .hepa-image-row img.hepa-img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 1em;
+}
+
+.project-modal .image-row img.project-img:last-child,
+.project-modal .hepa-image-row img.hepa-img:last-child {
+  margin-bottom: 0;
 }

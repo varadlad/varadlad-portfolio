@@ -580,8 +580,8 @@ article.active {
 /* Mobile fixes for project thumbnails */
 @media (max-width: 600px) {
   .project-card {
-    height: 180px;
-    min-height: 180px;
+    height: 160px;
+    min-height: 160px;
     border-radius: 12px;
   }
   
@@ -597,9 +597,9 @@ article.active {
 /* Additional mobile thumbnail optimizations */
 @media (max-width: 480px) {
   .project-card {
-    height: 160px;
-    min-height: 160px;
-    margin-bottom: 12px;
+    height: 140px;
+    min-height: 140px;
+    margin-bottom: 10px;
   }
   
   .project-card img {
@@ -611,20 +611,31 @@ article.active {
   }
   
   .project-list {
-    gap: 15px;
+    gap: 12px;
   }
 }
 
 /* Very small mobile devices */
 @media (max-width: 360px) {
   .project-card {
-    height: 140px;
-    min-height: 140px;
-    border-radius: 10px;
+    height: 120px;
+    min-height: 120px;
+    border-radius: 8px;
   }
   
   .project-list {
-    gap: 12px;
+    gap: 10px;
+  }
+  
+  .project-title {
+    font-size: var(--fs-8);
+    margin-left: 4px;
+  }
+  
+  .project-category {
+    font-size: var(--fs-8);
+    margin-left: 4px;
+    margin-bottom: 4px;
   }
 }
 
@@ -2698,10 +2709,10 @@ textarea.form-input::-webkit-resizer { display: none; }
     gap: 0.7em;
   }
   
-  /* Additional mobile project layout fixes */
+  /* Two project tiles per row on mobile */
   .project-list {
-    grid-template-columns: 1fr;
-    gap: 20px;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
   }
   
   .project-item.active {
@@ -3374,16 +3385,16 @@ html {
 /* Mobile text styling for projects */
 @media (max-width: 600px) {
   .project-title {
-    font-size: var(--fs-6);
+    font-size: var(--fs-7);
     line-height: 1.2;
-    margin-left: 8px;
-    margin-bottom: 3px;
+    margin-left: 6px;
+    margin-bottom: 2px;
   }
   
   .project-category {
-    font-size: var(--fs-7);
-    margin-left: 8px;
-    margin-bottom: 8px;
+    font-size: var(--fs-8);
+    margin-left: 6px;
+    margin-bottom: 6px;
   }
 }
 

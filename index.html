@@ -445,11 +445,10 @@
 
       <article class="projects" data-page="projects">
 
-        <header>
-        <header style="display: flex; align-items: center; gap: 1.2em; flex-wrap: wrap; margin-bottom: 1.2em;">
-          <h2 class="h2 article-title" style="margin-bottom: 0;">Projects</h2>
-          <a href="https://cdn.jsdelivr.net/gh/varadlad/VaradLadDocuments-/Varad%20Lad%20Portfolio.pdf" download title="Download Portfolio" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; background: none; color: #E4C15D; border: 1.5px solid #E4C15D; border-radius: 50%; width: 2.2em; height: 2.2em; justify-content: center; text-decoration: none; box-shadow: none; padding: 0; margin-top: -1em; vertical-align: middle; transition: background 0.15s, border-color 0.15s;">
-            <ion-icon name="document-outline" style="font-size:1.25em; vertical-align: middle;"></ion-icon>
+        <header class="header-with-download">
+          <h2 class="h2 article-title">Projects</h2>
+          <a href="https://cdn.jsdelivr.net/gh/varadlad/VaradLadDocuments-/Varad%20Lad%20Portfolio.pdf" download title="Download Portfolio" target="_blank" rel="noopener noreferrer">
+            <ion-icon name="document-outline"></ion-icon>
             <span style="position: absolute; left: -9999px;">Download Portfolio PDF</span>
           </a>
         </header>
@@ -735,6 +734,66 @@
                 </ul>
               </div>
             </li>
+            <!-- Applied CFD - Heat Transfer in Half Pipe Geometry -->
+            <li class="project-item active" data-filter-item data-category="cad-cfd-fea">
+              <a href="#">
+                <figure class="project-card">
+                  <img src="project-images/acfd1-thumbnai.jpg" alt="Temperature contour showing thermal distribution in half-pipe geometry" loading="lazy">
+                  <div class="project-overlay">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+                </figure>
+                <h3 class="project-title">Applied CFD — Heat Transfer in Half Pipe Geometry</h3>
+                <p class="project-category">CAD CFD & FEA</p>
+              </a>
+              <!-- Modal pages for project details -->
+              <div class="modal-page" data-page="0" style="display:none;">
+                <h4>What?</h4>
+                <ul style="list-style-type: disc; margin-left: 0; padding-left: 1.2em;">
+                  <li>•  Simulated heat transfer and fluid flow within a half-pipe geometry using Computational Fluid Dynamics (CFD).</li>
+                  <li>•  Analyzed temperature distribution, velocity profiles, and heat transfer rates under different inlet conditions.</li>
+                  <li>•  Studied how inlet size affects thermal performance and flow behavior.</li>
+                </ul>
+              </div>
+              <div class="modal-page" data-page="1" style="display:none;">
+                <h4>How?</h4>
+                <div class="image-row">
+                  <img src="project-images/acfd1velocity.jpg" alt="Velocity contour of fluid through half-pipe geometry" class="project-img">
+                </div>
+                <ul style="list-style-type: disc; margin-left: 0; padding-left: 1.2em;">
+                  <li>•  Created half-pipe model and boundary conditions in ANSYS Fluent (or equivalent CFD tool).</li>
+                  <li>•  Simulated large and small inlet configurations and analyzed pressure outlet conditions.</li>
+                  <li>•  Used custom field functions and surface integrals to compute heat transfer rates at key surfaces.</li>
+                  <li>•  Generated contour plots for velocity, static temperature, and Y velocity to study flow and thermal fields.</li>
+                </ul>
+                <div class="image-row">
+                  <img src="project-images/acfd1-static-temp.jpg" alt="Static temperature distribution in half-pipe geometry" class="project-img">
+                </div>
+                <p>Figure. Static temperature profile of the simulation domain.</p>
+              </div>
+              <div class="modal-page" data-page="2" style="display:none;">
+                <h4>Results?</h4>
+                <ul style="list-style-type: disc; margin-left: 0; padding-left: 1.2em;">
+                  <li>•  Heat transfer rate for large inlet: 183,215 W</li>
+                  <li>•  Heat transfer rate for small inlet: 152,271 W</li>
+                  <li>•  Heat transfer rate at pressure outlet: 335,470 W (matches sum of inlet rates)</li>
+                  <li>•  Results showed clear thermal and flow differences with varying inlet sizes.</li>
+                </ul>
+                <div class="image-row">
+                  <img src="project-images/acfd1-yvelo.jpg" alt="Y velocity distribution in half-pipe geometry" class="project-img">
+                  <img src="project-images/acfd1-result1.jpg" alt="Heat transfer rate summary table" class="project-img">
+                </div>
+                <div class="image-row">
+                  <img src="project-images/acfd1-result2.jpg" alt="Heat transfer comparison chart" class="project-img">
+                  <img src="project-images/acfd1-result3.jpg" alt="Additional results visualization" class="project-img">
+                </div>
+                <div style="margin-top: 1.2em; text-align: left;">
+                  <a href="assets/reports/Varad_Lad_ACFD1_Report.pdf" target="_blank" style="color: #fbd109; text-decoration: underline;">
+                    🔗 View Full Report (PDF)
+                  </a>
+                </div>
+              </div>
+            </li>
             <li class="project-item active" data-filter-item data-category="cad-cfd-fea">
               <a href="#">
                 <figure class="project-card">
@@ -1001,7 +1060,7 @@
                     href="https://docs.google.com/spreadsheets/d/17DaBa-_J5uWVXE-AHNjWGL1Dc0JFo-2pum-m_9PsnII/edit?usp=sharing" 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    class="mister-calculation-link"
+                    class="mister-link"
                   >
                     Project Calculation Link (Excel Sheet) ↗️
                   </a>
@@ -1272,14 +1331,14 @@
 
       <article class="resume" data-page="resume">
 
-        <header style="display: flex; align-items: center; gap: 1.2em; flex-wrap: wrap;">
-          <h2 class="h2 article-title" style="margin-bottom: 0;">Resume</h2>
-          <a href="https://cdn.jsdelivr.net/gh/varadlad/VaradLadDocuments-/Varad%20Lad%20Resume.pdf" download title="Download Resume" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; background: none; color: #E4C15D; border: 1.5px solid #E4C15D; border-radius: 50%; width: 2.2em; height: 2.2em; justify-content: center; text-decoration: none; box-shadow: none; padding: 0; margin-top: -1em; vertical-align: middle; transition: background 0.15s, border-color 0.15s;">
-            <ion-icon name="download-outline" style="font-size:1.25em; vertical-align: middle;"></ion-icon>
+        <header class="header-with-download">
+          <h2 class="h2 article-title">Resume</h2>
+          <a href="https://cdn.jsdelivr.net/gh/varadlad/VaradLadDocuments-/Varad%20Lad%20Resume.pdf" download title="Download Resume" target="_blank" rel="noopener noreferrer">
+            <ion-icon name="download-outline"></ion-icon>
             <span style="position: absolute; left: -9999px;">Download Resume PDF</span>
           </a>
-          <a href="https://cdn.jsdelivr.net/gh/varadlad/VaradLadDocuments-/Varad%20Lad%20Cover%20Letter.pdf" download title="Download Cover Letter" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; background: none; color: #E4C15D; border: 1.5px solid #E4C15D; border-radius: 50%; width: 2.2em; height: 2.2em; justify-content: center; text-decoration: none; box-shadow: none; padding: 0; margin-top: -1em; vertical-align: middle; transition: background 0.15s, border-color 0.15s;">
-            <ion-icon name="document-outline" style="font-size:1.25em; vertical-align: middle;"></ion-icon>
+          <a href="https://cdn.jsdelivr.net/gh/varadlad/VaradLadDocuments-/Varad%20Lad%20Cover%20Letter.pdf" download title="Download Cover Letter" target="_blank" rel="noopener noreferrer">
+            <ion-icon name="document-outline"></ion-icon>
             <span style="position: absolute; left: -9999px;">Download Cover Letter PDF</span>
           </a>
         </header>

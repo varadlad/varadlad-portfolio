@@ -356,6 +356,10 @@ document.addEventListener('click', function(e) {
   if (img) {
     // Prevent default link navigation if inside <a>
     if (e.target.closest('a')) e.preventDefault();
+    // Stop event propagation to prevent double opening
+    e.stopPropagation();
+    e.stopImmediatePropagation();
+    
     // Create lightbox overlay
     const lightbox = document.createElement('div');
     lightbox.style.position = 'fixed';
@@ -369,28 +373,224 @@ document.addEventListener('click', function(e) {
     lightbox.style.justifyContent = 'center';
     lightbox.style.zIndex = 99999;
     lightbox.style.cursor = 'zoom-out';
+    lightbox.style.backdropFilter = 'blur(8px)';
+
+    // Create image container
+    const imgContainer = document.createElement('div');
+    imgContainer.style.position = 'relative';
+    imgContainer.style.maxWidth = '90vw';
+    imgContainer.style.maxHeight = '90vh';
+    imgContainer.style.overflow = 'hidden';
+    imgContainer.style.borderRadius = '12px';
+    imgContainer.style.boxShadow = '0 25px 60px rgba(0,0,0,0.6), 0 10px 20px rgba(0,0,0,0.3)';
+    imgContainer.style.background = '#222';
+    imgContainer.style.cursor = 'grab';
 
     const zoomImg = document.createElement('img');
     zoomImg.src = img.src;
     zoomImg.alt = img.alt || '';
-    zoomImg.style.maxWidth = '90vw';
-    zoomImg.style.maxHeight = '90vh';
-    zoomImg.style.borderRadius = '8px';
-    zoomImg.style.boxShadow = '0 8px 32px rgba(0,0,0,0.45)';
-    zoomImg.style.background = '#222';
+    zoomImg.style.width = '100%';
+    zoomImg.style.height = 'auto';
+    zoomImg.style.display = 'block';
+    zoomImg.style.transition = 'transform 0.3s ease';
+    zoomImg.style.userSelect = 'none';
+    zoomImg.draggable = false;
 
-    lightbox.appendChild(zoomImg);
+    // Create close button
+    const closeBtn = document.createElement('button');
+    closeBtn.innerHTML = '×';
+    closeBtn.style.position = 'absolute';
+    closeBtn.style.top = '10px';
+    closeBtn.style.right = '10px';
+    closeBtn.style.width = '40px';
+    closeBtn.style.height = '40px';
+    closeBtn.style.border = 'none';
+    closeBtn.style.borderRadius = '50%';
+    closeBtn.style.background = 'rgba(0,0,0,0.7)';
+    closeBtn.style.color = 'white';
+    closeBtn.style.fontSize = '24px';
+    closeBtn.style.fontWeight = 'bold';
+    closeBtn.style.cursor = 'pointer';
+    closeBtn.style.display = 'flex';
+    closeBtn.style.alignItems = 'center';
+    closeBtn.style.justifyContent = 'center';
+    closeBtn.style.zIndex = '1';
+    closeBtn.style.boxShadow = '0 4px 12px rgba(0,0,0,0.5)';
+    closeBtn.style.backdropFilter = 'blur(10px)';
+    closeBtn.style.transition = 'all 0.2s ease';
+
+    // Create zoom controls
+    const zoomControls = document.createElement('div');
+    zoomControls.style.position = 'absolute';
+    zoomControls.style.bottom = '15px';
+    zoomControls.style.right = '15px';
+    zoomControls.style.display = 'flex';
+    zoomControls.style.gap = '8px';
+    zoomControls.style.zIndex = '1';
+
+    const zoomInBtn = document.createElement('button');
+    zoomInBtn.innerHTML = '+';
+    const zoomOutBtn = document.createElement('button');
+    zoomOutBtn.innerHTML = '−';
+
+    [zoomInBtn, zoomOutBtn].forEach(btn => {
+      btn.style.width = '40px';
+      btn.style.height = '40px';
+      btn.style.border = 'none';
+      btn.style.borderRadius = '50%';
+      btn.style.background = 'rgba(0,0,0,0.7)';
+      btn.style.color = 'white';
+      btn.style.fontSize = '20px';
+      btn.style.fontWeight = 'bold';
+      btn.style.cursor = 'pointer';
+      btn.style.display = 'flex';
+      btn.style.alignItems = 'center';
+      btn.style.justifyContent = 'center';
+      btn.style.boxShadow = '0 4px 12px rgba(0,0,0,0.5)';
+      btn.style.backdropFilter = 'blur(10px)';
+      btn.style.transition = 'all 0.2s ease';
+    });
+
+    // Zoom functionality
+    let scale = 1;
+    let translateX = 0;
+    let translateY = 0;
+    let isDragging = false;
+    let lastX = 0;
+    let lastY = 0;
+
+    function updateTransform() {
+      zoomImg.style.transform = `scale(${scale}) translate(${translateX}px, ${translateY}px)`;
+    }
+
+    function resetZoom() {
+      scale = 1;
+      translateX = 0;
+      translateY = 0;
+      updateTransform();
+      imgContainer.style.cursor = 'grab';
+    }
+
+    // Zoom in/out functions
+    function zoomIn() {
+      scale = Math.min(scale * 1.3, 5);
+      updateTransform();
+      imgContainer.style.cursor = scale > 1 ? 'grab' : 'grab';
+    }
+
+    function zoomOut() {
+      scale = Math.max(scale / 1.3, 0.5);
+      if (scale <= 1) {
+        resetZoom();
+      } else {
+        updateTransform();
+      }
+    }
+
+    // Mouse drag functionality
+    imgContainer.addEventListener('mousedown', function(e) {
+      if (scale > 1) {
+        isDragging = true;
+        lastX = e.clientX;
+        lastY = e.clientY;
+        imgContainer.style.cursor = 'grabbing';
+        e.preventDefault();
+      }
+    });
+
+    document.addEventListener('mousemove', function(e) {
+      if (isDragging && scale > 1) {
+        const deltaX = e.clientX - lastX;
+        const deltaY = e.clientY - lastY;
+        translateX += deltaX / scale;
+        translateY += deltaY / scale;
+        updateTransform();
+        lastX = e.clientX;
+        lastY = e.clientY;
+      }
+    });
+
+    document.addEventListener('mouseup', function() {
+      if (isDragging) {
+        isDragging = false;
+        imgContainer.style.cursor = scale > 1 ? 'grab' : 'grab';
+      }
+    });
+
+    // Wheel zoom
+    imgContainer.addEventListener('wheel', function(e) {
+      e.preventDefault();
+      const delta = e.deltaY;
+      if (delta < 0) {
+        zoomIn();
+      } else {
+        zoomOut();
+      }
+    });
+
+    // Button hover effects
+    [closeBtn, zoomInBtn, zoomOutBtn].forEach(btn => {
+      btn.addEventListener('mouseenter', function() {
+        this.style.background = 'rgba(255,255,255,0.2)';
+        this.style.transform = 'scale(1.1)';
+      });
+      btn.addEventListener('mouseleave', function() {
+        this.style.background = 'rgba(0,0,0,0.7)';
+        this.style.transform = 'scale(1)';
+      });
+    });
+
+    // Event listeners
+    zoomInBtn.addEventListener('click', function(e) {
+      e.stopPropagation();
+      zoomIn();
+    });
+
+    zoomOutBtn.addEventListener('click', function(e) {
+      e.stopPropagation();
+      zoomOut();
+    });
+
+    // Assembly
+    zoomControls.appendChild(zoomOutBtn);
+    zoomControls.appendChild(zoomInBtn);
+    imgContainer.appendChild(zoomImg);
+    imgContainer.appendChild(closeBtn);
+    imgContainer.appendChild(zoomControls);
+    lightbox.appendChild(imgContainer);
     document.body.appendChild(lightbox);
 
     function removeLightbox() {
-      document.body.removeChild(lightbox);
+      if (document.body.contains(lightbox)) {
+        document.body.removeChild(lightbox);
+      }
       document.removeEventListener('keydown', escListener);
+      document.removeEventListener('mousemove', arguments.callee);
+      document.removeEventListener('mouseup', arguments.callee);
     }
-    lightbox.addEventListener('click', removeLightbox);
+
+    // Close handlers
+    closeBtn.addEventListener('click', function(e) {
+      e.stopPropagation();
+      removeLightbox();
+    });
+
+    lightbox.addEventListener('click', function(e) {
+      if (e.target === lightbox) {
+        removeLightbox();
+      }
+    });
+
     function escListener(ev) {
       if (ev.key === 'Escape') removeLightbox();
     }
     document.addEventListener('keydown', escListener);
+
+    // Double-click to reset zoom
+    imgContainer.addEventListener('dblclick', function(e) {
+      e.stopPropagation();
+      resetZoom();
+    });
   }
 });
 
@@ -410,29 +610,21 @@ function createZoomOverlay() {
   zoomOverlay = document.createElement('div');
   zoomOverlay.className = 'image-zoom-overlay';
   zoomOverlay.innerHTML = `
-    <div class="zoom-image-container">
-      <button class="zoom-close-btn" onclick="closeImageZoom()">×</button>
-      <img id="zoomed-image" alt="Zoomed image">
-      <div class="zoom-controls">
-        <button class="zoom-btn" onclick="zoomIn()">+</button>
-        <button class="zoom-btn" onclick="resetZoom()">⌂</button>
-        <button class="zoom-btn" onclick="zoomOut()">−</button>
-      </div>
+    <button class="zoom-close-btn" onclick="closeImageZoom()">×</button>
+    <div class="zoom-controls">
+      <button class="zoom-btn" onclick="zoomIn()">+</button>
+      <button class="zoom-btn" onclick="resetZoom()">⌂</button>
+      <button class="zoom-btn" onclick="zoomOut()">−</button>
     </div>
+    <img id="zoomed-image" alt="Zoomed image">
   `;
   document.body.appendChild(zoomOverlay);
   
-  // Close on overlay click (only when clicking outside the image container)
+  // Close on overlay click (but not on image click)
   zoomOverlay.addEventListener('click', function(e) {
     if (e.target === zoomOverlay) {
       closeImageZoom();
     }
-  });
-  
-  // Prevent image container clicks from bubbling to overlay
-  const imageContainer = zoomOverlay.querySelector('.zoom-image-container');
-  imageContainer.addEventListener('click', function(e) {
-    e.stopPropagation();
   });
   
   // Add keyboard support
@@ -606,35 +798,70 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // --------------------
-// Page Navigation (Template Version)
+// Enhanced Navigation
 // --------------------
-const navigationLinks = document.querySelectorAll("[data-nav-link]");
-const pages = document.querySelectorAll("[data-page]");
 
-// add event to all nav link
-for (let i = 0; i < navigationLinks.length; i++) {
-  navigationLinks[i].addEventListener("click", function () {
-    const clickedLinkText = this.innerHTML.toLowerCase();
+// Enhanced smooth scrolling for navigation
+document.addEventListener('click', function(e) {
+  if (e.target.matches('[data-nav-link]')) {
+    e.preventDefault();
+    const targetSection = e.target.textContent.toLowerCase();
+    const targetElement = document.querySelector(`[data-page="${targetSection}"]`);
     
-    // Remove active from all pages and links first
-    for (let j = 0; j < pages.length; j++) {
-      pages[j].classList.remove("active");
+    if (targetElement) {
+      targetElement.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
     }
-    for (let k = 0; k < navigationLinks.length; k++) {
-      navigationLinks[k].classList.remove("active");
-    }
-    
-    // Add active to the matching page and clicked link
-    for (let j = 0; j < pages.length; j++) {
-      if (clickedLinkText === pages[j].dataset.page) {
-        pages[j].classList.add("active");
-        this.classList.add("active");
-        window.scrollTo(0, 0);
-        break;
+  }
+});
+
+// Handle image lazy loading if supported
+document.querySelectorAll('img[loading="lazy"]').forEach(img => {
+  if ('loading' in HTMLImageElement.prototype) {
+    img.addEventListener('load', () => img.classList.add('loaded'));
+  }
+});
+
+// --------------------
+// Modern Animation Enhancements
+// --------------------
+
+// Enhanced page transitions - Lock scroll position completely
+const enhancePageTransitions = function() {
+  const navigationLinks = document.querySelectorAll("[data-nav-link]");
+  const pages = document.querySelectorAll("article[data-page]");
+
+  navigationLinks.forEach(link => {
+    link.addEventListener("click", function(e) {
+      e.preventDefault();
+      const target = this.textContent.trim().toLowerCase();
+      
+      // Don't do anything if already on target page
+      const targetPage = document.querySelector(`article[data-page="${target}"]`);
+      if (targetPage && targetPage.classList.contains("active")) {
+        return;
       }
-    }
+      
+      // Lock scroll position during transition
+      lockScrollPosition();
+      
+      // Remove active class from all nav links
+      navigationLinks.forEach(l => l.classList.remove("active"));
+      this.classList.add("active");
+      
+      // Instant page switch
+      pages.forEach(page => {
+        if (page.dataset.page === target) {
+          page.classList.add("active");
+        } else {
+          page.classList.remove("active");
+        }
+      });
+    });
   });
-}
+};
 
 // Skill progress bar animations
 const animateSkillBars = function() {
@@ -777,8 +1004,43 @@ const addScrollIndicator = function() {
   });
 };
 
-// Initialize remaining animations (keeping project cards, modals, etc.)
+// Scroll position preservation utility
+let isTransitioning = false;
+let lockedScrollPosition = 0;
+
+// Lock scroll position during page transitions
+const lockScrollPosition = function() {
+  if (!isTransitioning) {
+    isTransitioning = true;
+    lockedScrollPosition = window.pageYOffset || document.documentElement.scrollTop;
+    
+    // Prevent scroll events during transition
+    const preventScroll = (e) => {
+      if (isTransitioning) {
+        e.preventDefault();
+        window.scrollTo(0, lockedScrollPosition);
+      }
+    };
+    
+    // Add scroll lock listeners
+    window.addEventListener('scroll', preventScroll, { passive: false });
+    document.addEventListener('wheel', preventScroll, { passive: false });
+    document.addEventListener('touchmove', preventScroll, { passive: false });
+    
+    // Remove lock after transition
+    setTimeout(() => {
+      isTransitioning = false;
+      window.removeEventListener('scroll', preventScroll);
+      document.removeEventListener('wheel', preventScroll);
+      document.removeEventListener('touchmove', preventScroll);
+      window.scrollTo(0, lockedScrollPosition);
+    }, 100);
+  }
+};
+
+// Initialize all animations
 document.addEventListener('DOMContentLoaded', function() {
+  enhancePageTransitions();
   animateSkillBars();
   enhanceProjectFiltering();
   enhanceModals();

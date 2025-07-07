@@ -475,7 +475,7 @@
             </li>
             <li class="filter-item">
               <button class="filter-btn" data-filter-btn data-category="cad-cfd-fea">
-                <span class="filter-title">CAD CFD & FEA</span>
+                <span class="filter-title">CAD, CFD & FEA</span>
                 <span class="filter-subtitle">(Design & Simulation)</span>
               </button>
             </li>
@@ -518,7 +518,7 @@
                 <button data-select-item data-category="semiconductor">Semiconductor R&D</button>
               </li>
               <li class="select-item">
-                <button data-select-item data-category="cad-cfd-fea">CAD CFD & FEA</button>
+                <button data-select-item data-category="cad-cfd-fea">CAD, CFD & FEA</button>
               </li>
               <li class="select-item">
                 <button data-select-item data-category="robotics">Robotics</button>
@@ -734,6 +734,182 @@
                 </ul>
               </div>
             </li>
+            <!-- UFO Aerodynamics CFD Analysis -->
+            <li class="project-item active" data-filter-item data-category="cad-cfd-fea">
+              <a href="#">
+                <figure class="project-card">
+                  <img src="project-images/ufo-thumbnail.png" alt="UFO Aerodynamics CFD Analysis" loading="lazy">
+                  <div class="project-overlay">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+                </figure>
+                <h3 class="project-title">UFO Aerodynamics CFD Analysis</h3>
+                <p class="project-category">CAD, CFD & FEA</p>
+              </a>
+              <!-- Modal pages for project details -->
+              <div class="modal-page" data-page="0" style="display:none;">
+                <h4>What?</h4>
+                <ul style="list-style-type: disc; margin-left: 0; padding-left: 1.2em;">
+                  <li>•  Simulated 3D external flow around a flying saucer (UFO shape) inside a virtual wind tunnel to study aerodynamic behavior at high altitude.</li>
+                  <li>•  Investigated how varying the tilt angle (0°, 22.5°, 45°) affects lift and drag forces.</li>
+                  <li>•  Visualized velocity field distributions at different tilt configurations to assess stability and wake patterns.</li>
+                </ul>
+                <div class="image-row">
+                  <div class="image-with-caption">
+                    <img src="project-images/acfd3-mesh.jpg" alt="Mesh along plane of symmetry" class="project-img">
+                    <p class="image-caption">Mesh along plane of symmetry</p>
+                  </div>
+                </div>
+              </div>
+              <div class="modal-page" data-page="1" style="display:none;">
+                <h4>How?</h4>
+                <div class="image-row">
+                  <div class="image-with-caption">
+                    <img src="project-images/acfd3-velocity-0.jpg" alt="X-velocity contour at 0° tilt" class="project-img">
+                    <p class="image-caption">X-velocity contour at 0° tilt</p>
+                  </div>
+                </div>
+                <ul style="list-style-type: disc; margin-left: 0; padding-left: 1.2em;">
+                  <li>•  Modeled the saucer by revolving a 2D profile and set it inside a cylindrical wind tunnel geometry.</li>
+                  <li>•  Applied parabolic velocity profile at the inlet (max 100 m/s at center) and pressure outlet at the exit; used k-omega turbulence model for steady-state solutions.</li>
+                  <li>•  Ran separate cases for each tilt angle and analyzed flow with x-velocity contour plots at key planes.</li>
+                </ul>
+                <div class="image-row">
+                  <div class="image-with-caption">
+                    <img src="project-images/acfd3-velocity-22.jpg" alt="X-velocity contour at 22.5° tilt" class="project-img">
+                    <p class="image-caption">X-velocity contour at 22.5° tilt</p>
+                  </div>
+                </div>
+              </div>
+              <div class="modal-page" data-page="2" style="display:none;">
+                <h4>Results?</h4>
+                <ul style="list-style-type: disc; margin-left: 0; padding-left: 1.2em;">
+                  <li>•  Lift and drag forces increased with tilt angle; maximum lift recorded at 22.5° tilt.</li>
+                  <li>•  X-velocity contours confirmed accurate boundary conditions and showed stronger flow separation at higher tilt angles.</li>
+                  <li>•  Outlet flow revealed clear velocity gradient consistent with increased wake disturbance at 45° tilt.</li>
+                </ul>
+                <div class="image-row">
+                  <div class="image-with-caption">
+                    <img src="project-images/acfd3-velocity-45.jpg" alt="X-velocity contour at 45° tilt" class="project-img">
+                    <p class="image-caption">X-velocity contour at 45° tilt</p>
+                  </div>
+                  <div class="image-with-caption">
+                    <img src="project-images/acfd3-inlet-45.jpg" alt="X-velocity over inlet at 45° tilt" class="project-img">
+                    <p class="image-caption">X-velocity over inlet at 45° tilt</p>
+                  </div>
+                </div>
+                <div class="image-row">
+                  <div class="image-with-caption">
+                    <img src="project-images/acfd3-outlet-45.jpg" alt="X-velocity over outlet at 45° tilt" class="project-img">
+                    <p class="image-caption">X-velocity over outlet at 45° tilt</p>
+                  </div>
+                  <div class="image-with-caption">
+                    <img src="project-images/acfd3-lift-drag.jpg" alt="Lift and drag force summary chart" class="project-img">
+                    <p class="image-caption">Lift and drag force summary chart</p>
+                  </div>
+                </div>
+                <p style="margin-top: 1.5em; text-align: center;">
+                  <a href="assets/reports/Varad_Lad_Flying_Saucer_Project.pdf" target="_blank" style="color: #ffd600; text-decoration: none; font-weight: 500;">🔗 View Full Report (PDF)</a>
+                </p>
+              </div>
+            </li>
+            <!-- CFD Explorations: From Earth's Gravity to Supersonic Jets -->
+            <li class="project-item active" data-filter-item data-category="cad-cfd-fea semiconductor data-analytics all">
+              <a href="#">
+                <figure class="project-card">
+                  <img src="project-images/acfd2-thumbnail.png" alt="CFD Explorations: From Earth's Gravity to Supersonic Jets" loading="lazy">
+                  <div class="project-overlay">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+                </figure>
+                <h3 class="project-title">CFD Explorations: From Earth's Gravity to Supersonic Jets</h3>
+                <p class="project-category">CAD, CFD & FEA</p>
+              </a>
+              <!-- Modal pages for project details -->
+              <div class="modal-page" data-page="0" style="display:none;">
+                <h4>Buoyancy-Driven Internal Flow for Earth vs. Moon Gravity</h4>
+                <ul style="list-style-type: none; margin-left: 0; padding-left: 1.2em;">
+                  <li>•  <strong>WHAT?</strong> Simulated thermal convection in a water tank to study how Earth and Moon gravity impact internal mixing and heat distribution.</li>
+                  <li>•  <strong>HOW?</strong> Used Boussinesq approximation and transient ANSYS Fluent simulations with velocity inlet, outflow outlet, and thermal boundary at tank bottom.</li>
+                  <li>•  <strong>RESULT?</strong> Visualized stratification and mixing; Earth gravity showed stronger downward jet and mixing compared to Moon gravity.</li>
+                </ul>
+                <div class="image-row">
+                  <div class="image-with-caption">
+                    <img src="project-images/acfd2-earth-velocity.jpg" alt="Y-velocity contour at t = 5 min (Earth)" class="project-img">
+                    <p class="image-caption">Y-velocity contour at t = 5 min (Earth)</p>
+                  </div>
+                  <div class="image-with-caption">
+                    <img src="project-images/acfd2-earth-temp.jpg" alt="Temperature contour at t = 5 min (Earth)" class="project-img">
+                    <p class="image-caption">Temperature contour at t = 5 min (Earth)</p>
+                  </div>
+                </div>
+                <div class="image-row">
+                  <div class="image-with-caption">
+                    <img src="project-images/acfd2-moon-temp.jpg" alt="Temperature contour at t = 1 min (Moon)" class="project-img">
+                    <p class="image-caption">Temperature contour at t = 1 min (Moon)</p>
+                  </div>
+                  <div class="image-with-caption">
+                    <img src="project-images/acfd2-avg-temp-line.jpg" alt="Avg. temperature vs. time plot" class="project-img">
+                    <p class="image-caption">Avg. temperature vs. time plot</p>
+                  </div>
+                </div>
+              </div>
+              <div class="modal-page" data-page="1" style="display:none;">
+                <h4>Internal Flow with Heated Wall</h4>
+                <ul style="list-style-type: none; margin-left: 0; padding-left: 1.2em;">
+                  <li>•  <strong>WHAT?</strong> Simulated water flow through a coiled pipe heated externally to assess how inlet velocity affects temperature gain.</li>
+                  <li>•  <strong>HOW?</strong> Used steady-state CFD with uniform wall heating (1000 W/m²) and varied inlet velocity to analyze outlet temperature rise.</li>
+                  <li>•  <strong>RESULT?</strong> ΔT decreased as inlet velocity increased due to reduced residence time; hand calculation provided reference comparison.</li>
+                </ul>
+                <div class="image-row">
+                  <div class="image-with-caption">
+                    <img src="project-images/acfd2-CAD.jpg" alt="Helical Spring/Bar CAD Model" class="project-img">
+                    <p class="image-caption">Helical Spring/Bar CAD Model</p>
+                  </div>
+                  <div class="image-with-caption">
+                    <img src="project-images/acfd2-helix-outer-temp.jpg" alt="Outlet temperature contour (0.01 m/s)" class="project-img">
+                    <p class="image-caption">Outlet temperature contour (0.01 m/s)</p>
+                  </div>
+                </div>
+                <div class="image-row">
+                  <div class="image-with-caption">
+                    <img src="project-images/acfd2-helix-skin-temp.jpg" alt="Skin temperature of helical pipe" class="project-img">
+                    <p class="image-caption">Skin temperature of helical pipe</p>
+                  </div>
+                </div>
+              </div>
+              <div class="modal-page" data-page="3" style="display:none;">
+                <h4>Compressible Jet and Nozzle Flow</h4>
+                <ul style="list-style-type: none; margin-left: 0; padding-left: 1.2em;">
+                  <li>•  <strong>WHAT?</strong> Simulated air jet discharge and nozzle flows to study compressible flow behavior, Mach number rise, and adiabatic cooling.</li>
+                  <li>•  <strong>HOW?</strong> Used transient and steady-state CFD, density-based solver, and ideal gas law with varying initial pressures and outlet pressures.</li>
+                  <li>•  <strong>RESULT?</strong> Identified stronger cooling and higher velocity in cases with larger adiabatic expansion; Mach number increased along nozzle length.</li>
+                </ul>
+                <div class="image-row">
+                  <div class="image-with-caption">
+                    <img src="project-images/acfd2-jet-mach-line.jpg" alt="Mach number along jet / nozzle axis" class="project-img">
+                    <p class="image-caption">Mach number along jet / nozzle axis</p>
+                  </div>
+                  <div class="image-with-caption">
+                    <img src="project-images/acfd2-jet-velocity-line.jpg" alt="Velocity along jet / nozzle axis" class="project-img">
+                    <p class="image-caption">Velocity along jet / nozzle axis</p>
+                  </div>
+                </div>
+                <div class="image-row">
+                  <div class="image-with-caption">
+                    <img src="project-images/acfd2-nozzle-temp-contour.jpg" alt="Nozzle static temperature contour" class="project-img">
+                    <p class="image-caption">Nozzle static temperature contour</p>
+                  </div>
+                  <div class="image-with-caption">
+                    <img src="project-images/acfd2-nozzle-density-contour.jpg" alt="Nozzle density contour" class="project-img">
+                    <p class="image-caption">Nozzle density contour</p>
+                  </div>
+                </div>
+                <p style="margin-top: 1.5em; text-align: center;">
+                  <a href="assets/reports/Varad_Lad_CFD_Full_Project.pdf" target="_blank" style="color: #ffd600; text-decoration: none; font-weight: 500;">🔗 View Full Report (PDF)</a>
+                </p>
+              </div>
+            </li>
             <!-- Applied CFD - Heat Transfer in Half Pipe Geometry -->
             <li class="project-item active" data-filter-item data-category="cad-cfd-fea">
               <a href="#">
@@ -744,7 +920,7 @@
                   </div>
                 </figure>
                 <h3 class="project-title">Applied CFD — Heat Transfer in Half Pipe Geometry</h3>
-                <p class="project-category">CAD CFD & FEA</p>
+                <p class="project-category">CAD, CFD & FEA</p>
               </a>
               <!-- Modal pages for project details -->
               <div class="modal-page" data-page="0" style="display:none;">
@@ -803,7 +979,7 @@
                   </div>
                 </figure>
                 <h3 class="project-title">Industrial-Grade Brick-Making Machine</h3>
-                <p class="project-category">CAD CFD & FEA</p>
+                <p class="project-category">CAD, CFD & FEA</p>
               </a>
               <!-- Modal pages for project details -->
               <div class="modal-page" data-page="0" style="display:none;">
@@ -870,7 +1046,7 @@
                   </div>
                 </figure>
                 <h3 class="project-title">Sustainable 3 Stage HEPA Air Filter</h3>
-                <p class="project-category">CAD CFD & FEA</p>
+                <p class="project-category">CAD, CFD & FEA</p>
               </a>
                <div class="modal-page" data-page="0" style="display:none;">
     <h4>What?</h4>
@@ -953,7 +1129,7 @@
                   </div>
                 </figure>
                 <h3 class="project-title">Hydraulic Ram Pump for Rural Water Supply</h3>
-                <p class="project-category">CAD CFD & FEA</p>
+                <p class="project-category">CAD, CFD & FEA</p>
               </a>
               <div class="modal-page" data-page="0" style="display:none;">
                 <h4>What?</h4>
@@ -1584,6 +1760,9 @@
 <!-- Modal Close Button Custom Style -->
 <style>
   .project-modal-close {
+    position: absolute;
+    top: 8px;
+    right: 8px;
     background: rgba(0, 0, 0, 0.5);
     backdrop-filter: blur(4px);
     border-radius: 50%;
@@ -1597,6 +1776,7 @@
     border: none;
     cursor: pointer;
     transition: background 0.18s, box-shadow 0.18s;
+    z-index: 1000;
   }
   .project-modal-close:hover, .project-modal-close:focus {
     background: rgba(40, 40, 40, 0.7);

@@ -74,8 +74,63 @@
       color: #e0e0e0 !important;
     }
 
+    /* Chart and diagram styling */
+    .charts-container {
+      margin: 1.5rem 0;
+    }
+
+    .chart-item {
+      margin: 1rem 0;
+    }
+
+    .pie-charts-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .pie-chart-container {
+      text-align: center;
+      min-width: 200px;
+      flex: 1;
+    }
+
+    .chart-image {
+      width: 100%;
+      max-width: 400px;
+      height: auto;
+      border-radius: 8px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .diagram-image {
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .diagrams-container {
+      margin: 1.5rem 0;
+    }
+
+    .diagram-item {
+      margin: 1rem 0;
+    }
+
     @media (max-width: 600px) {
       .image-row img {
+        max-width: 100%;
+      }
+      
+      .pie-charts-row {
+        flex-direction: column;
+      }
+      
+      .chart-image, .diagram-image {
         max-width: 100%;
       }
     }
@@ -547,6 +602,21 @@
                   <li>•  The project aimed to compare air vs. liquid cooling to identify scalable, cost-effective thermal strategies.</li>
                   <li>•  Real-world conditions were simulated to benchmark methods for modern data center loads (~10 kW per rack).</li>
                 </ul>
+                
+                <!-- Energy Usage Breakdown -->
+                <div class="charts-container">
+                  <div class="chart-item">
+                    <h5>Current Energy Usage Challenge</h5>
+                    <div class="pie-charts-row">
+                      <div class="pie-chart-container">
+                        <img src="project-images/air-cooled-pie-chart.png" alt="Traditional Air-Cooled System Energy Breakdown" class="chart-image">
+                      </div>
+                      <div class="pie-chart-container">
+                        <img src="project-images/liquid-cooled-pie-chart.png" alt="Target Liquid-Cooled Hybrid Energy Breakdown" class="chart-image">
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
               <div class="modal-page" data-page="1" style="display:none;">
                 <h4>How?</h4>
@@ -557,6 +627,19 @@
                   <li>•  Analyzed simulation results in Python, computing metrics like rack temperatures and cooling energy needs.</li>
                   <li>•  Visualized outcomes via an interactive Streamlit dashboard for clear comparison of cooling methods.</li>
                 </ul>
+                
+                <!-- System Architecture Diagrams -->
+                <div class="diagrams-container">
+                  <div class="diagram-item">
+                    <h5>Airflow Architecture</h5>
+                    <img src="project-images/airflow-architecture-diagram.svg" alt="Airflow Architecture Diagram" class="diagram-image">
+                  </div>
+                  
+                  <div class="diagram-item">
+                    <h5>Liquid Cooling Loop</h5>
+                    <img src="project-images/liquid-cooling-diagram.svg" alt="Liquid Cooling Loop Diagram" class="diagram-image">
+                  </div>
+                </div>
               </div>
               <div class="modal-page" data-page="2" style="display:none;">
                 <h4>Results?</h4>
@@ -567,6 +650,76 @@
                   <li>•  Projected PUE improved from ~1.5 (air-cooled) to ~1.1 (liquid-cooled hybrid system).</li>
                   <li>•  Demonstrated a scalable, low-cost approach to guide future smart thermal management strategies.</li>
                 </ul>
+                
+                <!-- Performance Analysis & Comparison -->
+                <div class="comparison-table-container">
+                  <h5>Air vs Liquid Cooling Performance Summary</h5>
+                  <table class="comparison-table">
+                    <thead>
+                      <tr>
+                        <th>Metric</th>
+                        <th>Air Cooling</th>
+                        <th>Liquid Cooling</th>
+                        <th>Improvement</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Cooling Performance</td>
+                        <td>Baseline</td>
+                        <td>+27%</td>
+                        <td>27% Better</td>
+                      </tr>
+                      <tr>
+                        <td>Hotspot Reduction</td>
+                        <td>Baseline</td>
+                        <td>-32%</td>
+                        <td>32% Reduction</td>
+                      </tr>
+                      <tr>
+                        <td>Inlet Temperature</td>
+                        <td>35°C</td>
+                        <td>20°C</td>
+                        <td>15°C Cooler</td>
+                      </tr>
+                      <tr>
+                        <td>PUE (Power Usage Effectiveness)</td>
+                        <td>1.5</td>
+                        <td>1.1</td>
+                        <td>27% Better</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+
+                <!-- Performance Charts -->
+                <div class="charts-container">
+                  <div class="chart-item">
+                    <h5>Cooling Performance Comparison</h5>
+                    <img src="project-images/performance-comparison-chart.png" alt="Cooling Performance Comparison Chart" class="chart-image">
+                  </div>
+                </div>
+              </div>
+              <div class="modal-page" data-page="3" style="display:none;">
+                <h4>System Integration & Future Outlook</h4>
+                
+                <!-- Hybrid System Integration -->
+                <div class="diagrams-container">
+                  <div class="diagram-item">
+                    <h5>Hybrid System Integration</h5>
+                    <img src="project-images/hybrid-system-integration-diagram.svg" alt="Hybrid System Integration Diagram" class="diagram-image">
+                  </div>
+                </div>
+                
+                <div style="margin-top: 2rem;">
+                  <h5>Key Achievements & Future Applications</h5>
+                  <ul style="list-style-type: '✓ '; margin-left: 0; padding-left: 1.2em;">
+                    <li>•  Scalable design framework applicable to various data center sizes</li>
+                    <li>•  Cost-effective hybrid approach balancing performance and investment</li>
+                    <li>•  Validated simulation methodology for future cooling system designs</li>
+                    <li>•  Foundation for AI-driven adaptive cooling control systems</li>
+                  </ul>
+                </div>
               </div>
             </li>
             <li class="project-item active" data-filter-item data-category="data-center cad-cfd-fea">
@@ -784,8 +937,6 @@
                     <img src="project-images/acfd3-velocity-45.jpg" alt="X-velocity contour at 45° tilt" class="project-img">
                     <p class="image-caption">X-velocity contour at 45° tilt</p>
                   </div>
-                </div>
-                <div class="image-row">
                   <div class="image-with-caption">
                     <img src="project-images/acfd3-outlet-45.jpg" alt="X-velocity over outlet at 45° tilt" class="project-img">
                     <p class="image-caption">X-velocity over outlet at 45° tilt</p>
@@ -1196,7 +1347,6 @@
                 </ul>
               </div>
               <!-- ...existing code for images or other modal content if needed... -->
-            </li>
             </li>
             <!-- Mister-Enhanced Vapor-Compression -->
             <li class="project-item active" data-filter-item data-category="data-center cad-cfd-fea">

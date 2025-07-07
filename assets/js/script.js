@@ -77,24 +77,20 @@ filterBtns.forEach(btn => {
   });
 });
 
-// --- Filtering function ---
+// --- Filtering function (matching template exactly) ---
 function filterFunc(selectedValue) {
-  // Remove .active from all first, and force reflow to retrigger animation
-  filterItems.forEach(item => {
-    item.classList.remove("active");
-    void item.offsetWidth; // Force reflow
-  });
-  if (selectedValue === "all") {
-    filterItems.forEach(item => {
-      item.classList.add("active");
-    });
-  } else {
-    filterItems.forEach(item => {
-      const categories = (item.dataset.category || "").split(" ");
+  for (let i = 0; i < filterItems.length; i++) {
+    if (selectedValue === "all") {
+      filterItems[i].classList.add("active");
+    } else {
+      // Support multiple categories by checking if selectedValue is in the space-separated list
+      const categories = (filterItems[i].dataset.category || "").split(" ");
       if (categories.includes(selectedValue)) {
-        item.classList.add("active");
+        filterItems[i].classList.add("active");
+      } else {
+        filterItems[i].classList.remove("active");
       }
-    });
+    }
   }
 }
 
@@ -139,23 +135,9 @@ if (filterSelect && selectList) {
       if (selectValue) selectValue.innerText = btn.innerText;
       filterSelect.classList.remove('open');
       selectList.classList.remove('open');
-      // Multi-category filter logic for mobile dropdown
-      projectItems.forEach(function(item) {
-        item.classList.remove("active");
-        void item.offsetWidth; // Force reflow
-      });
-      if (category === "all") {
-        projectItems.forEach(function(item) {
-          item.classList.add("active");
-        });
-      } else {
-        projectItems.forEach(function(item) {
-          const categories = (item.dataset.category || "").split(" ");
-          if (categories.includes(category)) {
-            item.classList.add("active");
-          }
-        });
-      }
+      
+      // Use the same filtering function for consistency
+      filterFunc(category);
     });
   });
 }
@@ -878,40 +860,8 @@ const animateSkillBars = function() {
   skillBars.forEach(bar => observeSkills.observe(bar));
 };
 
-// Staggered project animations when filtering - Fixed flickering
-const enhanceProjectFiltering = function() {
-  const filterItems = document.querySelectorAll("[data-filter-item]");
-  
-  // Store original filterFunc to preserve existing functionality
-  const originalFilterFunc = window.filterFunc;
-  
-  // Enhance existing filterFunc with smoother animations
-  window.filterFunc = function(selectedValue) {
-    // Remove any existing animation classes first
-    filterItems.forEach(item => {
-      item.classList.remove("animate-in");
-      item.style.opacity = "";
-      item.style.transform = "";
-    });
-    
-    // Run original filter logic
-    originalFilterFunc(selectedValue);
-    
-    // Add smooth entrance animations to newly active items
-    setTimeout(() => {
-      const activeItems = document.querySelectorAll("[data-filter-item].active");
-      activeItems.forEach((item, index) => {
-        item.style.opacity = "0";
-        item.style.transform = "translateY(15px)";
-        
-        setTimeout(() => {
-          item.style.opacity = "1";
-          item.style.transform = "translateY(0)";
-        }, index * 80);
-      });
-    }, 50);
-  };
-};
+// Enhanced staggered project animations when filtering - REMOVED TO PREVENT CONFLICTS
+// Original filterFunc is kept simple to match template behavior
 
 // Enhanced modal animations
 const enhanceModals = function() {
@@ -1038,11 +988,26 @@ const lockScrollPosition = function() {
   }
 };
 
+// --------------------
+// Initialize project filtering - Simple initialization only
+// --------------------
+function initializeProjectAnimations() {
+  // Ensure all projects start in the correct state
+  filterItems.forEach(item => {
+    // Show all projects initially (All category is default)
+    item.classList.add('active');
+  });
+}
+
+// Initialize on page load
+document.addEventListener('DOMContentLoaded', initializeProjectAnimations);
+
+// --------------------
 // Initialize all animations
 document.addEventListener('DOMContentLoaded', function() {
   enhancePageTransitions();
   animateSkillBars();
-  enhanceProjectFiltering();
+  // enhanceProjectFiltering(); // REMOVED - was causing conflicts
   enhanceModals();
   enhanceImageLoading();
   addTouchFeedback();

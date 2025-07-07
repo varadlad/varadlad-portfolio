@@ -83,7 +83,7 @@
   <!-- Secondary loop arrows -->
   <g stroke="#9966cc" stroke-width="2" fill="none" marker-end="url(#arrowhead-purple)">
     <!-- Heat Exchanger → Secondary Loop -->
-    <line x1="490" y1="150" x2="490" y2="300" x2="140" y2="300" x2="140" y2="340"/>
+    <polyline points="490,150 490,300 140,300 140,340" fill="none"/>
     
     <!-- Secondary Loop → Facility Chilled Water -->
     <line x1="200" y1="380" x2="270" y2="380"/>

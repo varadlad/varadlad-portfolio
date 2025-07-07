@@ -1,0 +1,67 @@
+<svg width="600" height="500" xmlns="http://www.w3.org/2000/svg" style="background: #2b2b2b;">
+  <!-- Title -->
+  <text x="300" y="30" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="18" font-weight="bold">Airflow Architecture</text>
+  
+  <!-- Boxes -->
+  <!-- Rack Inlet -->
+  <rect x="50" y="80" width="120" height="60" fill="#0066cc" stroke="#333" stroke-width="2" rx="8"/>
+  <text x="110" y="105" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="12" font-weight="bold">Rack Inlet</text>
+  <text x="110" y="120" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="11">Cold Air 20°C</text>
+  
+  <!-- Server Components -->
+  <rect x="240" y="80" width="120" height="60" fill="#666" stroke="#333" stroke-width="2" rx="8"/>
+  <text x="300" y="105" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="12" font-weight="bold">Server Components</text>
+  <text x="300" y="120" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="11">Heat Generation</text>
+  
+  <!-- Hot Aisle -->
+  <rect x="430" y="80" width="120" height="60" fill="#ff6600" stroke="#333" stroke-width="2" rx="8"/>
+  <text x="490" y="105" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="12" font-weight="bold">Hot Aisle</text>
+  <text x="490" y="120" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="11">35-40°C</text>
+  
+  <!-- Exhaust System -->
+  <rect x="430" y="200" width="120" height="60" fill="#666" stroke="#333" stroke-width="2" rx="8"/>
+  <text x="490" y="225" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="12" font-weight="bold">Exhaust System</text>
+  <text x="490" y="240" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="11">HVAC Return</text>
+  
+  <!-- Cooling Unit -->
+  <rect x="240" y="200" width="120" height="60" fill="#00cc66" stroke="#333" stroke-width="2" rx="8"/>
+  <text x="300" y="225" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="12" font-weight="bold">Cooling Unit</text>
+  <text x="300" y="240" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="11">Heat Rejection</text>
+  
+  <!-- Supply Air -->
+  <rect x="50" y="200" width="120" height="60" fill="#666" stroke="#333" stroke-width="2" rx="8"/>
+  <text x="110" y="225" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="12" font-weight="bold">Supply Air</text>
+  <text x="110" y="240" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="11">Conditioned</text>
+  
+  <!-- Arrows -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#ffffff"/>
+    </marker>
+  </defs>
+  
+  <!-- Flow arrows -->
+  <g stroke="#ffffff" stroke-width="2" fill="none" marker-end="url(#arrowhead)">
+    <!-- Rack Inlet → Server Components -->
+    <line x1="170" y1="110" x2="230" y2="110"/>
+    
+    <!-- Server Components → Hot Aisle -->
+    <line x1="360" y1="110" x2="420" y2="110"/>
+    
+    <!-- Hot Aisle → Exhaust System -->
+    <line x1="490" y1="150" x2="490" y2="190"/>
+    
+    <!-- Exhaust System → Cooling Unit -->
+    <line x1="420" y1="230" x2="370" y2="230"/>
+    
+    <!-- Cooling Unit → Supply Air -->
+    <line x1="230" y1="230" x2="180" y2="230"/>
+    
+    <!-- Supply Air → Rack Inlet -->
+    <line x1="110" y1="190" x2="110" y2="150"/>
+  </g>
+  
+  <!-- Process description -->
+  <text x="300" y="350" text-anchor="middle" fill="#cccccc" font-family="Arial, sans-serif" font-size="14">Traditional Air Cooling Loop</text>
+  <text x="300" y="380" text-anchor="middle" fill="#cccccc" font-family="Arial, sans-serif" font-size="12">Cold air enters servers → Heat generated → Hot air exhausted → Cooled → Recirculated</text>
+</svg>

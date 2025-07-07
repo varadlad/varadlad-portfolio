@@ -248,6 +248,12 @@ formInputs.forEach(input => {
       if (modalBody) {
         modalBody.scrollTop = 0;
       }
+      
+      // Initialize charts and diagrams when page changes with longer delay
+      setTimeout(() => {
+        console.log('Page changed, initializing visualizations...');
+        initVisualizations();
+      }, 500);
     }
 
     document.querySelectorAll('.project-item').forEach(item => {
@@ -282,6 +288,12 @@ formInputs.forEach(input => {
         document.body.style.overflow = 'hidden';
         // Always scroll modal body to top when opening a project
         if (modalBody) modalBody.scrollTop = 0;
+        
+        // Initialize charts and diagrams after modal opens with longer delay
+        setTimeout(() => {
+          console.log('Modal opened, initializing visualizations...');
+          initVisualizations();
+        }, 500);
       });
     });
 
@@ -962,4 +974,204 @@ document.addEventListener('DOMContentLoaded', function() {
     activePage.style.opacity = '1';
     activePage.style.transform = 'translateY(0)';
   }
+});
+
+// Data Center Project Charts and Diagrams - Simplified Version
+let chartsInitialized = false;
+
+function initDataCenterCharts() {
+  console.log('Initializing Data Center Charts...');
+  
+  // Performance Comparison Chart
+  const performanceCtx = document.getElementById('performanceChart');
+  if (performanceCtx && typeof Chart !== 'undefined') {
+    console.log('Found performance chart canvas');
+    
+    // Clear any existing chart
+    if (window.performanceChart instanceof Chart) {
+      window.performanceChart.destroy();
+    }
+    
+    try {
+      window.performanceChart = new Chart(performanceCtx.getContext('2d'), {
+        type: 'bar',
+        data: {
+          labels: ['Cooling Performance', 'Hotspot Reduction', 'Inlet Temp (°C)', 'PUE'],
+          datasets: [
+            {
+              label: 'Air Cooling',
+              data: [0, 0, 35, 1.5],
+              backgroundColor: '#ff6600',
+              borderColor: '#ff6600',
+              borderWidth: 1
+            },
+            {
+              label: 'Liquid Cooling', 
+              data: [27, 32, 20, 1.1],
+              backgroundColor: '#0066cc',
+              borderColor: '#0066cc',
+              borderWidth: 1
+            }
+          ]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: {
+              labels: { color: '#ffffff' }
+            }
+          },
+          scales: {
+            y: {
+              beginAtZero: true,
+              ticks: { color: '#ffffff' },
+              grid: { color: 'rgba(255, 255, 255, 0.1)' }
+            },
+            x: {
+              ticks: { color: '#ffffff' },
+              grid: { color: 'rgba(255, 255, 255, 0.1)' }
+            }
+          }
+        }
+      });
+      console.log('Performance Chart created successfully');
+    } catch (error) {
+      console.error('Error creating performance chart:', error);
+    }
+  }
+
+  // Air-Cooled System Pie Chart
+  const airCooledCtx = document.getElementById('airCooledPieChart');
+  if (airCooledCtx && typeof Chart !== 'undefined') {
+    console.log('Found air-cooled pie chart canvas');
+    
+    if (window.airCooledChart instanceof Chart) {
+      window.airCooledChart.destroy();
+    }
+    
+    try {
+      window.airCooledChart = new Chart(airCooledCtx.getContext('2d'), {
+        type: 'pie',
+        data: {
+          labels: ['Cooling Energy', 'IT Load'],
+          datasets: [{
+            data: [50, 50],
+            backgroundColor: ['#ff6600', '#00cc66'],
+            borderColor: ['#ff6600', '#00cc66'],
+            borderWidth: 2
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: {
+              position: 'bottom',
+              labels: { color: '#ffffff', padding: 20 }
+            }
+          }
+        }
+      });
+      console.log('Air-Cooled Pie Chart created successfully');
+    } catch (error) {
+      console.error('Error creating air-cooled pie chart:', error);
+    }
+  }
+
+  // Liquid-Cooled System Pie Chart
+  const liquidCooledCtx = document.getElementById('liquidCooledPieChart');
+  if (liquidCooledCtx && typeof Chart !== 'undefined') {
+    console.log('Found liquid-cooled pie chart canvas');
+    
+    if (window.liquidCooledChart instanceof Chart) {
+      window.liquidCooledChart.destroy();
+    }
+    
+    try {
+      window.liquidCooledChart = new Chart(liquidCooledCtx.getContext('2d'), {
+        type: 'pie',
+        data: {
+          labels: ['Cooling Energy', 'IT Load'],
+          datasets: [{
+            data: [30, 70],
+            backgroundColor: ['#ff6600', '#00cc66'],
+            borderColor: ['#ff6600', '#00cc66'],
+            borderWidth: 2
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: {
+              position: 'bottom',
+              labels: { color: '#ffffff', padding: 20 }
+            }
+          }
+        }
+      });
+      console.log('Liquid-Cooled Pie Chart created successfully');
+    } catch (error) {
+      console.error('Error creating liquid-cooled pie chart:', error);
+    }
+  }
+}
+
+// Initialize Mermaid diagrams
+function initMermaidDiagrams() {
+  console.log('Initializing Mermaid Diagrams...');
+  
+  if (typeof mermaid !== 'undefined') {
+    try {
+      // Find all unprocessed mermaid diagrams
+      const mermaidElements = document.querySelectorAll('.mermaid:not([data-processed])');
+      console.log('Found', mermaidElements.length, 'unprocessed mermaid diagrams');
+      
+      if (mermaidElements.length > 0) {
+        mermaidElements.forEach((element, index) => {
+          element.setAttribute('data-processed', 'true');
+          const id = 'mermaid-' + Date.now() + '-' + index;
+          element.id = id;
+        });
+        
+        mermaid.run({
+          nodes: mermaidElements
+        });
+        console.log('Mermaid diagrams processed successfully');
+      }
+    } catch (error) {
+      console.error('Error initializing mermaid diagrams:', error);
+    }
+  } else {
+    console.warn('Mermaid library not loaded');
+  }
+}
+
+// Simple initialization function
+function initVisualizations() {
+  console.log('Initializing visualizations...');
+  
+  // Initialize charts and diagrams
+  initDataCenterCharts();
+  initMermaidDiagrams();
+  
+  chartsInitialized = true;
+  console.log('Visualization initialization completed');
+}
+
+// Initialize when DOM is ready
+document.addEventListener('DOMContentLoaded', function() {
+  console.log('DOM Content Loaded');
+  
+  // Wait a bit for libraries to load
+  setTimeout(() => {
+    console.log('Chart.js available:', typeof Chart !== 'undefined');
+    console.log('Mermaid available:', typeof mermaid !== 'undefined');
+    
+    // Try to initialize immediately if elements exist (though they might not be visible)
+    if (document.querySelector('#performanceChart') || document.querySelector('.mermaid')) {
+      console.log('Found chart elements, will initialize when modal opens');
+    }
+  }, 1000);
 });

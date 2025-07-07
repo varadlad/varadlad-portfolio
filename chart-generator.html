@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chart Generator</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            background: #1a1a1a;
+            color: white;
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        .chart-container {
+            background: #2b2b2b;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            border: 1px solid #333;
+            width: 400px;
+            height: 400px;
+        }
+        canvas {
+            background: #2b2b2b !important;
+        }
+        button {
+            background: #0066cc;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin: 10px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Chart Generator for Data Center Project</h1>
+    
+    <div class="chart-container">
+        <canvas id="airCooledChart" width="350" height="350"></canvas>
+    </div>
+    <button onclick="downloadChart('airCooledChart', 'air-cooled-pie-chart.png')">Download Air-Cooled Chart</button>
+    
+    <div class="chart-container">
+        <canvas id="liquidCooledChart" width="350" height="350"></canvas>
+    </div>
+    <button onclick="downloadChart('liquidCooledChart', 'liquid-cooled-pie-chart.png')">Download Liquid-Cooled Chart</button>
+    
+    <div class="chart-container">
+        <canvas id="performanceChart" width="350" height="350"></canvas>
+    </div>
+    <button onclick="downloadChart('performanceChart', 'performance-comparison-chart.png')">Download Performance Chart</button>
+
+    <script>
+        // Air-Cooled System Pie Chart
+        const airCooledCtx = document.getElementById('airCooledChart').getContext('2d');
+        const airCooledChart = new Chart(airCooledCtx, {
+            type: 'pie',
+            data: {
+                labels: ['Cooling Energy (50%)', 'IT Load (50%)'],
+                datasets: [{
+                    data: [50, 50],
+                    backgroundColor: ['#ff6600', '#00cc66'],
+                    borderColor: ['#ff6600', '#00cc66'],
+                    borderWidth: 2
+                }]
+            },
+            options: {
+                responsive: false,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                        labels: { 
+                            color: '#ffffff', 
+                            padding: 20,
+                            font: {
+                                size: 14
+                            }
+                        }
+                    },
+                    title: {
+                        display: true,
+                        text: 'Traditional Air-Cooled System',
+                        color: '#ffffff',
+                        font: {
+                            size: 16,
+                            weight: 'bold'
+                        },
+                        padding: 20
+                    }
+                }
+            }
+        });
+
+        // Liquid-Cooled System Pie Chart
+        const liquidCooledCtx = document.getElementById('liquidCooledChart').getContext('2d');
+        const liquidCooledChart = new Chart(liquidCooledCtx, {
+            type: 'pie',
+            data: {
+                labels: ['Cooling Energy (30%)', 'IT Load (70%)'],
+                datasets: [{
+                    data: [30, 70],
+                    backgroundColor: ['#ff6600', '#00cc66'],
+                    borderColor: ['#ff6600', '#00cc66'],
+                    borderWidth: 2
+                }]
+            },
+            options: {
+                responsive: false,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                        labels: { 
+                            color: '#ffffff', 
+                            padding: 20,
+                            font: {
+                                size: 14
+                            }
+                        }
+                    },
+                    title: {
+                        display: true,
+                        text: 'Target: Liquid-Cooled Hybrid',
+                        color: '#ffffff',
+                        font: {
+                            size: 16,
+                            weight: 'bold'
+                        },
+                        padding: 20
+                    }
+                }
+            }
+        });
+
+        // Performance Comparison Chart
+        const performanceCtx = document.getElementById('performanceChart').getContext('2d');
+        const performanceChart = new Chart(performanceCtx, {
+            type: 'bar',
+            data: {
+                labels: ['Cooling Performance', 'Hotspot Reduction', 'Inlet Temp (°C)', 'PUE'],
+                datasets: [
+                    {
+                        label: 'Air Cooling',
+                        data: [0, 0, 35, 1.5],
+                        backgroundColor: '#ff6600',
+                        borderColor: '#ff6600',
+                        borderWidth: 1
+                    },
+                    {
+                        label: 'Liquid Cooling', 
+                        data: [27, 32, 20, 1.1],
+                        backgroundColor: '#0066cc',
+                        borderColor: '#0066cc',
+                        borderWidth: 1
+                    }
+                ]
+            },
+            options: {
+                responsive: false,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        labels: { color: '#ffffff' }
+                    },
+                    title: {
+                        display: true,
+                        text: 'Cooling Performance Comparison',
+                        color: '#ffffff',
+                        font: {
+                            size: 16,
+                            weight: 'bold'
+                        },
+                        padding: 20
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        ticks: { color: '#ffffff' },
+                        grid: { color: 'rgba(255, 255, 255, 0.1)' }
+                    },
+                    x: {
+                        ticks: { color: '#ffffff' },
+                        grid: { color: 'rgba(255, 255, 255, 0.1)' }
+                    }
+                }
+            }
+        });
+
+        // Function to download chart as image
+        function downloadChart(canvasId, filename) {
+            const canvas = document.getElementById(canvasId);
+            const link = document.createElement('a');
+            link.download = filename;
+            link.href = canvas.toDataURL();
+            link.click();
+        }
+    </script>
+</body>
+</html>

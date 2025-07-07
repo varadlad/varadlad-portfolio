@@ -1401,15 +1401,16 @@ main {
 
 .project-item { 
   display: none; 
-  width: 100%;
-  opacity: 1;
-  transform: translateY(0);
-  transition: opacity 0.4s ease, transform 0.4s ease;
 }
 
 .project-item.active {
   display: block;
-  width: 100%;
+  animation: scaleUp 0.25s ease forwards;
+}
+
+@keyframes scaleUp {
+  0% { transform: scale(0.5); }
+  100% { transform: scale(1); }
 }
 
 .project-item > a { 
@@ -2874,7 +2875,7 @@ a:active {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
+       width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.9);
   z-index: 20000;
@@ -3118,44 +3119,13 @@ body {
 
 /* Enhanced project card hover effects - Integrated with floating animation above */
 
-/* Staggered project entrance animations - Fixed flickering */
-.project-item {
-  opacity: 1;
-  transform: translateY(0);
+/* Simple project animation matching template exactly */
+@keyframes scaleUp {
+  0% { transform: scale(0.5); }
+  100% { transform: scale(1); }
 }
 
-.project-item.active {
-  animation: none; /* Remove automatic animation */
-}
-
-.project-item.animate-in {
-  animation: slideInUp 0.6s ease-out forwards;
-}
-
-.project-item:nth-child(1).animate-in { animation-delay: 0.05s; }
-.project-item:nth-child(2).animate-in { animation-delay: 0.1s; }
-.project-item:nth-child(3).animate-in { animation-delay: 0.15s; }
-.project-item:nth-child(4).animate-in { animation-delay: 0.2s; }
-.project-item:nth-child(5).animate-in { animation-delay: 0.25s; }
-.project-item:nth-child(6).animate-in { animation-delay: 0.3s; }
-
-@keyframes slideInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Enhanced modal animations */
-.project-modal {
-  transition: opacity 0.3s ease;
-}
-
-.project-modal.active {
+/* Clean end - template approach only */
   animation: modalFadeIn 0.3s ease-out;
 }
 
@@ -3436,15 +3406,15 @@ html {
   }
 }
 
-/* Touch devices - always show overlay for better UX */
+/* Touch devices - hide overlay by default, show only on active touch */
 @media (hover: none) and (pointer: coarse) {
   .project-overlay {
-    opacity: 0.8;
+    opacity: 0;
     pointer-events: auto;
   }
   
   .project-card:active .project-overlay {
-    opacity: 1;
+    opacity: 0.9;
     transform: translate(-50%, -50%) scale(0.95);
   }
 }
@@ -3479,5 +3449,106 @@ html {
     width: 100%;
     text-decoration: none;
     color: inherit;
+  }
+}
+
+/* Additional mobile overlay fixes to ensure it's hidden by default */
+@media (max-width: 768px) {
+  .project-overlay {
+    opacity: 0 !important;
+    pointer-events: none;
+  }
+  
+  /* Only show overlay when project card is actively being touched/clicked */
+  .project-card:active .project-overlay {
+    opacity: 0.9 !important;
+    pointer-events: auto;
+  }
+  
+  /* Ensure overlay doesn't interfere with clicking the project */
+  .project-card {
+    cursor: pointer;
+  }
+}
+
+/* Mobile animation optimizations */
+@media (max-width: 768px) {
+  .project-item {
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+  
+  .project-item.animate-in {
+    animation-duration: 0.5s;
+  }
+  
+  .project-item.animate-out {
+    animation-duration: 0.2s;
+  }
+  
+  /* Faster staggered delays for mobile */
+  .project-item:nth-child(1).animate-in { animation-delay: 0.03s; }
+  .project-item:nth-child(2).animate-in { animation-delay: 0.06s; }
+  .project-item:nth-child(3).animate-in { animation-delay: 0.09s; }
+  .project-item:nth-child(4).animate-in { animation-delay: 0.12s; }
+  .project-item:nth-child(5).animate-in { animation-delay: 0.15s; }
+  .project-item:nth-child(6).animate-in { animation-delay: 0.18s; }
+  .project-item:nth-child(7).animate-in { animation-delay: 0.21s; }
+  .project-item:nth-child(8).animate-in { animation-delay: 0.24s; }
+  .project-item:nth-child(9).animate-in { animation-delay: 0.27s; }
+  .project-item:nth-child(10).animate-in { animation-delay: 0.3s; }
+}
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  .project-item {
+    transition: opacity 0.2s ease;
+  }
+  
+  .project-item.animate-in,
+  .project-item.animate-out {
+    animation: none;
+  }
+  
+  .project-item:nth-child(n).animate-in {
+    animation-delay: 0s;
+  }
+}
+
+/* Enhanced project card animations during filtering */
+.project-card {
+  transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.project-item.animate-in .project-card {
+  animation: cardBounceIn 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+.project-item.animate-out .project-card {
+  animation: cardShrinkOut 0.3s cubic-bezier(0.55, 0.085, 0.68, 0.53) forwards;
+}
+
+@keyframes cardBounceIn {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes cardShrinkOut {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0.9);
+    opacity: 0;
   }
 }

@@ -1,0 +1,7 @@
+/* Simple project animation matching template exactly */
+@keyframes scaleUp {
+  0% { transform: scale(0.5); }
+  100% { transform: scale(1); }
+}
+
+/* Clean end - template approach only */

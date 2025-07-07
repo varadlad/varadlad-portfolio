@@ -546,8 +546,8 @@ article.active {
 /* Enhanced hover effect */
 .project-card:hover {
   animation-play-state: paused;
-  transform: translateY(-15px) rotateX(10deg) rotateY(5deg) scale(1.02);
-  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+  transform: translateY(-8px) rotateX(5deg) rotateY(2deg) scale(1.01);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.3);
 }
 
 /* Floating 3D Animation Keyframes */
@@ -556,13 +556,13 @@ article.active {
     transform: translateY(0px) rotateX(0deg) rotateY(0deg);
   }
   25% {
-    transform: translateY(-8px) rotateX(2deg) rotateY(-1deg);
+    transform: translateY(-4px) rotateX(1deg) rotateY(-0.5deg);
   }
   50% {
-    transform: translateY(-4px) rotateX(-1deg) rotateY(2deg);
+    transform: translateY(-2px) rotateX(-0.5deg) rotateY(1deg);
   }
   75% {
-    transform: translateY(-12px) rotateX(1deg) rotateY(-2deg);
+    transform: translateY(-6px) rotateX(0.5deg) rotateY(-1deg);
   }
   100% {
     transform: translateY(0px) rotateX(0deg) rotateY(0deg);
@@ -2249,21 +2249,36 @@ textarea.form-input::-webkit-resizer { display: none; }
 
   .filter-list {
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap;
-    gap: 25px;
+    flex-wrap: nowrap;
+    gap: clamp(0.8rem, 2vw, 1.8rem);
     margin-bottom: 30px;
-    padding-left: 5px;
+    padding: 0 0.5rem 0.5em;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    width: 100%;
+  }
+
+  .filter-list li {
+    flex: 1 1 auto;
+    text-align: center;
   }
 @media (min-width: 768px) {
   .filter-list {
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-between;
     align-items: center;
-    gap: 25px;
-    padding-left: 5px;
+    gap: clamp(1rem, 2.5vw, 2.5rem);
+    padding: 0 1rem 0.5em;
     margin-bottom: 30px;
+    overflow-x: hidden;
+    width: 100%;
+  }
+
+  .filter-list li {
+    flex: 1 1 auto;
+    text-align: center;
   }
 }
 
@@ -2573,25 +2588,57 @@ textarea.form-input::-webkit-resizer { display: none; }
 .filter-list {
   display: flex;
   flex-wrap: nowrap;
-  overflow-x: auto;
+  justify-content: space-between;
+  align-items: center;
+  overflow-x: hidden;
   overflow-y: hidden;
   white-space: nowrap;
-  gap: 2.2em; /* More space between category titles */
-  padding-bottom: 0.5em; /* For scroll bar clearance */
+  gap: clamp(0.5rem, 1.5vw, 1.5rem);
+  padding: 0 0 0.5em 0;
   margin-bottom: 3em;
-  scrollbar-width: thin; /* Firefox */
-  -webkit-overflow-scrolling: touch; /* Smooth scroll on iOS */
+  width: 100%;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.filter-list li:first-child {
+  margin-left: 0;
 }
 
 .filter-list li {
-  flex: 0 0 auto;
-  margin-right: 0; /* Remove any default margin */
+  flex: 1 1 auto;
+  margin-right: 0;
+  text-align: center;
 }
 
 .filter-list .filter-btn {
   white-space: nowrap;
-  margin-right: 0; /* Remove any default margin */
-  padding-right: 0; /* Remove any default padding */
+  margin-right: 0;
+  padding-right: 0;
+  width: 100%;
+  text-align: center;
+}
+
+/* Tablet screens - ensure proper left margin */
+@media (min-width: 768px) {
+  .filter-list {
+    gap: clamp(0.8rem, 2vw, 2rem);
+    padding: 0 0 0.5em 0;
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+/* Desktop and larger screens - maintain proper left alignment */
+@media (min-width: 1200px) {
+  .filter-list {
+    gap: clamp(1rem, 2.5vw, 2.5rem);
+    padding: 0 0 0.5em 0;
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+  }
 }
 
 @media (max-width: 700px) {

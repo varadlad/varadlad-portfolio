@@ -81,12 +81,22 @@ filterBtns.forEach(btn => {
 function filterFunc(selectedValue) {
   for (let i = 0; i < filterItems.length; i++) {
     if (selectedValue === "all") {
-      filterItems[i].classList.add("active");
+      // Force animation retrigger by briefly removing active class
+      filterItems[i].classList.remove("active");
+      // Use setTimeout to ensure animation retriggers
+      setTimeout(() => {
+        filterItems[i].classList.add("active");
+      }, 10);
     } else {
       // Support multiple categories by checking if selectedValue is in the space-separated list
       const categories = (filterItems[i].dataset.category || "").split(" ");
       if (categories.includes(selectedValue)) {
-        filterItems[i].classList.add("active");
+        // Force animation retrigger by briefly removing active class
+        filterItems[i].classList.remove("active");
+        // Use setTimeout to ensure animation retriggers
+        setTimeout(() => {
+          filterItems[i].classList.add("active");
+        }, 10);
       } else {
         filterItems[i].classList.remove("active");
       }
@@ -158,11 +168,6 @@ formInputs.forEach(input => {
     }
   });
 });
-
-// --------------------
-// Page Navigation - Disabled to prevent conflicts
-// --------------------
-// Navigation is now handled by enhancePageTransitions() function
 
 // --------------------
 // Project Modal Logic
@@ -780,70 +785,30 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // --------------------
-// Enhanced Navigation
+// Page Navigation (Template Approach)
 // --------------------
 
-// Enhanced smooth scrolling for navigation
-document.addEventListener('click', function(e) {
-  if (e.target.matches('[data-nav-link]')) {
-    e.preventDefault();
-    const targetSection = e.target.textContent.toLowerCase();
-    const targetElement = document.querySelector(`[data-page="${targetSection}"]`);
-    
-    if (targetElement) {
-      targetElement.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start'
-      });
-    }
-  }
-});
+// page navigation variables
+const navigationLinks = document.querySelectorAll("[data-nav-link]");
+const pages = document.querySelectorAll("[data-page]");
 
-// Handle image lazy loading if supported
-document.querySelectorAll('img[loading="lazy"]').forEach(img => {
-  if ('loading' in HTMLImageElement.prototype) {
-    img.addEventListener('load', () => img.classList.add('loaded'));
-  }
-});
+// add event to all nav link
+for (let i = 0; i < navigationLinks.length; i++) {
+  navigationLinks[i].addEventListener("click", function () {
 
-// --------------------
-// Modern Animation Enhancements
-// --------------------
-
-// Enhanced page transitions - Lock scroll position completely
-const enhancePageTransitions = function() {
-  const navigationLinks = document.querySelectorAll("[data-nav-link]");
-  const pages = document.querySelectorAll("article[data-page]");
-
-  navigationLinks.forEach(link => {
-    link.addEventListener("click", function(e) {
-      e.preventDefault();
-      const target = this.textContent.trim().toLowerCase();
-      
-      // Don't do anything if already on target page
-      const targetPage = document.querySelector(`article[data-page="${target}"]`);
-      if (targetPage && targetPage.classList.contains("active")) {
-        return;
+    for (let i = 0; i < pages.length; i++) {
+      if (this.innerHTML.toLowerCase() === pages[i].dataset.page) {
+        pages[i].classList.add("active");
+        navigationLinks[i].classList.add("active");
+        window.scrollTo(0, 0);
+      } else {
+        pages[i].classList.remove("active");
+        navigationLinks[i].classList.remove("active");
       }
-      
-      // Lock scroll position during transition
-      lockScrollPosition();
-      
-      // Remove active class from all nav links
-      navigationLinks.forEach(l => l.classList.remove("active"));
-      this.classList.add("active");
-      
-      // Instant page switch
-      pages.forEach(page => {
-        if (page.dataset.page === target) {
-          page.classList.add("active");
-        } else {
-          page.classList.remove("active");
-        }
-      });
-    });
+    }
+
   });
-};
+}
 
 // Skill progress bar animations
 const animateSkillBars = function() {
@@ -954,39 +919,12 @@ const addScrollIndicator = function() {
   });
 };
 
-// Scroll position preservation utility
-let isTransitioning = false;
-let lockedScrollPosition = 0;
-
-// Lock scroll position during page transitions
-const lockScrollPosition = function() {
-  if (!isTransitioning) {
-    isTransitioning = true;
-    lockedScrollPosition = window.pageYOffset || document.documentElement.scrollTop;
-    
-    // Prevent scroll events during transition
-    const preventScroll = (e) => {
-      if (isTransitioning) {
-        e.preventDefault();
-        window.scrollTo(0, lockedScrollPosition);
-      }
-    };
-    
-    // Add scroll lock listeners
-    window.addEventListener('scroll', preventScroll, { passive: false });
-    document.addEventListener('wheel', preventScroll, { passive: false });
-    document.addEventListener('touchmove', preventScroll, { passive: false });
-    
-    // Remove lock after transition
-    setTimeout(() => {
-      isTransitioning = false;
-      window.removeEventListener('scroll', preventScroll);
-      document.removeEventListener('wheel', preventScroll);
-      document.removeEventListener('touchmove', preventScroll);
-      window.scrollTo(0, lockedScrollPosition);
-    }, 100);
+// Handle image lazy loading if supported
+document.querySelectorAll('img[loading="lazy"]').forEach(img => {
+  if ('loading' in HTMLImageElement.prototype) {
+    img.addEventListener('load', () => img.classList.add('loaded'));
   }
-};
+});
 
 // --------------------
 // Initialize project filtering - Simple initialization only
@@ -1005,7 +943,6 @@ document.addEventListener('DOMContentLoaded', initializeProjectAnimations);
 // --------------------
 // Initialize all animations
 document.addEventListener('DOMContentLoaded', function() {
-  enhancePageTransitions();
   animateSkillBars();
   // enhanceProjectFiltering(); // REMOVED - was causing conflicts
   enhanceModals();

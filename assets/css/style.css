@@ -1,3 +1,54 @@
+/* Prevent horizontal scrollbar movement when switching categories */
+html {
+  overflow-x: hidden;
+  width: 100%;
+  position: relative;
+}
+
+body {
+  width: 100%;
+  overflow-x: hidden;
+  position: relative;
+}
+
+.main-content {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+
+/* Project list and items */
+.project-list {
+  width: 100%;
+  overflow: hidden;
+  will-change: transform;
+  contain: content;
+}
+
+.project-item {
+  width: 100%;
+  overflow: hidden;
+}
+
+/* Filter and select elements */
+.filter-select,
+.filter-list,
+.filter-select-list {
+  contain: content;
+  overflow: hidden;
+}
+
+/* Container adjustments */
+@media (min-width: 768px) {
+  .container {
+    max-width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
 .project-modal .modal-page h5,
 .modal-page h5 {
   color: var(--orange-yellow-crayola) !important;
@@ -1528,8 +1579,8 @@ main {
 .project-list {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 30px;
-  margin-bottom: 10px;
+  gap: 30px 20px;
+  margin-bottom: 0;
   width: 100%;
 }
 
@@ -1612,6 +1663,7 @@ main {
 
 .project-img img {
   width: 100%;
+  margin-bottom: 0;
   height: 100%;
   object-fit: cover;
   transition: var(--transition-1);
@@ -2494,6 +2546,8 @@ textarea.form-input::-webkit-resizer { display: none; }
 
   .project-list, .blog-posts-list { 
     grid-template-columns: 1fr 1fr; 
+    row-gap: 30px;
+    column-gap: 20px;
   }
   
   .project-item.active {

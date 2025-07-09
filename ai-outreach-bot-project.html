@@ -1,0 +1,50 @@
+            <li class="project-item active" data-filter-item data-category="robotics data-analytics all">
+              <a href="#">
+                <figure class="project-card">
+                  <img src="project-images/Emailly_v3.5.2_Project_Report.docx" alt="AI Powered Outreach Automation Bot for Gmail" loading="lazy">
+                  <div class="project-overlay">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+                </figure>
+                <h3 class="project-title">AI Powered – Outreach Automation Bot for Gmail</h3>
+                <p class="project-category">Robotics, Data Analytics & Coding</p>
+              </a>
+              <!-- WHAT? -->
+              <div class="modal-page" data-page="0" style="display:none;">
+                <h4>What?</h4>
+                <ul style="list-style-type: disc; margin-left: 0; padding-left: 1.2em;">
+                  <li>•  Manual job outreach is slow, repetitive, and expensive. Traditional cold outreach requires hours of manual email writing, tracking, and follow-up—often costing $200–$500/month for recruiter services or SaaS tools.</li>
+                  <li>•  Direct, personalized outreach is crucial for standing out, but doing it at scale is nearly impossible by hand.</li>
+                </ul>
+              </div>
+              <!-- HOW? -->
+              <div class="modal-page" data-page="1" style="display:none;">
+                <h4>How?</h4>
+                <ul style="list-style-type: disc; margin-left: 0; padding-left: 1.2em;">
+                  <li>•  v1.0: OCR tools (Tesseract, Apple Vision, Microsoft OCR) for resume/contact extraction—quickly hit accuracy and formatting limits.</li>
+                  <li>•  v2.0: DOM scraping and bookmarklets for LinkedIn/Apollo—HTML changes and anti-bot measures broke reliability.</li>
+                  <li>•  v3.0: Apollo API access—limited to 10 contacts/page, not scalable for bulk outreach.</li>
+                  <li>•  v3.5: CSV bulk export automation: Python parses Apollo CSVs, Gmail API + OAuth 2.0 for secure, multi-account draft creation, async drafting for speed, CLI interface prompts for company, position, template, and Gmail account, personalized drafts with resume/cover letter attachments, multi-account support and job-title input, file export for tracking outreach per company.</li>
+                  <li>•  Tools: Python, Gmail API, OAuth 2.0, Pandas, Apollo.io, Plotly Dash (KPI dashboard), Mermaid (automation flow), CLI, Jinja2 (templating), AsyncIO.</li>
+                  <li>•  Flow: CSV ingest → Parse → User prompt (company, position, template) → Gmail account auth → Generate personalized drafts (with attachments) → Export logs.</li>
+                  <li>•  Security: No confidential code or credentials shown; core logic is proprietary.</li>
+                </ul>
+              </div>
+              <!-- RESULTS? -->
+              <div class="modal-page" data-page="2" style="display:none;">
+                <h4>Results?</h4>
+                <ul style="list-style-type: disc; margin-left: 0; padding-left: 1.2em;">
+                  <li>•  Drafted 500+ personalized emails in under 15 minutes (vs. 10+ hours manual).</li>
+                  <li>•  Equivalent to $400–$800/month saved vs. recruiter/SaaS tools.</li>
+                </ul>
+                <div class="image-row">
+                  <img src="project-images/charts/time_savings_pie.png" alt="Time Savings Graph" class="project-img">
+                  <img src="project-images/charts/cost_savings.png" alt="Cost Savings Graph" class="project-img">
+                  <img src="project-images/charts/time_efficiency.png" alt="Time Efficiency Graph" class="project-img">
+                  <img src="project-images/charts/version_evolution.png" alt="Version Evolution" class="project-img">
+                </div>
+                <div style="margin-top:1em;">
+                  <a href="project-images/Emailly_v3.5.2_Project_Report.docx" download>Download Project Report (docx)</a>
+                </div>
+              </div>
+            </li>

@@ -587,7 +587,8 @@
           </div>
 
           <ul class="project-list">
-            <!-- Data Center Projects -->
+            <!-- CAD Models Gallery (Cloned as Project Popup) -->
+            <!-- Will be moved after "Applied CFD - Heat Transfer in Half Pipe Geometry" project below -->
             <li class="project-item active" data-filter-item data-category="data-center cad-cfd-fea">
               <a href="#">
                 <!-- Wrap each project image in a .project-card container -->
@@ -838,6 +839,8 @@
                 <ul style="list-style-type: disc; margin-left: 0; padding-left: 1.2em;">
                   <li>•  Manual job outreach is slow, repetitive, and expensive. Traditional cold outreach requires hours of manual email writing, tracking, and follow-up—often costing $200–$500/month for recruiter services or SaaS tools.</li>
                   <li>•  Direct, personalized outreach is crucial for standing out, but doing it at scale is nearly impossible by hand.</li>
+                  <li>•  After being laid off, I saw firsthand how important automation is in today’s competitive job market and the new age of outreach. I wanted a smarter way to market myself and manage the repetitive side of job searching.</li>
+                  <li>•  Building this bot let me reclaim my time for what matters most—applying on career pages, preparing for interviews, and growing my skills—while the automation handled the busywork. It’s about working smarter, not just harder.</li>
                 </ul>
                 <div class="image-row">
                   <img src="project-images/charts/time_savings_pie.png" alt="Time Savings Graph" class="project-img">
@@ -851,20 +854,30 @@
                   <li>•  v2.0: DOM scraping and bookmarklets for LinkedIn/Apollo—HTML changes and anti-bot measures broke reliability.</li>
                   <li>•  v3.0: Apollo API access—limited to 10 contacts/page, not scalable for bulk outreach.</li>
                   <li>•  v3.5: CSV bulk export automation: Python parses Apollo CSVs, Gmail API + OAuth 2.0 for secure, multi-account draft creation, async drafting for speed, CLI interface prompts for company, position, template, and Gmail account, personalized drafts with resume/cover letter attachments, multi-account support and job-title input, file export for tracking outreach per company.</li>
-                  <li>•  Tools: Python, Gmail API, OAuth 2.0, Pandas, Apollo.io, Plotly Dash (KPI dashboard), Mermaid (automation flow), CLI, Jinja2 (templating), AsyncIO.</li>
-                  <li>•  Flow: CSV ingest → Parse → User prompt (company, position, template) → Gmail account auth → Generate personalized drafts (with attachments) → Export logs.</li>
-                  <li>•  Security: No confidential code or credentials shown; core logic is proprietary.</li>
                 </ul>
                 <div class="image-row">
                   <img src="project-images/charts/time_efficiency.png" alt="Time Efficiency Graph" class="project-img">
+                </div>
+                <div style="margin-top: 1.5em;">
+                  <h5 style="color: #FFD600; font-weight: bold; margin-bottom: 0.5em;">TOOLS</h5>
+                  <div style="margin-bottom: 0.8em;">Python, Gmail API, OAuth 2.0, Pandas, Apollo.io, Plotly Dash (KPI dashboard), Mermaid (automation flow), CLI, Jinja2 (templating), AsyncIO.</div>
+                  <h5 style="color: #FFD600; font-weight: bold; margin-bottom: 0.5em;">FLOW</h5>
+                  <div style="margin-bottom: 0.8em;">CSV ingest → Parse → User prompt (company, position, template) → Gmail account auth → Generate personalized drafts (with attachments) → Export logs.</div>
+                  <h5 style="color: #FFD600; font-weight: bold; margin-bottom: 0.5em;">SECURITY</h5>
+                  <div>No confidential code or credentials shown; core logic is proprietary.</div>
                 </div>
               </div>
               <!-- RESULTS? -->
               <div class="modal-page" data-page="2" style="display:none;">
                 <h4>Results?</h4>
                 <ul style="list-style-type: disc; margin-left: 0; padding-left: 1.2em;">
-                  <li>•  Drafted 500+ personalized emails in under 15 minutes (vs. 10+ hours manual).</li>
-                  <li>•  Equivalent to $400–$800/month saved vs. recruiter/SaaS tools.</li>
+                  <li>•  The bot drafts 108 personalized emails in just over 1 minute (1:03), making high-volume outreach practical and efficient for job seekers.</li>
+                  <li>•  To avoid spam risks and ensure deliverability, the safest workflow is to generate drafts and send them manually—this keeps control in your hands and prevents bulk-sending flags.</li>
+                  <li>•  This approach saves significant time and effort compared to manual drafting, and can easily replace $400–$800/month SaaS or recruiter tools for similar outreach volume.</li>
+                  <li>•  The dashboard and logs provide clear visibility into campaign progress, helping you iterate on templates and targeting for better results over time. <br>
+                    <a href="https://outreach-bot-dashboard-demo.varadlad.com" target="_blank" style="color: #FFD600; text-decoration: underline; font-weight: 500;">🔗 View Dashboard Demo</a>
+                  </li>
+                  <li>•  While automation speeds up the process, it’s designed to support—not replace—thoughtful, targeted outreach and follow-up.</li>
                 </ul>
                 <div class="image-row">
                   <img src="project-images/charts/cost_savings.png" alt="Cost Savings Graph" class="project-img">
@@ -1165,6 +1178,159 @@
                     🔗 View Full Report (PDF)
                   </a>
                 </div>
+              </div>
+            </li>
+            <!-- CAD Models Gallery (Cloned as Project Popup) -->
+            <li class="project-item active" data-filter-item data-category="cad-cfd-fea">
+              <a href="#">
+                <figure class="project-card">
+                  <img src="project-images/cad-model/cad-thumbnail.png" alt="CAD Models Collection Thumbnail" loading="lazy">
+                  <div class="project-overlay">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+                </figure>
+                <h3 class="project-title">CAD Models Collection</h3>
+                <p class="project-category">3D Modeling & Design</p>
+              </a>
+              <!-- Modal pages for project details -->
+              <div class="modal-page" data-page="0" style="display:none;">
+                <h4>Precision Engineering Showcase</h4>
+                <p>Explore a collection of meticulously crafted 3D CAD models demonstrating expertise in mechanical design, assembly engineering, and surface modeling. Each model represents real-world engineering challenges and solutions, from industrial components to consumer product design.</p>
+                <ul style="list-style-type: none; margin-left: 0; padding-left: 1.2em;">
+                  <li>•  Industrial-grade mechanical assemblies and components</li>
+                  <li>•  Detailed exploded views and technical drawings</li>
+                  <li>•  Advanced surface modeling applications</li>
+                  <li>•  Design for manufacturing principles</li>
+                </ul>
+                <div class="image-row" style="display: flex; flex-wrap: wrap; gap: 1em; justify-content: center; align-items: flex-start; min-height: 120px;">
+                  <a href="project-images/cad-model/cad1.png" data-lightbox="CAD-Models" data-title="Pump Motor" style="display:inline-block; background:#222; border-radius:8px; padding:4px; box-shadow:0 2px 8px #0002;">
+                    <div class="cad-caption">Pump Motor Assembly</div>
+                    <img src="project-images/cad-model/cad1.png" alt="Pump Motor Assembly" class="project-img" style="max-width:120px; max-height:90px; object-fit:contain; display:block; background:#222; border-radius:6px;">
+                  </a>
+                  <a href="project-images/cad-model/cad2.png" data-lightbox="CAD-Models" data-title="Pump Housing" style="display:inline-block; background:#222; border-radius:8px; padding:4px; box-shadow:0 2px 8px #0002;">
+                    <div class="cad-caption">Pump Housing Component</div>
+                    <img src="project-images/cad-model/cad2.png" alt="Pump Housing Component" class="project-img" style="max-width:120px; max-height:90px; object-fit:contain; display:block; background:#222; border-radius:6px;">
+                  </a>
+                  <a href="project-images/cad-model/cad3.png" data-lightbox="CAD-Models" data-title="Pump Exploded" style="display:inline-block; background:#222; border-radius:8px; padding:4px; box-shadow:0 2px 8px #0002;">
+                    <div class="cad-caption">Pump Assembly - Exploded View</div>
+                    <img src="project-images/cad-model/cad3.png" alt="Pump Assembly - Exploded View" class="project-img" style="max-width:120px; max-height:90px; object-fit:contain; display:block; background:#222; border-radius:6px;">
+                  </a>
+                  <a href="project-images/cad-model/cad4.png" data-lightbox="CAD-Models" data-title="Pipe Manifold" style="display:inline-block; background:#222; border-radius:8px; padding:4px; box-shadow:0 2px 8px #0002;">
+                    <div class="cad-caption">Pipe Manifold System</div>
+                    <img src="project-images/cad-model/cad4.png" alt="Pipe Manifold System" class="project-img" style="max-width:120px; max-height:90px; object-fit:contain; display:block; background:#222; border-radius:6px;">
+                  </a>
+                  <a href="project-images/cad-model/cad5.png" data-lightbox="CAD-Models" data-title="Pipe Manifold (Alt)" style="display:inline-block; background:#222; border-radius:8px; padding:4px; box-shadow:0 2px 8px #0002;">
+                    <div class="cad-caption">Pipe Manifold - Alternate Design</div>
+                    <img src="project-images/cad-model/cad5.png" alt="Pipe Manifold - Alternate Design" class="project-img" style="max-width:120px; max-height:90px; object-fit:contain; display:block; background:#222; border-radius:6px;">
+                  </a>
+                  <a href="project-images/cad-model/cad6.png" data-lightbox="CAD-Models" data-title="Jack Exploded" style="display:inline-block; background:#222; border-radius:8px; padding:4px; box-shadow:0 2px 8px #0002;">
+                    <div class="cad-caption">Screw Jack - Exploded View</div>
+                    <img src="project-images/cad-model/cad6.png" alt="Screw Jack - Exploded View" class="project-img" style="max-width:120px; max-height:90px; object-fit:contain; display:block; background:#222; border-radius:6px;">
+                  </a>
+                  <a href="project-images/cad-model/cad7.png" data-lightbox="CAD-Models" data-title="Screw Jack" style="display:inline-block; background:#222; border-radius:8px; padding:4px; box-shadow:0 2px 8px #0002;">
+                    <div class="cad-caption">Screw Jack Assembly</div>
+                    <img src="project-images/cad-model/cad7.png" alt="Screw Jack Assembly" class="project-img" style="max-width:120px; max-height:90px; object-fit:contain; display:block; background:#222; border-radius:6px;">
+                  </a>
+                  <a href="project-images/cad-model/cad8.png" data-lightbox="CAD-Models" data-title="Clamp" style="display:inline-block; background:#222; border-radius:8px; padding:4px; box-shadow:0 2px 8px #0002;">
+                    <div class="cad-caption">Mechanical Clamp</div>
+                    <img src="project-images/cad-model/cad8.png" alt="Mechanical Clamp" class="project-img" style="max-width:120px; max-height:90px; object-fit:contain; display:block; background:#222; border-radius:6px;">
+                  </a>
+                  <a href="project-images/cad-model/cad9.png" data-lightbox="CAD-Models" data-title="Clamp Exploded" style="display:inline-block; background:#222; border-radius:8px; padding:4px; box-shadow:0 2px 8px #0002;">
+                    <div class="cad-caption">Clamp - Exploded View</div>
+                    <img src="project-images/cad-model/cad9.png" alt="Clamp - Exploded View" class="project-img" style="max-width:120px; max-height:90px; object-fit:contain; display:block; background:#222; border-radius:6px;">
+                  </a>
+                  <a href="project-images/cad-model/cad10.png" data-lightbox="CAD-Models" data-title="V Block" style="display:inline-block; background:#222; border-radius:8px; padding:4px; box-shadow:0 2px 8px #0002;">
+                    <div class="cad-caption">V-Block Fixture</div>
+                    <img src="project-images/cad-model/cad10.png" alt="V-Block Fixture" class="project-img" style="max-width:120px; max-height:90px; object-fit:contain; display:block; background:#222; border-radius:6px;">
+                  </a>
+                  <a href="project-images/cad-model/cad11.png" data-lightbox="CAD-Models" data-title="Vane Rotor" style="display:inline-block; background:#222; border-radius:8px; padding:4px; box-shadow:0 2px 8px #0002;">
+                    <div class="cad-caption">Vane Rotor Assembly</div>
+                    <img src="project-images/cad-model/cad11.png" alt="Vane Rotor Assembly" class="project-img" style="max-width:120px; max-height:90px; object-fit:contain; display:block; background:#222; border-radius:6px;">
+                  </a>
+                  <a href="project-images/cad-model/cad12.png" data-lightbox="CAD-Models" data-title="Toggle Clamp">
+                    <div class="cad-caption">Toggle Clamp Mechanism</div>
+                    <img src="project-images/cad-model/cad12.png" alt="Toggle Clamp Mechanism" class="project-img">
+                  </a>
+                  <a href="project-images/cad-model/cad13.png" data-lightbox="CAD-Models" data-title="Toggle Clamp Exploded">
+                    <div class="cad-caption">Toggle Clamp - Exploded View</div>
+                    <img src="project-images/cad-model/cad13.png" alt="Toggle Clamp - Exploded View" class="project-img">
+                  </a>
+                  <a href="project-images/cad-model/cad14.png" data-lightbox="CAD-Models" data-title="Mount Bracket">
+                    <div class="cad-caption">Mount Bracket</div>
+                    <img src="project-images/cad-model/cad14.png" alt="Mount Bracket" class="project-img">
+                  </a>
+                  <a href="project-images/cad-model/cad15.png" data-lightbox="CAD-Models" data-title="Housing Cover">
+                    <div class="cad-caption">Housing Cover</div>
+                    <img src="project-images/cad-model/cad15.png" alt="Housing Cover" class="project-img">
+                  </a>
+                  <a href="project-images/cad-model/cad16.png" data-lightbox="CAD-Models" data-title="Bearing Block">
+                    <div class="cad-caption">Bearing Block Assembly</div>
+                    <img src="project-images/cad-model/cad16.png" alt="Bearing Block Assembly" class="project-img">
+                  </a>
+                  <a href="project-images/cad-model/cad17.png" data-lightbox="CAD-Models" data-title="Bearing Block Exploded">
+                    <div class="cad-caption">Bearing Block - Exploded View</div>
+                    <img src="project-images/cad-model/cad17.png" alt="Bearing Block - Exploded View" class="project-img">
+                  </a>
+                  <a href="project-images/cad-model/cad18.png" data-lightbox="CAD-Models" data-title="Hair Dryer Handle Grip (Surface Modeling)">
+                    <div class="cad-caption">Hair Dryer Handle (Surface Modeling)</div>
+                    <img src="project-images/cad-model/cad18.png" alt="Hair Dryer Handle - Surface Modeling" class="project-img">
+                  </a>
+                  <a href="project-images/cad-model/cad19.png" data-lightbox="CAD-Models" data-title="Piston Head">
+                    <div class="cad-caption">Piston Head Assembly</div>
+                    <img src="project-images/cad-model/cad19.png" alt="Piston Head Assembly" class="project-img">
+                  </a>
+                  <a href="project-images/cad-model/cad20.png" data-lightbox="CAD-Models" data-title="Water Jug (Surface Modeling)">
+                    <div class="cad-caption">Water Jug (Surface Modeling)</div>
+                    <img src="project-images/cad-model/cad20.png" alt="Water Jug - Surface Modeling" class="project-img">
+                  </a>
+                  <a href="project-images/cad-model/cad21.png" data-lightbox="CAD-Models" data-title="Water Jug (Surface Modeling) 2">
+                    <div class="cad-caption">Water Jug - Alternate View</div>
+                    <img src="project-images/cad-model/cad21.png" alt="Water Jug - Alternate View" class="project-img">
+                  </a>
+                  <a href="project-images/cad-model/cad22.png" data-lightbox="CAD-Models" data-title="Machining Block 1">
+                    <div class="cad-caption">Machining Block - Front View</div>
+                    <img src="project-images/cad-model/cad22.png" alt="Machining Block - Front View" class="project-img">
+                  </a>
+                  <a href="project-images/cad-model/cad23.png" data-lightbox="CAD-Models" data-title="Machining Block 2">
+                    <div class="cad-caption">Machining Block - Isometric View</div>
+                    <img src="project-images/cad-model/cad23.png" alt="Machining Block - Isometric View" class="project-img">
+                  </a>
+                  <a href="project-images/cad-model/cad24.png" data-lightbox="CAD-Models" data-title="Machining Block 3">
+                    <div class="cad-caption">Machining Block - Top View</div>
+                    <img src="project-images/cad-model/cad24.png" alt="Machining Block - Top View" class="project-img">
+                  </a>
+                  <a href="project-images/cad-model/cad25.png" data-lightbox="CAD-Models" data-title="Drainer Sink">
+                    <div class="cad-caption">Drainer Sink (Surface Modeling)</div>
+                    <img src="project-images/cad-model/cad25.png" alt="Drainer Sink - Surface Modeling" class="project-img">
+                  </a>
+                  <a href="project-images/cad-model/cad26.png" data-lightbox="CAD-Models" data-title="Bearing Cap">
+                    <div class="cad-caption">Bearing Cap</div>
+                    <img src="project-images/cad-model/cad26.png" alt="Bearing Cap" class="project-img">
+                  </a>
+                </div>
+                <p style="margin-top:1em; text-align:center; color:#FFD600; font-weight:500;">Click any image to open, zoom, and browse the full CAD gallery.</p>
+              </div>
+              <div class="modal-page" data-page="1" style="display:none;">
+                <h4>Engineering Excellence in Action</h4>
+                <p>Each model in this collection showcases specific engineering principles and design considerations:</p>
+                <ul style="list-style-type: none; margin-left: 0; padding-left: 1.2em;">
+                  <li>•  <strong>Mechanical Assemblies:</strong> Screw Jack, Bearing Blocks, Pipe Manifold</li>
+                  <li>•  <strong>Manufacturing Fixtures:</strong> V Block, Clamps, Toggle Clamps</li>
+                  <li>•  <strong>Pump Systems:</strong> Complete Pump Assembly with Housing and Rotor</li>
+                  <li>•  <strong>Surface Modeling:</strong> Consumer Products and Ergonomic Designs</li>
+                  <li>•  <strong>Technical Documentation:</strong> Exploded Views and Assembly Guides</li>
+                </ul>
+              </div>
+              <div class="modal-page" data-page="2" style="display:none;">
+                <h4>Technical Highlights</h4>
+                <p>Key features and achievements demonstrated in this collection:</p>
+                <ul style="list-style-type: none; margin-left: 0; padding-left: 1.2em;">
+                  <li>•  <strong>Complex Assemblies:</strong> Multi-component systems with proper constraints and relationships</li>
+                  <li>•  <strong>Design Intent:</strong> Models created with manufacturing and assembly in mind</li>
+                  <li>•  <strong>Technical Documentation:</strong> Clear visualization of components and assemblies</li>
+                  <li>•  <strong>Surface Modeling:</strong> Complex organic shapes and ergonomic designs</li>
+                  <li>•  <strong>Precision Engineering:</strong> Accurate dimensions and tolerances for real-world applications</li>
+                </ul>
               </div>
             </li>
             <li class="project-item active" data-filter-item data-category="cad-cfd-fea">
@@ -2198,6 +2364,61 @@
   -->
   <script src="./assets/js/script.js"></script>
   <script src="lightbox.js"></script>
+  <script>
+    // Pin CAD Models Collection to top of CAD, CFD & FEA category only, restore after Applied CFD otherwise
+    document.addEventListener('DOMContentLoaded', function() {
+      var projectList = document.querySelector('.project-list');
+      if (!projectList) return;
+      var cadModelsItem = Array.from(projectList.children).find(function(li) {
+        var title = li.querySelector('.project-title');
+        return title && title.textContent.trim() === 'CAD Models Collection';
+      });
+      if (!cadModelsItem) return;
+
+      function reorderForCategory() {
+        var activeCategory = document.querySelector('.filter-btn.active, [data-select-item].active');
+        var isCAD = false;
+        var isAll = false;
+        if (activeCategory) {
+          var cat = activeCategory.getAttribute('data-category');
+          isCAD = cat && (cat === 'cad-cfd-fea');
+          isAll = cat && (cat === 'all');
+        } else {
+          // fallback: check select value
+          var selectVal = document.querySelector('.select-value');
+          if (selectVal) {
+            isCAD = selectVal.textContent.includes('CAD, CFD & FEA');
+            isAll = selectVal.textContent.trim().toLowerCase() === 'all';
+          }
+        }
+        if (isCAD) {
+          // Move to top if not already
+          if (projectList.firstElementChild !== cadModelsItem) {
+            projectList.insertBefore(cadModelsItem, projectList.firstElementChild);
+          }
+        } else {
+          // Always find the current Applied CFD project and insert after it
+          var appliedCFDItem = Array.from(projectList.children).find(function(li) {
+            var title = li.querySelector('.project-title');
+            return title && title.textContent.trim().includes('Applied CFD');
+          });
+          if (appliedCFDItem && appliedCFDItem.nextElementSibling !== cadModelsItem) {
+            if (appliedCFDItem.nextElementSibling) {
+              projectList.insertBefore(cadModelsItem, appliedCFDItem.nextElementSibling);
+            } else {
+              projectList.appendChild(cadModelsItem);
+            }
+          }
+        }
+      }
+
+      document.querySelectorAll('[data-filter-btn], [data-select-item]').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+          setTimeout(reorderForCategory, 10);
+        });
+      });
+    });
+  </script>
   <!--
     - ionicon link
   -->

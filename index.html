@@ -762,16 +762,55 @@
                   <li>•  Applied species transport models to track nitrogen levels and oxygen exclusion in the sealed pod.</li>
                   <li>•  Used corrosion and thermal cycling models to project reliability benefits.</li>
                 </ul>
+                <!-- Mermaid state diagram and Sankey diagram for pod life-cycle and energy flow -->
+                <div class="diagrams-container">
+  <div class="diagram-item">
+    <h5>Nitrogen Pod Life-Cycle State Diagram</h5>
+    <img src="project-images/pod-lifecycle-diagram.svg" alt="Nitrogen pod life-cycle state diagram" class="chart-image" />
+    <div class="diagram-caption" style="margin-top:0.5em; font-size:0.98em; color:#b48be0;">Figure 2. Nitrogen pod life-cycle state diagram.</div>
+  </div>
+  <div class="diagram-item">
+    <h5>Sankey Energy Flow: Pod vs Air Cooling</h5>
+    <img src="project-images/pod-sankey.svg" alt="Sankey energy flow: pod vs air cooling" class="chart-image" />
+    <div class="diagram-caption" style="margin-top:0.5em; font-size:0.98em; color:#b48be0;">Figure 3. Sankey energy flow: pod vs air cooling.</div>
+  </div>
+                </div>
               </div>
               <div class="modal-page" data-page="2" style="display:none;">
                 <h4>Result?</h4>
-                <ul style="list-style-type: '👉 '; margin-left: 0; padding-left: 1.2em;">
-                  <li>•  The sealed pod improved thermal reliability by 25% and cut thermal stratification by ~50%.</li>
-                  <li>•  Projected hardware failure rates dropped by 35–40% compared to standard racks.</li>
-                  <li>•  Daily temperature swings reduced to ±1°C in the pod, enhancing component longevity.</li>
-                  <li>•  Cooling energy demand decreased ~10%, with PUE improving to ~1.1 in optimized configurations.</li>
-                  <li>•  Delivered a scalable design concept for high-efficiency, high-reliability land-based data centers.</li>
-                </ul>
+                <div class="charts-container" style="margin-bottom:2em;">
+  <div class="chart-item">
+    <h5>Daily Temperature Swing: Open Rack vs Pod</h5>
+    <img src="project-images/acfd3-temp-line.svg" alt="Daily temperature swing: open rack vs pod" class="chart-image" />
+    <div class="chart-caption" style="margin-top:0.5em; font-size:0.98em; color:#b48be0;">Figure 4. Daily temperature swing: open rack vs pod.</div>
+  </div>
+  <div class="chart-item">
+    <h5>Reliability Gauge: Projected Failure-Rate Drop</h5>
+    <img src="project-images/acfd3-gauge.svg" alt="Reliability gauge: projected failure-rate drop" class="chart-image" />
+    <div class="chart-caption" style="margin-top:0.5em; font-size:0.98em; color:#b48be0;">Figure 5. Reliability gauge: projected failure-rate drop.</div>
+  </div>
+                </div>
+                <div class="comparison-table-container">
+                  <h5>KPI Comparison: Open Rack vs Sealed Pod</h5>
+                  <table class="comparison-table" id="podComp">
+                    <thead>
+                      <tr>
+                        <th>Metric</th>
+                        <th>Open Rack</th>
+                        <th>Sealed Pod</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr><td>Thermal Reliability Gain</td><td>–</td><td>+25%</td></tr>
+                      <tr><td>Hotspot/Stratification Reduction</td><td>–</td><td>50%</td></tr>
+                      <tr><td>Failure Rate Drop</td><td>–</td><td>35–40%</td></tr>
+                      <tr><td>Daily Temp Swing (±°C)</td><td>6</td><td>1</td></tr>
+                      <tr><td>PUE</td><td>1.46</td><td>1.10</td></tr>
+                      <tr><td>Cooling Energy (kWh)</td><td>100</td><td>90</td></tr>
+                    </tbody>
+                  </table>
+                  <div class="table-caption" style="margin-top:0.5em; font-size:0.98em; color:#b48be0;">Figure 6. KPI comparison table: open rack vs sealed pod.</div>
+                </div>
               </div>
             </li>
 
@@ -2359,6 +2398,12 @@
 
   </main>
 
+  <!--
+    - external libraries
+  -->
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@10.9.0/dist/mermaid.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/d3@7.8.5/dist/d3.min.js"></script>
+  
   <!--
     - custom js link
   -->

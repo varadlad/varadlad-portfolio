@@ -797,6 +797,76 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // --------------------
+// Sankey Diagram for Pod Energy Flow
+// --------------------
+function drawPodSankey() {
+  const svg = d3.select("#podSankey");
+  if (!svg.node()) return;
+  
+  const { width, height } = svg.node().getBoundingClientRect();
+  const sankey = d3.sankey()
+                   .nodeWidth(15)
+                   .nodePadding(10)
+                   .extent([[1,1],[width-1,height-6]]);
+
+  const graph = {
+    nodes: [
+      { name:"Power In" }, 
+      { name:"IT Load" },
+      { name:"Cooling Fans" }, 
+      { name:"Pump/Heat-Ex" },
+      { name:"Losses" }
+    ],
+    links: [
+      { source:0, target:1, value:100 },
+      { source:0, target:2, value:30 },
+      { source:0, target:3, value:10 },
+      { source:2, target:4, value:25 },
+      { source:3, target:4, value:8 }
+    ]
+  };
+
+  const {nodes,links} = sankey(graph);
+
+  // Clear any existing content
+  svg.selectAll("*").remove();
+
+  // Add nodes
+  svg.append("g")
+     .selectAll("rect")
+     .data(nodes)
+     .join("rect")
+     .attr("x", d=>d.x0)
+     .attr("y", d=>d.y0)
+     .attr("width", d=>d.x1-d.x0)
+     .attr("height", d=>d.y1-d.y0)
+     .attr("fill","#8bc3ff");
+
+  // Add links
+  svg.append("g")
+     .attr("fill","none")
+     .attr("stroke","#ccc")
+     .selectAll("path")
+     .data(links)
+     .join("path")
+     .attr("d", d3.sankeyLinkHorizontal())
+     .attr("stroke-width", d=>Math.max(1,d.width));
+
+  // Add node labels
+  svg.append("g")
+     .selectAll("text")
+     .data(nodes)
+     .join("text")
+     .attr("x", d => d.x0 < width / 2 ? d.x1 + 6 : d.x0 - 6)
+     .attr("y", d => (d.y1 + d.y0) / 2)
+     .attr("dy", "0.35em")
+     .attr("text-anchor", d => d.x0 < width / 2 ? "start" : "end")
+     .attr("fill", "#ffffff")
+     .attr("font-size", "12px")
+     .text(d => d.name);
+}
+
+// --------------------
 // Page Navigation (Template Approach)
 // --------------------
 
@@ -1124,6 +1194,9 @@ function initMermaidDiagrams() {
   
   if (typeof mermaid !== 'undefined') {
     try {
+      // Initialize mermaid with startOnLoad: false
+      mermaid.initialize({ startOnLoad: false });
+      
       // Find all unprocessed mermaid diagrams
       const mermaidElements = document.querySelectorAll('.mermaid:not([data-processed])');
       console.log('Found', mermaidElements.length, 'unprocessed mermaid diagrams');
@@ -1135,9 +1208,8 @@ function initMermaidDiagrams() {
           element.id = id;
         });
         
-        mermaid.run({
-          nodes: mermaidElements
-        });
+        // Use mermaid.init instead of mermaid.run
+        mermaid.init(undefined, mermaidElements);
         console.log('Mermaid diagrams processed successfully');
       }
     } catch (error) {
@@ -1155,6 +1227,7 @@ function initVisualizations() {
   // Initialize charts and diagrams
   initDataCenterCharts();
   initMermaidDiagrams();
+  drawPodSankey();
   
   chartsInitialized = true;
   console.log('Visualization initialization completed');
@@ -1175,3 +1248,8 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   }, 1000);
 });
+
+// If Mermaid is loaded, initialize with startOnLoad: false
+if (typeof mermaid !== 'undefined') {
+  mermaid.initialize({ startOnLoad: false });
+}

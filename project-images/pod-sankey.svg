@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="420" height="260" viewBox="0 0 420 260" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="420" height="260" rx="18" fill="#181818"/>
+  <!-- Nodes -->
+  <g font-family="'Segoe UI', Arial, sans-serif" font-size="13" text-anchor="middle">
+    <rect x="30" y="110" width="60" height="40" rx="8" fill="#8bc3ff" stroke="#222" stroke-width="2"/>
+    <text x="60" y="135" fill="#222">Power In</text>
+    <rect x="120" y="60" width="60" height="40" rx="8" fill="#ffd600" stroke="#222" stroke-width="2"/>
+    <text x="150" y="85" fill="#222">IT Load</text>
+    <rect x="120" y="160" width="60" height="40" rx="8" fill="#ffd600" stroke="#222" stroke-width="2"/>
+    <text x="150" y="185" fill="#222">Cooling Fans</text>
+    <rect x="240" y="60" width="80" height="40" rx="8" fill="#8bc3ff" stroke="#222" stroke-width="2"/>
+    <text x="280" y="85" fill="#222">Pump/Heat-Ex</text>
+    <rect x="350" y="110" width="60" height="40" rx="8" fill="#ffd600" stroke="#222" stroke-width="2"/>
+    <text x="380" y="135" fill="#222">Losses</text>
+  </g>
+  <!-- Links (Sankey flows) -->
+  <g stroke="#ccc" fill="none" stroke-width="10" opacity="0.8">
+    <path d="M90,130 C105,130 120,80 120,80"/>
+    <path d="M90,130 C105,130 120,180 120,180"/>
+    <path d="M180,80 C210,80 240,80 240,80"/>
+    <path d="M180,180 C215,180 350,130 350,130"/>
+    <path d="M320,80 C340,80 380,130 380,130"/>
+    <path d="M320,180 C340,180 380,150 380,150"/>
+  </g>
+  <!-- Flow values -->
+  <g font-family="'Segoe UI', Arial, sans-serif" font-size="12" fill="#b48be0">
+    <text x="105" y="120">100</text>
+    <text x="105" y="200">30</text>
+    <text x="210" y="70">10</text>
+    <text x="210" y="190">25</text>
+    <text x="340" y="100">8</text>
+  </g>
+</svg>

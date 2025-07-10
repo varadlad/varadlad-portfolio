@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="420" height="260" viewBox="0 0 420 260" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="420" height="260" rx="18" fill="#181818"/>
+  <g font-family="'Segoe UI', Arial, sans-serif" font-size="15" text-anchor="middle">
+    <!-- States -->
+    <rect x="40" y="110" width="90" height="38" rx="8" fill="#8bc3ff" stroke="#222" stroke-width="2"/>
+    <text x="85" y="133" fill="#222">Normal Run</text>
+    <rect x="170" y="40" width="110" height="38" rx="8" fill="#ffd600" stroke="#222" stroke-width="2"/>
+    <text x="225" y="63" fill="#222">Nitrogen Replenish</text>
+    <rect x="320" y="110" width="70" height="38" rx="8" fill="#8bc3ff" stroke="#222" stroke-width="2"/>
+    <text x="355" y="133" fill="#222">Inspection</text>
+    <rect x="170" y="182" width="110" height="38" rx="8" fill="#ffd600" stroke="#222" stroke-width="2"/>
+    <text x="225" y="205" fill="#222">Seal Check</text>
+    <!-- Start -->
+    <circle cx="20" cy="129" r="10" fill="#ffd600" stroke="#222" stroke-width="2"/>
+    <!-- Arrows -->
+    <g stroke="#fff" stroke-width="2" marker-end="url(#arrow)">
+      <line x1="30" y1="129" x2="40" y2="129"/>
+      <line x1="130" y1="129" x2="170" y2="59"/>
+      <line x1="280" y1="59" x2="320" y2="129"/>
+      <line x1="390" y1="129" x2="280" y2="201"/>
+      <line x1="170" y1="201" x2="130" y2="129"/>
+    </g>
+    <!-- State Descriptions -->
+    <text x="85" y="153" font-size="12" fill="#b48be0">Sealed pod operating</text>
+    <text x="225" y="83" font-size="12" fill="#b48be0">Add N₂ as needed</text>
+    <text x="355" y="153" font-size="12" fill="#b48be0">Routine check</text>
+    <text x="225" y="225" font-size="12" fill="#b48be0">Verify pod integrity</text>
+  </g>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#fff"/>
+    </marker>
+  </defs>
+</svg>

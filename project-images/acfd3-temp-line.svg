@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="420" height="260" viewBox="0 0 420 260" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="420" height="260" rx="18" fill="#181818"/>
+  <g font-family="'Segoe UI', Arial, sans-serif" font-size="13">
+    <text x="210" y="30" fill="#ffd600" font-size="18" text-anchor="middle">Daily Temperature Swing</text>
+    <text x="210" y="50" fill="#b48be0" font-size="13" text-anchor="middle">Open Rack vs Pod</text>
+    <!-- Axes -->
+    <line x1="60" y1="200" x2="380" y2="200" stroke="#fff" stroke-width="2"/>
+    <line x1="60" y1="70" x2="60" y2="200" stroke="#fff" stroke-width="2"/>
+    <!-- Y-axis labels -->
+    <text x="50" y="205" fill="#fff">0°C</text>
+    <text x="50" y="170" fill="#fff">10</text>
+    <text x="50" y="140" fill="#fff">20</text>
+    <text x="50" y="110" fill="#fff">30</text>
+    <text x="50" y="80" fill="#fff">40</text>
+    <!-- X-axis labels -->
+    <text x="60" y="220" fill="#fff">0</text>
+    <text x="120" y="220" fill="#fff">6</text>
+    <text x="180" y="220" fill="#fff">12</text>
+    <text x="240" y="220" fill="#fff">18</text>
+    <text x="300" y="220" fill="#fff">24</text>
+    <!-- Open Rack Line (wider swing) -->
+    <polyline points="60,180 120,120 180,80 240,120 300,180 380,200" fill="none" stroke="#ff6666" stroke-width="3"/>
+    <!-- Pod Line (narrow swing) -->
+    <polyline points="60,160 120,140 180,130 240,140 300,160 380,170" fill="none" stroke="#00cc66" stroke-width="3"/>
+    <!-- Legend -->
+    <rect x="320" y="60" width="16" height="8" fill="#ff6666"/>
+    <text x="340" y="68" fill="#fff" font-size="12">Open Rack</text>
+    <rect x="320" y="80" width="16" height="8" fill="#00cc66"/>
+    <text x="340" y="88" fill="#fff" font-size="12">Pod</text>
+  </g>
+</svg>

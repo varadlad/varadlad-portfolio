@@ -780,22 +780,19 @@
 
       .image-grid {
         display: grid;
-        grid-template-columns: 2fr 1fr;
-        grid-template-rows: 1fr 1fr;
-        gap: 2px;
-        height: 100%;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 8px;
+        height: auto;
+        min-height: 300px;
         width: 100%;
       }
 
       .grid-item {
         position: relative;
         overflow: hidden;
-        border-radius: 4px;
-      }
-
-      .grid-item.main-image {
-        grid-row: 1 / 3;
-        grid-column: 1 / 2;
+        border-radius: 8px;
+        aspect-ratio: 4/3;
+        min-height: 200px;
       }
 
       .grid-item img {
@@ -809,88 +806,31 @@
         transform: scale(1.05);
       }
 
-      .grid-item.overlay {
-        position: relative;
+      .grid-item:hover {
+        box-shadow: 0 4px 12px rgba(255, 214, 0, 0.3);
       }
 
-      .overlay-text {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        background: rgba(0, 0, 0, 0.8);
-        color: white;
-        font-size: 1.2rem;
-        font-weight: 600;
-        padding: 8px 12px;
-        border-radius: 4px;
-        z-index: 2;
+      /* Responsive grid adjustments */
+      @media (max-width: 768px) {
+        .image-grid {
+          grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+          gap: 6px;
+        }
+        
+        .grid-item {
+          min-height: 150px;
+        }
       }
 
-      .grid-item.overlay::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: rgba(0, 0, 0, 0.4);
-        z-index: 1;
-      }
-
-      /* Special grid layouts for different image counts */
-      .image-grid.grid-3 {
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: 1fr 1fr;
-      }
-
-      .image-grid.grid-3 .grid-item.main-image {
-        grid-row: 1 / 3;
-        grid-column: 1 / 2;
-      }
-
-      .image-grid.grid-3 .grid-item:nth-child(2) {
-        grid-row: 1 / 2;
-        grid-column: 2 / 3;
-      }
-
-      .image-grid.grid-3 .grid-item:nth-child(3) {
-        grid-row: 2 / 3;
-        grid-column: 2 / 3;
-      }
-
-      .image-grid.grid-4 {
-        grid-template-columns: 2fr 1fr;
-        grid-template-rows: 1fr 1fr;
-      }
-
-      .image-grid.grid-4 .grid-item.main-image {
-        grid-row: 1 / 3;
-        grid-column: 1 / 2;
-      }
-
-      .image-grid.grid-4 .grid-item:nth-child(2) {
-        grid-row: 1 / 2;
-        grid-column: 2 / 3;
-      }
-
-      .image-grid.grid-4 .grid-item:nth-child(3) {
-        grid-row: 2 / 3;
-        grid-column: 2 / 3;
-      }
-
-      .image-grid.grid-4 .grid-item:nth-child(4) {
-        display: none;
-      }
-
-      .image-grid.grid-1 {
-        grid-template-columns: 1fr;
-        grid-template-rows: 1fr;
-      }
-
-      .image-grid.grid-1 .grid-item.main-image {
-        grid-row: 1 / 2;
-        grid-column: 1 / 2;
+      @media (max-width: 480px) {
+        .image-grid {
+          grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+          gap: 4px;
+        }
+        
+        .grid-item {
+          min-height: 120px;
+        }
       }
 
       .achievement-info {
@@ -3278,8 +3218,8 @@
           <!-- FSAE Team Achievement -->
           <div class="achievement-card">
             <div class="achievement-gallery">
-              <div class="image-grid grid-5">
-                <div class="grid-item main-image">
+              <div class="image-grid">
+                <div class="grid-item">
                   <img src="achievement-imgs/ASU-FASE/1743372661272.jpg" alt="FSAE Team 1" loading="lazy">
                 </div>
                 <div class="grid-item">
@@ -3291,9 +3231,14 @@
                 <div class="grid-item">
                   <img src="achievement-imgs/ASU-FASE/1743372662101.jpg" alt="FSAE Team 4" loading="lazy">
                 </div>
-                <div class="grid-item overlay">
+                <div class="grid-item">
                   <img src="achievement-imgs/ASU-FASE/1743372661883.jpg" alt="FSAE Team 5" loading="lazy">
-                  <div class="overlay-text">+2</div>
+                </div>
+                <div class="grid-item">
+                  <img src="achievement-imgs/ASU-FASE/1743372663105.jpg" alt="FSAE Team 6" loading="lazy">
+                </div>
+                <div class="grid-item">
+                  <img src="achievement-imgs/ASU-FASE/1743372662760.jpg" alt="FSAE Team 7" loading="lazy">
                 </div>
               </div>
             </div>
@@ -3308,8 +3253,8 @@
           <!-- Space For Humans Achievement -->
           <div class="achievement-card">
             <div class="achievement-gallery">
-              <div class="image-grid grid-3">
-                <div class="grid-item main-image">
+              <div class="image-grid">
+                <div class="grid-item">
                   <img src="achievement-imgs/Space-for-humans-writer/1738809395532.jpg" alt="Space For Humans 1" loading="lazy">
                 </div>
                 <div class="grid-item">
@@ -3331,8 +3276,8 @@
           <!-- Career Development Panel Achievement -->
           <div class="achievement-card">
             <div class="achievement-gallery">
-              <div class="image-grid grid-5">
-                <div class="grid-item main-image">
+              <div class="image-grid">
+                <div class="grid-item">
                   <img src="achievement-imgs/Career-advancement-seminar/1736625775616.jpg" alt="Career Panel 1" loading="lazy">
                 </div>
                 <div class="grid-item">
@@ -3344,9 +3289,8 @@
                 <div class="grid-item">
                   <img src="achievement-imgs/Career-advancement-seminar/1736625777370.jpg" alt="Career Panel 4" loading="lazy">
                 </div>
-                <div class="grid-item overlay">
+                <div class="grid-item">
                   <img src="achievement-imgs/Career-advancement-seminar/1736625777678.jpg" alt="Career Panel 5" loading="lazy">
-                  <div class="overlay-text">+1</div>
                 </div>
               </div>
             </div>
@@ -3361,8 +3305,8 @@
           <!-- Semiconductor Revolution Achievement -->
           <div class="achievement-card">
             <div class="achievement-gallery">
-              <div class="image-grid grid-5">
-                <div class="grid-item main-image">
+              <div class="image-grid">
+                <div class="grid-item">
                   <img src="achievement-imgs/worldwide-NewTech-revolution-seminar/1729114493226.jpg" alt="Semiconductor 1" loading="lazy">
                 </div>
                 <div class="grid-item">
@@ -3374,9 +3318,20 @@
                 <div class="grid-item">
                   <img src="achievement-imgs/worldwide-NewTech-revolution-seminar/1730621998499.jpg" alt="Semiconductor 4" loading="lazy">
                 </div>
-                <div class="grid-item overlay">
+                <div class="grid-item">
                   <img src="achievement-imgs/worldwide-NewTech-revolution-seminar/1730621998904.jpg" alt="Semiconductor 5" loading="lazy">
-                  <div class="overlay-text">+4</div>
+                </div>
+                <div class="grid-item">
+                  <img src="achievement-imgs/worldwide-NewTech-revolution-seminar/1730621999209.jpg" alt="Semiconductor 6" loading="lazy">
+                </div>
+                <div class="grid-item">
+                  <img src="achievement-imgs/worldwide-NewTech-revolution-seminar/1730621999217.jpg" alt="Semiconductor 7" loading="lazy">
+                </div>
+                <div class="grid-item">
+                  <img src="achievement-imgs/worldwide-NewTech-revolution-seminar/1730621999364.jpg" alt="Semiconductor 8" loading="lazy">
+                </div>
+                <div class="grid-item">
+                  <img src="achievement-imgs/worldwide-NewTech-revolution-seminar/1730962734465.jpg" alt="Semiconductor 9" loading="lazy">
                 </div>
               </div>
             </div>
@@ -3391,8 +3346,8 @@
           <!-- MRS Spokesperson Achievement -->
           <div class="achievement-card">
             <div class="achievement-gallery">
-              <div class="image-grid grid-4">
-                <div class="grid-item main-image">
+              <div class="image-grid">
+                <div class="grid-item">
                   <img src="achievement-imgs/MRS-spokesperson/1714423010888.jpg" alt="MRS Conference 1" loading="lazy">
                 </div>
                 <div class="grid-item">
@@ -3417,8 +3372,8 @@
           <!-- Innovation Featured Achievement -->
           <div class="achievement-card">
             <div class="achievement-gallery">
-              <div class="image-grid grid-4">
-                <div class="grid-item main-image">
+              <div class="image-grid">
+                <div class="grid-item">
                   <img src="achievement-imgs/innovation-asu-feature/1668374354865.jpg" alt="ASU Innovation 1" loading="lazy">
                 </div>
                 <div class="grid-item">
@@ -3443,8 +3398,8 @@
           <!-- NASA L'SPACE Achievement -->
           <div class="achievement-card">
             <div class="achievement-gallery">
-              <div class="image-grid grid-3">
-                <div class="grid-item main-image">
+              <div class="image-grid">
+                <div class="grid-item">
                   <img src="achievement-imgs/NASA-intern/1663826593795.jpg" alt="NASA L'SPACE 1" loading="lazy">
                 </div>
                 <div class="grid-item">
@@ -3466,8 +3421,8 @@
           <!-- Esports Creator Achievement -->
           <div class="achievement-card">
             <div class="achievement-gallery">
-              <div class="image-grid grid-1">
-                <div class="grid-item main-image">
+              <div class="image-grid">
+                <div class="grid-item">
                   <img src="achievement-imgs/last-youtube-sportskeeda-feature/sportskeeda.com.webloc" alt="Esports Creator" loading="lazy">
                 </div>
               </div>
@@ -3483,8 +3438,8 @@
           <!-- ASU Sun Award Achievement -->
           <div class="achievement-card">
             <div class="achievement-gallery">
-              <div class="image-grid grid-1">
-                <div class="grid-item main-image">
+              <div class="image-grid">
+                <div class="grid-item">
                   <img src="achievement-imgs/ASU-sun-award/Screenshot 2025-07-30 at 12.49.48 PM.png" alt="ASU Sun Award" loading="lazy">
                 </div>
               </div>

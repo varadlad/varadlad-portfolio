@@ -755,72 +755,93 @@
         gap: 3rem;
         max-width: 1200px;
         margin: 0 auto;
+        padding: 0 1rem;
       }
 
-      .achievement-images-container {
-        position: relative;
-        height: 400px;
-        overflow: hidden;
+      .achievement-card {
+        background: rgba(255, 255, 255, 0.05);
         border-radius: 16px;
+        border: 1px solid rgba(255, 214, 0, 0.2);
+        overflow: hidden;
         box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
       }
 
-      .achievement-images-wrapper {
+      .achievement-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+      }
+
+      .achievement-gallery {
+        position: relative;
+        height: 300px;
+        overflow: hidden;
+      }
+
+      .gallery-container {
         position: relative;
         width: 100%;
         height: 100%;
       }
 
-      .achievement-image {
+      .gallery-images {
+        position: relative;
+        width: 100%;
+        height: 100%;
+      }
+
+      .gallery-image {
         position: absolute;
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
         opacity: 0;
-        transition: opacity 1s ease-in-out;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        transition: opacity 0.8s ease-in-out;
+        object-fit: cover;
       }
 
-      .achievement-image.active {
+      .gallery-image.active {
         opacity: 1;
       }
 
-      .achievement-image img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        border-radius: 16px;
+      .gallery-nav {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: rgba(0, 0, 0, 0.6);
+        border: none;
+        color: #ffd600;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        z-index: 10;
       }
 
-      .achievement-content {
-        position: relative;
+      .gallery-nav:hover {
+        background: rgba(0, 0, 0, 0.8);
+        transform: translateY(-50%) scale(1.1);
+      }
+
+      .gallery-nav.prev {
+        left: 10px;
+      }
+
+      .gallery-nav.next {
+        right: 10px;
+      }
+
+      .gallery-nav ion-icon {
+        font-size: 1.2rem;
+      }
+
+      .achievement-info {
         padding: 2rem;
-        background: rgba(255, 255, 255, 0.05);
-        border-radius: 16px;
-        border: 1px solid rgba(255, 214, 0, 0.2);
-      }
-
-      .achievement-item {
-        display: none;
-        animation: fadeInUp 0.8s ease-out;
-      }
-
-      .achievement-item.active {
-        display: block;
-      }
-
-      @keyframes fadeInUp {
-        from {
-          opacity: 0;
-          transform: translateY(20px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
       }
 
       .achievement-title {
@@ -842,14 +863,14 @@
       @media (max-width: 768px) {
         .achievements-content {
           gap: 2rem;
-          padding: 0 1rem;
+          padding: 0 0.5rem;
         }
 
-        .achievement-images-container {
-          height: 300px;
+        .achievement-gallery {
+          height: 250px;
         }
 
-        .achievement-content {
+        .achievement-info {
           padding: 1.5rem;
         }
 
@@ -860,19 +881,33 @@
         .achievement-description {
           font-size: 1rem;
         }
+
+        .gallery-nav {
+          width: 35px;
+          height: 35px;
+        }
       }
 
       @media (max-width: 480px) {
-        .achievement-images-container {
-          height: 250px;
+        .achievement-gallery {
+          height: 200px;
         }
 
-        .achievement-content {
+        .achievement-info {
           padding: 1rem;
         }
 
         .achievement-title {
           font-size: 1.2rem;
+        }
+
+        .gallery-nav {
+          width: 30px;
+          height: 30px;
+        }
+
+        .gallery-nav ion-icon {
+          font-size: 1rem;
         }
       }
 
@@ -3187,98 +3222,234 @@
 
         <section class="achievements-content">
           
-          <!-- Image Shuffling Section -->
-          <div class="achievement-images-container">
-            <div class="achievement-images-wrapper">
-              <div class="achievement-image active" data-achievement="fsae">
-                <img src="achievement-imgs/ASU-FASE/1743372661272.jpg" alt="FSAE Team" loading="lazy">
-              </div>
-              <div class="achievement-image" data-achievement="space">
-                <img src="achievement-imgs/Space-for-humans-writer/1738809395532.jpg" alt="Space For Humans" loading="lazy">
-              </div>
-              <div class="achievement-image" data-achievement="career">
-                <img src="achievement-imgs/Career-advancement-seminar/1736625775616.jpg" alt="Career Development Panel" loading="lazy">
-              </div>
-              <div class="achievement-image" data-achievement="semiconductor">
-                <img src="achievement-imgs/worldwide-NewTech-revolution-seminar/1729114493226.jpg" alt="Semiconductor Revolution" loading="lazy">
-              </div>
-              <div class="achievement-image" data-achievement="mrs">
-                <img src="achievement-imgs/MRS-spokesperson/1714423010888.jpg" alt="MRS Conference" loading="lazy">
-              </div>
-              <div class="achievement-image" data-achievement="innovation">
-                <img src="achievement-imgs/innovation-asu-feature/1668374354865.jpg" alt="ASU Innovation Feature" loading="lazy">
-              </div>
-              <div class="achievement-image" data-achievement="nasa">
-                <img src="achievement-imgs/NASA-intern/1663826593795.jpg" alt="NASA L'SPACE Program" loading="lazy">
-              </div>
-              <div class="achievement-image" data-achievement="esports">
-                <img src="achievement-imgs/last-youtube-sportskeeda-feature/sportskeeda.com.webloc" alt="Esports Creator" loading="lazy">
-              </div>
-              <div class="achievement-image" data-achievement="sunaward">
-                <img src="achievement-imgs/ASU-sun-award/Screenshot 2025-07-30 at 12.49.48 PM.png" alt="ASU Sun Award" loading="lazy">
+          <!-- FSAE Team Achievement -->
+          <div class="achievement-card">
+            <div class="achievement-gallery">
+              <div class="gallery-container">
+                <div class="gallery-images">
+                  <img src="achievement-imgs/ASU-FASE/1743372661272.jpg" alt="FSAE Team 1" class="gallery-image active" loading="lazy">
+                  <img src="achievement-imgs/ASU-FASE/1743372661674.jpg" alt="FSAE Team 2" class="gallery-image" loading="lazy">
+                  <img src="achievement-imgs/ASU-FASE/1743372661761.jpg" alt="FSAE Team 3" class="gallery-image" loading="lazy">
+                  <img src="achievement-imgs/ASU-FASE/1743372662101.jpg" alt="FSAE Team 4" class="gallery-image" loading="lazy">
+                  <img src="achievement-imgs/ASU-FASE/1743372661883.jpg" alt="FSAE Team 5" class="gallery-image" loading="lazy">
+                  <img src="achievement-imgs/ASU-FASE/1743372663105.jpg" alt="FSAE Team 6" class="gallery-image" loading="lazy">
+                  <img src="achievement-imgs/ASU-FASE/1743372662760.jpg" alt="FSAE Team 7" class="gallery-image" loading="lazy">
+                </div>
+                <button class="gallery-nav prev" onclick="changeImage(this, -1)">
+                  <ion-icon name="chevron-back-outline"></ion-icon>
+                </button>
+                <button class="gallery-nav next" onclick="changeImage(this, 1)">
+                  <ion-icon name="chevron-forward-outline"></ion-icon>
+                </button>
               </div>
             </div>
-          </div>
-
-          <!-- Achievement Content Section -->
-          <div class="achievement-content">
-            <div class="achievement-item active" data-achievement="fsae">
+            <div class="achievement-info">
               <h3 class="achievement-title">🏎️ FSAE Team: Formula Car R&D</h3>
               <p class="achievement-description">
                 Led chassis optimization and CFD simulation for Arizona State University's Formula SAE racing team, bringing track-tested engineering to student-built cars.
               </p>
             </div>
+          </div>
 
-            <div class="achievement-item" data-achievement="space">
+          <!-- Space For Humans Achievement -->
+          <div class="achievement-card">
+            <div class="achievement-gallery">
+              <div class="gallery-container">
+                <div class="gallery-images">
+                  <img src="achievement-imgs/Space-for-humans-writer/1738809395532.jpg" alt="Space For Humans 1" class="gallery-image active" loading="lazy">
+                  <img src="achievement-imgs/Space-for-humans-writer/1738809395804.jpg" alt="Space For Humans 2" class="gallery-image" loading="lazy">
+                  <img src="achievement-imgs/Space-for-humans-writer/1738809395914.jpg" alt="Space For Humans 3" class="gallery-image" loading="lazy">
+                </div>
+                <button class="gallery-nav prev" onclick="changeImage(this, -1)">
+                  <ion-icon name="chevron-back-outline"></ion-icon>
+                </button>
+                <button class="gallery-nav next" onclick="changeImage(this, 1)">
+                  <ion-icon name="chevron-forward-outline"></ion-icon>
+                </button>
+              </div>
+            </div>
+            <div class="achievement-info">
               <h3 class="achievement-title">🚀 Three Body Problem x ASU: Space For Humans</h3>
               <p class="achievement-description">
                 Selected for ASU's "Space for Humans" program inspired by The Three Body Problem, contributing to space design research that blends science fiction and real-world innovation.
               </p>
             </div>
+          </div>
 
-            <div class="achievement-item" data-achievement="career">
+          <!-- Career Development Panel Achievement -->
+          <div class="achievement-card">
+            <div class="achievement-gallery">
+              <div class="gallery-container">
+                <div class="gallery-images">
+                  <img src="achievement-imgs/Career-advancement-seminar/1736625775616.jpg" alt="Career Panel 1" class="gallery-image active" loading="lazy">
+                  <img src="achievement-imgs/Career-advancement-seminar/1736625775794.jpg" alt="Career Panel 2" class="gallery-image" loading="lazy">
+                  <img src="achievement-imgs/Career-advancement-seminar/1736625777212.jpg" alt="Career Panel 3" class="gallery-image" loading="lazy">
+                  <img src="achievement-imgs/Career-advancement-seminar/1736625777370.jpg" alt="Career Panel 4" class="gallery-image" loading="lazy">
+                  <img src="achievement-imgs/Career-advancement-seminar/1736625777678.jpg" alt="Career Panel 5" class="gallery-image" loading="lazy">
+                </div>
+                <button class="gallery-nav prev" onclick="changeImage(this, -1)">
+                  <ion-icon name="chevron-back-outline"></ion-icon>
+                </button>
+                <button class="gallery-nav next" onclick="changeImage(this, 1)">
+                  <ion-icon name="chevron-forward-outline"></ion-icon>
+                </button>
+              </div>
+            </div>
+            <div class="achievement-info">
               <h3 class="achievement-title">🎓 ASU Alumni Career Development Panel</h3>
               <p class="achievement-description">
                 Invited as an ASU alumni speaker to guide students on career growth, networking, and industry transition strategies in engineering and tech.
               </p>
             </div>
+          </div>
 
-            <div class="achievement-item" data-achievement="semiconductor">
+          <!-- Semiconductor Revolution Achievement -->
+          <div class="achievement-card">
+            <div class="achievement-gallery">
+              <div class="gallery-container">
+                <div class="gallery-images">
+                  <img src="achievement-imgs/worldwide-NewTech-revolution-seminar/1729114493226.jpg" alt="Semiconductor 1" class="gallery-image active" loading="lazy">
+                  <img src="achievement-imgs/worldwide-NewTech-revolution-seminar/1730621996119.jpg" alt="Semiconductor 2" class="gallery-image" loading="lazy">
+                  <img src="achievement-imgs/worldwide-NewTech-revolution-seminar/1730621997028.jpg" alt="Semiconductor 3" class="gallery-image" loading="lazy">
+                  <img src="achievement-imgs/worldwide-NewTech-revolution-seminar/1730621998499.jpg" alt="Semiconductor 4" class="gallery-image" loading="lazy">
+                  <img src="achievement-imgs/worldwide-NewTech-revolution-seminar/1730621998904.jpg" alt="Semiconductor 5" class="gallery-image" loading="lazy">
+                  <img src="achievement-imgs/worldwide-NewTech-revolution-seminar/1730621999209.jpg" alt="Semiconductor 6" class="gallery-image" loading="lazy">
+                  <img src="achievement-imgs/worldwide-NewTech-revolution-seminar/1730621999217.jpg" alt="Semiconductor 7" class="gallery-image" loading="lazy">
+                  <img src="achievement-imgs/worldwide-NewTech-revolution-seminar/1730621999364.jpg" alt="Semiconductor 8" class="gallery-image" loading="lazy">
+                  <img src="achievement-imgs/worldwide-NewTech-revolution-seminar/1730962734465.jpg" alt="Semiconductor 9" class="gallery-image" loading="lazy">
+                </div>
+                <button class="gallery-nav prev" onclick="changeImage(this, -1)">
+                  <ion-icon name="chevron-back-outline"></ion-icon>
+                </button>
+                <button class="gallery-nav next" onclick="changeImage(this, 1)">
+                  <ion-icon name="chevron-forward-outline"></ion-icon>
+                </button>
+              </div>
+            </div>
+            <div class="achievement-info">
               <h3 class="achievement-title">🇮🇳 Semiconductor Revolution in India (Speaker & Educator)</h3>
               <p class="achievement-description">
                 Delivered national talks and led a pioneering guest lecture series to inspire India's next-generation chipmakers, spotlighting the country's role in the global semiconductor race.
               </p>
             </div>
+          </div>
 
-            <div class="achievement-item" data-achievement="mrs">
+          <!-- MRS Spokesperson Achievement -->
+          <div class="achievement-card">
+            <div class="achievement-gallery">
+              <div class="gallery-container">
+                <div class="gallery-images">
+                  <img src="achievement-imgs/MRS-spokesperson/1714423010888.jpg" alt="MRS Conference 1" class="gallery-image active" loading="lazy">
+                  <img src="achievement-imgs/MRS-spokesperson/1714423011406.jpg" alt="MRS Conference 2" class="gallery-image" loading="lazy">
+                  <img src="achievement-imgs/MRS-spokesperson/1714423012056.jpg" alt="MRS Conference 3" class="gallery-image" loading="lazy">
+                  <img src="achievement-imgs/MRS-spokesperson/1714423012287.jpg" alt="MRS Conference 4" class="gallery-image" loading="lazy">
+                </div>
+                <button class="gallery-nav prev" onclick="changeImage(this, -1)">
+                  <ion-icon name="chevron-back-outline"></ion-icon>
+                </button>
+                <button class="gallery-nav next" onclick="changeImage(this, 1)">
+                  <ion-icon name="chevron-forward-outline"></ion-icon>
+                </button>
+              </div>
+            </div>
+            <div class="achievement-info">
               <h3 class="achievement-title">🧪 MRS Spokesperson – Thin Films & Semiconductors (Seattle)</h3>
               <p class="achievement-description">
                 Represented ASU and spoke at the MRS Conference in Seattle, sharing research and industry insights on next-gen semiconductors and thin-film technology.
               </p>
             </div>
+          </div>
 
-            <div class="achievement-item" data-achievement="innovation">
+          <!-- Innovation Featured Achievement -->
+          <div class="achievement-card">
+            <div class="achievement-gallery">
+              <div class="gallery-container">
+                <div class="gallery-images">
+                  <img src="achievement-imgs/innovation-asu-feature/1668374354865.jpg" alt="ASU Innovation 1" class="gallery-image active" loading="lazy">
+                  <img src="achievement-imgs/innovation-asu-feature/1668374358730.jpg" alt="ASU Innovation 2" class="gallery-image" loading="lazy">
+                  <img src="achievement-imgs/innovation-asu-feature/1668374360107.jpg" alt="ASU Innovation 3" class="gallery-image" loading="lazy">
+                  <img src="achievement-imgs/innovation-asu-feature/1668374361111.jpg" alt="ASU Innovation 4" class="gallery-image" loading="lazy">
+                </div>
+                <button class="gallery-nav prev" onclick="changeImage(this, -1)">
+                  <ion-icon name="chevron-back-outline"></ion-icon>
+                </button>
+                <button class="gallery-nav next" onclick="changeImage(this, 1)">
+                  <ion-icon name="chevron-forward-outline"></ion-icon>
+                </button>
+              </div>
+            </div>
+            <div class="achievement-info">
               <h3 class="achievement-title">🌟 Innovation Featured by ASU</h3>
               <p class="achievement-description">
                 Recognized by Arizona State University for creating content that brings visibility to campus innovation, tech culture, and student creativity.
               </p>
             </div>
+          </div>
 
-            <div class="achievement-item" data-achievement="nasa">
+          <!-- NASA L'SPACE Achievement -->
+          <div class="achievement-card">
+            <div class="achievement-gallery">
+              <div class="gallery-container">
+                <div class="gallery-images">
+                  <img src="achievement-imgs/NASA-intern/1663826593795.jpg" alt="NASA L'SPACE 1" class="gallery-image active" loading="lazy">
+                  <img src="achievement-imgs/NASA-intern/1663826596844.jpg" alt="NASA L'SPACE 2" class="gallery-image" loading="lazy">
+                  <img src="achievement-imgs/NASA-intern/1663826598770.jpg" alt="NASA L'SPACE 3" class="gallery-image" loading="lazy">
+                </div>
+                <button class="gallery-nav prev" onclick="changeImage(this, -1)">
+                  <ion-icon name="chevron-back-outline"></ion-icon>
+                </button>
+                <button class="gallery-nav next" onclick="changeImage(this, 1)">
+                  <ion-icon name="chevron-forward-outline"></ion-icon>
+                </button>
+              </div>
+            </div>
+            <div class="achievement-info">
               <h3 class="achievement-title">🛰️ NASA L'SPACE Program Graduate</h3>
               <p class="achievement-description">
                 Completed NASA's L'SPACE Academy, contributing to mission-based aerospace design and cross-functional space engineering projects.
               </p>
             </div>
+          </div>
 
-            <div class="achievement-item" data-achievement="esports">
+          <!-- Esports Creator Achievement -->
+          <div class="achievement-card">
+            <div class="achievement-gallery">
+              <div class="gallery-container">
+                <div class="gallery-images">
+                  <img src="achievement-imgs/last-youtube-sportskeeda-feature/sportskeeda.com.webloc" alt="Esports Creator" class="gallery-image active" loading="lazy">
+                </div>
+                <button class="gallery-nav prev" onclick="changeImage(this, -1)">
+                  <ion-icon name="chevron-back-outline"></ion-icon>
+                </button>
+                <button class="gallery-nav next" onclick="changeImage(this, 1)">
+                  <ion-icon name="chevron-forward-outline"></ion-icon>
+                </button>
+              </div>
+            </div>
+            <div class="achievement-info">
               <h3 class="achievement-title">🎮 Featured Esports Creator (SportsKeeda)</h3>
               <p class="achievement-description">
                 Recognized by Sportskeeda for creative Minecraft temple builds, combining game mechanics with architectural precision to reach a global audience.
               </p>
             </div>
+          </div>
 
-            <div class="achievement-item" data-achievement="sunaward">
+          <!-- ASU Sun Award Achievement -->
+          <div class="achievement-card">
+            <div class="achievement-gallery">
+              <div class="gallery-container">
+                <div class="gallery-images">
+                  <img src="achievement-imgs/ASU-sun-award/Screenshot 2025-07-30 at 12.49.48 PM.png" alt="ASU Sun Award" class="gallery-image active" loading="lazy">
+                </div>
+                <button class="gallery-nav prev" onclick="changeImage(this, -1)">
+                  <ion-icon name="chevron-back-outline"></ion-icon>
+                </button>
+                <button class="gallery-nav next" onclick="changeImage(this, 1)">
+                  <ion-icon name="chevron-forward-outline"></ion-icon>
+                </button>
+              </div>
+            </div>
+            <div class="achievement-info">
               <h3 class="achievement-title">🏆 ASU Sun Award Holder</h3>
               <p class="achievement-description">
                 Honored with the prestigious ASU Sun Award for outstanding contributions to the university community and excellence in academic and professional achievements.
@@ -3551,38 +3722,48 @@
       }
     });
 
-    // Achievement Image Shuffling Functionality
+    // Achievement Gallery Functionality
+    function changeImage(button, direction) {
+      const galleryContainer = button.closest('.gallery-container');
+      const images = galleryContainer.querySelectorAll('.gallery-image');
+      const activeImage = galleryContainer.querySelector('.gallery-image.active');
+      let currentIndex = Array.from(images).indexOf(activeImage);
+      
+      // Calculate new index
+      let newIndex = currentIndex + direction;
+      
+      // Handle wrap-around
+      if (newIndex < 0) {
+        newIndex = images.length - 1;
+      } else if (newIndex >= images.length) {
+        newIndex = 0;
+      }
+      
+      // Update active image
+      activeImage.classList.remove('active');
+      images[newIndex].classList.add('active');
+    }
+
+    // Auto-shuffle functionality for each gallery
     document.addEventListener('DOMContentLoaded', function() {
-      const achievementImages = document.querySelectorAll('.achievement-image');
-      const achievementItems = document.querySelectorAll('.achievement-item');
-      let currentIndex = 0;
-      const totalAchievements = achievementImages.length;
-
-      function showAchievement(index) {
-        // Hide all images and content
-        achievementImages.forEach(img => img.classList.remove('active'));
-        achievementItems.forEach(item => item.classList.remove('active'));
-
-        // Show current image and content
-        achievementImages[index].classList.add('active');
-        achievementItems[index].classList.add('active');
-      }
-
-      function nextAchievement() {
-        currentIndex = (currentIndex + 1) % totalAchievements;
-        showAchievement(currentIndex);
-      }
-
-      // Auto-shuffle every 4 seconds
-      setInterval(nextAchievement, 4000);
-
-      // Optional: Add click functionality to manually cycle through achievements
-      const achievementContainer = document.querySelector('.achievement-images-container');
-      if (achievementContainer) {
-        achievementContainer.addEventListener('click', function() {
-          nextAchievement();
-        });
-      }
+      const galleries = document.querySelectorAll('.gallery-container');
+      
+      galleries.forEach(gallery => {
+        const images = gallery.querySelectorAll('.gallery-image');
+        
+        // Only auto-shuffle if there are multiple images
+        if (images.length > 1) {
+          let currentIndex = 0;
+          
+          setInterval(() => {
+            const activeImage = gallery.querySelector('.gallery-image.active');
+            activeImage.classList.remove('active');
+            
+            currentIndex = (currentIndex + 1) % images.length;
+            images[currentIndex].classList.add('active');
+          }, 5000); // Change image every 5 seconds
+        }
+      });
     });
   </script>
   <!--

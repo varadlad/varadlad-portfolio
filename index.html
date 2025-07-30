@@ -738,7 +738,7 @@
         }
       }
 
-      @media (max-width: 768px) {
+            @media (max-width: 768px) {
         .product-modal-content {
           width: 92%;
           max-width: 700px;
@@ -748,7 +748,135 @@
         }
       }
 
-    .pie-chart-container {
+      /* Achievement Section Styling */
+      .achievements-content {
+        display: flex;
+        flex-direction: column;
+        gap: 3rem;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .achievement-images-container {
+        position: relative;
+        height: 400px;
+        overflow: hidden;
+        border-radius: 16px;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+      }
+
+      .achievement-images-wrapper {
+        position: relative;
+        width: 100%;
+        height: 100%;
+      }
+
+      .achievement-image {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        transition: opacity 1s ease-in-out;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .achievement-image.active {
+        opacity: 1;
+      }
+
+      .achievement-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 16px;
+      }
+
+      .achievement-content {
+        position: relative;
+        padding: 2rem;
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 16px;
+        border: 1px solid rgba(255, 214, 0, 0.2);
+      }
+
+      .achievement-item {
+        display: none;
+        animation: fadeInUp 0.8s ease-out;
+      }
+
+      .achievement-item.active {
+        display: block;
+      }
+
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .achievement-title {
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: #ffd600;
+        margin-bottom: 1rem;
+        line-height: 1.3;
+      }
+
+      .achievement-description {
+        font-size: 1.1rem;
+        line-height: 1.6;
+        color: #fff;
+        margin: 0;
+      }
+
+      /* Responsive Design for Achievements */
+      @media (max-width: 768px) {
+        .achievements-content {
+          gap: 2rem;
+          padding: 0 1rem;
+        }
+
+        .achievement-images-container {
+          height: 300px;
+        }
+
+        .achievement-content {
+          padding: 1.5rem;
+        }
+
+        .achievement-title {
+          font-size: 1.3rem;
+        }
+
+        .achievement-description {
+          font-size: 1rem;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .achievement-images-container {
+          height: 250px;
+        }
+
+        .achievement-content {
+          padding: 1rem;
+        }
+
+        .achievement-title {
+          font-size: 1.2rem;
+        }
+      }
+
+      .pie-chart-container {
       text-align: center;
       min-width: 200px;
       flex: 1;
@@ -905,7 +1033,7 @@
           <li><button class="navbar-link" data-nav-link>Projects</button></li>
           <li><button class="navbar-link" data-nav-link>Products</button></li>
           <li><button class="navbar-link" data-nav-link>Resume</button></li>
-          <li><button class="navbar-link" data-nav-link style="display:none;">Achievements</button></li>
+                          <li><button class="navbar-link" data-nav-link>Achievements</button></li>
           <li><button class="navbar-link" data-nav-link style="display:none;">Extras</button></li>
         </ul>
 
@@ -3051,185 +3179,112 @@
         - #BLOG
       -->
 
-      <article class="achievements" data-page="achievements" style="display:none;">
+      <article class="achievements" data-page="achievements">
 
         <header>
           <h2 class="h2 article-title">Achievements</h2>
         </header>
 
-        <section class="blog-posts">
+        <section class="achievements-content">
+          
+          <!-- Image Shuffling Section -->
+          <div class="achievement-images-container">
+            <div class="achievement-images-wrapper">
+              <div class="achievement-image active" data-achievement="fsae">
+                <img src="achievement-imgs/ASU-FASE/1743372661272.jpg" alt="FSAE Team" loading="lazy">
+              </div>
+              <div class="achievement-image" data-achievement="space">
+                <img src="achievement-imgs/Space-for-humans-writer/1738809395532.jpg" alt="Space For Humans" loading="lazy">
+              </div>
+              <div class="achievement-image" data-achievement="career">
+                <img src="achievement-imgs/Career-advancement-seminar/1736625775616.jpg" alt="Career Development Panel" loading="lazy">
+              </div>
+              <div class="achievement-image" data-achievement="semiconductor">
+                <img src="achievement-imgs/worldwide-NewTech-revolution-seminar/1729114493226.jpg" alt="Semiconductor Revolution" loading="lazy">
+              </div>
+              <div class="achievement-image" data-achievement="mrs">
+                <img src="achievement-imgs/MRS-spokesperson/1714423010888.jpg" alt="MRS Conference" loading="lazy">
+              </div>
+              <div class="achievement-image" data-achievement="innovation">
+                <img src="achievement-imgs/innovation-asu-feature/1668374354865.jpg" alt="ASU Innovation Feature" loading="lazy">
+              </div>
+              <div class="achievement-image" data-achievement="nasa">
+                <img src="achievement-imgs/NASA-intern/1663826593795.jpg" alt="NASA L'SPACE Program" loading="lazy">
+              </div>
+              <div class="achievement-image" data-achievement="esports">
+                <img src="achievement-imgs/last-youtube-sportskeeda-feature/sportskeeda.com.webloc" alt="Esports Creator" loading="lazy">
+              </div>
+              <div class="achievement-image" data-achievement="sunaward">
+                <img src="achievement-imgs/ASU-sun-award/Screenshot 2025-07-30 at 12.49.48 PM.png" alt="ASU Sun Award" loading="lazy">
+              </div>
+            </div>
+          </div>
 
-          <ul class="blog-posts-list">
+          <!-- Achievement Content Section -->
+          <div class="achievement-content">
+            <div class="achievement-item active" data-achievement="fsae">
+              <h3 class="achievement-title">🏎️ FSAE Team: Formula Car R&D</h3>
+              <p class="achievement-description">
+                Led chassis optimization and CFD simulation for Arizona State University's Formula SAE racing team, bringing track-tested engineering to student-built cars.
+              </p>
+            </div>
 
-            <li class="blog-post-item">
-              <a href="#">
+            <div class="achievement-item" data-achievement="space">
+              <h3 class="achievement-title">🚀 Three Body Problem x ASU: Space For Humans</h3>
+              <p class="achievement-description">
+                Selected for ASU's "Space for Humans" program inspired by The Three Body Problem, contributing to space design research that blends science fiction and real-world innovation.
+              </p>
+            </div>
 
-                <figure class="blog-banner-box">
-                  <img src="./assets/images/blog-1.jpg" alt="Design conferences in 2022" loading="lazy">
-                </figure>
+            <div class="achievement-item" data-achievement="career">
+              <h3 class="achievement-title">🎓 ASU Alumni Career Development Panel</h3>
+              <p class="achievement-description">
+                Invited as an ASU alumni speaker to guide students on career growth, networking, and industry transition strategies in engineering and tech.
+              </p>
+            </div>
 
-                <div class="blog-content">
+            <div class="achievement-item" data-achievement="semiconductor">
+              <h3 class="achievement-title">🇮🇳 Semiconductor Revolution in India (Speaker & Educator)</h3>
+              <p class="achievement-description">
+                Delivered national talks and led a pioneering guest lecture series to inspire India's next-generation chipmakers, spotlighting the country's role in the global semiconductor race.
+              </p>
+            </div>
 
-                  <div class="blog-meta">
-                    <p class="blog-category">Design</p>
+            <div class="achievement-item" data-achievement="mrs">
+              <h3 class="achievement-title">🧪 MRS Spokesperson – Thin Films & Semiconductors (Seattle)</h3>
+              <p class="achievement-description">
+                Represented ASU and spoke at the MRS Conference in Seattle, sharing research and industry insights on next-gen semiconductors and thin-film technology.
+              </p>
+            </div>
 
-                    <span class="dot"></span>
+            <div class="achievement-item" data-achievement="innovation">
+              <h3 class="achievement-title">🌟 Innovation Featured by ASU</h3>
+              <p class="achievement-description">
+                Recognized by Arizona State University for creating content that brings visibility to campus innovation, tech culture, and student creativity.
+              </p>
+            </div>
 
-                    <time datetime="2022-02-23">Fab 23, 2022</time>
-                  </div>
+            <div class="achievement-item" data-achievement="nasa">
+              <h3 class="achievement-title">🛰️ NASA L'SPACE Program Graduate</h3>
+              <p class="achievement-description">
+                Completed NASA's L'SPACE Academy, contributing to mission-based aerospace design and cross-functional space engineering projects.
+              </p>
+            </div>
 
-                  <h3 class="h3 blog-item-title">Design conferences in 2022</h3>
+            <div class="achievement-item" data-achievement="esports">
+              <h3 class="achievement-title">🎮 Featured Esports Creator (SportsKeeda)</h3>
+              <p class="achievement-description">
+                Recognized by Sportskeeda for creative Minecraft temple builds, combining game mechanics with architectural precision to reach a global audience.
+              </p>
+            </div>
 
-                  <p class="blog-text">
-                    Veritatis et quasi architecto beatae vitae dicta sunt, explicabo.
-                  </p>
-
-                </div>
-
-              </a>
-            </li>
-
-            <li class="blog-post-item">
-              <a href="#">
-
-                <figure class="blog-banner-box">
-                  <img src="./assets/images/blog-2.jpg" alt="Best fonts every designer" loading="lazy">
-                </figure>
-
-                <div class="blog-content">
-
-                  <div class="blog-meta">
-                    <p class="blog-category">Design</p>
-
-                    <span class="dot"></span>
-
-                    <time datetime="2022-02-23">Fab 23, 2022</time>
-                  </div>
-
-                  <h3 class="h3 blog-item-title">Best fonts every designer</h3>
-
-                  <p class="blog-text">
-                    Sed ut perspiciatis, nam libero tempore, cum soluta nobis est eligendi.
-                  </p>
-
-                </div>
-
-              </a>
-            </li>
-
-            <li class="blog-post-item">
-              <a href="#">
-
-                <figure class="blog-banner-box">
-                  <img src="./assets/images/blog-3.jpg" alt="Design digest #80" loading="lazy">
-                </figure>
-
-                <div class="blog-content">
-
-                  <div class="blog-meta">
-                    <p class="blog-category">Design</p>
-
-                    <span class="dot"></span>
-
-                    <time datetime="2022-02-23">Fab 23, 2022</time>
-                  </div>
-
-                  <h3 class="h3 blog-item-title">Design digest #80</h3>
-
-                  <p class="blog-text">
-                    Excepteur sint occaecat cupidatat no proident, quis nostrum exercitationem ullam corporis suscipit.
-                  </p>
-
-                </div>
-
-              </a>
-            </li>
-
-            <li class="blog-post-item">
-              <a href="#">
-
-                <figure class="blog-banner-box">
-                  <img src="./assets/images/blog-4.jpg" alt="UI interactions of the week" loading="lazy">
-                </figure>
-
-                <div class="blog-content">
-
-                  <div class="blog-meta">
-                    <p class="blog-category">Design</p>
-
-                    <span class="dot"></span>
-
-                    <time datetime="2022-02-23">Fab 23, 2022</time>
-                  </div>
-
-                  <h3 class="h3 blog-item-title">UI interactions of the week</h3>
-
-                  <p class="blog-text">
-                    Enim ad minim veniam, consectetur adipiscing elit, quis nostrud exercitation ullamco laboris nisi.
-                  </p>
-
-                </div>
-
-              </a>
-            </li>
-
-            <li class="blog-post-item">
-              <a href="#">
-
-                <figure class="blog-banner-box">
-                  <img src="./assets/images/blog-5.jpg" alt="The forgotten art of spacing" loading="lazy">
-                </figure>
-
-                <div class="blog-content">
-
-                  <div class="blog-meta">
-                    <p class="blog-category">Design</p>
-
-                    <span class="dot"></span>
-
-                    <time datetime="2022-02-23">Fab 23, 2022</time>
-                  </div>
-
-                  <h3 class="h3 blog-item-title">The forgotten art of spacing</h3>
-
-                  <p class="blog-text">
-                    Maxime placeat, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  </p>
-
-                </div>
-
-              </a>
-            </li>
-
-            <li class="blog-post-item">
-              <a href="#">
-
-                <figure class="blog-banner-box">
-                  <img src="./assets/images/blog-6.jpg" alt="Design digest #79" loading="lazy">
-                </figure>
-
-                <div class="blog-content">
-
-                  <div class="blog-meta">
-                    <p class="blog-category">Design</p>
-
-                    <span class="dot"></span>
-
-                    <time datetime="2022-02-23">Fab 23, 2022</time>
-                                                    </div>
-
-                  <h3 class="h3 blog-item-title">Design digest #79</h3>
-
-                  <p class="blog-text">
-                    Optio cumque nihil impedit uo minus quod maxime placeat, velit esse cillum.
-                  </p>
-
-                </div>
-
-              </a>
-            </li>
-
-          </ul>
+            <div class="achievement-item" data-achievement="sunaward">
+              <h3 class="achievement-title">🏆 ASU Sun Award Holder</h3>
+              <p class="achievement-description">
+                Honored with the prestigious ASU Sun Award for outstanding contributions to the university community and excellence in academic and professional achievements.
+              </p>
+            </div>
+          </div>
 
         </section>
 
@@ -3493,6 +3548,40 @@
     document.addEventListener('keydown', function(e) {
       if (e.key === 'Escape') {
         closeProductModal();
+      }
+    });
+
+    // Achievement Image Shuffling Functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      const achievementImages = document.querySelectorAll('.achievement-image');
+      const achievementItems = document.querySelectorAll('.achievement-item');
+      let currentIndex = 0;
+      const totalAchievements = achievementImages.length;
+
+      function showAchievement(index) {
+        // Hide all images and content
+        achievementImages.forEach(img => img.classList.remove('active'));
+        achievementItems.forEach(item => item.classList.remove('active'));
+
+        // Show current image and content
+        achievementImages[index].classList.add('active');
+        achievementItems[index].classList.add('active');
+      }
+
+      function nextAchievement() {
+        currentIndex = (currentIndex + 1) % totalAchievements;
+        showAchievement(currentIndex);
+      }
+
+      // Auto-shuffle every 4 seconds
+      setInterval(nextAchievement, 4000);
+
+      // Optional: Add click functionality to manually cycle through achievements
+      const achievementContainer = document.querySelector('.achievement-images-container');
+      if (achievementContainer) {
+        achievementContainer.addEventListener('click', function() {
+          nextAchievement();
+        });
       }
     });
   </script>

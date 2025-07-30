@@ -838,6 +838,61 @@
         z-index: 1;
       }
 
+      /* Special grid layouts for different image counts */
+      .image-grid.grid-3 {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+      }
+
+      .image-grid.grid-3 .grid-item.main-image {
+        grid-row: 1 / 3;
+        grid-column: 1 / 2;
+      }
+
+      .image-grid.grid-3 .grid-item:nth-child(2) {
+        grid-row: 1 / 2;
+        grid-column: 2 / 3;
+      }
+
+      .image-grid.grid-3 .grid-item:nth-child(3) {
+        grid-row: 2 / 3;
+        grid-column: 2 / 3;
+      }
+
+      .image-grid.grid-4 {
+        grid-template-columns: 2fr 1fr;
+        grid-template-rows: 1fr 1fr;
+      }
+
+      .image-grid.grid-4 .grid-item.main-image {
+        grid-row: 1 / 3;
+        grid-column: 1 / 2;
+      }
+
+      .image-grid.grid-4 .grid-item:nth-child(2) {
+        grid-row: 1 / 2;
+        grid-column: 2 / 3;
+      }
+
+      .image-grid.grid-4 .grid-item:nth-child(3) {
+        grid-row: 2 / 3;
+        grid-column: 2 / 3;
+      }
+
+      .image-grid.grid-4 .grid-item:nth-child(4) {
+        display: none;
+      }
+
+      .image-grid.grid-1 {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+      }
+
+      .image-grid.grid-1 .grid-item.main-image {
+        grid-row: 1 / 2;
+        grid-column: 1 / 2;
+      }
+
       .achievement-info {
         padding: 2rem;
       }
@@ -3223,7 +3278,7 @@
           <!-- FSAE Team Achievement -->
           <div class="achievement-card">
             <div class="achievement-gallery">
-              <div class="image-grid">
+              <div class="image-grid grid-5">
                 <div class="grid-item main-image">
                   <img src="achievement-imgs/ASU-FASE/1743372661272.jpg" alt="FSAE Team 1" loading="lazy">
                 </div>
@@ -3253,7 +3308,7 @@
           <!-- Space For Humans Achievement -->
           <div class="achievement-card">
             <div class="achievement-gallery">
-              <div class="image-grid">
+              <div class="image-grid grid-3">
                 <div class="grid-item main-image">
                   <img src="achievement-imgs/Space-for-humans-writer/1738809395532.jpg" alt="Space For Humans 1" loading="lazy">
                 </div>
@@ -3276,7 +3331,7 @@
           <!-- Career Development Panel Achievement -->
           <div class="achievement-card">
             <div class="achievement-gallery">
-              <div class="image-grid">
+              <div class="image-grid grid-5">
                 <div class="grid-item main-image">
                   <img src="achievement-imgs/Career-advancement-seminar/1736625775616.jpg" alt="Career Panel 1" loading="lazy">
                 </div>
@@ -3306,7 +3361,7 @@
           <!-- Semiconductor Revolution Achievement -->
           <div class="achievement-card">
             <div class="achievement-gallery">
-              <div class="image-grid">
+              <div class="image-grid grid-5">
                 <div class="grid-item main-image">
                   <img src="achievement-imgs/worldwide-NewTech-revolution-seminar/1729114493226.jpg" alt="Semiconductor 1" loading="lazy">
                 </div>
@@ -3336,7 +3391,7 @@
           <!-- MRS Spokesperson Achievement -->
           <div class="achievement-card">
             <div class="achievement-gallery">
-              <div class="image-grid">
+              <div class="image-grid grid-4">
                 <div class="grid-item main-image">
                   <img src="achievement-imgs/MRS-spokesperson/1714423010888.jpg" alt="MRS Conference 1" loading="lazy">
                 </div>
@@ -3362,7 +3417,7 @@
           <!-- Innovation Featured Achievement -->
           <div class="achievement-card">
             <div class="achievement-gallery">
-              <div class="image-grid">
+              <div class="image-grid grid-4">
                 <div class="grid-item main-image">
                   <img src="achievement-imgs/innovation-asu-feature/1668374354865.jpg" alt="ASU Innovation 1" loading="lazy">
                 </div>
@@ -3388,7 +3443,7 @@
           <!-- NASA L'SPACE Achievement -->
           <div class="achievement-card">
             <div class="achievement-gallery">
-              <div class="image-grid">
+              <div class="image-grid grid-3">
                 <div class="grid-item main-image">
                   <img src="achievement-imgs/NASA-intern/1663826593795.jpg" alt="NASA L'SPACE 1" loading="lazy">
                 </div>
@@ -3411,7 +3466,7 @@
           <!-- Esports Creator Achievement -->
           <div class="achievement-card">
             <div class="achievement-gallery">
-              <div class="image-grid">
+              <div class="image-grid grid-1">
                 <div class="grid-item main-image">
                   <img src="achievement-imgs/last-youtube-sportskeeda-feature/sportskeeda.com.webloc" alt="Esports Creator" loading="lazy">
                 </div>
@@ -3428,7 +3483,7 @@
           <!-- ASU Sun Award Achievement -->
           <div class="achievement-card">
             <div class="achievement-gallery">
-              <div class="image-grid">
+              <div class="image-grid grid-1">
                 <div class="grid-item main-image">
                   <img src="achievement-imgs/ASU-sun-award/Screenshot 2025-07-30 at 12.49.48 PM.png" alt="ASU Sun Award" loading="lazy">
                 </div>

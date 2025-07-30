@@ -528,11 +528,11 @@
       color: #fff;
       border-radius: 12px;
       box-shadow: 0 8px 32px rgba(0,0,0,0.45);
-      width: 95%;
+      width: 90%;
       max-width: 800px;
-      max-height: 90vh;
-      overflow-y: auto;
-      padding: 2em 1.5em 1.5em 1.5em;
+      max-height: 85vh;
+      overflow: hidden;
+      padding: 0;
     }
 
     @keyframes fadeInModal {
@@ -543,6 +543,7 @@
     .product-modal-header {
       text-align: center;
       margin-bottom: 1.2em;
+      padding: 2em 1.5em 0 1.5em;
     }
 
     .product-modal-header h3 {
@@ -555,8 +556,8 @@
 
     .product-modal-close {
       position: absolute;
-      top: -12px; 
-      right: -12px;
+      top: 12px; 
+      right: 12px;
       background: rgba(0, 0, 0, 0.5);
       backdrop-filter: blur(4px);
       border-radius: 50%;
@@ -582,10 +583,11 @@
 
     .product-modal-body {
       min-height: 120px;
-      max-height: 70vh;
+      max-height: 60vh;
       overflow-y: auto;
       scrollbar-width: thin;
       scrollbar-color: #ffd600 #222;
+      padding: 0 1.5em 1.5em 1.5em;
     }
 
     .product-modal-body::-webkit-scrollbar {
@@ -634,7 +636,7 @@
 
     .modal-features-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
       gap: 1rem;
       margin-top: 1rem;
     }
@@ -717,15 +719,28 @@
 
       @media (max-width: 600px) {
         .product-modal-content {
-          padding: 1em 0.5em 1em 0.5em;
-          max-width: 98vw;
+          width: 95%;
+          max-width: 95vw;
+        }
+        .product-modal-header {
+          padding: 1.5em 1em 0 1em;
+        }
+        .product-modal-body {
+          padding: 0 1em 1em 1em;
+        }
+        .modal-features-grid {
+          grid-template-columns: 1fr;
+          gap: 0.8rem;
         }
       }
 
       @media (max-width: 768px) {
         .product-modal-content {
-          width: 95%;
-          max-width: 600px;
+          width: 92%;
+          max-width: 700px;
+        }
+        .modal-features-grid {
+          grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
         }
       }
 

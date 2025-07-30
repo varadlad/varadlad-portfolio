@@ -402,6 +402,7 @@
       display: flex;
       gap: 1rem;
       margin-top: auto;
+      justify-content: space-between;
     }
 
     .btn-primary, .btn-secondary {
@@ -418,6 +419,8 @@
       cursor: pointer;
       flex: 1;
       justify-content: center;
+      min-width: 0;
+      white-space: nowrap;
     }
 
     .btn-primary {
@@ -445,6 +448,7 @@
     .btn-secondary.disabled {
       opacity: 0.5;
       cursor: not-allowed;
+      flex: 1;
     }
 
     /* Responsive Design for Products */

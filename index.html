@@ -391,6 +391,159 @@
       }
     }
 
+    /* Product Modal Styling */
+    .product-modal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 9999;
+      display: none;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .product-modal.active {
+      display: flex;
+    }
+
+    .product-modal-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      backdrop-filter: blur(8px);
+    }
+
+    .product-modal-content {
+      position: relative;
+      background: linear-gradient(145deg, #2a2a2a, #1a1a1a);
+      border: 1px solid #333;
+      border-radius: 16px;
+      max-width: 800px;
+      width: 90%;
+      max-height: 80vh;
+      overflow: hidden;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+      animation: modalSlideIn 0.3s ease-out;
+    }
+
+    @keyframes modalSlideIn {
+      from {
+        opacity: 0;
+        transform: translateY(-50px) scale(0.9);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    .product-modal-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.5rem 2rem;
+      border-bottom: 1px solid #333;
+      background: linear-gradient(135deg, #fbd109, #ff6b6b);
+    }
+
+    .product-modal-header h3 {
+      color: #fff;
+      margin: 0;
+      font-size: 1.5rem;
+      font-weight: 600;
+    }
+
+    .product-modal-close {
+      background: none;
+      border: none;
+      color: #fff;
+      font-size: 1.5rem;
+      cursor: pointer;
+      padding: 0.5rem;
+      border-radius: 8px;
+      transition: background-color 0.3s ease;
+    }
+
+    .product-modal-close:hover {
+      background: rgba(255, 255, 255, 0.2);
+    }
+
+    .product-modal-body {
+      padding: 2rem;
+      max-height: 60vh;
+      overflow-y: auto;
+    }
+
+    .modal-section {
+      margin-bottom: 2rem;
+    }
+
+    .modal-section h4 {
+      color: #fbd109;
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+      font-weight: 600;
+    }
+
+    .modal-section ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .modal-section li {
+      color: #e0e0e0;
+      margin-bottom: 0.8rem;
+      padding-left: 1.5rem;
+      position: relative;
+      line-height: 1.6;
+    }
+
+    .modal-section li::before {
+      content: '•';
+      color: #fbd109;
+      position: absolute;
+      left: 0;
+      font-weight: bold;
+    }
+
+    .modal-section p {
+      color: #e0e0e0;
+      line-height: 1.6;
+      margin-bottom: 1rem;
+    }
+
+    .coming-soon-message {
+      text-align: center;
+      padding: 2rem;
+      color: #e0e0e0;
+    }
+
+    .coming-soon-message h4 {
+      color: #fbd109;
+      margin-bottom: 1rem;
+    }
+
+    .coming-soon-message p {
+      margin-bottom: 1rem;
+    }
+
+    .coming-soon-badge {
+      display: inline-block;
+      background: linear-gradient(135deg, #ff6b6b, #ee5a52);
+      color: #fff;
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-top: 1rem;
+    }
+
     .pie-chart-container {
       text-align: center;
       min-width: 200px;
@@ -2231,10 +2384,10 @@
                     <ion-icon name="download-outline"></ion-icon>
                     Download
                   </a>
-                  <a href="https://varadlad.github.io/emailly-landing-page/" target="_blank" class="btn-secondary">
+                  <button class="btn-secondary" onclick="openProductModal('emailly')">
                     <ion-icon name="information-circle-outline"></ion-icon>
                     Learn More
-                  </a>
+                  </button>
                 </div>
               </div>
             </li>
@@ -2278,6 +2431,10 @@
                     <ion-icon name="time-outline"></ion-icon>
                     In Development
                   </button>
+                  <button class="btn-secondary" onclick="openProductModal('cadly')">
+                    <ion-icon name="information-circle-outline"></ion-icon>
+                    Learn More
+                  </button>
                 </div>
               </div>
             </li>
@@ -2319,6 +2476,10 @@
                   <button class="btn-secondary disabled" disabled>
                     <ion-icon name="time-outline"></ion-icon>
                     In Development
+                  </button>
+                  <button class="btn-secondary" onclick="openProductModal('simly')">
+                    <ion-icon name="information-circle-outline"></ion-icon>
+                    Learn More
                   </button>
                 </div>
               </div>
@@ -2362,12 +2523,32 @@
                     <ion-icon name="time-outline"></ion-icon>
                     In Development
                   </button>
+                  <button class="btn-secondary" onclick="openProductModal('engineermart')">
+                    <ion-icon name="information-circle-outline"></ion-icon>
+                    Learn More
+                  </button>
                 </div>
               </div>
             </li>
 
           </ul>
         </section>
+
+        <!-- Product Modal -->
+        <div id="product-modal" class="product-modal">
+          <div class="product-modal-overlay" onclick="closeProductModal()"></div>
+          <div class="product-modal-content">
+            <div class="product-modal-header">
+              <h3 id="modal-product-title">Product Details</h3>
+              <button class="product-modal-close" onclick="closeProductModal()">
+                <ion-icon name="close-outline"></ion-icon>
+              </button>
+            </div>
+            <div class="product-modal-body">
+              <div id="modal-content"></div>
+            </div>
+          </div>
+        </div>
 
       </article>
 
@@ -2965,6 +3146,106 @@
           setTimeout(reorderForCategory, 10);
         });
       });
+    });
+
+    // Product Modal Functions
+    function openProductModal(product) {
+      const modal = document.getElementById('product-modal');
+      const modalTitle = document.getElementById('modal-product-title');
+      const modalContent = document.getElementById('modal-content');
+      
+      let title, content;
+      
+      switch(product) {
+        case 'emailly':
+          title = 'Emailly - Email Outreach Automation';
+          content = `
+            <div class="modal-section">
+              <h4>What?</h4>
+              <ul>
+                <li>Manual job outreach is slow, repetitive, and expensive. Traditional cold outreach requires hours of manual email writing, tracking, and follow-up—often costing $200–$500/month for recruiter services or SaaS tools.</li>
+                <li>Direct, personalized outreach is crucial for standing out, but doing it at scale is nearly impossible by hand.</li>
+                <li>Emailly transforms any Excel sheet with contact data into personalized Gmail drafts automatically.</li>
+                <li>Works with Apollo CSV, LinkedIn exports, or any spreadsheet containing Name, Company, and Email.</li>
+              </ul>
+            </div>
+            <div class="modal-section">
+              <h4>How?</h4>
+              <ul>
+                <li>CSV bulk export automation: Python parses contact lists, Gmail API + OAuth 2.0 for secure, multi-account draft creation</li>
+                <li>Async drafting for speed, CLI interface prompts for company, position, template, and Gmail account</li>
+                <li>Personalized drafts with resume/cover letter attachments, multi-account support and job-title input</li>
+                <li>File export for tracking outreach per company with intelligent duplicate prevention</li>
+                <li>Professional email templates for different industries and use cases</li>
+              </ul>
+            </div>
+            <div class="modal-section">
+              <h4>Results?</h4>
+              <ul>
+                <li>The tool drafts 100+ personalized emails in just over 1 minute, making high-volume outreach practical and efficient</li>
+                <li>Creates email drafts instead of sending directly - you review and send manually, avoiding spam filters and maintaining control</li>
+                <li>This approach saves significant time and effort compared to manual drafting, and can easily replace $400–$800/month SaaS or recruiter tools</li>
+                <li>All processing happens locally on your computer - your data never leaves your machine, ensuring complete privacy and security</li>
+                <li>Intelligent duplicate prevention ensures you never accidentally email the same person twice</li>
+              </ul>
+            </div>
+          `;
+          break;
+          
+        case 'cadly':
+          title = 'CADly - AI-Powered CAD Design Generation';
+          content = `
+            <div class="coming-soon-message">
+              <h4>🚧 Coming Soon</h4>
+              <p>CADly is currently in development. This revolutionary tool will transform natural language prompts into detailed CAD designs, enabling engineers and designers to generate complex assemblies, parts, and technical drawings with simple text descriptions.</p>
+              <p>Stay tuned for updates on this game-changing automation tool that will streamline the CAD design process.</p>
+              <div class="coming-soon-badge">In Development - 45% Complete</div>
+            </div>
+          `;
+          break;
+          
+        case 'simly':
+          title = 'SimLy - AI-Powered CFD/FEA Simulation';
+          content = `
+            <div class="coming-soon-message">
+              <h4>🚧 Coming Soon</h4>
+              <p>SimLy is currently in development. This advanced tool will perform CFD/FEA simulations on CAD assemblies from any software with simple prompts, providing comprehensive analysis results and insights automatically.</p>
+              <p>Engineers will be able to get simulation results without the steep learning curve of traditional simulation software.</p>
+              <div class="coming-soon-badge">In Development - 25% Complete</div>
+            </div>
+          `;
+          break;
+          
+        case 'engineermart':
+          title = 'EngineerMart - AI-Powered BOM Optimization';
+          content = `
+            <div class="coming-soon-message">
+              <h4>🚧 Coming Soon</h4>
+              <p>EngineerMart is currently in development. This innovative platform will allow users to upload CAD files and BOMs to get vendor comparisons based on price, quality, certifications, and budget.</p>
+              <p>The tool will help reduce procurement costs with intelligent sourcing recommendations, making it easier to find the best suppliers for engineering projects.</p>
+              <div class="coming-soon-badge">In Development - 15% Complete</div>
+            </div>
+          `;
+          break;
+      }
+      
+      modalTitle.textContent = title;
+      modalContent.innerHTML = content;
+      modal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeProductModal() {
+      const modal = document.getElementById('product-modal');
+      modal.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    // Close modal on escape key
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        closeProductModal();
+      }
     });
   </script>
   <!--

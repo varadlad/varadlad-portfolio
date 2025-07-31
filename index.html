@@ -16,7 +16,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Varad Lad Portfolio Website</title>
+  <title>Varad Lad Portfolio Website | Updated</title>
 
   <!--
     - favicon
@@ -29,174 +29,7 @@
   <link rel="stylesheet" href="./assets/css/style.css">
   <link href="lightbox.css" rel="stylesheet" />
 
-  <!--
-    - google font link
-  -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
-
   <style>
-    /* CSS Custom Properties for Theming System */
-    :root {
-      /* Primary Theme Colors */
-      --primary-color: hsl(45, 100%, 72%);
-      --primary-dark: hsl(45, 100%, 62%);
-      --primary-light: hsl(45, 100%, 82%);
-      
-      /* Secondary Theme Colors */
-      --secondary-color: hsl(0, 0%, 84%);
-      --secondary-dark: hsl(0, 0%, 74%);
-      --secondary-light: hsl(0, 0%, 94%);
-      
-      /* Text Colors */
-      --text-primary: hsl(0, 0%, 20%);
-      --text-secondary: hsl(0, 0%, 40%);
-      --text-light: hsl(0, 0%, 60%);
-      
-      /* Background Colors */
-      --bg-primary: hsl(0, 0%, 100%);
-      --bg-secondary: hsl(0, 0%, 96%);
-      --bg-tertiary: hsl(0, 0%, 92%);
-      
-      /* Border Colors */
-      --border-primary: hsl(0, 0%, 84%);
-      --border-secondary: hsl(0, 0%, 90%);
-      
-      /* Shadow Colors */
-      --shadow-light: rgba(0, 0, 0, 0.1);
-      --shadow-medium: rgba(0, 0, 0, 0.2);
-      --shadow-heavy: rgba(0, 0, 0, 0.3);
-      
-      /* Spacing System */
-      --spacing-xs: 0.5rem;
-      --spacing-sm: 1rem;
-      --spacing-md: 1.5rem;
-      --spacing-lg: 2rem;
-      --spacing-xl: 3rem;
-      
-      /* Border Radius */
-      --radius-sm: 4px;
-      --radius-md: 8px;
-      --radius-lg: 12px;
-      --radius-xl: 16px;
-      
-      /* Transitions */
-      --transition-fast: 0.2s ease;
-      --transition-normal: 0.3s ease;
-      --transition-slow: 0.5s ease;
-    }
-
-    /* Alternative Theme - Dark Mode */
-    [data-theme="dark"] {
-      --primary-color: hsl(45, 100%, 72%);
-      --primary-dark: hsl(45, 100%, 62%);
-      --primary-light: hsl(45, 100%, 82%);
-      
-      --secondary-color: hsl(0, 0%, 20%);
-      --secondary-dark: hsl(0, 0%, 15%);
-      --secondary-light: hsl(0, 0%, 25%);
-      
-      --text-primary: hsl(0, 0%, 90%);
-      --text-secondary: hsl(0, 0%, 70%);
-      --text-light: hsl(0, 0%, 50%);
-      
-      --bg-primary: hsl(0, 0%, 10%);
-      --bg-secondary: hsl(0, 0%, 15%);
-      --bg-tertiary: hsl(0, 0%, 20%);
-      
-      --border-primary: hsl(0, 0%, 30%);
-      --border-secondary: hsl(0, 0%, 25%);
-      
-      --shadow-light: rgba(0, 0, 0, 0.3);
-      --shadow-medium: rgba(0, 0, 0, 0.5);
-      --shadow-heavy: rgba(0, 0, 0, 0.7);
-    }
-
-    /* Alternative Theme - Blue Professional */
-    [data-theme="blue"] {
-      --primary-color: hsl(210, 100%, 60%);
-      --primary-dark: hsl(210, 100%, 50%);
-      --primary-light: hsl(210, 100%, 70%);
-      
-      --secondary-color: hsl(210, 20%, 95%);
-      --secondary-dark: hsl(210, 20%, 85%);
-      --secondary-light: hsl(210, 20%, 98%);
-      
-      --text-primary: hsl(210, 30%, 20%);
-      --text-secondary: hsl(210, 20%, 40%);
-      --text-light: hsl(210, 15%, 60%);
-      
-      --bg-primary: hsl(210, 20%, 98%);
-      --bg-secondary: hsl(210, 15%, 95%);
-      --bg-tertiary: hsl(210, 10%, 92%);
-      
-      --border-primary: hsl(210, 20%, 85%);
-      --border-secondary: hsl(210, 15%, 90%);
-    }
-
-    .image-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5em;
-      justify-content: center;
-    }
-
-    .exp-badge {
-      display: inline-block;
-      background: #E4C15D;
-      color: #222;
-      font-size: 0.75em;
-      font-weight: bold;
-      padding: 0.05em 0.45em;
-      border-radius: 0.6em;
-      margin-left: 0.4em;
-      vertical-align: middle;
-      letter-spacing: 0.01em;
-      box-shadow: none;
-      line-height: 1.1;
-    }
-
-    .image-row img {
-      max-width: 48%;
-      height: auto;
-    }
-
-    .modal-page img.project-img,
-    .modal-page .image-row {
-      max-width: 100%;
-      height: auto;
-      display: block;
-      margin: 0.5em auto;
-    }
-
-    .project-modal-body {
-      max-height: 60vh;
-      overflow-y: auto;
-    }
-
-    /* Education subtext color fix */
-    .timeline-item p[style*="color: #ffffff"] {
-      color: #e0e0e0 !important;
-    }
-
-    /* Chart and diagram styling */
-    .charts-container {
-      margin: 1.5rem 0;
-    }
-
-    .chart-item {
-      margin: 1rem 0;
-    }
-
-    .pie-charts-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1rem;
-      justify-content: center;
-      align-items: center;
-    }
-
     /* Products Section Styling */
     .products-intro {
       margin-bottom: 3rem;
@@ -451,49 +284,7 @@
       flex: 1;
     }
 
-    /* Responsive Design for Products */
-    @media (max-width: 768px) {
-      .products-list {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-      }
-
-      .product-card {
-        padding: 1.5rem;
-      }
-
-      .product-metrics {
-        gap: 1rem;
-      }
-
-      .product-actions {
-        flex-direction: column;
-      }
-
-      .btn-primary, .btn-secondary {
-        width: 100%;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .product-header {
-        flex-direction: column;
-        gap: 1rem;
-        align-items: flex-start;
-      }
-
-      .product-icon {
-        width: 50px;
-        height: 50px;
-        font-size: 1.5rem;
-      }
-
-      .product-title {
-        font-size: 1.3rem;
-      }
-    }
-
-    /* Product Modal Styling - Matching Project Modal Design */
+    /* Product Modal Styling */
     .product-modal {
       display: none;
       position: fixed;
@@ -508,18 +299,12 @@
       display: block;
     }
 
-    @keyframes fadeInBg {
-      from { background: rgba(0,0,0,0); }
-      to   { background: rgba(0,0,0,0.7); }
-    }
-
     .product-modal-overlay {
       position: absolute;
       inset: 0;
       background: rgba(0,0,0,0.7);
       cursor: pointer;
       z-index: 0;
-      animation: fadeInBg 0.25s;
     }
 
     .product-modal-content {
@@ -537,11 +322,6 @@
       max-height: 85vh;
       overflow: hidden;
       padding: 0;
-    }
-
-    @keyframes fadeInModal {
-      from { opacity: 0; transform: translateY(40px) scale(0.98);}
-      to   { opacity: 1; transform: translateY(0) scale(1);}
     }
 
     .product-modal-header {
@@ -592,20 +372,6 @@
       scrollbar-width: thin;
       scrollbar-color: #ffd600 #222;
       padding: 0 1.5em 1.5em 1.5em;
-    }
-
-    .product-modal-body::-webkit-scrollbar {
-      width: 8px;
-    }
-
-    .product-modal-body::-webkit-scrollbar-thumb {
-      background: #ffd600;
-      border-radius: 6px;
-    }
-
-    .product-modal-body::-webkit-scrollbar-track {
-      background: #222;
-      border-radius: 6px;
     }
 
     .modal-section {
@@ -698,213 +464,120 @@
       color: #fff;
     }
 
-    .coming-soon-message h4 {
-      color: #ffd600;
-      margin-bottom: 1rem;
-      font-size: 1.3rem;
-    }
-
-    .coming-soon-message p {
-      margin-bottom: 1rem;
-      line-height: 1.6;
-      color: #fff;
-    }
-
-          .coming-soon-badge {
-        display: inline-block;
-        background: #ffd600;
-        color: #181818;
-        padding: 0.5em 1.2em;
-        border-radius: 5px;
-        font-size: 0.9rem;
-        font-weight: 600;
-        margin-top: 1rem;
+    /* Responsive Design for Products */
+    @media (max-width: 768px) {
+      .products-list {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
       }
 
-      @media (max-width: 600px) {
-        .product-modal-content {
-          width: 95%;
-          max-width: 95vw;
-        }
-        .product-modal-header {
-          padding: 1.5em 1em 0 1em;
-        }
-        .product-modal-body {
-          padding: 0 1em 1em 1em;
-        }
-        .modal-features-grid {
-          grid-template-columns: 1fr;
-          gap: 0.8rem;
-        }
+      .product-card {
+        padding: 1.5rem;
       }
 
-            @media (max-width: 768px) {
-        .product-modal-content {
-          width: 92%;
-          max-width: 700px;
-        }
-        .modal-features-grid {
-          grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-        }
+      .product-metrics {
+        gap: 1rem;
       }
 
-      /* Achievement Section Styling */
-      .achievements-content {
-        display: flex;
+      .product-actions {
         flex-direction: column;
-        gap: 3rem;
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 1rem;
       }
 
-      .achievement-card {
-        background: rgba(255, 255, 255, 0.05);
-        border-radius: 16px;
-        border: 1px solid rgba(255, 214, 0, 0.2);
-        overflow: hidden;
-        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-      }
-
-      .achievement-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
-      }
-
-      .achievement-gallery {
-        position: relative;
-        height: 300px;
-        overflow: hidden;
-      }
-
-      .image-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: 8px;
-        height: auto;
-        min-height: 300px;
+      .btn-primary, .btn-secondary {
         width: 100%;
       }
+    }
 
-      .grid-item {
-        position: relative;
-        overflow: hidden;
-        border-radius: 8px;
-        aspect-ratio: 4/3;
-        min-height: 200px;
+    @media (max-width: 480px) {
+      .product-header {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: flex-start;
       }
 
-      .grid-item img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        transition: transform 0.3s ease;
-      }
-
-      .grid-item:hover img {
-        transform: scale(1.05);
-      }
-
-      .grid-item:hover {
-        box-shadow: 0 4px 12px rgba(255, 214, 0, 0.3);
-      }
-
-      /* Responsive grid adjustments */
-      @media (max-width: 768px) {
-        .image-grid {
-          grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-          gap: 6px;
-        }
-        
-        .grid-item {
-          min-height: 150px;
-        }
-      }
-
-      @media (max-width: 480px) {
-        .image-grid {
-          grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-          gap: 4px;
-        }
-        
-        .grid-item {
-          min-height: 120px;
-        }
-      }
-
-      .achievement-info {
-        padding: 2rem;
-      }
-
-      .achievement-title {
+      .product-icon {
+        width: 50px;
+        height: 50px;
         font-size: 1.5rem;
-        font-weight: 600;
-        color: #ffd600;
-        margin-bottom: 1rem;
-        line-height: 1.3;
       }
 
-      .achievement-description {
-        font-size: 1.1rem;
-        line-height: 1.6;
-        color: #fff;
-        margin: 0;
+      .product-title {
+        font-size: 1.3rem;
       }
+    }
+  </style>
 
-      /* Responsive Design for Achievements */
-      @media (max-width: 768px) {
-        .achievements-content {
-          gap: 2rem;
-          padding: 0 0.5rem;
-        }
+  <!--
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-        .achievement-gallery {
-          height: 250px;
-        }
+  <style>
+    .image-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5em;
+      justify-content: center;
+    }
 
-        .achievement-info {
-          padding: 1.5rem;
-        }
+    .exp-badge {
+      display: inline-block;
+      background: #E4C15D;
+      color: #222;
+      font-size: 0.75em;
+      font-weight: bold;
+      padding: 0.05em 0.45em;
+      border-radius: 0.6em;
+      margin-left: 0.4em;
+      vertical-align: middle;
+      letter-spacing: 0.01em;
+      box-shadow: none;
+      line-height: 1.1;
+    }
 
-        .achievement-title {
-          font-size: 1.3rem;
-        }
+    .image-row img {
+      max-width: 48%;
+      height: auto;
+    }
 
-        .achievement-description {
-          font-size: 1rem;
-        }
+    .modal-page img.project-img,
+    .modal-page .image-row {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin: 0.5em auto;
+    }
 
-        .gallery-nav {
-          width: 35px;
-          height: 35px;
-        }
-      }
+    .project-modal-body {
+      max-height: 60vh;
+      overflow-y: auto;
+    }
 
-      @media (max-width: 480px) {
-        .achievement-gallery {
-          height: 200px;
-        }
+    /* Education subtext color fix */
+    .timeline-item p[style*="color: #ffffff"] {
+      color: #e0e0e0 !important;
+    }
 
-        .achievement-info {
-          padding: 1rem;
-        }
+    /* Chart and diagram styling */
+    .charts-container {
+      margin: 1.5rem 0;
+    }
 
-        .achievement-title {
-          font-size: 1.2rem;
-        }
+    .chart-item {
+      margin: 1rem 0;
+    }
 
-        .gallery-nav {
-          width: 30px;
-          height: 30px;
-        }
+    .pie-charts-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+      align-items: center;
+    }
 
-        .gallery-nav ion-icon {
-          font-size: 1rem;
-        }
-      }
-
-      .pie-chart-container {
+    .pie-chart-container {
       text-align: center;
       min-width: 200px;
       flex: 1;
@@ -1059,10 +732,10 @@
         <ul class="navbar-list">
           <li><button class="navbar-link" data-nav-link>About</button></li>
           <li><button class="navbar-link" data-nav-link>Projects</button></li>
-          <li><button class="navbar-link" data-nav-link>Products</button></li>
+          <li><button class="navbar-link" data-nav-link style="display:none;">Products</button></li>
           <li><button class="navbar-link" data-nav-link>Resume</button></li>
-                          <li><button class="navbar-link" data-nav-link>Achievements</button></li>
-          <li><button class="navbar-link" data-nav-link style="display:none;">Extras</button></li>
+          <li><button class="navbar-link" data-nav-link style="display:none;">Achievements</button></li>
+          <li><button class="navbar-link" data-nav-link>Extras</button></li>
         </ul>
 
       </nav>
@@ -2912,7 +2585,7 @@
 
       </article>
 
-      <!--
+       <!--
         - #RESUME
       -->
 
@@ -3207,258 +2880,424 @@
         - #BLOG
       -->
 
-      <article class="achievements" data-page="achievements">
+      <article class="achievements" data-page="achievements" style="display:none;">
 
         <header>
           <h2 class="h2 article-title">Achievements</h2>
         </header>
 
-        <section class="achievements-content">
-          
-          <!-- FSAE Team Achievement -->
-          <div class="achievement-card">
-            <div class="achievement-gallery">
-              <div class="image-grid">
-                <div class="grid-item">
-                  <img src="achievement-imgs/ASU-FASE/1743372661272.jpg" alt="FSAE Team 1" loading="lazy">
-                </div>
-                <div class="grid-item">
-                  <img src="achievement-imgs/ASU-FASE/1743372661674.jpg" alt="FSAE Team 2" loading="lazy">
-                </div>
-                <div class="grid-item">
-                  <img src="achievement-imgs/ASU-FASE/1743372661761.jpg" alt="FSAE Team 3" loading="lazy">
-                </div>
-                <div class="grid-item">
-                  <img src="achievement-imgs/ASU-FASE/1743372662101.jpg" alt="FSAE Team 4" loading="lazy">
-                </div>
-                <div class="grid-item">
-                  <img src="achievement-imgs/ASU-FASE/1743372661883.jpg" alt="FSAE Team 5" loading="lazy">
-                </div>
-                <div class="grid-item">
-                  <img src="achievement-imgs/ASU-FASE/1743372663105.jpg" alt="FSAE Team 6" loading="lazy">
-                </div>
-                <div class="grid-item">
-                  <img src="achievement-imgs/ASU-FASE/1743372662760.jpg" alt="FSAE Team 7" loading="lazy">
-                </div>
-              </div>
-            </div>
-            <div class="achievement-info">
-              <h3 class="achievement-title">🏎️ FSAE Team: Formula Car R&D</h3>
-              <p class="achievement-description">
-                Led chassis optimization and CFD simulation for Arizona State University's Formula SAE racing team, bringing track-tested engineering to student-built cars.
-              </p>
-            </div>
-          </div>
+        <section class="blog-posts">
 
-          <!-- Space For Humans Achievement -->
-          <div class="achievement-card">
-            <div class="achievement-gallery">
-              <div class="image-grid">
-                <div class="grid-item">
-                  <img src="achievement-imgs/Space-for-humans-writer/1738809395532.jpg" alt="Space For Humans 1" loading="lazy">
-                </div>
-                <div class="grid-item">
-                  <img src="achievement-imgs/Space-for-humans-writer/1738809395804.jpg" alt="Space For Humans 2" loading="lazy">
-                </div>
-                <div class="grid-item">
-                  <img src="achievement-imgs/Space-for-humans-writer/1738809395914.jpg" alt="Space For Humans 3" loading="lazy">
-                </div>
-              </div>
-            </div>
-            <div class="achievement-info">
-              <h3 class="achievement-title">🚀 Three Body Problem x ASU: Space For Humans</h3>
-              <p class="achievement-description">
-                Selected for ASU's "Space for Humans" program inspired by The Three Body Problem, contributing to space design research that blends science fiction and real-world innovation.
-              </p>
-            </div>
-          </div>
+          <ul class="blog-posts-list">
 
-          <!-- Career Development Panel Achievement -->
-          <div class="achievement-card">
-            <div class="achievement-gallery">
-              <div class="image-grid">
-                <div class="grid-item">
-                  <img src="achievement-imgs/Career-advancement-seminar/1736625775616.jpg" alt="Career Panel 1" loading="lazy">
-                </div>
-                <div class="grid-item">
-                  <img src="achievement-imgs/Career-advancement-seminar/1736625775794.jpg" alt="Career Panel 2" loading="lazy">
-                </div>
-                <div class="grid-item">
-                  <img src="achievement-imgs/Career-advancement-seminar/1736625777212.jpg" alt="Career Panel 3" loading="lazy">
-                </div>
-                <div class="grid-item">
-                  <img src="achievement-imgs/Career-advancement-seminar/1736625777370.jpg" alt="Career Panel 4" loading="lazy">
-                </div>
-                <div class="grid-item">
-                  <img src="achievement-imgs/Career-advancement-seminar/1736625777678.jpg" alt="Career Panel 5" loading="lazy">
-                </div>
-              </div>
-            </div>
-            <div class="achievement-info">
-              <h3 class="achievement-title">🎓 ASU Alumni Career Development Panel</h3>
-              <p class="achievement-description">
-                Invited as an ASU alumni speaker to guide students on career growth, networking, and industry transition strategies in engineering and tech.
-              </p>
-            </div>
-          </div>
+            <li class="blog-post-item">
+              <a href="#">
 
-          <!-- Semiconductor Revolution Achievement -->
-          <div class="achievement-card">
-            <div class="achievement-gallery">
-              <div class="image-grid">
-                <div class="grid-item">
-                  <img src="achievement-imgs/worldwide-NewTech-revolution-seminar/1729114493226.jpg" alt="Semiconductor 1" loading="lazy">
-                </div>
-                <div class="grid-item">
-                  <img src="achievement-imgs/worldwide-NewTech-revolution-seminar/1730621996119.jpg" alt="Semiconductor 2" loading="lazy">
-                </div>
-                <div class="grid-item">
-                  <img src="achievement-imgs/worldwide-NewTech-revolution-seminar/1730621997028.jpg" alt="Semiconductor 3" loading="lazy">
-                </div>
-                <div class="grid-item">
-                  <img src="achievement-imgs/worldwide-NewTech-revolution-seminar/1730621998499.jpg" alt="Semiconductor 4" loading="lazy">
-                </div>
-                <div class="grid-item">
-                  <img src="achievement-imgs/worldwide-NewTech-revolution-seminar/1730621998904.jpg" alt="Semiconductor 5" loading="lazy">
-                </div>
-                <div class="grid-item">
-                  <img src="achievement-imgs/worldwide-NewTech-revolution-seminar/1730621999209.jpg" alt="Semiconductor 6" loading="lazy">
-                </div>
-                <div class="grid-item">
-                  <img src="achievement-imgs/worldwide-NewTech-revolution-seminar/1730621999217.jpg" alt="Semiconductor 7" loading="lazy">
-                </div>
-                <div class="grid-item">
-                  <img src="achievement-imgs/worldwide-NewTech-revolution-seminar/1730621999364.jpg" alt="Semiconductor 8" loading="lazy">
-                </div>
-                <div class="grid-item">
-                  <img src="achievement-imgs/worldwide-NewTech-revolution-seminar/1730962734465.jpg" alt="Semiconductor 9" loading="lazy">
-                </div>
-              </div>
-            </div>
-            <div class="achievement-info">
-              <h3 class="achievement-title">🇮🇳 Semiconductor Revolution in India (Speaker & Educator)</h3>
-              <p class="achievement-description">
-                Delivered national talks and led a pioneering guest lecture series to inspire India's next-generation chipmakers, spotlighting the country's role in the global semiconductor race.
-              </p>
-            </div>
-          </div>
+                <figure class="blog-banner-box">
+                  <img src="./assets/images/blog-1.jpg" alt="Design conferences in 2022" loading="lazy">
+                </figure>
 
-          <!-- MRS Spokesperson Achievement -->
-          <div class="achievement-card">
-            <div class="achievement-gallery">
-              <div class="image-grid">
-                <div class="grid-item">
-                  <img src="achievement-imgs/MRS-spokesperson/1714423010888.jpg" alt="MRS Conference 1" loading="lazy">
-                </div>
-                <div class="grid-item">
-                  <img src="achievement-imgs/MRS-spokesperson/1714423011406.jpg" alt="MRS Conference 2" loading="lazy">
-                </div>
-                <div class="grid-item">
-                  <img src="achievement-imgs/MRS-spokesperson/1714423012056.jpg" alt="MRS Conference 3" loading="lazy">
-                </div>
-                <div class="grid-item">
-                  <img src="achievement-imgs/MRS-spokesperson/1714423012287.jpg" alt="MRS Conference 4" loading="lazy">
-                </div>
-              </div>
-            </div>
-            <div class="achievement-info">
-              <h3 class="achievement-title">🧪 MRS Spokesperson – Thin Films & Semiconductors (Seattle)</h3>
-              <p class="achievement-description">
-                Represented ASU and spoke at the MRS Conference in Seattle, sharing research and industry insights on next-gen semiconductors and thin-film technology.
-              </p>
-            </div>
-          </div>
+                <div class="blog-content">
 
-          <!-- Innovation Featured Achievement -->
-          <div class="achievement-card">
-            <div class="achievement-gallery">
-              <div class="image-grid">
-                <div class="grid-item">
-                  <img src="achievement-imgs/innovation-asu-feature/1668374354865.jpg" alt="ASU Innovation 1" loading="lazy">
-                </div>
-                <div class="grid-item">
-                  <img src="achievement-imgs/innovation-asu-feature/1668374358730.jpg" alt="ASU Innovation 2" loading="lazy">
-                </div>
-                <div class="grid-item">
-                  <img src="achievement-imgs/innovation-asu-feature/1668374360107.jpg" alt="ASU Innovation 3" loading="lazy">
-                </div>
-                <div class="grid-item">
-                  <img src="achievement-imgs/innovation-asu-feature/1668374361111.jpg" alt="ASU Innovation 4" loading="lazy">
-                </div>
-              </div>
-            </div>
-            <div class="achievement-info">
-              <h3 class="achievement-title">🌟 Innovation Featured by ASU</h3>
-              <p class="achievement-description">
-                Recognized by Arizona State University for creating content that brings visibility to campus innovation, tech culture, and student creativity.
-              </p>
-            </div>
-          </div>
+                  <div class="blog-meta">
+                    <p class="blog-category">Design</p>
 
-          <!-- NASA L'SPACE Achievement -->
-          <div class="achievement-card">
-            <div class="achievement-gallery">
-              <div class="image-grid">
-                <div class="grid-item">
-                  <img src="achievement-imgs/NASA-intern/1663826593795.jpg" alt="NASA L'SPACE 1" loading="lazy">
-                </div>
-                <div class="grid-item">
-                  <img src="achievement-imgs/NASA-intern/1663826596844.jpg" alt="NASA L'SPACE 2" loading="lazy">
-                </div>
-                <div class="grid-item">
-                  <img src="achievement-imgs/NASA-intern/1663826598770.jpg" alt="NASA L'SPACE 3" loading="lazy">
-                </div>
-              </div>
-            </div>
-            <div class="achievement-info">
-              <h3 class="achievement-title">🛰️ NASA L'SPACE Program Graduate</h3>
-              <p class="achievement-description">
-                Completed NASA's L'SPACE Academy, contributing to mission-based aerospace design and cross-functional space engineering projects.
-              </p>
-            </div>
-          </div>
+                    <span class="dot"></span>
 
-          <!-- Esports Creator Achievement -->
-          <div class="achievement-card">
-            <div class="achievement-gallery">
-              <div class="image-grid">
-                <div class="grid-item">
-                  <img src="achievement-imgs/last-youtube-sportskeeda-feature/sportskeeda.com.webloc" alt="Esports Creator" loading="lazy">
-                </div>
-              </div>
-            </div>
-            <div class="achievement-info">
-              <h3 class="achievement-title">🎮 Featured Esports Creator (SportsKeeda)</h3>
-              <p class="achievement-description">
-                Recognized by Sportskeeda for creative Minecraft temple builds, combining game mechanics with architectural precision to reach a global audience.
-              </p>
-            </div>
-          </div>
+                    <time datetime="2022-02-23">Fab 23, 2022</time>
+                  </div>
 
-          <!-- ASU Sun Award Achievement -->
-          <div class="achievement-card">
-            <div class="achievement-gallery">
-              <div class="image-grid">
-                <div class="grid-item">
-                  <img src="achievement-imgs/ASU-sun-award/Screenshot 2025-07-30 at 12.49.48 PM.png" alt="ASU Sun Award" loading="lazy">
+                  <h3 class="h3 blog-item-title">Design conferences in 2022</h3>
+
+                  <p class="blog-text">
+                    Veritatis et quasi architecto beatae vitae dicta sunt, explicabo.
+                  </p>
+
                 </div>
-              </div>
-            </div>
-            <div class="achievement-info">
-              <h3 class="achievement-title">🏆 ASU Sun Award Holder</h3>
-              <p class="achievement-description">
-                Honored with the prestigious ASU Sun Award for outstanding contributions to the university community and excellence in academic and professional achievements.
-              </p>
-            </div>
-          </div>
+
+              </a>
+            </li>
+
+            <li class="blog-post-item">
+              <a href="#">
+
+                <figure class="blog-banner-box">
+                  <img src="./assets/images/blog-2.jpg" alt="Best fonts every designer" loading="lazy">
+                </figure>
+
+                <div class="blog-content">
+
+                  <div class="blog-meta">
+                    <p class="blog-category">Design</p>
+
+                    <span class="dot"></span>
+
+                    <time datetime="2022-02-23">Fab 23, 2022</time>
+                  </div>
+
+                  <h3 class="h3 blog-item-title">Best fonts every designer</h3>
+
+                  <p class="blog-text">
+                    Sed ut perspiciatis, nam libero tempore, cum soluta nobis est eligendi.
+                  </p>
+
+                </div>
+
+              </a>
+            </li>
+
+            <li class="blog-post-item">
+              <a href="#">
+
+                <figure class="blog-banner-box">
+                  <img src="./assets/images/blog-3.jpg" alt="Design digest #80" loading="lazy">
+                </figure>
+
+                <div class="blog-content">
+
+                  <div class="blog-meta">
+                    <p class="blog-category">Design</p>
+
+                    <span class="dot"></span>
+
+                    <time datetime="2022-02-23">Fab 23, 2022</time>
+                  </div>
+
+                  <h3 class="h3 blog-item-title">Design digest #80</h3>
+
+                  <p class="blog-text">
+                    Excepteur sint occaecat cupidatat no proident, quis nostrum exercitationem ullam corporis suscipit.
+                  </p>
+
+                </div>
+
+              </a>
+            </li>
+
+            <li class="blog-post-item">
+              <a href="#">
+
+                <figure class="blog-banner-box">
+                  <img src="./assets/images/blog-4.jpg" alt="UI interactions of the week" loading="lazy">
+                </figure>
+
+                <div class="blog-content">
+
+                  <div class="blog-meta">
+                    <p class="blog-category">Design</p>
+
+                    <span class="dot"></span>
+
+                    <time datetime="2022-02-23">Fab 23, 2022</time>
+                  </div>
+
+                  <h3 class="h3 blog-item-title">UI interactions of the week</h3>
+
+                  <p class="blog-text">
+                    Enim ad minim veniam, consectetur adipiscing elit, quis nostrud exercitation ullamco laboris nisi.
+                  </p>
+
+                </div>
+
+              </a>
+            </li>
+
+            <li class="blog-post-item">
+              <a href="#">
+
+                <figure class="blog-banner-box">
+                  <img src="./assets/images/blog-5.jpg" alt="The forgotten art of spacing" loading="lazy">
+                </figure>
+
+                <div class="blog-content">
+
+                  <div class="blog-meta">
+                    <p class="blog-category">Design</p>
+
+                    <span class="dot"></span>
+
+                    <time datetime="2022-02-23">Fab 23, 2022</time>
+                  </div>
+
+                  <h3 class="h3 blog-item-title">The forgotten art of spacing</h3>
+
+                  <p class="blog-text">
+                    Maxime placeat, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  </p>
+
+                </div>
+
+              </a>
+            </li>
+
+            <li class="blog-post-item">
+              <a href="#">
+
+                <figure class="blog-banner-box">
+                  <img src="./assets/images/blog-6.jpg" alt="Design digest #79" loading="lazy">
+                </figure>
+
+                <div class="blog-content">
+
+                  <div class="blog-meta">
+                    <p class="blog-category">Design</p>
+
+                    <span class="dot"></span>
+
+                    <time datetime="2022-02-23">Fab 23, 2022</time>
+                                                    </div>
+
+                  <h3 class="h3 blog-item-title">Design digest #79</h3>
+
+                  <p class="blog-text">
+                    Optio cumque nihil impedit uo minus quod maxime placeat, velit esse cillum.
+                  </p>
+
+                </div>
+
+              </a>
+            </li>
+
+          </ul>
 
         </section>
 
       </article>
 
+      <!--
+        - #EXTRAS
+      -->
 
+      <article class="extras" data-page="extras">
 
+        <header>
+          <h2 class="h2 article-title">Extras</h2>
+        </header>
 
+        <section class="extras-posts">
+
+          <ul class="extras-posts-list">
+
+            <li class="extras-post-item">
+              <a href="#">
+
+                <figure class="extras-banner-box">
+                  <div class="extras-image-carousel">
+                    <div class="extras-image-scroll">
+                      <img src="achievement-imgs/ASU-FASE/Main-img.jpg" alt="FSAE Team Achievement" loading="lazy" onclick="openImageModal('fsae', 0)">
+                      <img src="achievement-imgs/ASU-FASE/1743372661272.jpg" alt="FSAE Team Achievement" loading="lazy" onclick="openImageModal('fsae', 1)">
+                      <img src="achievement-imgs/ASU-FASE/1743372661883.jpg" alt="FSAE Team Achievement" loading="lazy" onclick="openImageModal('fsae', 2)">
+                    </div>
+                    <button class="extras-scroll-btn prev" onclick="scrollExtrasImages(this, -1)">‹</button>
+                    <button class="extras-scroll-btn next" onclick="scrollExtrasImages(this, 1)">›</button>
+                  </div>
+                </figure>
+
+                <div class="extras-content">
+
+                  <div class="extras-meta">
+                    <p class="extras-category">Engineering</p>
+
+                    <span class="dot"></span>
+
+                    <time datetime="2024">2024</time>
+                  </div>
+
+                  <h3 class="h3 extras-item-title">FSAE Team: Formula Car R&D</h3>
+
+                  <p class="extras-text">
+                    Led chassis optimization and CFD simulation for Arizona State University's Formula SAE racing team, bringing track-tested engineering to student-built cars.
+                  </p>
+
+                </div>
+
+              </a>
+            </li>
+
+            <li class="extras-post-item">
+              <a href="#">
+
+                <figure class="extras-banner-box">
+                  <div class="extras-image-carousel">
+                    <div class="extras-image-scroll">
+                      <img src="achievement-imgs/Space-for-humans-writer/main-img.jpg" alt="Space for Humans Achievement" loading="lazy" onclick="openImageModal('space', 0)">
+                      <img src="achievement-imgs/Space-for-humans-writer/1738809395804.jpg" alt="Space for Humans Achievement" loading="lazy" onclick="openImageModal('space', 1)">
+                      <img src="achievement-imgs/Space-for-humans-writer/1738809395914.jpg" alt="Space for Humans Achievement" loading="lazy" onclick="openImageModal('space', 2)">
+                    </div>
+                    <button class="extras-scroll-btn prev" onclick="scrollExtrasImages(this, -1)">‹</button>
+                    <button class="extras-scroll-btn next" onclick="scrollExtrasImages(this, 1)">›</button>
+                  </div>
+                </figure>
+
+                <div class="extras-content">
+
+                  <div class="extras-meta">
+                    <p class="extras-category">Writing</p>
+
+                    <span class="dot"></span>
+
+                    <time datetime="2024">2024</time>
+                  </div>
+
+                  <h3 class="h3 extras-item-title">Space for Humans: Technical Writer</h3>
+
+                  <p class="extras-text">
+                    Contributed technical writing expertise to space exploration initiatives, making complex engineering concepts accessible to broader audiences. <a href="https://lnkd.in/ggJHT8sZ" target="_blank" style="color: #fbd109; text-decoration: underline;">Watch Video ↗️</a>
+                  </p>
+
+                </div>
+
+              </a>
+            </li>
+
+            <li class="extras-post-item">
+              <a href="#">
+
+                <figure class="extras-banner-box">
+                  <div class="extras-image-carousel">
+                    <div class="extras-image-scroll">
+                      <img src="achievement-imgs/Career-advancement-seminar/Main-img.jpg" alt="Career Development Achievement" loading="lazy" onclick="openImageModal('career', 0)">
+                      <img src="achievement-imgs/Career-advancement-seminar/Main-img2.jpg" alt="Career Development Achievement" loading="lazy" onclick="openImageModal('career', 1)">
+                    </div>
+                    <button class="extras-scroll-btn prev" onclick="scrollExtrasImages(this, -1)">‹</button>
+                    <button class="extras-scroll-btn next" onclick="scrollExtrasImages(this, 1)">›</button>
+                  </div>
+                </figure>
+
+                <div class="extras-content">
+
+                  <div class="extras-meta">
+                    <p class="extras-category">Leadership</p>
+
+                    <span class="dot"></span>
+
+                    <time datetime="2024">2024</time>
+                  </div>
+
+                  <h3 class="h3 extras-item-title">Career Development Panel</h3>
+
+                  <p class="extras-text">
+                    Organized and led career advancement seminars, providing mentorship and guidance to engineering students on professional development.
+                  </p>
+
+                </div>
+
+              </a>
+            </li>
+
+            <li class="extras-post-item">
+              <a href="#">
+
+                <figure class="extras-banner-box">
+                  <div class="extras-image-carousel">
+                    <div class="extras-image-scroll">
+                      <img src="achievement-imgs/MRS-spokesperson/main-img.jpg" alt="MRS Spokesperson Achievement" loading="lazy" onclick="openImageModal('mrs', 0)">
+                      <img src="achievement-imgs/MRS-spokesperson/main-img2.jpg" alt="MRS Spokesperson Achievement" loading="lazy" onclick="openImageModal('mrs', 1)">
+                      <img src="achievement-imgs/MRS-spokesperson/1714423012287.jpg" alt="MRS Spokesperson Achievement" loading="lazy" onclick="openImageModal('mrs', 2)">
+                    </div>
+                    <button class="extras-scroll-btn prev" onclick="scrollExtrasImages(this, -1)">‹</button>
+                    <button class="extras-scroll-btn next" onclick="scrollExtrasImages(this, 1)">›</button>
+                  </div>
+                </figure>
+
+                <div class="extras-content">
+
+                  <div class="extras-meta">
+                    <p class="extras-category">Research</p>
+
+                    <span class="dot"></span>
+
+                    <time datetime="2024">2024</time>
+                  </div>
+
+                  <h3 class="h3 extras-item-title">MRS Spokesperson</h3>
+
+                  <p class="extras-text">
+                    Represented research initiatives at Materials Research Society events, communicating cutting-edge developments in materials science.
+                  </p>
+
+                </div>
+
+              </a>
+            </li>
+
+            <li class="extras-post-item">
+              <a href="#">
+
+                <figure class="extras-banner-box">
+                  <div class="extras-image-carousel">
+                    <div class="extras-image-scroll">
+                      <img src="achievement-imgs/NASA-intern/main-img.jpg" alt="NASA Internship Achievement" loading="lazy" onclick="openImageModal('nasa', 0)">
+                      <img src="achievement-imgs/NASA-intern/main-img2.jpg" alt="NASA Internship Achievement" loading="lazy" onclick="openImageModal('nasa', 1)">
+                      <img src="achievement-imgs/NASA-intern/1663826593795.jpg" alt="NASA Internship Achievement" loading="lazy" onclick="openImageModal('nasa', 2)">
+                    </div>
+                    <button class="extras-scroll-btn prev" onclick="scrollExtrasImages(this, -1)">‹</button>
+                    <button class="extras-scroll-btn next" onclick="scrollExtrasImages(this, 1)">›</button>
+                  </div>
+                </figure>
+
+                <div class="extras-content">
+
+                  <div class="extras-meta">
+                    <p class="extras-category">Aerospace</p>
+
+                    <span class="dot"></span>
+
+                    <time datetime="2023">2023</time>
+                  </div>
+
+                  <h3 class="h3 extras-item-title">NASA L'SPACE Internship</h3>
+
+                  <p class="extras-text">
+                    Participated in NASA's L'SPACE program, contributing to space exploration projects and gaining hands-on experience in aerospace engineering.
+                  </p>
+
+                </div>
+
+              </a>
+            </li>
+
+            <li class="extras-post-item">
+              <a href="#">
+
+                <figure class="extras-banner-box">
+                  <div class="extras-image-carousel">
+                    <div class="extras-image-scroll">
+                      <img src="achievement-imgs/innovation-asu-feature/main-img.jpg" alt="ASU Innovation Achievement" loading="lazy" onclick="openImageModal('innovation', 0)">
+                      <img src="achievement-imgs/innovation-asu-feature/1668374354865.jpg" alt="ASU Innovation Achievement" loading="lazy" onclick="openImageModal('innovation', 1)">
+                      <img src="achievement-imgs/innovation-asu-feature/1668374358730.jpg" alt="ASU Innovation Achievement" loading="lazy" onclick="openImageModal('innovation', 2)">
+                    </div>
+                    <button class="extras-scroll-btn prev" onclick="scrollExtrasImages(this, -1)">‹</button>
+                    <button class="extras-scroll-btn next" onclick="scrollExtrasImages(this, 1)">›</button>
+                  </div>
+                </figure>
+
+                <div class="extras-content">
+
+                  <div class="extras-meta">
+                    <p class="extras-category">Innovation</p>
+
+                    <span class="dot"></span>
+
+                    <time datetime="2024">2024</time>
+                  </div>
+
+                  <h3 class="h3 extras-item-title">ASU Innovation Feature</h3>
+
+                  <p class="extras-text">
+                    Featured in ASU's innovation showcase for contributions to engineering research and development of cutting-edge technologies. <a href="https://lnkd.in/gChq-TQN" target="_blank" style="color: #fbd109; text-decoration: underline;">Watch Video ↗️</a>
+                  </p>
+
+                </div>
+
+              </a>
+            </li>
+
+          </ul>
+
+        </section>
+
+      </article>
 
       <!--
         - #CONTACT
@@ -3716,22 +3555,21 @@
         closeProductModal();
       }
     });
-
-    // Achievement Grid Hover Effects
-    document.addEventListener('DOMContentLoaded', function() {
-      const gridItems = document.querySelectorAll('.grid-item');
-      
-      gridItems.forEach(item => {
-        item.addEventListener('mouseenter', function() {
-          this.style.transform = 'scale(1.02)';
-        });
-        
-        item.addEventListener('mouseleave', function() {
-          this.style.transform = 'scale(1)';
-        });
-      });
-    });
   </script>
+
+
+
+  <!-- Fullscreen Image Modal -->
+  <div class="image-modal" id="imageModal">
+    <div class="image-modal-content">
+      <img id="modalImage" src="" alt="Fullscreen Image">
+      <button class="image-modal-close" onclick="closeImageModal()">×</button>
+      <button class="image-modal-nav prev" onclick="changeModalImage(-1)">‹</button>
+      <button class="image-modal-nav next" onclick="changeModalImage(1)">›</button>
+      <div class="image-modal-counter" id="modalCounter">1/5</div>
+    </div>
+  </div>
+
   <!--
     - ionicon link
   -->

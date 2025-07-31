@@ -1253,3 +1253,329 @@ document.addEventListener('DOMContentLoaded', function() {
 if (typeof mermaid !== 'undefined') {
   mermaid.initialize({ startOnLoad: false });
 }
+
+// Extras Image Data
+const extrasData = {
+  fsae: {
+    title: "FSAE Team: Formula Car R&D",
+    images: [
+      { src: "achievement-imgs/ASU-FASE/Main-img.jpg", caption: "Main FSAE Team Image" },
+      { src: "achievement-imgs/ASU-FASE/1743372661272.jpg", caption: "FSAE Team - Image 2" },
+      { src: "achievement-imgs/ASU-FASE/1743372661883.jpg", caption: "FSAE Team - Image 3" },
+      { src: "achievement-imgs/ASU-FASE/1743372662101.jpg", caption: "FSAE Team - Image 4" },
+      { src: "achievement-imgs/ASU-FASE/1743372663105.jpg", caption: "FSAE Team - Image 5" }
+    ]
+  },
+  space: {
+    title: "Space for Humans: Technical Writer",
+    images: [
+      { src: "achievement-imgs/Space-for-humans-writer/main-img.jpg", caption: "Space for Humans - Main Image" },
+      { src: "achievement-imgs/Space-for-humans-writer/1738809395804.jpg", caption: "Space for Humans - Image 2" },
+      { src: "achievement-imgs/Space-for-humans-writer/1738809395914.jpg", caption: "Space for Humans - Image 3" }
+    ]
+  },
+  career: {
+    title: "Career Development Panel",
+    images: [
+      { src: "achievement-imgs/Career-advancement-seminar/Main-img.jpg", caption: "Career Development - Main Image" },
+      { src: "achievement-imgs/Career-advancement-seminar/Main-img2.jpg", caption: "Career Development - Image 2" },
+      { src: "achievement-imgs/Career-advancement-seminar/1736625775794.jpg", caption: "Career Development - Image 3" },
+      { src: "achievement-imgs/Career-advancement-seminar/1736625777370.jpg", caption: "Career Development - Image 4" }
+    ]
+  },
+  mrs: {
+    title: "MRS Spokesperson",
+    images: [
+      { src: "achievement-imgs/MRS-spokesperson/main-img.jpg", caption: "MRS Spokesperson - Main Image" },
+      { src: "achievement-imgs/MRS-spokesperson/main-img2.jpg", caption: "MRS Spokesperson - Image 2" },
+      { src: "achievement-imgs/MRS-spokesperson/1714423012287.jpg", caption: "MRS Spokesperson - Image 3" }
+    ]
+  },
+  nasa: {
+    title: "NASA L'SPACE Internship",
+    images: [
+      { src: "achievement-imgs/NASA-intern/main-img.jpg", caption: "NASA Internship - Main Image" },
+      { src: "achievement-imgs/NASA-intern/main-img2.jpg", caption: "NASA Internship - Image 2" },
+      { src: "achievement-imgs/NASA-intern/1663826593795.jpg", caption: "NASA Internship - Image 3" }
+    ]
+  },
+  innovation: {
+    title: "ASU Innovation Feature",
+    images: [
+      { src: "achievement-imgs/innovation-asu-feature/main-img.jpg", caption: "ASU Innovation - Main Image" },
+      { src: "achievement-imgs/innovation-asu-feature/1668374354865.jpg", caption: "ASU Innovation - Image 2" },
+      { src: "achievement-imgs/innovation-asu-feature/1668374358730.jpg", caption: "ASU Innovation - Image 3" },
+      { src: "achievement-imgs/innovation-asu-feature/1668374361111.jpg", caption: "ASU Innovation - Image 4" }
+    ]
+  }
+};
+
+// Horizontal scroll functionality for extras images
+function scrollExtrasImages(button, direction) {
+  const carousel = button.closest('.extras-image-carousel');
+  const scrollContainer = carousel.querySelector('.extras-image-scroll');
+  const images = scrollContainer.querySelectorAll('img');
+  
+  if (images.length <= 3) return; // No need to scroll if 3 or fewer images
+  
+  // Simple transform-based scrolling
+  let currentTransform = parseFloat(scrollContainer.style.transform?.replace('translateX(', '')?.replace('px)', '') || 0);
+  
+  // Calculate scroll distance (one image width)
+  const imageWidth = scrollContainer.offsetWidth / 3;
+  const newTransform = currentTransform + (direction * imageWidth * -1);
+  
+  // Calculate bounds
+  const maxTransform = -(imageWidth * (images.length - 3));
+  const minTransform = 0;
+  
+  // Apply bounds
+  const finalTransform = Math.max(maxTransform, Math.min(minTransform, newTransform));
+  
+  // Apply transform
+  scrollContainer.style.transform = `translateX(${finalTransform}px)`;
+  
+  // Update button states
+  updateScrollButtons(carousel, finalTransform, maxTransform);
+}
+
+function updateScrollButtons(carousel, currentTransform, maxTransform) {
+  const prevBtn = carousel.querySelector('.extras-scroll-btn.prev');
+  const nextBtn = carousel.querySelector('.extras-scroll-btn.next');
+  
+  if (prevBtn) {
+    prevBtn.disabled = currentTransform >= 0;
+  }
+  if (nextBtn) {
+    nextBtn.disabled = currentTransform <= maxTransform;
+  }
+}
+
+// Initialize scroll buttons on page load
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('.extras-image-carousel').forEach(carousel => {
+    const scrollContainer = carousel.querySelector('.extras-image-scroll');
+    const images = scrollContainer.querySelectorAll('img');
+    
+    if (images.length > 3) {
+      const imageWidth = scrollContainer.offsetWidth / 3;
+      const maxTransform = -(imageWidth * (images.length - 3));
+      updateScrollButtons(carousel, 0, maxTransform);
+    } else {
+      // Hide buttons if not enough images
+      const buttons = carousel.querySelectorAll('.extras-scroll-btn');
+      buttons.forEach(btn => btn.style.display = 'none');
+    }
+    
+    // Add touch/swipe support for mobile
+    initExtrasTouchSupport(carousel);
+  });
+});
+
+// Product Modal Functionality
+const productData = {
+  emailly: {
+    title: "Emailly - AI Email Automation",
+    content: `
+      <div class="product-detail">
+        <div class="product-hero">
+          <img src="./assets/images/emailly-product.jpg" alt="Emailly Product" loading="lazy">
+        </div>
+        <div class="product-info">
+          <h4>Transform Your Email Outreach with AI</h4>
+          <p>Emailly is a powerful AI-driven email automation tool that revolutionizes how you handle email campaigns. Simply upload an Excel sheet containing Name, Company, and Email data, and watch as our intelligent system crafts personalized, engaging emails for each recipient.</p>
+          
+          <h5>Key Features:</h5>
+          <ul>
+            <li>🤖 <strong>AI-Powered Personalization:</strong> Each email is uniquely crafted based on recipient data</li>
+            <li>📊 <strong>Excel Integration:</strong> Direct upload and processing of spreadsheet data</li>
+            <li>⚡ <strong>Bulk Processing:</strong> Handle hundreds of contacts in minutes</li>
+            <li>📝 <strong>Smart Content:</strong> Contextual messaging that resonates with each recipient</li>
+            <li>🎯 <strong>High Engagement:</strong> Personalized emails achieve better open and response rates</li>
+          </ul>
+          
+          <h5>Technical Stack:</h5>
+          <div class="tech-stack">
+            <span class="tech-badge">Python</span>
+            <span class="tech-badge">OpenAI GPT</span>
+            <span class="tech-badge">Pandas</span>
+            <span class="tech-badge">Streamlit</span>
+            <span class="tech-badge">Natural Language Processing</span>
+          </div>
+          
+          <div class="product-actions-modal">
+            <button class="btn btn-primary" onclick="window.open('https://emailly.streamlit.app/', '_blank')">Try Emailly</button>
+          </div>
+        </div>
+      </div>
+    `
+  },
+  cadly: {
+    title: "AI CAD Designer - Coming Soon",
+    content: `
+      <div class="product-detail">
+        <div class="product-hero">
+          <img src="./assets/images/coming-soon-1.jpg" alt="AI CAD Designer" loading="lazy">
+        </div>
+        <div class="product-info">
+          <h4>Revolutionary AI-Powered CAD Design</h4>
+          <p>The future of mechanical design is here. Our AI CAD Designer transforms natural language descriptions into professional, manufacturing-ready CAD models, making advanced design accessible to everyone.</p>
+          
+          <h5>Planned Features:</h5>
+          <ul>
+            <li>🎨 <strong>Natural Language Design:</strong> Describe your product in plain English</li>
+            <li>🔧 <strong>Intelligent Modeling:</strong> AI interprets and creates accurate 3D models</li>
+            <li>📐 <strong>Engineering Standards:</strong> Automatically applies best practices and constraints</li>
+            <li>🏭 <strong>Manufacturing Ready:</strong> Outputs optimized for various production methods</li>
+            <li>🔄 <strong>Iterative Refinement:</strong> Continuous improvement through user feedback</li>
+          </ul>
+          
+          <h5>Technology Preview:</h5>
+          <div class="tech-stack">
+            <span class="tech-badge">Machine Learning</span>
+            <span class="tech-badge">CAD APIs</span>
+            <span class="tech-badge">Natural Language Processing</span>
+            <span class="tech-badge">3D Modeling</span>
+            <span class="tech-badge">Generative Design</span>
+          </div>
+          
+          <div class="status-info">
+            <p><strong>Development Status:</strong> Early prototyping phase. Expected beta release Q3 2024.</p>
+          </div>
+        </div>
+      </div>
+    `
+  },
+  simly: {
+    title: "AI Simulation Engine - Coming Soon",
+    content: `
+      <div class="product-detail">
+        <div class="product-hero">
+          <img src="./assets/images/coming-soon-2.jpg" alt="AI Simulation Engine" loading="lazy">
+        </div>
+        <div class="product-info">
+          <h4>Democratizing Advanced Engineering Simulation</h4>
+          <p>Our AI Simulation Engine makes complex CFD and FEA analyses accessible to all engineers. Simply describe your simulation requirements, and our AI handles the setup, meshing, and analysis automatically.</p>
+          
+          <h5>Planned Capabilities:</h5>
+          <ul>
+            <li>🌊 <strong>Automated CFD:</strong> Fluid dynamics simulation from simple descriptions</li>
+            <li>🔩 <strong>Intelligent FEA:</strong> Structural analysis with AI-driven setup</li>
+            <li>🎛️ <strong>Smart Meshing:</strong> Automatic mesh generation and optimization</li>
+            <li>📊 <strong>Results Interpretation:</strong> AI-powered analysis of simulation data</li>
+            <li>☁️ <strong>Cloud Computing:</strong> Scalable processing power on demand</li>
+          </ul>
+          
+          <h5>Technical Vision:</h5>
+          <div class="tech-stack">
+            <span class="tech-badge">Artificial Intelligence</span>
+            <span class="tech-badge">Computational Fluid Dynamics</span>
+            <span class="tech-badge">Finite Element Analysis</span>
+            <span class="tech-badge">Cloud Computing</span>
+            <span class="tech-badge">Parallel Processing</span>
+          </div>
+          
+          <div class="status-info">
+            <p><strong>Development Status:</strong> Research and development phase. Target launch Q4 2024.</p>
+          </div>
+        </div>
+      </div>
+    `
+  },
+  engineermart: {
+    title: "AI Procurement Assistant - Coming Soon",
+    content: `
+      <div class="product-detail">
+        <div class="product-hero">
+          <img src="./assets/images/coming-soon-3.jpg" alt="AI Procurement Assistant" loading="lazy">
+        </div>
+        <div class="product-info">
+          <h4>Smart BOM Optimization Platform</h4>
+          <p>Transform your procurement process with AI-powered Bill of Materials optimization. Our platform intelligently sources components, compares suppliers, and optimizes costs while ensuring quality and delivery requirements.</p>
+          
+          <h5>Planned Features:</h5>
+          <ul>
+            <li>🧠 <strong>AI-Powered Sourcing:</strong> Intelligent supplier discovery and evaluation</li>
+            <li>💰 <strong>Cost Optimization:</strong> Real-time price comparison and negotiations</li>
+            <li>📦 <strong>Supply Chain Intelligence:</strong> Risk assessment and mitigation</li>
+            <li>🔍 <strong>Component Analysis:</strong> Alternative part suggestions and compatibility</li>
+            <li>📈 <strong>Market Insights:</strong> Trend analysis and forecasting</li>
+          </ul>
+          
+          <h5>Technology Stack:</h5>
+          <div class="tech-stack">
+            <span class="tech-badge">Machine Learning</span>
+            <span class="tech-badge">Supply Chain Analytics</span>
+            <span class="tech-badge">Data Mining</span>
+            <span class="tech-badge">API Integration</span>
+            <span class="tech-badge">Market Intelligence</span>
+          </div>
+          
+          <div class="status-info">
+            <p><strong>Development Status:</strong> Concept validation phase. Market research ongoing.</p>
+          </div>
+        </div>
+      </div>
+    `
+  }
+};
+
+function openProductModal(productId) {
+  const modal = document.getElementById('productModal');
+  const title = document.getElementById('productModalTitle');
+  const body = document.getElementById('productModalBody');
+  
+  if (productData[productId]) {
+    title.textContent = productData[productId].title;
+    body.innerHTML = productData[productId].content;
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+}
+
+function closeProductModal() {
+  const modal = document.getElementById('productModal');
+  modal.classList.remove('active');
+  document.body.style.overflow = '';
+}
+
+// Close product modal on background click
+document.addEventListener('click', function(e) {
+  const modal = document.getElementById('productModal');
+  if (e.target === modal) {
+    closeProductModal();
+  }
+});
+
+// Close product modal on escape key
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') {
+    closeProductModal();
+  }
+});
+
+// Touch/swipe support for extras carousel
+function initExtrasTouchSupport(carousel) {
+  const scrollContainer = carousel.querySelector('.extras-image-scroll');
+  let startX = 0;
+  let startScrollLeft = 0;
+  let isDragging = false;
+  
+  scrollContainer.addEventListener('touchstart', function(e) {
+    startX = e.touches[0].clientX;
+    startScrollLeft = scrollContainer.scrollLeft;
+    isDragging = true;
+  });
+  
+  scrollContainer.addEventListener('touchmove', function(e) {
+    if (!isDragging) return;
+    e.preventDefault();
+    const x = e.touches[0].clientX;
+    const walk = (startX - x) * 2;
+    scrollContainer.scrollLeft = startScrollLeft + walk;
+  });
+  
+  scrollContainer.addEventListener('touchend', function() {
+    isDragging = false;
+  });
+}

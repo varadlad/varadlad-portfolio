@@ -1044,13 +1044,16 @@ main {
   justify-content: center;
   align-items: center;
   padding: 0 10px;
+  gap: 1.5rem;
 }
 
 .navbar-link {
   color: var(--light-gray);
   font-size: var(--fs-8);
-  padding: 20px 7px;
+  padding: 20px 12px;
   transition: color var(--transition-1);
+  white-space: nowrap;
+  margin: 0;
 }
 
   .navbar-link:hover,
@@ -2398,8 +2401,6 @@ main {
   box-shadow: var(--shadow-4);
   border-radius: 16px;
   z-index: 1;
-  display: flex;
-  flex-direction: column;
 }
 
 .extras-post-item > a::before {
@@ -2444,16 +2445,6 @@ main {
   flex-shrink: 0;
 }
 
-/* Special styling for career development (3rd item) to show 2 images evenly spaced */
-.extras-post-item:nth-child(3) .extras-image-scroll img {
-  width: calc(50% - 0.5px);
-  border-right: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.extras-post-item:nth-child(3) .extras-image-scroll img:last-child {
-  border-right: none;
-}
-
 .extras-image-scroll img:last-child {
   border-right: none;
 }
@@ -2468,14 +2459,7 @@ main {
 
 .extras-post-item > a:hover .extras-banner-box img { transform: scale(1.1); }
 
-.extras-content { 
-  padding: 15px; 
-  overflow: hidden;
-  max-height: 200px;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-}
+.extras-content { padding: 15px; }
 
 .extras-meta {
   display: flex;
@@ -2511,47 +2495,6 @@ main {
   font-size: var(--fs-6);
   font-weight: var(--fw-300);
   line-height: 1.6;
-  word-wrap: break-word;
-  overflow-wrap: break-word;
-  hyphens: auto;
-  max-width: 100%;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  display: -webkit-box;
-  -webkit-line-clamp: 4;
-  -webkit-box-orient: vertical;
-}
-
-/* Extras scroll buttons styling */
-.extras-scroll-btn {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: rgba(0, 0, 0, 0.7);
-  color: white;
-  border: none;
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  cursor: pointer;
-  font-size: 16px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 2;
-  transition: background 0.3s ease;
-}
-
-.extras-scroll-btn:hover {
-  background: rgba(0, 0, 0, 0.9);
-}
-
-.extras-scroll-btn.prev {
-  left: 10px;
-}
-
-.extras-scroll-btn.next {
-  right: 10px;
 }
 
 
@@ -2817,7 +2760,7 @@ textarea.form-input::-webkit-resizer { display: none; }
 
   .navbar { border-radius: 20px 20px 0 0; }
 
-  .navbar-list { gap: 20px; }
+  .navbar-list { gap: 1.5rem; }
 
   .navbar-link { --fs-8: 14px; }
 
@@ -3216,7 +3159,7 @@ textarea.form-input::-webkit-resizer { display: none; }
   }
 
   .navbar-list {
-    gap: 30px;
+    gap: 1.5rem;
     padding: 0 20px;
   }
 
@@ -3455,8 +3398,6 @@ textarea.form-input::-webkit-resizer { display: none; }
     margin-right: 0;
   }
 }
-
-
 
 @media (max-width: 700px) {
   .filter-list {

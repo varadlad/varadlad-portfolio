@@ -2398,6 +2398,8 @@ main {
   box-shadow: var(--shadow-4);
   border-radius: 16px;
   z-index: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 .extras-post-item > a::before {
@@ -2466,7 +2468,14 @@ main {
 
 .extras-post-item > a:hover .extras-banner-box img { transform: scale(1.1); }
 
-.extras-content { padding: 15px; }
+.extras-content { 
+  padding: 15px; 
+  overflow: hidden;
+  max-height: 200px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
 
 .extras-meta {
   display: flex;
@@ -2502,6 +2511,15 @@ main {
   font-size: var(--fs-6);
   font-weight: var(--fw-300);
   line-height: 1.6;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
 }
 
 /* Extras scroll buttons styling */

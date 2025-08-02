@@ -1044,22 +1044,29 @@ main {
   justify-content: center;
   align-items: center;
   padding: 0 10px;
-  gap: 1.5rem;
 }
 
 .navbar-link {
   color: var(--light-gray);
   font-size: var(--fs-8);
-  padding: 20px 12px;
+  padding: 20px 7px;
   transition: color var(--transition-1);
-  white-space: nowrap;
-  margin: 0;
 }
 
   .navbar-link:hover,
   .navbar-link:focus { color: var(--light-gray-70); }
 
   .navbar-link.active { color: var(--orange-yellow-crayola); }
+
+/* Hide lightbox text that appears at bottom of page */
+.lb-number {
+  display: none !important;
+}
+
+/* Hide any stray lightbox elements */
+#lightbox .lb-dataContainer .lb-data .lb-details .lb-number {
+  display: none !important;
+}
 
 
 
@@ -2760,7 +2767,7 @@ textarea.form-input::-webkit-resizer { display: none; }
 
   .navbar { border-radius: 20px 20px 0 0; }
 
-  .navbar-list { gap: 1.5rem; }
+  .navbar-list { gap: 20px; }
 
   .navbar-link { --fs-8: 14px; }
 
@@ -3159,7 +3166,7 @@ textarea.form-input::-webkit-resizer { display: none; }
   }
 
   .navbar-list {
-    gap: 1.5rem;
+    gap: 30px;
     padding: 0 20px;
   }
 

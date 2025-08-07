@@ -1428,12 +1428,9 @@
                   <li>•  Complex interdependencies between parameters (temperature, pressure, gas flow, plasma power) make manual optimization impractical.</li>
                   <li>•  The goal was to increase deposition rate by 40% while maintaining strict film quality standards and reducing process variability.</li>
                   <li>•  A two-phase optimization strategy was developed: Design of Experiments (DOE) for systematic exploration, followed by Bayesian optimization for intelligent search.</li>
-                  <li>•  Bayesian optimization uses Gaussian Process models to efficiently search high-dimensional parameter spaces with minimal experiments.</li>
-                  <li>•  The approach balances exploration of uncertain regions with exploitation of promising areas to find global optima.</li>
-                  <li>•  This methodology addresses the classic process optimization challenge in semiconductor manufacturing with non-linear effects and stringent quality requirements.</li>
                 </ul>
                 <div class="image-row">
-                  <a href="project-images/process_flow_diagram.png" data-lightbox="Deposition-Rate-Optimization">
+                  <a href="project-images/process_flow_diagram.png" data-lightbox="Deposition-Rate-Optimization" data-title="Process Flow Diagram">
                     <img src="project-images/process_flow_diagram.png" alt="Process Flow Diagram" class="project-img">
                   </a>
                 </div>
@@ -1444,29 +1441,32 @@
                   <li>•  Phase 1: Design of Experiments (DOE) provided systematic exploration of major deposition parameters using factorial or Taguchi designs.</li>
                   <li>•  Parameter space was clearly defined with physical and equipment constraints (temperature: 200-500°C, pressure: 0.5-5 Torr, plasma power: 50-150W).</li>
                   <li>•  DOE uncovered key effects and interactions, revealing trends like "increasing power generally increases deposition rate with diminishing returns" and "temperature has an optimal range around 300°C".</li>
-                  <li>•  A preliminary empirical model was built using DOE results and theoretical relationships to predict deposition rate for untested parameter combinations.</li>
                   <li>•  Phase 2: Bayesian optimization using Gaussian Process (GP) models with Expected Improvement (EI) acquisition function for intelligent parameter selection.</li>
-                  <li>•  The GP model provided predictions with uncertainty estimates, balancing exploration of uncertain regions with exploitation of promising areas.</li>
                   <li>•  Python scripts were developed to streamline the process, interfacing with lab equipment software for parameter setting and result logging.</li>
-                  <li>•  Concurrent quality checks ensured film quality remained acceptable throughout optimization, with constraints on uniformity and defect density.</li>
                 </ul>
                 <div class="image-row">
-                  <a href="project-images/doe_matrix_heatmap.png" data-lightbox="Deposition-Rate-Optimization">
+                  <a href="project-images/doe_matrix_heatmap.png" data-lightbox="Deposition-Rate-Optimization" data-title="DOE Matrix Heatmap">
                     <img src="project-images/doe_matrix_heatmap.png" alt="DOE Matrix Heatmap" class="project-img">
                   </a>
-                  <a href="project-images/bayesian_workflow.png" data-lightbox="Deposition-Rate-Optimization">
+                  <a href="project-images/bayesian_workflow.png" data-lightbox="Deposition-Rate-Optimization" data-title="Bayesian Optimization Workflow">
                     <img src="project-images/bayesian_workflow.png" alt="Bayesian Optimization Workflow" class="project-img">
+                  </a>
+                  <a href="project-images/deposition-rate-optimization-img-1.png" data-lightbox="Deposition-Rate-Optimization" data-title="Python Code Implementation">
+                    <img src="project-images/deposition-rate-optimization-img-1.png" alt="Python Code Implementation" class="project-img">
                   </a>
                 </div>
               </div>
               <div class="modal-page" data-page="2" style="display:none;">
                 <h4>Results?</h4>
                 <div class="image-row">
-                  <a href="project-images/bayesian_convergence_chart.png" data-lightbox="Deposition-Rate-Optimization">
+                  <a href="project-images/bayesian_convergence_chart.png" data-lightbox="Deposition-Rate-Optimization" data-title="Bayesian Convergence Chart">
                     <img src="project-images/bayesian_convergence_chart.png" alt="Bayesian Convergence Chart" class="project-img">
                   </a>
-                  <a href="project-images/results_charts.png" data-lightbox="Deposition-Rate-Optimization">
+                  <a href="project-images/results_charts.png" data-lightbox="Deposition-Rate-Optimization" data-title="Results Charts">
                     <img src="project-images/results_charts.png" alt="Results Charts" class="project-img">
+                  </a>
+                  <a href="project-images/deposition-rate-optimization-img-2.png" data-lightbox="Deposition-Rate-Optimization" data-title="Optimization Results">
+                    <img src="project-images/deposition-rate-optimization-img-2.png" alt="Optimization Results" class="project-img">
                   </a>
                 </div>
                 <ul style="list-style-type: none; margin-left: 0; padding-left: 1.2em;">
@@ -1475,11 +1475,7 @@
                   <li>•  Defect density decreased by ~20% due to optimized parameters moving to a more stable operating regime.</li>
                   <li>•  Predictive model achieved 90% accuracy in cross-validation tests, enabling run-to-run control and digital twin simulations.</li>
                   <li>•  Manufacturing cost per wafer reduced by ~15% through higher equipment utilization, less material waste, and energy savings.</li>
-                  <li>•  Bayesian optimization found the optimum with only 15-20 iterative runs, far fewer than exhaustive grid search approaches.</li>
                   <li>•  Optimal parameters identified: ~305°C temperature and ~150W plasma power for maximum deposition rate.</li>
-                  <li>•  All quality metrics maintained or improved: film uniformity, microstructure, composition, and device performance remained within specifications.</li>
-                  <li>•  The methodology is generalizable to other semiconductor processes and can be scaled for additional parameters.</li>
-                  <li>•  Implementation ready for production with rigorous validation through metrology, microscopy, and statistical analysis.</li>
                 </ul>
               </div>
             </li>

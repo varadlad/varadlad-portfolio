@@ -3954,25 +3954,100 @@ a:active {
 
 /* Custom lightbox2 styles to limit size */
 .lb-outerContainer {
-  max-width: 80% !important;
-  max-height: 80% !important;
+  max-width: 60% !important;
+  max-height: 60% !important;
   width: auto !important;
   height: auto !important;
+  margin: 0 auto !important;
+  position: relative !important;
+  border-radius: 8px !important;
+  background-color: white !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3) !important;
 }
 
 .lb-image {
   max-width: 100% !important;
-  max-height: 80vh !important;
+  max-height: 60vh !important;
   width: auto !important;
   height: auto !important;
+  border-radius: 8px !important;
+  display: block !important;
 }
 
 .lb-dataContainer {
-  max-width: 80% !important;
+  max-width: 60% !important;
+  border-radius: 0 0 8px 8px !important;
+  margin: 0 auto !important;
 }
 
 .lb-closeContainer {
-  max-width: 80% !important;
+  max-width: 60% !important;
+  border-radius: 8px 8px 0 0 !important;
+}
+
+/* Force smaller size for all lightbox elements */
+.lb-outerContainer,
+.lb-dataContainer,
+.lb-closeContainer {
+  max-width: 60% !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+/* Ensure the lightbox overlay doesn't interfere */
+.lightboxOverlay {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+/* Override lightbox positioning and sizing */
+.lightbox {
+  position: fixed !important;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  width: auto !important;
+  height: auto !important;
+  max-width: 60% !important;
+  max-height: 60% !important;
+  z-index: 10000 !important;
+}
+
+.lb-outerContainer {
+  position: relative !important;
+  width: auto !important;
+  height: auto !important;
+  max-width: 60% !important;
+  max-height: 60% !important;
+  margin: 0 auto !important;
+  border-radius: 8px !important;
+  background-color: white !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3) !important;
+}
+
+.lb-image {
+  max-width: 100% !important;
+  max-height: 60vh !important;
+  width: auto !important;
+  height: auto !important;
+  border-radius: 8px !important;
+  display: block !important;
+  border: none !important;
+}
+
+/* Additional responsive constraints */
+@media (max-width: 768px) {
+  .lightbox,
+  .lb-outerContainer,
+  .lb-dataContainer,
+  .lb-closeContainer {
+    max-width: 90% !important;
+  }
+  
+  .lb-image {
+    max-height: 70vh !important;
+  }
 }
 
 .close-lightbox {

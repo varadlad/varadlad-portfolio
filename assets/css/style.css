@@ -1044,19 +1044,25 @@ main {
   justify-content: center;
   align-items: center;
   padding: 0 10px;
+  gap: 2rem;
 }
 
 .navbar-link {
   color: var(--light-gray);
   font-size: var(--fs-8);
-  padding: 20px 7px;
+  padding: 0.75rem 1rem;
+  margin: 0;
+  flex: 0 0 auto;
   transition: color var(--transition-1);
 }
 
   .navbar-link:hover,
   .navbar-link:focus { color: var(--light-gray-70); }
 
-  .navbar-link.active { color: var(--orange-yellow-crayola); }
+  .navbar-link.active { 
+    color: var(--orange-yellow-crayola); 
+    margin: 0;
+  }
 
 /* Hide lightbox text that appears at bottom of page */
 .lb-number {
@@ -3686,6 +3692,15 @@ a:active {
 
 .project-modal .project-img:hover {
   transform: scale(1.02);
+}
+
+/* Ensure all images in project modal are properly sized */
+.project-modal-body img {
+  max-width: 90vw;
+  max-height: 80vh;
+  height: auto;
+  width: auto;
+  border-radius: 8px;
 }
 
 /* Image zoom overlay - Fixed animations */

@@ -1044,25 +1044,19 @@ main {
   justify-content: center;
   align-items: center;
   padding: 0 10px;
-  gap: 2rem;
 }
 
 .navbar-link {
   color: var(--light-gray);
   font-size: var(--fs-8);
-  padding: 0.75rem 1rem;
-  margin: 0;
-  flex: 0 0 auto;
+  padding: 20px 7px;
   transition: color var(--transition-1);
 }
 
   .navbar-link:hover,
   .navbar-link:focus { color: var(--light-gray-70); }
 
-  .navbar-link.active { 
-    color: var(--orange-yellow-crayola); 
-    margin: 0;
-  }
+  .navbar-link.active { color: var(--orange-yellow-crayola); }
 
 /* Hide lightbox text that appears at bottom of page */
 .lb-number {
@@ -1381,17 +1375,53 @@ main {
   margin-bottom: 25px;
 }
 
-.exp-badge {
-  background: linear-gradient(135deg, rgba(251, 209, 9, 0.1), rgba(255, 107, 107, 0.1));
-  border: 1px solid rgba(251, 209, 9, 0.3);
-  border-radius: 20px;
-  padding: 4px 12px;
-  font-size: 0.75em;
-  color: var(--orange-yellow-crayola);
-  font-weight: 600;
-  letter-spacing: 0.5px;
-  text-transform: uppercase;
-  box-shadow: 0 2px 8px rgba(251, 209, 9, 0.1);
+.timeline-list {
+  font-size: var(--fs-6);
+  margin-left: 45px;
+}
+
+.timeline-item { position: relative; }
+
+.timeline-item:not(:last-child) { margin-bottom: 20px; }
+
+.timeline-item-title {
+  font-size: var(--fs-6);
+  line-height: 1.3;
+  margin-bottom: 7px;
+}
+
+.timeline-list span {
+  color: var(--vegas-gold);
+  font-weight: var(--fw-400);
+  line-height: 1.6;
+}
+
+.timeline-item:not(:last-child)::before {
+  content: "";
+  position: absolute;
+  top: -25px;
+  left: -30px;
+  width: 1px;
+  height: calc(100% + 50px);
+  background: var(--jet);
+}
+
+.timeline-item::after {
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: -33px;
+  height: 6px;
+  width: 6px;
+  background: var(--text-gradient-yellow);
+  border-radius: 50%;
+  box-shadow: 0 0 0 4px var(--jet);
+}
+
+.timeline-text {
+  color: var(--light-gray);
+  font-weight: var(--fw-300);
+  line-height: 1.6;
 }
 
 /* Compact Certifications Grid */
@@ -1425,57 +1455,6 @@ main {
   font-weight: var(--fw-400);
   color: var(--white-2);
   margin: 0;
-}
-
-.timeline-list {
-  font-size: var(--fs-6);
-  margin-left: 45px;
-}
-
-.timeline-item { 
-  position: relative;
-}
-
-.timeline-item:not(:last-child) { margin-bottom: 20px; }
-
-.timeline-item-title {
-  font-size: var(--fs-6);
-  line-height: 1.3;
-  margin-bottom: 7px;
-}
-
-.timeline-list span {
-  color: var(--vegas-gold);
-  font-weight: var(--fw-400);
-  line-height: 1.6;
-}
-
-.timeline-item:not(:last-child)::before {
-  content: "";
-  position: absolute;
-  top: -25px;
-  left: -15px;
-  width: 1px;
-  height: calc(100% + 50px);
-  background: var(--jet);
-}
-
-.timeline-item::after {
-  content: "";
-  position: absolute;
-  top: 5px;
-  left: -18px;
-  height: 6px;
-  width: 6px;
-  background: var(--text-gradient-yellow);
-  border-radius: 50%;
-  box-shadow: 0 0 0 4px var(--jet);
-}
-
-.timeline-text {
-  color: var(--light-gray);
-  font-weight: var(--fw-300);
-  line-height: 1.6;
 }
 
 
@@ -2924,7 +2903,7 @@ textarea.form-input::-webkit-resizer { display: none; }
    */
 
   .timeline-list { margin-left: 65px; }
-
+  
   .certifications-grid { 
     margin-left: 65px;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -2948,7 +2927,7 @@ textarea.form-input::-webkit-resizer { display: none; }
     content: "";
     position: absolute;
     top: -25px;
-    left: -33px;
+    left: -30px;
     width: 1px;
     height: calc(100% + 50px);
     background: var(--jet);
@@ -2958,7 +2937,7 @@ textarea.form-input::-webkit-resizer { display: none; }
     content: "";
     position: absolute;
     top: 5px;
-    left: -37px;
+    left: -33px;
     height: 8px;
     width: 8px;
     background: var(--text-gradient-yellow);
@@ -3694,15 +3673,6 @@ a:active {
   transform: scale(1.02);
 }
 
-/* Ensure all images in project modal are properly sized */
-.project-modal-body img {
-  max-width: 90vw;
-  max-height: 80vh;
-  height: auto;
-  width: auto;
-  border-radius: 8px;
-}
-
 /* Image zoom overlay - Fixed animations */
 .image-zoom-overlay {
   display: none;
@@ -3965,104 +3935,6 @@ a:active {
   max-height: 80vh;
   border: 2px solid var(--orange-yellow-crayola);
   border-radius: 4px;
-}
-
-/* Custom lightbox2 styles to limit size */
-.lb-outerContainer {
-  max-width: 60% !important;
-  max-height: 60% !important;
-  width: auto !important;
-  height: auto !important;
-  margin: 0 auto !important;
-  position: relative !important;
-  border-radius: 8px !important;
-  background-color: white !important;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3) !important;
-}
-
-.lb-image {
-  max-width: 100% !important;
-  max-height: 60vh !important;
-  width: auto !important;
-  height: auto !important;
-  border-radius: 8px !important;
-  display: block !important;
-}
-
-.lb-dataContainer {
-  max-width: 60% !important;
-  border-radius: 0 0 8px 8px !important;
-  margin: 0 auto !important;
-}
-
-.lb-closeContainer {
-  max-width: 60% !important;
-  border-radius: 8px 8px 0 0 !important;
-}
-
-/* Force smaller size for all lightbox elements */
-.lb-outerContainer,
-.lb-dataContainer,
-.lb-closeContainer {
-  max-width: 60% !important;
-  margin-left: auto !important;
-  margin-right: auto !important;
-}
-
-/* Ensure the lightbox overlay doesn't interfere */
-.lightboxOverlay {
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-}
-
-/* Override lightbox positioning and sizing */
-.lightbox {
-  position: fixed !important;
-  top: 50% !important;
-  left: 50% !important;
-  transform: translate(-50%, -50%) !important;
-  width: auto !important;
-  height: auto !important;
-  max-width: 60% !important;
-  max-height: 60% !important;
-  z-index: 10000 !important;
-}
-
-.lb-outerContainer {
-  position: relative !important;
-  width: auto !important;
-  height: auto !important;
-  max-width: 60% !important;
-  max-height: 60% !important;
-  margin: 0 auto !important;
-  border-radius: 8px !important;
-  background-color: white !important;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3) !important;
-}
-
-.lb-image {
-  max-width: 100% !important;
-  max-height: 60vh !important;
-  width: auto !important;
-  height: auto !important;
-  border-radius: 8px !important;
-  display: block !important;
-  border: none !important;
-}
-
-/* Additional responsive constraints */
-@media (max-width: 768px) {
-  .lightbox,
-  .lb-outerContainer,
-  .lb-dataContainer,
-  .lb-closeContainer {
-    max-width: 90% !important;
-  }
-  
-  .lb-image {
-    max-height: 70vh !important;
-  }
 }
 
 .close-lightbox {

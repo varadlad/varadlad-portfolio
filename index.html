@@ -1423,59 +1423,53 @@
               <div class="modal-page" data-page="0" style="display:none;">
                 <h4>What?</h4>
                 <ul style="list-style-type: none; margin-left: 0; padding-left: 1.2em;">
-                  <li>•  Deposition rate optimization is critical for semiconductor manufacturing efficiency, directly impacting throughput, cost per wafer, and device performance.</li>
-                  <li>•  The baseline process had low deposition rates and notable process variability, causing bottlenecks in production lines and degraded yield.</li>
-                  <li>•  Complex interdependencies between parameters (temperature, pressure, gas flow, plasma power) make manual optimization impractical.</li>
-                  <li>•  The goal was to increase deposition rate by 40% while maintaining strict film quality standards and reducing process variability.</li>
-                  <li>•  A two-phase optimization strategy was developed: Design of Experiments (DOE) for systematic exploration, followed by Bayesian optimization for intelligent search.</li>
+                  <li>•  Optimization of the semiconductor deposition rate is critical for improving quality and reducing manufacturing costs.</li>
+                  <li>•  The deposition rate affects properties like film thickness, uniformity, and purity that impact device performance and yield.</li>
+                  <li>•  Faster deposition can increase production throughput and lower capital costs.</li>
+                  <li>•  There is a complex relationship between process parameters like temperature and deposition rate that is difficult to optimize manually.</li>
+                  <li>•  Bayesian optimization is an advanced machine learning technique to efficiently search high-dimensional parameter spaces.</li>
+                  <li>•  It constructs a probabilistic model to represent belief over the objective function.</li>
+                  <li>•  The model is used to determine informative sample locations to evaluate.</li>
+                  <li>•  It balances exploration to improve the model and exploitation to find the optimum.</li>
                 </ul>
-                <div class="image-row">
-                  <a href="project-images/process_flow_diagram.png" data-lightbox="Deposition-Rate-Optimization" data-title="Process Flow Diagram">
-                    <img src="project-images/process_flow_diagram.png" alt="Process Flow Diagram" class="project-img">
-                  </a>
-                </div>
               </div>
               <div class="modal-page" data-page="1" style="display:none;">
                 <h4>How?</h4>
                 <ul style="list-style-type: none; margin-left: 0; padding-left: 1.2em;">
-                  <li>•  Phase 1: Design of Experiments (DOE) provided systematic exploration of major deposition parameters using factorial or Taguchi designs.</li>
-                  <li>•  Parameter space was clearly defined with physical and equipment constraints (temperature: 200-500°C, pressure: 0.5-5 Torr, plasma power: 50-150W).</li>
-                  <li>•  DOE uncovered key effects and interactions, revealing trends like "increasing power generally increases deposition rate with diminishing returns" and "temperature has an optimal range around 300°C".</li>
-                  <li>•  Phase 2: Bayesian optimization using Gaussian Process (GP) models with Expected Improvement (EI) acquisition function for intelligent parameter selection.</li>
-                  <li>•  Python scripts were developed to streamline the process, interfacing with lab equipment software for parameter setting and result logging.</li>
+                  <li>•  An empirical deposition rate model was defined as a function of temperature and plasma power.</li>
+                  <li>•  The model has a quadratic relationship between temperature and deposition rate.</li>
+                  <li>•  Deposition rate increases linearly with higher plasma power.</li>
+                  <li>•  The model allows evaluating deposition rate at different parameter settings.</li>
+                  <li>•  A Gaussian process probabilistic model was constructed to represent belief over the deposition rate.</li>
+                  <li>•  Gaussian processes can capture complex nonlinear functions.</li>
+                  <li>•  The GP model is iteratively updated to improve accuracy.</li>
+                  <li>•  The model guides the selection of optimal parameters to evaluate next.</li>
                 </ul>
                 <div class="image-row">
-                  <a href="project-images/doe_matrix_heatmap.png" data-lightbox="Deposition-Rate-Optimization" data-title="DOE Matrix Heatmap">
-                    <img src="project-images/doe_matrix_heatmap.png" alt="DOE Matrix Heatmap" class="project-img">
-                  </a>
-                  <a href="project-images/bayesian_workflow.png" data-lightbox="Deposition-Rate-Optimization" data-title="Bayesian Optimization Workflow">
-                    <img src="project-images/bayesian_workflow.png" alt="Bayesian Optimization Workflow" class="project-img">
-                  </a>
-                  <a href="project-images/deposition-rate-optimization-img-1.png" data-lightbox="Deposition-Rate-Optimization" data-title="Python Code Implementation">
-                    <img src="project-images/deposition-rate-optimization-img-1.png" alt="Python Code Implementation" class="project-img">
+                  <a href="project-images/deposition-rate-optimization-img-1.png" data-lightbox="Deposition-Rate-Optimization">
+                    <img src="project-images/deposition-rate-optimization-img-1.png" alt="deposition-rate-optimization-img-1.png" class="project-img">
                   </a>
                 </div>
               </div>
               <div class="modal-page" data-page="2" style="display:none;">
                 <h4>Results?</h4>
                 <div class="image-row">
-                  <a href="project-images/bayesian_convergence_chart.png" data-lightbox="Deposition-Rate-Optimization" data-title="Bayesian Convergence Chart">
-                    <img src="project-images/bayesian_convergence_chart.png" alt="Bayesian Convergence Chart" class="project-img">
-                  </a>
-                  <a href="project-images/results_charts.png" data-lightbox="Deposition-Rate-Optimization" data-title="Results Charts">
-                    <img src="project-images/results_charts.png" alt="Results Charts" class="project-img">
-                  </a>
-                  <a href="project-images/deposition-rate-optimization-img-2.png" data-lightbox="Deposition-Rate-Optimization" data-title="Optimization Results">
-                    <img src="project-images/deposition-rate-optimization-img-2.png" alt="Optimization Results" class="project-img">
+                  <a href="project-images/deposition-rate-optimization-img-2.png" data-lightbox="Deposition-Rate-Optimization">
+                    <img src="project-images/deposition-rate-optimization-img-2.png" alt="deposition-rate-optimization-img-2.png" class="project-img">
                   </a>
                 </div>
                 <ul style="list-style-type: none; margin-left: 0; padding-left: 1.2em;">
-                  <li>•  Achieved 40% improvement in deposition rate (from baseline to optimized conditions), significantly increasing production throughput.</li>
-                  <li>•  Process variability reduced by ~25%, leading to tighter control of film thickness variation and more predictable process behavior.</li>
-                  <li>•  Defect density decreased by ~20% due to optimized parameters moving to a more stable operating regime.</li>
-                  <li>•  Predictive model achieved 90% accuracy in cross-validation tests, enabling run-to-run control and digital twin simulations.</li>
-                  <li>•  Manufacturing cost per wafer reduced by ~15% through higher equipment utilization, less material waste, and energy savings.</li>
-                  <li>•  Optimal parameters identified: ~305°C temperature and ~150W plasma power for maximum deposition rate.</li>
+                  <li>•  The optimized deposition rate was 65.25 Aǒ/s, a 30% improvement over the baseline.</li>
+                  <li>•  The higher deposition rate can enable faster production and lower costs.</li>
+                  <li>•  Film quality will also benefit from the optimized parameters.</li>
+                  <li>•  Bayesian optimization efficiently searched the parameter space to determine the optimal configuration.</li>
+                  <li>•  Only nine evaluations of the deposition model were required.</li>
+                  <li>•  The algorithm quickly converged despite the small data requirement.</li>
+                  <li>•  Bayesian optimization successfully maximized the deposition rate in the model by 30%.</li>
+                  <li>•  Significant benefits in terms of throughput, quality, and cost reduction are expected.</li>
+                  <li>•  This methodology provides an automated, efficient way to optimize complex manufacturing processes.</li>
+                  <li>•  The optimization framework is flexible to other processes and objective functions.</li>
+                  <li>•  Bayesian optimization accelerates parameter optimization compared to conventional methods.</li>
                 </ul>
               </div>
             </li>
@@ -2589,6 +2583,7 @@
           </div>
         </div>
 
+        
       </article>
 
        <!--
@@ -2654,65 +2649,78 @@
           </div>
 
           <ol class="timeline-list">
+
             <li class="timeline-item">
+          
               <h4 class="h4 timeline-item-title">Arizona State University, USA</h4>
               <p style="font-weight: normal; font-size: 0.95em; color: #ffffff; margin: 0.2em 0 0.5em 0;">
                 Master of Science in Mechanical Engineering
               </p>
               <span>2022 — 2024</span>
+          
             </li>
+          
             <li class="timeline-item">
+          
               <h4 class="h4 timeline-item-title">Sanjay Ghodawat University, India</h4>
               <p style="font-weight: normal; font-size: 0.95em; color: #ffffff; margin: 0.2em 0 0.5em 0;">
                 Bachelor of Technology in Mechanical Engineering
               </p>
               <span>2019 — 2022</span>
+          
             </li>
+          
             <li class="timeline-item">
-              <h4 class="h4 timeline-item-title">Latthe Education Society's Polytechnic, India</h4>
+          
+              <h4 class="h4 timeline-item-title">Latthe Education Society’s Polytechnic, India</h4>
               <p style="font-weight: normal; font-size: 0.95em; color: #ffffff; margin: 0.2em 0 0.5em 0;">
                 Diploma in Mechanical Engineering
               </p>
               <span>2016 — 2019</span>
+          
             </li>
+          
           </ol>
+          
           
         </section>
 
-        <section class="certifications-compact">
+        <section class="timeline">
           <div class="title-wrapper">
             <div class="icon-box">
-              <ion-icon name="trophy-outline"></ion-icon>
+              <ion-icon name="ribbon-outline"></ion-icon>
             </div>
             <h3 class="h3">Certifications & Training</h3>
           </div>
-          <div class="certifications-grid">
-            <div class="cert-item">
-              <h4>CSWP - SolidWorks Professional</h4>
-            </div>
-            <div class="cert-item">
-              <h4>ANSYS Certified User</h4>
-            </div>
-            <div class="cert-item">
-              <h4>Certified Manufacturing Engineer</h4>
-            </div>
-            <div class="cert-item">
-              <h4>NASA L'SPACE Academy</h4>
-            </div>
-            <div class="cert-item">
-              <h4>ASME GD&T Certification</h4>
-            </div>
-            <div class="cert-item">
-              <h4>AutoCAD Professional</h4>
-            </div>
-            <div class="cert-item">
-              <h4>Six Sigma Green Belt</h4>
-            </div>
-            <div class="cert-item">
-              <h4>Product Development</h4>
-            </div>
-            <div class="cert-item">
-              <h4>OSHA 30-Hour Safety</h4>
+          <div class="certifications-compact">
+            <div class="certifications-grid">
+              <div class="cert-item">
+                <h4>NASA L'SPACE Academy</h4>
+              </div>
+              <div class="cert-item">
+                <h4>Six Sigma Green Belt</h4>
+              </div>
+              <div class="cert-item">
+                <h4>OSHA 30-Hour Construction Safety</h4>
+              </div>
+              <div class="cert-item">
+                <h4>CSWP - SolidWorks Professional</h4>
+              </div>
+              <div class="cert-item">
+                <h4>ANSYS Certified User - Mechanical Simulation</h4>
+              </div>
+              <div class="cert-item">
+                <h4>Certified Manufacturing Engineer (CMfgE)</h4>
+              </div>
+              <div class="cert-item">
+                <h4>ASME Geometric Dimensioning & Tolerancing (GD&T)</h4>
+              </div>
+              <div class="cert-item">
+                <h4>Autodesk Certified Professional - AutoCAD</h4>
+              </div>
+              <div class="cert-item">
+                <h4>Product Development and Design Thinking Certification</h4>
+              </div>
             </div>
           </div>
         </section>
@@ -2746,7 +2754,7 @@
       <span style="background: #E4C15D; color: #000; padding: 0.3em 0.6em; border-radius: 0.6em;">SimScale cloud solver</span>
       <span style="background: #E4C15D; color: #000; padding: 0.3em 0.6em; border-radius: 0.6em;">MATLAB</span>
       <span style="background: #E4C15D; color: #000; padding: 0.3em 0.6em; border-radius: 0.6em;">Heat-transfer models</span>
-      <span style="background: #E4C15D; color: #000; padding: 0.3em 0.6em; border-radius: 0.6em;">Liquid cooling & nitrogen-pod studies</span>
+      <span style="background: #E4C15D; color: #000; padding: 0.3em 0.6em; border-radius: 0.6em;">Liquid- vs-air & nitrogen-pod cooling studies</span>
       <span style="background: #E4C15D; color: #000; padding: 0.3em 0.6em; border-radius: 0.6em;">Load / vibration analysis</span>
     </div>
   </div>
@@ -2765,7 +2773,7 @@
       <span style="background: #E4C15D; color: #000; padding: 0.3em 0.6em; border-radius: 0.6em;">DMLS</span>
       <span style="background: #E4C15D; color: #000; padding: 0.3em 0.6em; border-radius: 0.6em;">PolyJet</span>
       <span style="background: #E4C15D; color: #000; padding: 0.3em 0.6em; border-radius: 0.6em;">Vacuum casting</span>
-      <span style="background: #E4C15D; color: #000; padding: 0.3em 0.6em; border-radius: 0.6em;">Laser/Water-jet cutting</span>
+      <span style="background: #E4C15D; color: #000; padding: 0.3em 0.6em; border-radius: 0.6em;">Laser / Water-jet cutting</span>
       <span style="background: #E4C15D; color: #000; padding: 0.3em 0.6em; border-radius: 0.6em;">PLC & HMI programming</span>
       <span style="background: #E4C15D; color: #000; padding: 0.3em 0.6em; border-radius: 0.6em;">G-code</span>
       <span style="background: #E4C15D; color: #000; padding: 0.3em 0.6em; border-radius: 0.6em;">SEM</span>
@@ -2824,7 +2832,7 @@
       <span style="background: #E4C15D; color: #000; padding: 0.3em 0.6em; border-radius: 0.6em;">OSHA / EPA safety regulations</span>
     </div>
   </div>
-</section>
+</section>       
 
 <!-- Modal Close Button Custom Style -->
 <style>

@@ -359,8 +359,14 @@ document.addEventListener('click', function(e) {
     e.stopPropagation();
     e.stopImmediatePropagation();
     
+    // Check if lightbox already exists to prevent multiple overlays
+    if (document.querySelector('#lightbox-overlay')) {
+      return;
+    }
+    
     // Create lightbox overlay
     const lightbox = document.createElement('div');
+    lightbox.id = 'lightbox-overlay';
     lightbox.style.position = 'fixed';
     lightbox.style.top = 0;
     lightbox.style.left = 0;
@@ -562,6 +568,13 @@ document.addEventListener('click', function(e) {
     function removeLightbox() {
       if (document.body.contains(lightbox)) {
         document.body.removeChild(lightbox);
+      }
+      // Remove all child elements to prevent stray nodes
+      if (imgContainer && document.body.contains(imgContainer)) {
+        document.body.removeChild(imgContainer);
+      }
+      if (zoomControls && document.body.contains(zoomControls)) {
+        document.body.removeChild(zoomControls);
       }
       document.removeEventListener('keydown', escListener);
       document.removeEventListener('mousemove', arguments.callee);

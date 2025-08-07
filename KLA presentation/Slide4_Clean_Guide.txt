@@ -1,0 +1,47 @@
+SLIDE 4 - CLEAN RADIAL REQUIREMENTS DIAGRAM
+==========================================
+
+DIAGRAM FEATURES:
+✅ Single, professional radial cluster design
+✅ No overlapping text - all elements clearly spaced
+✅ Central hub with main objective
+✅ 5 color-coded requirement clusters
+✅ Quantified metrics prominently displayed
+✅ Detailed descriptions in separate boxes
+✅ Clean white background for projection clarity
+
+VISUAL ELEMENTS:
+🎯 CENTER: "Deposition Rate Optimization" - main objective
+📊 SPOKES: 5 requirements radiating outward
+🎨 COLORS: Professional color scheme (blue, green, yellow, red, purple)
+📋 METRICS: Specific targets clearly visible
+📝 DETAILS: Supporting information in connected boxes
+
+HOW TO PRESENT:
+
+🗣️ OPENING (30 seconds):
+"This radial diagram shows our five integrated optimization requirements. Rather than treating these as trade-offs, our approach aims to achieve all goals simultaneously."
+
+🗣️ CLOCKWISE PRESENTATION (2-3 minutes):
+1. TOP (Blue): "Higher Throughput - targeting 40% improvement in deposition rate"
+2. TOP-RIGHT (Green): "Quality Preservation - maintaining all film specifications"
+3. BOTTOM-RIGHT (Yellow): "Process Consistency - reducing variability by 25%"
+4. BOTTOM-LEFT (Red): "Cost Efficiency - achieving 15% savings per wafer"
+5. TOP-LEFT (Purple): "Operational Constraints - staying within equipment limits"
+
+🗣️ CLOSING (30 seconds):
+"The center represents our integrated solution - optimizing deposition rate while satisfying all requirements through systematic methodology."
+
+KEY ADVANTAGES:
+✅ Visual clarity - immediate comprehension
+✅ Professional appearance - no text overload
+✅ Balanced presentation - equal weight to all requirements
+✅ Quantified targets - specific and measurable
+✅ Technical credibility - systematic approach
+
+TECHNICAL DEPTH READY:
+- Why 40% improvement is achievable
+- How quality is maintained during optimization
+- Statistical basis for variability reduction targets
+- Cost calculation methodology
+- Equipment constraint definitions

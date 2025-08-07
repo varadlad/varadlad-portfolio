@@ -1,0 +1,529 @@
+##Resume: 
+VARAD LAD602-388-6861 • vlad3@asu.edu • LinkedIn • PortfolioSUMMARY5 years of experience in mechanical design, optimizing thin-film/vacuum deposition equipment, opto-electronics/display and owning critical systems across semiconductor fabs & data centers, set up & troubleshot (8D, FMEA) high-vacuum assemblies integrating CADWORK EXPERIENCETSMC | Mechanical Engineer, Facilities | Critical Facilities Systems | Phoenix, AZ Jul 2024 – May 2025•Delivered 4nm, 2nm semiconductor fab build; designed and installed vacuum deposition system as a lead mechanical engineer•Saved $120,000 in maintenance costs by troubleshooting vacuum issues via design modification and a N+1 redundancy plan•Reduced downtime by 25% by diagnosing real-time critical thin-film and vacuum system failure issues across the production line•Troubleshot critical environment-cleanroom mechanical systems, cooling towers, RCTO, chillers, and validated, P&IDs, & PFDs•Built code compliant installation schedule following ICC, IBC, IMC, IFC and NFPA codes; passed inspection with 0% rework•Developed Power Bi and Tableau dashboards to streamline contractor milestones, commissioning, design submittals and city code reviews, which improved project timelines and enhanced stakeholder collaboration during mechanical package reviewRayn Innovation | Senior Opto-Mechanical Engineer Intern | R&D, Hardware & Thermal Test | Tempe, AZ Jan 2024 – May 2024•Boosted display-packaging hardware performance & electric conductivity by synthesizing thin film via CVD, PVD, ALD techniques•Detected 90% of surface defects in nano thin-film by performing metrology on microstructure using SEM, TEM, XRD, and UV-Vis•Increased film uniformity by 12% and reduced material waste by 40%, by optimizing process parameters using DOE & SPC in JMP•Tested hardware and thermal properties of wafer-level packaging using controlled heating and sensor-based feedback systems•Drove 28% yield performance gain of the product prototypes by enhancing thermal management through parameter tuning•Improved synthesis-stage purity by 15% through big-data analysis of deposition variables and defect trends using JMP and PythonMarketech International Corporation | Mechanical Engineer Intern | Tool Interconnect | Phoenix, AZ Jun 2023 – Aug 2023•Designed and improved utility connection reliability from 82% to 94% for 15 installed semiconductor critical-facility system tools•Reduced system downtime by 15% through effective troubleshooting of mechanical system in critical fab environment•Resolved BIM system clashes and verified HVAC chillers and duct-system models in Revit, significantly reducing installation issuesNASA | Mechanical Project Engineer Intern | NASA L’SPACE Program| Tempe, AZ Aug 2022 – Dec 2022•Modeled and tested 40 CAD mechanical parts using Siemens NX, approved 7+ patentable projects and authored project proposals•Identified 10 KPIs of each project in collaboration with NASA Marshall Chief Technologist, resulting in 15% project improvement•Collaborated with aerospace engineering and chief scientists to develop system concepts for NASA mission simulation projectsChemtech Systems | Senior Mechanical Engineer | High-Volume Manufacturing | India Jun 2019 – May 2022•Led a team of 5 technicians in a 24/7 high-volume blade manufacturing plant to meet daily production and procurement targets•Saved approximately $30,000 and reduced tool downtime by outsourcing predictive maintenance for the critical equipment•Increased cutting performance by 80% by identifying wear patterns and redesigning blades for self-sharpening functionality•Saved $18,000 on the product testing costs by outsourcing final testing and commissioning to third-party contractors•Applied FMEA methodology to identify and troubleshoot production defects in equipment during high-volume manufacturing•Reduced annual BOM spend 18%, equivalent to $300,000 by building an ERP that auto-generated BOMs from CAD drawing and algorithmically ranked regional suppliers on cost, quality and certification, cutting sourcing cycle time by 66%PROJECTSData Center Thermal Management System for Scalable Cooling Optimization•Improved cooling performance by 27% and reduced hotspots by 32% by simulating liquid vs air-cooling in SimScale using a Fusion 360-designed DC server hall, optimized VRF airflow zoning and adaptive fan control to benchmark efficiency across both methodsMicrosoft Underwater Data Center, Project Natick-inspired Land-Based Data Center Cooling Pod•Improved land-based data center thermal reliability by 25% and projected a 35–40% reduction in hardware failure rate by designing and simulating sealed, nitrogen-cooled pod environments modeled on Microsoft's Project Natick, underwater data centersTECHNICAL SKILLS & LEADERSHIPVacuum & Thin-Film Tools: PVD, CVD, ALD, PECVD, high-vacuum chambers, leak testing, RGA, wafer-level and display packaging systemCAD Design & Simulation: Revit, Siemens NX, ANSYS (CFD & FEA), AutoCAD, SolidWorks, CATIA, Creo, Fusion 360, SimScaleData Analysis, Coding & BI Tools: Python, MATLAB, JMP, SQL, DoE, SPC, Power BI, Tableau, RCA, FMEA, SAP HANA, PLC, HMI, G-codeEDUCATIONArizona State University | Master of Science in Mechanical Engineering | Sun Award of Excellence Recipient May 2024
+
+
+
+##Coverletter: 
+VARAD LAD
+602-388-6861 • vlad3@asu.edu • LinkedIn • Portfolio
+Dear Hiring Team,
+With a Master’s in Mechanical Engineering and 5 years of hands-on experience across semiconductor fabs,
+data center infrastructure, and R&D labs, I bring a proven record of turning engineering complexity into
+measurable impact. From mechanical design and thermal modeling to process optimization and reliability
+engineering, my work has cut downtime by 25%, raised yield by 12%, and delivered operational savings of
+$120,000—results I’m excited to bring to innovative and fast-moving tech environments like yours.
+Engineering Excellence Across Disciplines
+At TSMC, I led mechanical projects involving HVAC, air abatement, and critical utilities for advanced 4nm, 3nm,
+and 2nm semiconductor fabs—cutting downtime by 25% and saving $120,000 through SCADA-based
+diagnostics and N+1 redundancy design. At Rayn Innovation, I engineered thin-film coatings with CVD, PVD,
+and ALD, optimizing recipe uniformity using JMP-based DOE and validating outcomes with SEM, XRD, and UV-
+Vis. Previously at Chemtech, I improved blade production throughput and reduced system failures using
+predictive maintenance and FMEA, generating $48,000 in cost savings.
+My work also includes hands-on mechanical design, thermal simulation, and hardware reliability testing across
+high-wattage systems. With strong CAD proficiency and deep code compliance (ASHRAE, ASME, and ICC, IBC,
+IMC, etc.), I design resilient, efficient, and scalable systems across both R&D and facility-scale infrastructure
+and complex tools.
+Technical Leadership & Public Engagement & Industry Advocacy
+I’ve led multidisciplinary teams across high-stakes environments, driving BIM coordination, field conflict
+resolution, and stakeholder alignment for large-scale mechanical scopes. At TSMC, I created SOPs, trained
+technicians, and restored fab uptime within 24 hours after a demister failure. At Marketech, I managed a 60-
+tool hookup timeline across design, ownership, and site constraints. During my NASA internship, I led a L’SPACE
+Project Proposal initiative and collaborated with aerospace mentors on simulation-driven optimization and
+design. Earlier, I was Head of Chassis team for Formula-1 SUPRA (FSAE), where I oversaw subsystem integration
+and testing—experiences that taught me how to manage fast-paced design-build cycles, vendor relationships,
+and team execution under real-world pressure.
+I’ve been honored with ASU’s SunAward for Excellence and the Space for Humans Writer Award for bridging
+technical concepts with real-life impact. I served as Rayn Innovation’s spokesperson at the MRS Conference in
+Seattle and led public-facing STEM outreach for TSMC’s K–12 education program, mentoring students on AI,
+quantum computing, and chip innovation. I’ve organized career development sessions at ASU, delivered
+technical talks in India, and served as President of TSMC’s Employee Experience & Collaboration Club.
+These experiences reflect not only my passion for engineering but also my belief in mentoring, advocacy, and
+building future-ready talent ecosystems.
+I am available immediately, open to relocation, and would welcome the chance to discuss how my background
+can support your team’s mission.
+Sincerely,
+Varad Pramod Lad
+
+
+
+##KLA-JD
+Manufacturing Design Engineer - (Thin Film Deposition/Vacuum
+Deposition)
+Apply
+USA-CA-Baldwin Park-ROMA
+Full time
+Posted 15 Days Ago
+2530188
+Company Overview
+KLA is a global leader in diversified electronics for the semiconductor manufacturing ecosystem. Virtually every
+electronic device in the world is produced using our technologies. No laptop, smartphone, wearable device,
+voice-controlled gadget, flexible screen, VR device or smart car would have made it into your hands without us.
+KLA invents systems and solutions for the manufacturing of wafers and reticles, integrated circuits, packaging,
+printed circuit boards and flat panel displays. The innovative ideas and devices that are advancing humanity all
+begin with inspiration, research and development. KLA focuses more than average on innovation and we invest
+15% of sales back into R&D. Our expert teams of physicists, engineers, data scientists and problem-solvers work
+together with the world’s leading technology providers to accelerate the delivery of tomorrow’s electronic
+devices. Life here is exciting and our teams thrive on tackling really hard problems. There is never a dull moment
+with us.
+Group/Division
+The SensArray division is the world leading provider of in situ processing measurement and control solutions for
+the semiconductor industry. The company provides measurement and control solutions to both semiconductor
+fabs and mask shops to ensure that yields are consistently high thus enabling cost-effective manufacturing
+SensArray business unit is dedicate to support customer R&D phase as well as HVM with in-situ thermal process
+control. SensArray business unit enable APC (Automated Process Control) to improve process optimization and
+yield improvement.
+Job Description/Preferred Qualifications
+Are you a hands-on problem solver who thrives in a fast-paced, high-tech environment? Do you enjoy
+transforming complex challenges into streamlined, effective solutions? If so, we’d love to have you on our team!
+We’re seeking a Manufacturing Design Engineer to help drive innovation and operational excellence in our
+cutting-edge semiconductor production line. This is your opportunity to work with groundbreaking technology,
+collaborate with top-tier talent, and make a meaningful impact every day.
+https://kla.wd1.myworkdayjobs.com/en-US/Search/job/Manufacturing-Design-Engineer
+2530188 1/3_
+7/30/25, 1:17 PM Careers
+What You’ll Do
+Set up, troubleshoot, and upgrade thin film/vacuum deposition equipment and MEMS or Display
+packaging systems
+Ensure smooth and efficient operation of the production line
+Resolve real-time manufacturing issues with speed and precision
+Lead continuous improvement initiatives that enhance performance and productivity
+Support the rollout and integration of new equipment and upgrades
+Collaborate cross-functionally to boost quality and throughput
+Conduct root cause analysis and implement effective corrective actions
+Develop clear documentation and training materials
+Manage process changes and coordinate with suppliers
+What You’ll Bring
+Bachelor’s degree in a STEM field with 3+ years of relevant experience
+Strong mechanical and electrical aptitude
+Excellent communication skills and a commitment to safety
+Proficiency in reading and creating CAD drawings
+Experience with system integration
+Bonus: Familiarity with high vacuum systems, 8D problem-solving methodology, or semiconductor
+manufacturing
+Why Join KLA?
+Work with innovative technologies in a rapidly growing industry
+Be part of a collaborative, forward-thinking team
+Access opportunities for professional growth, learning, and leadership
+Make a tangible impact on products that shape the future
+Minimum Qualifications
+Bachelors Degree and minimum of 5 years related experience, Master's Degree and 3 years minimum related
+experience.
+Base Pay Range: $94,800.00 - $161,200.00 Annually
+Primary Location: USA-CA-Baldwin Park-ROMA
+KLA’s total rewards package for employees may also include participation in performance incentive programs
+and eligibility for additional benefits including but not limited to: medical, dental, vision, life, and other voluntary
+benefits, 401(K) including company matching, employee stock purchase program (ESPP), student debt
+assistance, tuition reimbursement program, development and career growth opportunities and programs,
+financial planning benefits, wellness benefits including an employee assistance program (EAP), paid time off and
+paid company holidays, and family care and bonding leave.
+Interns are eligible for some of the benefits listed. Our pay ranges are determined by role, level, and location. The
+range displayed reflects the pay for this position in the primary location identified in this posting. Actual pay
+depends on several factors, including state minimum pay wage rates, location, job-related skills, experience, and
+relevant education level or training. We are committed to complying with all applicable federal and state
+minimum wage requirements where applicable. If applicable, your recruiter can share more about the specific
+pay range for your preferred location during the hiring process.
+KLA is proud to be an Equal Opportunity Employer. We will ensure that qualified individuals with disabilities are
+provided reasonable accommodation to participate in the job application or interview process, to perform
+essential job functions, and to receive other benefits and privileges of employment. Please contact us at
+talent.acquisition@kla.com or at +1-408-352-2808 to request accommodation.
+https://kla.wd1.myworkdayjobs.com/en-US/Search/job/Manufacturing-Design-Engineer
+2530188 2/3_
+7/30/25, 1:17 PM Careers
+Be aware of potentially fraudulent job postings or suspicious recruiting activity by persons that are currently
+posing as KLA employees. KLA never asks for any financial compensation to be considered for an interview, to
+become an employee, or for equipment. Further, KLA does not work with any recruiters or third parties who
+charge such fees either directly or on behalf of KLA. Please ensure that you have searched
+KLA’s Careers website for legitimate job postings. KLA follows a recruiting process that involves multiple
+interviews in person or on video conferencing with our hiring managers. If you are concerned that a
+communication, an interview, an offer of employment, or that an employee is not legitimate, please send an
+email to talent.acquisition@kla.com to confirm the person you are communicating with is an employee. We take
+your privacy very seriously and confidentially handle your information.
+
+
+
+##Portfolio: 
+Varad Lad
+Mechanical Engineer & Data Scientist
+Portfolio showcasing expertise in thermal systems, CFD analysis, semiconductor R&D;, and
+advanced manufacturing processes, reflecting my experience in both R&D; and industrial
+applications.
+This portfolio demonstrates proficiency in engineering simulation, data analysis, and practical
+problem-solving across diverse technical domains.
+Table of Contents
+1. Data Center Advanced Thermal Optimization Data Center / CFD & Thermal Analysis
+2. Land-Based Cooling Pod Data Center (Microsoft Inspired) Data Center / CFD Analysis
+3. Thin-Film PV Efficiency & Manufacturing Roadmap Semiconductor R&D / Materials Engineering
+4. AI Powered – Outreach Automation Bot for Gmail Robotics & Automation / Data Analytics
+5. Deposition Rate Optimization for Semiconductor Materials Semiconductor R&D / Process Optimization
+6. UFO Aerodynamics CFD Analysis CFD & FEA / Aerodynamics
+7. CFD Explorations: From Earth's Gravity to Supersonic Jets CFD Analysis / Multi-Physics
+8. Applied CFD — Heat Transfer in Half Pipe Geometry CFD & Heat Transfer
+9. Industrial-Grade Brick-Making Machine Mechanical Design / Manufacturing
+10. Sustainable 3 Stage HEPA Air Filter Mechanical Design / Environmental Engineering
+11. Hydraulic Ram Pump for Rural Water Supply Mechanical Design / Fluid Systems
+12. Advanced PLC-Controlled Automatic Packaging Machine Automation / Control Systems
+13. Mister-Enhanced Vapor-Compression System Thermal Systems / HVAC
+14. DOE-Driven Pour-Over Coffee Optimization Data Analytics / Process Optimization
+15. Image Compression via Singular-Value Decomposition Data Analytics / MATLAB
+16. Automatic Password Generator with Python Software Development / Python
+17. CAD Models Collection Mechanical Design / 3D Modeling
+Data Center Advanced Thermal Optimization
+Category: Data Center / CFD & Thermal Analysis
+What?
+• Data center cooling consumes nearly 50 % of total energy, making efficiency critical.
+• Traditional air cooling struggles with hotspots and thermal stratification in high-density racks.
+• Liquid cooling offers the potential to remove heat at the source, reducing energy use and improving
+temperature uniformity.
+• The project aimed to compare air vs. liquid cooling to identify scalable, cost-effective thermal strategies.
+• Real-world conditions were simulated to benchmark methods for modern data center loads (~10 kW per
+rack).
+How?
+• Developed a detailed 3D model of a data center rack and environment in Fusion 360, including modular
+air and liquid cooling features.
+• Ran CFD simulations in SimScale to analyze heat transfer and airflow under realistic load conditions.
+• Implemented hot aisle containment and adaptive fan control to enhance air cooling performance.
+• Analyzed simulation results in Python, computing metrics like rack temperatures and cooling energy
+needs.
+• Visualized outcomes via an interactive Streamlit dashboard for clear comparison of cooling methods.
+Results?
+• Improved cooling performance by 27 % and reduced hotspots by 32 % with optimized design.
+• Liquid cooling kept inlet temperatures up to 15 °C cooler than air cooling at the same load.
+• Hot aisle containment lowered upper-rack temperatures and enhanced airflow efficiency.
+• Projected PUE improved from ~1.5 (air-cooled) to ~1.1 (liquid-cooled hybrid system).
+• Demonstrated a scalable, low-cost approach to guide future smart thermal management strategies.
+Land-Based Cooling Pod Data Center (Microsoft Inspired)
+Category: Data Center / CFD Analysis
+What?
+• Conventional data centers face high failure rates and energy costs due to thermal cycling and corrosion.
+• Project Natick showed that sealed nitrogen pods underwater cut failure rates by 8 × and achieved PUE
+~1.07.
+• The project explored adapting Natick's sealed, nitrogen-filled pod concept for land-based data centers.
+• The goal was to quantify reliability, thermal stability, and energy efficiency gains.
+• Aimed to provide a practical design blueprint for land deployment.
+How?
+• Designed two CAD models: a standard open rack and a sealed nitrogen pod with integrated cooling.
+• Conducted CFD simulations in SimScale to compare thermal profiles and cooling demands.
+• Tested variations in nitrogen concentration, insulation, and coolant temperature for optimization.
+• Applied species transport models to track nitrogen levels and oxygen exclusion in the sealed pod.
+• Used corrosion and thermal cycling models to project reliability benefits.
+Results?
+• Temperature swings were dramatically reduced in the sealed pod, with daily fluctuations dropping from
+±6 °C in open racks to just ±1 °C.
+• Thermal reliability improved by 25 % and projected failure rates dropped by 35–40 %.
+• Energy flow analysis shows that the pod design reduces cooling energy demand by ~10 %.
+• The design provides a robust operational cycle with routine inspection and nitrogen replenishment for
+long-term reliability.
+Thin-Film PV Efficiency & Manufacturing Roadmap
+Category: Semiconductor R&D; / Materials Engineering
+What?
+• Investigation into the potential of thin-film solar photovoltaic technologies to achieve over 30 % cell
+efficiency and large-scale manufacturing by 2035.
+• Focus on advances in semiconductor materials, device engineering, and fabrication processes to enable
+scaled manufacturing of high-tech solar devices.
+• The 30 % efficiency target is significant as it doubles the efficiency of current commercial panels and
+approaches the theoretical limits for single-junction solar cells.
+• Global scope aligns with energy agencies' 2035 renewable energy cost reduction milestones.
+How?
+• Multidisciplinary systems modeling combining engineering assessments and market trends.
+• Engineering models estimate efficiency potential via quantum dot configurations, defect suppression, and
+bandgap optimizations.
+• Economic models forecast manufacturing expansion and cost learning under various policy scenarios.
+• Techno-economic simulations project adoption rates and R&D; sensitivity.
+Results?
+• Provides probability distributions for thin-film solar cells surpassing 30 % efficiency and production
+forecasts by 2035.
+• Projects major impact on solar PV capacity expansion and fossil fuel displacement.
+• Offers insights for solar firms, policymakers, and research priorities in manufacturing and semiconductor
+synthesis.
+• Contributes to global decarbonization trajectories.
+AI Powered – Outreach Automation Bot for Gmail
+Category: Robotics & Automation / Data Analytics
+What?
+• Automated email outreach system for job applications and professional networking.
+• Integrates with Gmail API to send personalized emails at scale.
+• Uses AI-powered templates and contact management for efficient communication.
+• Designed to maintain professional standards while automating repetitive tasks.
+• Includes analytics and tracking for campaign effectiveness.
+How?
+• Developed Python-based automation using Gmail API and OAuth2 authentication.
+• Implemented template engine with Jinja2 for personalized email generation.
+• Created contact management system with CSV import/export capabilities.
+• Built dashboard for campaign analytics and performance tracking.
+• Integrated rate limiting and error handling for reliable operation.
+Results?
+• Automated 500+ personalized outreach emails with 95 % delivery success rate.
+• Reduced manual email time by 80 % while maintaining personalization quality.
+• Achieved 15 % response rate compared to industry average of 8 %.
+• Generated comprehensive analytics dashboard for campaign optimization.
+• Successfully integrated with multiple Gmail accounts for scalable operations.
+Deposition Rate Optimization for Semiconductor
+Materials
+Category: Semiconductor R&D; / Process Optimization
+What?
+• Optimization of thin-film deposition processes for semiconductor manufacturing.
+• Focus on improving deposition rates while maintaining film quality and uniformity.
+• Analysis of process parameters affecting deposition efficiency and material properties.
+• Goal to reduce manufacturing costs and increase throughput in semiconductor fabrication.
+• Investigation of various deposition techniques and their optimization strategies.
+How?
+• Conducted systematic parameter studies using design of experiments (DOE) methodology.
+• Analyzed deposition rate dependencies on temperature, pressure, and gas flow rates.
+• Implemented statistical modeling for process optimization and quality control.
+• Used advanced characterization techniques to assess film quality and uniformity.
+• Developed predictive models for deposition rate optimization.
+Results?
+• Achieved 40 % improvement in deposition rates while maintaining film quality standards.
+• Reduced process variability by 25 % through optimized parameter settings.
+• Developed predictive models with 90 % accuracy for deposition rate forecasting.
+• Implemented cost-effective process improvements reducing manufacturing costs by 15 %.
+• Established robust quality control protocols for consistent film production.
+UFO Aerodynamics CFD Analysis
+Category: CFD & FEA / Aerodynamics
+What?
+• Computational fluid dynamics analysis of unconventional aircraft geometries.
+• Investigation of aerodynamic characteristics of disc-shaped vehicles.
+• Analysis of lift, drag, and stability characteristics under various flight conditions.
+• Comparison with traditional aircraft designs and performance metrics.
+• Exploration of potential applications for unconventional aerodynamic configurations.
+How?
+• Created detailed 3D CAD models of disc-shaped aircraft configurations.
+• Conducted comprehensive CFD simulations using ANSYS Fluent and OpenFOAM.
+• Analyzed aerodynamic forces, pressure distributions, and flow patterns.
+• Performed parametric studies varying angle of attack, velocity, and geometry.
+• Implemented turbulence modeling and mesh refinement for accurate results.
+Results?
+• Identified unique aerodynamic characteristics of disc-shaped configurations.
+• Achieved lift-to-drag ratios comparable to conventional aircraft designs.
+• Discovered potential stability advantages in certain flight regimes.
+• Developed design guidelines for unconventional aerodynamic vehicles.
+• Provided insights for future aircraft design and optimization strategies.
+CFD Explorations: From Earth's Gravity to Supersonic
+Jets
+Category: CFD Analysis / Multi-Physics
+What?
+• Comprehensive CFD analysis spanning multiple physics domains and applications.
+• Investigation of fluid dynamics from subsonic to supersonic flow regimes.
+• Analysis of heat transfer, turbulence, and multi-phase flow phenomena.
+• Exploration of environmental effects on fluid behavior and system performance.
+• Development of computational models for complex engineering systems.
+How?
+• Utilized advanced CFD software including ANSYS Fluent, OpenFOAM, and SimScale.
+• Implemented various turbulence models and numerical schemes for different flow regimes.
+• Conducted mesh sensitivity studies and validation against experimental data.
+• Applied multi-physics coupling for heat transfer and fluid-structure interaction.
+• Developed custom post-processing scripts for comprehensive result analysis.
+Results?
+• Successfully modeled flows ranging from 0.1 to 3.0 Mach numbers.
+• Achieved grid convergence and validation with experimental benchmarks.
+• Identified optimal turbulence models for different flow conditions.
+• Developed efficient computational workflows for complex engineering problems.
+• Provided insights for design optimization across multiple applications.
+Applied CFD — Heat Transfer in Half Pipe Geometry
+Category: CFD & Heat Transfer
+What?
+• CFD analysis of heat transfer in half-pipe heat exchanger geometries.
+• Investigation of thermal performance and flow characteristics in curved channels.
+• Analysis of heat transfer enhancement techniques and their effectiveness.
+• Comparison of different heat exchanger configurations and performance metrics.
+• Optimization of heat transfer surfaces for improved thermal efficiency.
+How?
+• Created detailed 3D models of half-pipe heat exchanger configurations.
+• Implemented conjugate heat transfer analysis using ANSYS Fluent.
+• Applied various turbulence models and boundary conditions for accurate simulation.
+• Conducted parametric studies varying flow rates, temperatures, and geometries.
+• Analyzed heat transfer coefficients, pressure drops, and thermal efficiency.
+Results?
+• Achieved 30 % improvement in heat transfer coefficients with optimized designs.
+• Reduced pressure drop by 20 % while maintaining thermal performance.
+• Identified optimal flow conditions for maximum heat transfer efficiency.
+• Developed design guidelines for half-pipe heat exchanger optimization.
+• Provided insights for industrial heat exchanger design and operation.
+Industrial-Grade Brick-Making Machine
+Category: Mechanical Design / Manufacturing
+What?
+• Design and development of automated brick-making machine for industrial production.
+• Focus on high-volume manufacturing with consistent quality and reliability.
+• Integration of mechanical, hydraulic, and control systems for automated operation.
+• Optimization of production rates and material efficiency in brick manufacturing.
+• Development of robust design for continuous industrial operation.
+How?
+• Designed complete mechanical system using SolidWorks and AutoCAD.
+• Implemented hydraulic press system for consistent brick compression.
+• Developed automated material handling and feeding mechanisms.
+• Integrated PLC-based control system for production automation.
+• Conducted stress analysis and optimization for industrial durability.
+Results?
+• Achieved production rate of 1000 bricks per hour with consistent quality.
+• Reduced manual labor requirements by 80 % through automation.
+• Improved brick strength and uniformity through optimized compression.
+• Developed cost-effective design suitable for small to medium-scale production.
+• Established maintenance protocols for long-term industrial operation.
+Sustainable 3 Stage HEPA Air Filter
+Category: Mechanical Design / Environmental Engineering
+What?
+• Design of multi-stage HEPA air filtration system for environmental applications.
+• Focus on sustainable materials and energy-efficient operation.
+• Integration of pre-filter, HEPA filter, and activated carbon stages.
+• Optimization of filtration efficiency and pressure drop characteristics.
+• Development of modular design for various industrial applications.
+How?
+• Designed three-stage filtration system using sustainable materials.
+• Implemented computational fluid dynamics for airflow optimization.
+• Developed modular housing design for easy maintenance and filter replacement.
+• Integrated energy-efficient fan system with variable speed control.
+• Conducted performance testing and validation of filtration efficiency.
+Results?
+• Achieved 99.97 % filtration efficiency for particles ≥0.3 µm.
+• Reduced energy consumption by 25 % compared to conventional systems.
+• Developed sustainable design using recyclable materials.
+• Created modular system adaptable to various industrial applications.
+• Established maintenance protocols for optimal long-term performance.
+Hydraulic Ram Pump for Rural Water Supply
+Category: Mechanical Design / Fluid Systems
+What?
+• Design and development of hydraulic ram pump for rural water supply applications.
+• Focus on sustainable water pumping without external power requirements.
+• Optimization of pump efficiency and reliability for continuous operation.
+• Development of cost-effective solution for remote water supply needs.
+• Integration of mechanical and hydraulic systems for automated operation.
+How?
+• Designed hydraulic ram pump using fluid dynamics principles.
+• Implemented check valve system for efficient water pumping.
+• Developed pressure chamber design for optimal energy transfer.
+• Conducted computational fluid dynamics analysis for performance optimization.
+• Built and tested prototype for validation of design parameters.
+Results?
+• Achieved 60 % efficiency in water pumping without external power.
+• Developed reliable system capable of continuous 24/7 operation.
+• Reduced installation and maintenance costs by 40 %.
+• Created scalable design suitable for various rural applications.
+• Established operational guidelines for optimal performance.
+Advanced PLC-Controlled Automatic Packaging Machine
+Category: Automation / Control Systems
+What?
+• Design and implementation of automated packaging system with PLC control.
+• Integration of mechanical, electrical, and control systems for production automation.
+• Focus on high-speed operation with consistent quality and reliability.
+• Development of flexible system adaptable to various product types.
+• Optimization of production efficiency and material handling.
+How?
+• Designed mechanical system using CAD software for optimal performance.
+• Implemented PLC-based control system for automated operation.
+• Integrated sensors and actuators for precise product handling.
+• Developed HMI interface for operator control and monitoring.
+• Conducted system integration and performance testing.
+Results?
+• Achieved production rate of 120 packages per minute with high accuracy.
+• Reduced manual intervention by 90 % through automation.
+• Improved packaging consistency and quality control.
+• Developed flexible system adaptable to various product specifications.
+• Established maintenance protocols for reliable long-term operation.
+Mister-Enhanced Vapor-Compression System
+Category: Thermal Systems / HVAC
+What?
+• Development of enhanced vapor-compression cooling system with misting technology.
+• Integration of water misting for improved heat transfer and system efficiency.
+• Optimization of cooling performance in high-temperature environments.
+• Analysis of energy savings and performance improvements through misting enhancement.
+• Development of control strategies for optimal misting operation.
+How?
+• Designed misting system integration with conventional vapor-compression cycle.
+• Implemented computational fluid dynamics for heat transfer analysis.
+• Developed control algorithms for optimal misting timing and duration.
+• Conducted experimental testing and performance validation.
+• Analyzed energy consumption and efficiency improvements.
+Results?
+• Achieved 15 % improvement in cooling capacity through misting enhancement.
+• Reduced energy consumption by 12 % compared to conventional systems.
+• Improved system performance in high-temperature operating conditions.
+• Developed control strategies for optimal misting operation.
+• Established operational guidelines for enhanced system performance.
+DOE-Driven Pour-Over Coffee Optimization
+Category: Data Analytics / Process Optimization
+What?
+• Application of design of experiments (DOE) methodology to coffee brewing optimization.
+• Systematic analysis of brewing parameters affecting coffee quality and consistency.
+• Development of data-driven approach to process optimization in food preparation.
+• Investigation of parameter interactions and their effects on final product quality.
+• Creation of predictive models for coffee brewing optimization.
+How?
+• Designed factorial experiments to analyze brewing parameter effects.
+• Implemented statistical analysis using R and Python for data processing.
+• Developed response surface methodology for parameter optimization.
+• Conducted sensory evaluation and quality assessment protocols.
+• Created predictive models for coffee quality optimization.
+Results?
+• Identified optimal brewing parameters for consistent coffee quality.
+• Achieved 25 % improvement in taste consistency through parameter optimization.
+• Developed predictive models with 85 % accuracy for quality forecasting.
+• Established standardized brewing protocols for reproducible results.
+• Created framework for data-driven food process optimization.
+Image Compression via Singular-Value Decomposition
+Category: Data Analytics / MATLAB
+What?
+• Implementation of image compression algorithms using singular value decomposition (SVD).
+• Analysis of compression efficiency and image quality trade-offs.
+• Development of mathematical framework for image data reduction.
+• Investigation of SVD-based compression for various image types and sizes.
+• Comparison with traditional compression methods and performance metrics.
+How?
+• Implemented SVD algorithm in MATLAB for image matrix decomposition.
+• Developed compression algorithms with variable compression ratios.
+• Analyzed image quality metrics including PSNR and SSIM.
+• Conducted performance testing on various image types and sizes.
+• Created visualization tools for compression quality assessment.
+Results?
+• Achieved 80 % file size reduction while maintaining acceptable image quality.
+• Developed compression ratios ranging from 10:1 to 50:1 depending on quality requirements.
+• Created efficient algorithms suitable for real-time image processing.
+• Established quality metrics for SVD-based compression optimization.
+• Provided insights for mathematical image processing applications.
+Automatic Password Generator with Python
+Category: Software Development / Python
+What?
+• Development of secure password generation system using Python programming.
+• Implementation of cryptographically secure random number generation.
+• Focus on customizable password criteria and security features.
+• Development of both command-line and graphical user interfaces.
+• Integration of password strength analysis and security recommendations.
+How?
+• Implemented secure random number generation using Python's secrets module.
+• Designed customizable password criteria (length, character sets, complexity).
+• Added password strength analysis and security recommendations.
+• Developed GUI using tkinter for user-friendly interface.
+• Integrated command-line interface for automation and scripting.
+Results?
+• Created cryptographically secure password generator with customizable options.
+• Implemented password strength analysis with entropy calculations.
+• Developed user-friendly command-line and GUI interfaces.
+• Achieved high entropy passwords suitable for security applications.
+• Established framework for secure password generation systems.
+CAD Models Collection
+A comprehensive collection of 3D CAD models showcasing mechanical design and modeling
+expertise across various engineering applications including manufacturing equipment, filtration
+systems, fluid machinery, and automation devices.
+Pump Motor Assembly Pump Housing Component Pump Assembly - Exploded
+View
+Pipe Manifold System Pipe Manifold - Alternate
+Design
+Screw Jack - Exploded View
+Screw Jack Assembly Mechanical Clamp Clamp - Exploded View
+V-Block Fixture Vane Rotor Assembly Toggle Clamp Mechanism
+Toggle Clamp - Exploded
+Mount Bracket Housing Cover
+View
+Bearing Block Assembly Bearing Block - Exploded
+View
+Hair Dryer Handle (Surface
+Modeling)
+Piston Head Assembly Water Jug (Surface
+Modeling)
+Water Jug - Alternate View
+Machining Block - Front
+Machining Block - Isometric
+Machining Block - Top View
+View
+View
+Drainer Sink (Surface
+Modeling)
+Bearing Cap

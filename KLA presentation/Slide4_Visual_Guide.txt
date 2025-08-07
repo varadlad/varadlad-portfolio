@@ -1,0 +1,46 @@
+
+SLIDE 4 VISUAL REQUIREMENTS GUIDE
+=================================
+
+DIAGRAM EXPLANATION:
+
+🎯 RADIAL SPOKE DIAGRAM (Primary Option):
+- CENTER CIRCLE: "Optimize Deposition Process" - the main objective
+- 5 SPOKES: Each represents a key requirement category
+- COLOR CODING: Different colors for easy identification
+- METRICS: Quantified targets for each requirement
+- DESCRIPTIONS: Brief explanations outside each circle
+
+📊 CYCLE DIAGRAM (Alternative Option):
+- PENTAGON SHAPE: Shows interconnected requirements
+- CENTER HUB: Optimal deposition process
+- CONNECTING LINES: Shows how requirements relate to each other
+- BALANCED APPROACH: All requirements equally important
+
+HOW TO PRESENT:
+
+🗣️ OPENING:
+"Rather than list requirements as bullet points, this diagram shows our optimization goals visually. The center represents our main objective - optimizing the deposition process. Each spoke represents a critical requirement."
+
+🗣️ WALK THROUGH EACH SPOKE:
+1. "Higher Throughput (blue) - We're targeting 30-40% improvement in deposition rate"
+2. "Quality Preservation (green) - Maintaining all film specifications while going faster"  
+3. "Process Consistency (yellow) - Reducing variability and defects by 20-25%"
+4. "Cost Efficiency (red) - Achieving 15% cost savings per wafer"
+5. "Operational Constraints (purple) - Staying within equipment safety limits"
+
+🗣️ KEY MESSAGE:
+"Notice these aren't trade-offs - our goal is to achieve ALL these requirements simultaneously through intelligent optimization, not by sacrificing one for another."
+
+VISUAL ADVANTAGES:
+✅ Immediate comprehension - audience sees all requirements at once
+✅ Balanced presentation - no hierarchy implied
+✅ Quantified targets - specific metrics clearly displayed
+✅ Professional appearance - reduces text-heavy slide syndrome
+✅ Memorable format - easier to recall than bullet points
+
+TECHNICAL DEPTH READY:
+- Be prepared to explain WHY each target is realistic
+- Know the relationships between requirements
+- Understand which requirements might conflict and how optimization resolves this
+- Connect each requirement to semiconductor manufacturing best practices

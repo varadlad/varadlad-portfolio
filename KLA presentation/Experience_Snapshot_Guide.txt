@@ -1,0 +1,72 @@
+EXPERIENCE SNAPSHOT - PRESENTATION GUIDE
+======================================
+
+PURPOSE:
+Demonstrate direct alignment between your background and KLA SensArray role requirements
+
+WHEN TO USE:
+• As backup slide during Q&A about your experience
+• If interviewer asks about specific technical background
+• To reinforce your qualifications during role-fit discussion
+• As supporting material for "Why you're the right candidate"
+
+VISUAL ELEMENTS:
+
+📊 FOUR EXPERIENCE CATEGORIES:
+
+1. THIN-FILM DEPOSITION (Blue - Top Left)
+   - Rayn Innovation: Nano-thin films, spin coating, sol-gel
+   - DOE optimization with JMP
+   - TSMC vacuum chamber support
+
+2. VACUUM SYSTEM DESIGN (Green - Top Right)
+   - TSMC N+1 redundancy plan (25% downtime reduction)
+   - Fab21 tool hookups and layout
+   - Chamber sealing and leak testing
+
+3. ROOT CAUSE ANALYSIS (Yellow - Bottom Left)
+   - JMP-based DOE at Rayn
+   - 8D methodology at TSMC ($120K savings)
+   - Failure data analysis for calibration
+
+4. SYSTEM DESIGN & CAD (Red - Bottom Right)
+   - SolidWorks and Fusion360 modeling
+   - CFD thermal analysis
+   - Engineering drawings for vacuum systems
+
+🗣️ HOW TO PRESENT (2-3 minutes):
+
+OPENING (30 seconds):
+"Let me show you how my experience directly aligns with what KLA SensArray needs. I've organized my background into four key areas."
+
+CATEGORY WALKTHROUGH (90 seconds):
+"Starting with thin-film deposition - I have hands-on experience with the exact processes KLA's customers use. At Rayn Innovation, I synthesized nano-films and optimized deposition rates using DOE.
+
+For vacuum systems, at TSMC I designed redundancy plans and coordinated tool installations - critical for the fab environment where SensArray operates.
+
+My root cause analysis experience includes both the statistical rigor (JMP, DOE) and the practical problem-solving (8D, FMEA) that KLA values.
+
+Finally, my CAD and thermal analysis skills directly support sensor wafer design and integration."
+
+CLOSING (30 seconds):
+"This isn't just related experience - this is direct, hands-on work in the exact technical domains where KLA SensArray operates."
+
+KEY MESSAGES:
+✅ Direct semiconductor manufacturing experience
+✅ Hands-on deposition and vacuum system work
+✅ Statistical process optimization expertise
+✅ Proven cost savings and performance improvements
+✅ Cross-functional technical skills
+
+TECHNICAL DEPTH READY:
+- Specific JMP techniques used
+- Vacuum system design principles
+- 8D methodology application
+- CFD analysis approaches
+- CAD modeling best practices
+
+STRATEGIC VALUE:
+• Proves you can contribute immediately
+• Shows understanding of KLA's technical challenges
+• Demonstrates both breadth and depth of experience
+• Connects your background to business impact

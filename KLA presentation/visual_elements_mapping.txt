@@ -1,0 +1,61 @@
+VISUAL ELEMENTS MAPPING REFERENCE
+==================================================
+
+This document maps visual elements to specific slides in the main presentation.
+
+VISUAL: Process Flow Diagram
+FILE: process_flow_diagram.png
+MAPS TO: Slide 5: Concept and Methodology
+DESCRIPTION: Two-Phase Optimization Methodology
+USAGE: Visual representation of the DOE + Bayesian optimization workflow
+----------------------------------------
+
+VISUAL: Parameter Ranges Table
+FILE: parameter_ranges_table.png
+MAPS TO: Slide 7: Technical Implementation & Parameter Mapping
+DESCRIPTION: Process Parameters and Optimization Results
+USAGE: Detailed parameter specifications and optimization outcomes
+----------------------------------------
+
+VISUAL: DOE Matrix Heatmap
+FILE: doe_matrix_heatmap.png
+MAPS TO: Slide 6: Decision Framework (DOE & Design Tree)
+DESCRIPTION: Design of Experiments Matrix Visualization
+USAGE: Visual representation of experimental design structure
+----------------------------------------
+
+VISUAL: Bayesian Optimization Workflow
+FILE: bayesian_workflow.png
+MAPS TO: Slide 8: Bayesian Optimization Code and Analysis
+DESCRIPTION: Algorithm Implementation Flowchart
+USAGE: Step-by-step algorithm workflow with decision points
+----------------------------------------
+
+VISUAL: Results Summary Charts
+FILE: results_charts.png
+MAPS TO: Slide 9: Results & Data Interpretation
+DESCRIPTION: Key Performance Improvements
+USAGE: Quantitative results showing 40% rate increase, 25% variability reduction
+----------------------------------------
+
+VISUAL: Validation Metrics Spider Chart
+FILE: validation_spider_chart.png
+MAPS TO: Slide 10: Metrology & Validation
+DESCRIPTION: Film Quality Assessment Comparison
+USAGE: Multi-dimensional quality comparison baseline vs optimized
+----------------------------------------
+
+VISUAL: KLA Alignment Diagram
+FILE: kla_alignment_diagram.png
+MAPS TO: Slide 11: Relevance to KLA & Candidate Fit
+DESCRIPTION: Candidate-Role Fit Visualization
+USAGE: Visual mapping of skills to KLA SensArray requirements
+----------------------------------------
+
+VISUAL: Project Timeline
+FILE: project_timeline.png
+MAPS TO: Additional/Backup slide
+DESCRIPTION: Gantt Chart of Project Phases
+USAGE: Project management timeline showing systematic approach
+----------------------------------------
+

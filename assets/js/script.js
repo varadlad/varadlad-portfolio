@@ -1579,3 +1579,32 @@ function initExtrasTouchSupport(carousel) {
     isDragging = false;
   });
 }
+
+/* ===== IMAGE POSITIONING SYSTEM ===== */
+// Auto-apply data-pos attributes to object-position style
+document.addEventListener("DOMContentLoaded", function() {
+    // Target banner/card images
+    const bannerImages = document.querySelectorAll(".extras-banner-box img, .project-card img");
+    
+    bannerImages.forEach(img => {
+        const dataPos = img.getAttribute("data-pos");
+        if (dataPos) {
+            // Convert data-pos to object-position format
+            const positions = {
+                "left top": "left top",
+                "left center": "left center", 
+                "left bottom": "left bottom",
+                "center top": "center top",
+                "center center": "center center",
+                "center bottom": "center bottom",
+                "right top": "right top",
+                "right center": "right center",
+                "right bottom": "right bottom"
+            };
+            
+            if (positions[dataPos]) {
+                img.style.objectPosition = positions[dataPos];
+            }
+        }
+    });
+});

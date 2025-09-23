@@ -4298,3 +4298,49 @@ article.resume.active {
     font-size: var(--fs-9) !important;
   }
 }
+
+/* ===== EXTRAS IMAGE LAYOUT FIX ===== */
+
+/* Double images - each takes half */
+.extras-image-carousel.double-image .extras-image-scroll {
+    display: flex;
+    height: 200px;
+    width: 100%;
+    gap: 10px;
+}
+
+.extras-image-carousel.double-image img {
+    width: calc(50% - 5px);
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* Triple images - each takes third */
+.extras-image-carousel.triple-image .extras-image-scroll {
+    display: flex;
+    height: 200px;
+    width: 100%;
+    gap: 10px;
+}
+
+.extras-image-carousel.triple-image img {
+    width: calc(33.33% - 7px);
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* Hide scroll buttons since we're not scrolling anymore */
+.extras-scroll-btn {
+    display: none !important;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .extras-image-carousel.double-image .extras-image-scroll,
+    .extras-image-carousel.triple-image .extras-image-scroll {
+        height: 150px;
+        gap: 5px;
+    }
+}

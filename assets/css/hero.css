@@ -1,0 +1,484 @@
+/*-----------------------------------*\
+  #HERO
+  Full-screen landing journey, drawn by hero.js.
+\*-----------------------------------*/
+
+/* a plain cover holds the first paint until hero.js takes over; the delayed
+   rule removes it even if hero.js never loads */
+.hero-boot::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: #050506;
+  animation: hero-failsafe 0s linear 6s forwards;
+}
+
+@keyframes hero-failsafe {
+  to { visibility: hidden; }
+}
+
+.hero-open,
+.hero-open body { overflow: hidden; }
+
+#hero {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  background: #050506;
+  color: var(--white-2);
+  font-family: var(--ff-poppins);
+  overflow: hidden;
+  overscroll-behavior: none;
+  touch-action: none;
+  user-select: none;
+  -webkit-user-select: none;
+  transition: opacity 0.7s ease;
+}
+
+#hero.is-leaving {
+  opacity: 0;
+  transition-delay: 0.25s;
+  pointer-events: none;
+}
+
+/* only the flying particles cross into the site, never the text */
+#hero.is-leaving > :not(.hero-canvas) {
+  opacity: 0 !important;
+  transition: opacity 0.18s ease !important;
+}
+
+.hero-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  cursor: grab;
+  touch-action: none;
+}
+
+.hero-canvas.is-dragging { cursor: grabbing; }
+
+
+
+/**
+ * SCRIM keeps text readable over the particles
+ */
+
+.hero-scrim {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0;
+  background: linear-gradient(90deg, hsla(240, 6%, 3%, 0.82) 0%, hsla(240, 6%, 3%, 0.5) 34%, transparent 58%);
+  transition: opacity 0.8s ease;
+}
+
+.is-journey .hero-scrim { opacity: 1; }
+
+
+
+/**
+ * OPENING TITLE
+ */
+
+.hero-title {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 60%;
+  padding: 0 24px;
+  text-align: center;
+  pointer-events: none;
+  opacity: 0;
+  transform: translateY(14px);
+  filter: blur(6px);
+  transition: opacity 0.5s ease, transform 0.8s cubic-bezier(0.34, 1.45, 0.64, 1), filter 0.5s ease;
+}
+
+.hero-title.is-in {
+  opacity: 1;
+  transform: none;
+  filter: none;
+  transition-delay: 0.45s;
+}
+
+.hero-title-role {
+  font-size: clamp(15px, 1.7vw, 24px);
+  font-weight: 400;
+  color: hsl(45, 100%, 80%);
+  letter-spacing: 0.01em;
+}
+
+.hero-title-hint {
+  margin-top: 14px;
+  font-size: clamp(12px, 1vw, 14px);
+  font-weight: 300;
+  color: hsla(0, 0%, 100%, 0.62);
+}
+
+
+
+/**
+ * YEAR ticks forward between stages
+ */
+
+.hero-year {
+  position: absolute;
+  left: clamp(20px, 6vw, 96px);
+  top: clamp(58px, 12vh, 130px);
+  font-size: clamp(56px, 8.5vw, 132px);
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+  pointer-events: none;
+  background: linear-gradient(180deg, hsl(45, 100%, 82%) 0%, hsl(38, 90%, 58%) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  opacity: 0;
+  transition: opacity 0.6s ease;
+}
+
+.is-journey .hero-year { opacity: 1; }
+
+
+
+/**
+ * STAGE PANEL
+ */
+
+.hero-panel {
+  position: absolute;
+  left: clamp(20px, 6vw, 96px);
+  bottom: 132px;
+  width: min(460px, calc(100vw - 40px));
+  pointer-events: none;
+}
+
+.hero-panel > * {
+  opacity: 0;
+  transform: translateY(16px);
+  filter: blur(5px);
+  transition: opacity 0.22s ease, transform 0.22s ease, filter 0.22s ease;
+}
+
+.hero-panel.is-in > * {
+  opacity: 1;
+  transform: none;
+  filter: none;
+  transition: opacity 0.55s ease, transform 0.75s cubic-bezier(0.34, 1.45, 0.64, 1), filter 0.55s ease;
+}
+
+.hero-panel.is-in > :nth-child(2) { transition-delay: 0.07s; }
+.hero-panel.is-in > :nth-child(3) { transition-delay: 0.14s; }
+.hero-panel.is-in > :nth-child(4) { transition-delay: 0.21s; }
+.hero-panel.is-in > :nth-child(5) { transition-delay: 0.28s; }
+.hero-panel.is-in > :nth-child(6) { transition-delay: 0.35s; }
+
+.hero-panel [hidden] { display: none; }
+
+.hero-kicker {
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: hsl(45, 100%, 72%);
+}
+
+.hero-company {
+  margin-top: 6px;
+  font-size: clamp(34px, 4.2vw, 60px);
+  font-weight: 600;
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  color: var(--white-1);
+  text-transform: none;
+}
+
+.hero-role {
+  margin-top: 10px;
+  font-size: clamp(14px, 1.2vw, 17px);
+  font-weight: 400;
+  line-height: 1.45;
+  color: hsl(0, 0%, 84%);
+}
+
+.hero-enter {
+  margin-top: 22px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 48px;
+  padding: 0 26px;
+  border-radius: 999px;
+  background: hsl(45, 100%, 72%);
+  color: #16120a;
+  font-size: 15px;
+  font-weight: 600;
+  pointer-events: auto;
+  cursor: pointer;
+  box-shadow: 0 0 34px hsla(45, 100%, 72%, 0.35);
+  animation: hero-pulse 2.6s ease-in-out infinite;
+}
+
+.hero-enter span { transition: transform 0.3s cubic-bezier(0.34, 1.45, 0.64, 1); }
+
+.hero-enter:hover span { transform: translateX(5px); }
+
+.hero-enter:hover { background: hsl(45, 100%, 80%); }
+
+@keyframes hero-pulse {
+  0%, 100% { box-shadow: 0 0 26px hsla(45, 100%, 72%, 0.28); }
+  50% { box-shadow: 0 0 52px hsla(45, 100%, 72%, 0.55); }
+}
+
+
+
+/**
+ * RAIL
+ */
+
+.hero-rail {
+  position: absolute;
+  left: clamp(20px, 6vw, 96px);
+  right: clamp(20px, 6vw, 96px);
+  bottom: calc(22px + env(safe-area-inset-bottom));
+  height: 68px;
+  display: flex;
+  justify-content: space-between;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.6s ease;
+}
+
+.is-journey .hero-rail {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.hero-rail-line {
+  position: absolute;
+  left: 7px;
+  right: 7px;
+  top: 21px;
+  height: 2px;
+  background: hsla(0, 0%, 100%, 0.16);
+}
+
+.hero-rail-fill {
+  height: 100%;
+  background: hsl(45, 100%, 72%);
+  transform: scaleX(0);
+  transform-origin: left;
+  box-shadow: 0 0 12px hsla(45, 100%, 72%, 0.7);
+}
+
+.hero-rail-node {
+  position: relative;
+  min-width: 44px;
+  height: 68px;
+  padding: 14px 0 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  color: hsla(0, 0%, 100%, 0.62);
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.hero-rail-node:last-child { align-items: flex-end; }
+
+.hero-rail-node:hover,
+.hero-rail-node.is-active,
+.hero-rail-node.is-past { color: var(--white-1); }
+
+.hero-rail-dot {
+  flex: none;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #17171a;
+  border: 2px solid hsla(0, 0%, 100%, 0.34);
+  transition: transform 0.45s cubic-bezier(0.34, 1.45, 0.64, 1), background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hero-rail-node.is-past .hero-rail-dot {
+  background: hsl(45, 100%, 72%);
+  border-color: hsl(45, 100%, 72%);
+}
+
+.hero-rail-node.is-active .hero-rail-dot {
+  background: hsl(45, 100%, 72%);
+  border-color: hsl(45, 100%, 88%);
+  transform: scale(1.25);
+  box-shadow: 0 0 18px hsla(45, 100%, 72%, 0.85);
+}
+
+.hero-rail-label {
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.15;
+  display: flex;
+  gap: 6px;
+  white-space: nowrap;
+}
+
+.hero-rail-label small {
+  font-size: 12px;
+  font-weight: 300;
+  color: hsla(0, 0%, 100%, 0.62);
+}
+
+
+
+/**
+ * SKIP, REPLAY
+ */
+
+.hero-skip {
+  position: absolute;
+  top: 18px;
+  right: clamp(16px, 3vw, 40px);
+  min-height: 40px;
+  padding: 0 18px;
+  border-radius: 999px;
+  border: 1px solid hsla(0, 0%, 100%, 0.24);
+  background: hsla(0, 0%, 8%, 0.5);
+  backdrop-filter: blur(8px);
+  color: hsla(0, 0%, 100%, 0.85);
+  font-size: 13px;
+  font-weight: 400;
+  cursor: pointer;
+  transition: border-color 0.3s ease, color 0.3s ease;
+}
+
+.hero-skip:hover {
+  border-color: hsl(45, 100%, 72%);
+  color: hsl(45, 100%, 72%);
+}
+
+.is-final .hero-skip { opacity: 0; pointer-events: none; }
+
+#hero button:focus-visible,
+.hero-replay:focus-visible {
+  outline: 2px solid hsl(45, 100%, 80%);
+  outline-offset: 3px;
+}
+
+.hero-replay {
+  display: block;
+  margin: 16px auto 0;
+  min-height: 36px;
+  padding: 0 14px;
+  border-radius: 999px;
+  border: 1px solid var(--jet);
+  background: hsla(240, 1%, 17%, 0.8);
+  color: var(--light-gray);
+  font-family: var(--ff-poppins);
+  font-size: 12px;
+  cursor: pointer;
+  transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+.hero-replay:hover {
+  color: var(--orange-yellow-crayola);
+  border-color: var(--orange-yellow-crayola);
+}
+
+
+
+
+/**
+ * PHONES: the shape sits above the text
+ */
+
+@media (max-width: 720px), (orientation: portrait) {
+  .hero-scrim {
+    background: linear-gradient(0deg, hsla(240, 6%, 3%, 0.9) 0%, hsla(240, 6%, 3%, 0.62) 38%, transparent 62%);
+  }
+
+  .hero-year {
+    top: auto;
+    bottom: calc(104px + var(--hero-panel-space, 212px));
+    font-size: clamp(48px, 13vw, 76px);
+  }
+
+  .hero-panel { bottom: calc(96px + env(safe-area-inset-bottom)); }
+
+  .hero-company { font-size: clamp(30px, 9vw, 44px); }
+
+  .hero-enter { margin-top: 14px; }
+
+  .hero-rail { height: 72px; bottom: calc(10px + env(safe-area-inset-bottom)); }
+
+  .hero-rail-node { height: 72px; }
+
+  .hero-rail-label { flex-direction: column; gap: 1px; font-size: 12px; }
+
+  .hero-rail-label small { font-size: 11px; }
+
+  /* seven stops don't fit on a phone: only the current one is labeled */
+  .hero-dense .hero-rail-node:not(.is-active) .hero-rail-label { visibility: hidden; }
+
+  .hero-dense .hero-rail-node { min-width: 28px; }
+}
+
+
+
+/**
+ * PHONES ON THEIR SIDE: everything has to fit in very little height
+ */
+
+@media (max-height: 500px) and (orientation: landscape) {
+  .hero-year {
+    top: 12px;
+    bottom: auto;
+    font-size: 44px;
+  }
+
+  .hero-panel {
+    bottom: 58px;
+    width: 42vw;
+  }
+
+  .hero-kicker { display: none; }
+
+  .hero-company { font-size: 26px; }
+
+  .hero-role {
+    margin-top: 4px;
+    font-size: 12px;
+  }
+
+  .hero-enter {
+    margin-top: 8px;
+    min-height: 40px;
+    padding: 0 18px;
+    font-size: 13px;
+  }
+
+  .hero-skip { top: 10px; min-height: 36px; }
+
+  .hero-rail { height: 44px; bottom: 6px; }
+
+  .hero-rail-node { height: 44px; padding-top: 6px; gap: 2px; }
+
+  .hero-rail-line { top: 13px; }
+
+  .hero-rail-node:not(.is-active) .hero-rail-label { visibility: hidden; }
+}
+
+/* the sidebar's contact drawer has to fit the replay button on phones */
+.sidebar.active { max-height: 470px; }
+
+@media (min-width: 580px) {
+  .sidebar.active { max-height: 650px; }
+}
+
+@media (min-width: 1250px) {
+  .sidebar.active { max-height: max-content; }
+}

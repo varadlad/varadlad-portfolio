@@ -248,13 +248,7 @@ formInputs.forEach(input => {
       if (modalBody) {
         modalBody.scrollTop = 0;
       }
-      
-      // Initialize charts and diagrams when page changes with longer delay
-      setTimeout(() => {
-        console.log('Page changed, initializing visualizations...');
-        initVisualizations();
-      }, 500);
-    }
+          }
 
     document.querySelectorAll('.project-item').forEach(item => {
       item.addEventListener('click', function(e) {
@@ -288,12 +282,6 @@ formInputs.forEach(input => {
         document.body.style.overflow = 'hidden';
         // Always scroll modal body to top when opening a project
         if (modalBody) modalBody.scrollTop = 0;
-        
-        // Initialize charts and diagrams after modal opens with longer delay
-        setTimeout(() => {
-          console.log('Modal opened, initializing visualizations...');
-          initVisualizations();
-        }, 500);
       });
     });
 
@@ -320,7 +308,7 @@ formInputs.forEach(input => {
     closeBtn.addEventListener('click', closeModal);
     overlay.addEventListener('click', closeModal);
     document.addEventListener('keydown', function(e) {
-      if (modal.classList.contains('active') && e.key === 'Escape') closeModal();
+      if (modal.classList.contains('active') && e.key === 'Escape' && !document.querySelector('.image-lightbox')) closeModal();
     });
   })();
 })();
@@ -348,8 +336,8 @@ document.addEventListener('click', function(e) {
   let img = null;
   // If clicked element is an <a> with a child <img class="project-img"> or <img class="hepa-img">
   if (e.target.matches('.project-modal .image-row a')) {
-    img = e.target.querySelector('img.project-img, img.hepa-img');
-  } else if (e.target.matches('.project-modal img.project-img, .project-modal img.hepa-img')) {
+    img = e.target.querySelector('img.project-img, img.hepa-img, img.chart-image, img.diagram-image');
+  } else if (e.target.matches('.project-modal img.project-img, .project-modal img.hepa-img, .project-modal img.chart-image, .project-modal img.diagram-image')) {
     img = e.target;
   }
   if (img) {
@@ -358,9 +346,14 @@ document.addEventListener('click', function(e) {
     // Stop event propagation to prevent double opening
     e.stopPropagation();
     e.stopImmediatePropagation();
-    
+    openImageLightbox(img);
+  }
+});
+
+function openImageLightbox(img) {
     // Create lightbox overlay
     const lightbox = document.createElement('div');
+    lightbox.className = 'image-lightbox';
     lightbox.style.position = 'fixed';
     lightbox.style.top = 0;
     lightbox.style.left = 0;
@@ -388,8 +381,8 @@ document.addEventListener('click', function(e) {
     const zoomImg = document.createElement('img');
     zoomImg.src = img.src;
     zoomImg.alt = img.alt || '';
-    zoomImg.style.width = '100%';
-    zoomImg.style.height = 'auto';
+    zoomImg.style.maxWidth = '90vw';
+    zoomImg.style.maxHeight = '90vh';
     zoomImg.style.display = 'block';
     zoomImg.style.transition = 'transform 0.3s ease';
     zoomImg.style.userSelect = 'none';
@@ -497,7 +490,7 @@ document.addEventListener('click', function(e) {
       }
     });
 
-    document.addEventListener('mousemove', function(e) {
+    function onDragMove(e) {
       if (isDragging && scale > 1) {
         const deltaX = e.clientX - lastX;
         const deltaY = e.clientY - lastY;
@@ -507,14 +500,55 @@ document.addEventListener('click', function(e) {
         lastX = e.clientX;
         lastY = e.clientY;
       }
-    });
+    }
 
-    document.addEventListener('mouseup', function() {
+    function onDragEnd() {
       if (isDragging) {
         isDragging = false;
-        imgContainer.style.cursor = scale > 1 ? 'grab' : 'grab';
+        imgContainer.style.cursor = 'grab';
       }
-    });
+    }
+
+    document.addEventListener('mousemove', onDragMove);
+    document.addEventListener('mouseup', onDragEnd);
+
+    // Touch: one finger moves a zoomed photo, two fingers pinch to zoom
+    let pinchGap = 0;
+    let pinchScale = 1;
+    imgContainer.style.touchAction = 'none';
+
+    const fingerGap = function(touches) {
+      return Math.hypot(touches[0].clientX - touches[1].clientX, touches[0].clientY - touches[1].clientY);
+    };
+
+    imgContainer.addEventListener('touchstart', function(e) {
+      if (e.touches.length === 2) {
+        pinchGap = fingerGap(e.touches);
+        pinchScale = scale;
+      } else if (e.touches.length === 1) {
+        lastX = e.touches[0].clientX;
+        lastY = e.touches[0].clientY;
+      }
+    }, { passive: true });
+
+    imgContainer.addEventListener('touchmove', function(e) {
+      e.preventDefault();
+      if (e.touches.length === 2 && pinchGap) {
+        scale = Math.min(5, Math.max(1, pinchScale * fingerGap(e.touches) / pinchGap));
+        updateTransform();
+      } else if (e.touches.length === 1 && scale > 1) {
+        translateX += (e.touches[0].clientX - lastX) / scale;
+        translateY += (e.touches[0].clientY - lastY) / scale;
+        lastX = e.touches[0].clientX;
+        lastY = e.touches[0].clientY;
+        updateTransform();
+      }
+    }, { passive: false });
+
+    imgContainer.addEventListener('touchend', function(e) {
+      if (e.touches.length < 2) pinchGap = 0;
+      if (scale <= 1) resetZoom();
+    }, { passive: true });
 
     // Wheel zoom
     imgContainer.addEventListener('wheel', function(e) {
@@ -564,8 +598,8 @@ document.addEventListener('click', function(e) {
         document.body.removeChild(lightbox);
       }
       document.removeEventListener('keydown', escListener);
-      document.removeEventListener('mousemove', arguments.callee);
-      document.removeEventListener('mouseup', arguments.callee);
+      document.removeEventListener('mousemove', onDragMove);
+      document.removeEventListener('mouseup', onDragEnd);
     }
 
     // Close handlers
@@ -590,280 +624,6 @@ document.addEventListener('click', function(e) {
       e.stopPropagation();
       resetZoom();
     });
-  }
-});
-
-// --------------------
-// Image Zoom Functionality
-// --------------------
-let zoomOverlay = null;
-let currentZoomedImage = null;
-let zoomLevel = 1;
-let isDragging = false;
-let startX, startY, translateX = 0, translateY = 0;
-
-// Create zoom overlay
-function createZoomOverlay() {
-  if (zoomOverlay) return zoomOverlay;
-  
-  zoomOverlay = document.createElement('div');
-  zoomOverlay.className = 'image-zoom-overlay';
-  zoomOverlay.innerHTML = `
-    <button class="zoom-close-btn" onclick="closeImageZoom()">×</button>
-    <div class="zoom-controls">
-      <button class="zoom-btn" onclick="zoomIn()">+</button>
-      <button class="zoom-btn" onclick="resetZoom()">⌂</button>
-      <button class="zoom-btn" onclick="zoomOut()">−</button>
-    </div>
-    <img id="zoomed-image" alt="Zoomed image">
-  `;
-  document.body.appendChild(zoomOverlay);
-  
-  // Close on overlay click (but not on image click)
-  zoomOverlay.addEventListener('click', function(e) {
-    if (e.target === zoomOverlay) {
-      closeImageZoom();
-    }
-  });
-  
-  // Add keyboard support
-  document.addEventListener('keydown', function(e) {
-    if (zoomOverlay && zoomOverlay.classList.contains('active')) {
-      switch(e.key) {
-        case 'Escape':
-          closeImageZoom();
-          break;
-        case '+':
-        case '=':
-          zoomIn();
-          break;
-        case '-':
-          zoomOut();
-          break;
-        case '0':
-          resetZoom();
-          break;
-      }
-    }
-  });
-  
-  return zoomOverlay;
-}
-
-// Open image in zoom overlay - Fixed animation
-function openImageZoom(imageSrc, imageAlt) {
-  const overlay = createZoomOverlay();
-  const zoomedImg = overlay.querySelector('#zoomed-image');
-  
-  currentZoomedImage = zoomedImg;
-  zoomedImg.src = imageSrc;
-  zoomedImg.alt = imageAlt || 'Zoomed image';
-  
-  // Reset zoom state
-  zoomLevel = 1;
-  translateX = 0;
-  translateY = 0;
-  updateImageTransform();
-  
-  // Smooth show animation
-  overlay.style.display = 'flex';
-  overlay.offsetHeight; // Force reflow
-  overlay.classList.add('active');
-  document.body.style.overflow = 'hidden';
-  
-  // Add touch/mouse events for pan and zoom
-  addPanZoomEvents(zoomedImg);
-}
-
-// Close zoom overlay - Fixed animation
-function closeImageZoom() {
-  if (zoomOverlay) {
-    zoomOverlay.classList.remove('active');
-    
-    setTimeout(() => {
-      zoomOverlay.style.display = 'none';
-      document.body.style.overflow = '';
-    }, 300);
-    
-    zoomLevel = 1;
-    translateX = 0;
-    translateY = 0;
-  }
-}
-
-// Zoom functions
-function zoomIn() {
-  zoomLevel = Math.min(zoomLevel * 1.3, 5);
-  updateImageTransform();
-}
-
-function zoomOut() {
-  zoomLevel = Math.max(zoomLevel / 1.3, 0.5);
-  updateImageTransform();
-}
-
-function resetZoom() {
-  zoomLevel = 1;
-  translateX = 0;
-  translateY = 0;
-  updateImageTransform();
-}
-
-function updateImageTransform() {
-  if (currentZoomedImage && currentZoomedImage.parentElement) {
-    // Use more precise transform calculation
-    const scaleTransform = `scale(${zoomLevel})`;
-    const translateTransform = `translate(${translateX / zoomLevel}px, ${translateY / zoomLevel}px)`;
-    currentZoomedImage.style.transform = `${scaleTransform} ${translateTransform}`;
-    
-    // Update cursor based on zoom level
-    currentZoomedImage.style.cursor = zoomLevel > 1 ? 'grab' : 'zoom-in';
-  }
-}
-
-// Add pan and zoom events
-function addPanZoomEvents(img) {
-  // Mouse events
-  img.addEventListener('mousedown', startPan);
-  document.addEventListener('mousemove', pan);
-  document.addEventListener('mouseup', endPan);
-  
-  // Touch events
-  img.addEventListener('touchstart', handleTouchStart, { passive: false });
-  img.addEventListener('touchmove', handleTouchMove, { passive: false });
-  img.addEventListener('touchend', endPan);
-  
-  // Mouse wheel zoom
-  img.addEventListener('wheel', function(e) {
-    e.preventDefault();
-    if (e.deltaY < 0) {
-      zoomIn();
-    } else {
-      zoomOut();
-    }
-  });
-}
-
-function startPan(e) {
-  if (zoomLevel > 1) {
-    isDragging = true;
-    startX = e.clientX - translateX;
-    startY = e.clientY - translateY;
-    currentZoomedImage.style.cursor = 'grabbing';
-  }
-}
-
-function pan(e) {
-  if (isDragging && zoomLevel > 1) {
-    e.preventDefault();
-    translateX = e.clientX - startX;
-    translateY = e.clientY - startY;
-    updateImageTransform();
-  }
-}
-
-function endPan() {
-  isDragging = false;
-  if (currentZoomedImage) {
-    currentZoomedImage.style.cursor = zoomLevel > 1 ? 'grab' : 'zoom-out';
-  }
-}
-
-function handleTouchStart(e) {
-  if (e.touches.length === 1 && zoomLevel > 1) {
-    const touch = e.touches[0];
-    startPan({ clientX: touch.clientX, clientY: touch.clientY });
-  }
-}
-
-function handleTouchMove(e) {
-  if (e.touches.length === 1 && isDragging) {
-    e.preventDefault();
-    const touch = e.touches[0];
-    pan({ clientX: touch.clientX, clientY: touch.clientY, preventDefault: () => {} });
-  }
-}
-
-// Initialize zoom functionality for project modal images
-document.addEventListener('DOMContentLoaded', function() {
-  // Add click listeners to all project modal images
-  document.addEventListener('click', function(e) {
-    if (e.target.classList.contains('project-img') && e.target.closest('.project-modal')) {
-      e.preventDefault();
-      e.stopPropagation();
-      openImageZoom(e.target.src, e.target.alt);
-    }
-  });
-});
-
-// --------------------
-// Sankey Diagram for Pod Energy Flow
-// --------------------
-function drawPodSankey() {
-  const svg = d3.select("#podSankey");
-  if (!svg.node()) return;
-  
-  const { width, height } = svg.node().getBoundingClientRect();
-  const sankey = d3.sankey()
-                   .nodeWidth(15)
-                   .nodePadding(10)
-                   .extent([[1,1],[width-1,height-6]]);
-
-  const graph = {
-    nodes: [
-      { name:"Power In" }, 
-      { name:"IT Load" },
-      { name:"Cooling Fans" }, 
-      { name:"Pump/Heat-Ex" },
-      { name:"Losses" }
-    ],
-    links: [
-      { source:0, target:1, value:100 },
-      { source:0, target:2, value:30 },
-      { source:0, target:3, value:10 },
-      { source:2, target:4, value:25 },
-      { source:3, target:4, value:8 }
-    ]
-  };
-
-  const {nodes,links} = sankey(graph);
-
-  // Clear any existing content
-  svg.selectAll("*").remove();
-
-  // Add nodes
-  svg.append("g")
-     .selectAll("rect")
-     .data(nodes)
-     .join("rect")
-     .attr("x", d=>d.x0)
-     .attr("y", d=>d.y0)
-     .attr("width", d=>d.x1-d.x0)
-     .attr("height", d=>d.y1-d.y0)
-     .attr("fill","#8bc3ff");
-
-  // Add links
-  svg.append("g")
-     .attr("fill","none")
-     .attr("stroke","#ccc")
-     .selectAll("path")
-     .data(links)
-     .join("path")
-     .attr("d", d3.sankeyLinkHorizontal())
-     .attr("stroke-width", d=>Math.max(1,d.width));
-
-  // Add node labels
-  svg.append("g")
-     .selectAll("text")
-     .data(nodes)
-     .join("text")
-     .attr("x", d => d.x0 < width / 2 ? d.x1 + 6 : d.x0 - 6)
-     .attr("y", d => (d.y1 + d.y0) / 2)
-     .attr("dy", "0.35em")
-     .attr("text-anchor", d => d.x0 < width / 2 ? "start" : "end")
-     .attr("fill", "#ffffff")
-     .attr("font-size", "12px")
-     .text(d => d.name);
 }
 
 // --------------------
@@ -1047,223 +807,16 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // Data Center Project Charts and Diagrams - Simplified Version
-let chartsInitialized = false;
-
-function initDataCenterCharts() {
-  console.log('Initializing Data Center Charts...');
-  
-  // Performance Comparison Chart
-  const performanceCtx = document.getElementById('performanceChart');
-  if (performanceCtx && typeof Chart !== 'undefined') {
-    console.log('Found performance chart canvas');
-    
-    // Clear any existing chart
-    if (window.performanceChart instanceof Chart) {
-      window.performanceChart.destroy();
-    }
-    
-    try {
-      window.performanceChart = new Chart(performanceCtx.getContext('2d'), {
-        type: 'bar',
-        data: {
-          labels: ['Cooling Performance', 'Hotspot Reduction', 'Inlet Temp (°C)', 'PUE'],
-          datasets: [
-            {
-              label: 'Air Cooling',
-              data: [0, 0, 35, 1.5],
-              backgroundColor: '#ff6600',
-              borderColor: '#ff6600',
-              borderWidth: 1
-            },
-            {
-              label: 'Liquid Cooling', 
-              data: [27, 32, 20, 1.1],
-              backgroundColor: '#0066cc',
-              borderColor: '#0066cc',
-              borderWidth: 1
-            }
-          ]
-        },
-        options: {
-          responsive: true,
-          maintainAspectRatio: false,
-          plugins: {
-            legend: {
-              labels: { color: '#ffffff' }
-            }
-          },
-          scales: {
-            y: {
-              beginAtZero: true,
-              ticks: { color: '#ffffff' },
-              grid: { color: 'rgba(255, 255, 255, 0.1)' }
-            },
-            x: {
-              ticks: { color: '#ffffff' },
-              grid: { color: 'rgba(255, 255, 255, 0.1)' }
-            }
-          }
-        }
-      });
-      console.log('Performance Chart created successfully');
-    } catch (error) {
-      console.error('Error creating performance chart:', error);
-    }
-  }
-
-  // Air-Cooled System Pie Chart
-  const airCooledCtx = document.getElementById('airCooledPieChart');
-  if (airCooledCtx && typeof Chart !== 'undefined') {
-    console.log('Found air-cooled pie chart canvas');
-    
-    if (window.airCooledChart instanceof Chart) {
-      window.airCooledChart.destroy();
-    }
-    
-    try {
-      window.airCooledChart = new Chart(airCooledCtx.getContext('2d'), {
-        type: 'pie',
-        data: {
-          labels: ['Cooling Energy', 'IT Load'],
-          datasets: [{
-            data: [50, 50],
-            backgroundColor: ['#ff6600', '#00cc66'],
-            borderColor: ['#ff6600', '#00cc66'],
-            borderWidth: 2
-          }]
-        },
-        options: {
-          responsive: true,
-          maintainAspectRatio: false,
-          plugins: {
-            legend: {
-              position: 'bottom',
-              labels: { color: '#ffffff', padding: 20 }
-            }
-          }
-        }
-      });
-      console.log('Air-Cooled Pie Chart created successfully');
-    } catch (error) {
-      console.error('Error creating air-cooled pie chart:', error);
-    }
-  }
-
-  // Liquid-Cooled System Pie Chart
-  const liquidCooledCtx = document.getElementById('liquidCooledPieChart');
-  if (liquidCooledCtx && typeof Chart !== 'undefined') {
-    console.log('Found liquid-cooled pie chart canvas');
-    
-    if (window.liquidCooledChart instanceof Chart) {
-      window.liquidCooledChart.destroy();
-    }
-    
-    try {
-      window.liquidCooledChart = new Chart(liquidCooledCtx.getContext('2d'), {
-        type: 'pie',
-        data: {
-          labels: ['Cooling Energy', 'IT Load'],
-          datasets: [{
-            data: [30, 70],
-            backgroundColor: ['#ff6600', '#00cc66'],
-            borderColor: ['#ff6600', '#00cc66'],
-            borderWidth: 2
-          }]
-        },
-        options: {
-          responsive: true,
-          maintainAspectRatio: false,
-          plugins: {
-            legend: {
-              position: 'bottom',
-              labels: { color: '#ffffff', padding: 20 }
-            }
-          }
-        }
-      });
-      console.log('Liquid-Cooled Pie Chart created successfully');
-    } catch (error) {
-      console.error('Error creating liquid-cooled pie chart:', error);
-    }
-  }
-}
-
-// Initialize Mermaid diagrams
-function initMermaidDiagrams() {
-  console.log('Initializing Mermaid Diagrams...');
-  
-  if (typeof mermaid !== 'undefined') {
-    try {
-      // Initialize mermaid with startOnLoad: false
-      mermaid.initialize({ startOnLoad: false });
-      
-      // Find all unprocessed mermaid diagrams
-      const mermaidElements = document.querySelectorAll('.mermaid:not([data-processed])');
-      console.log('Found', mermaidElements.length, 'unprocessed mermaid diagrams');
-      
-      if (mermaidElements.length > 0) {
-        mermaidElements.forEach((element, index) => {
-          element.setAttribute('data-processed', 'true');
-          const id = 'mermaid-' + Date.now() + '-' + index;
-          element.id = id;
-        });
-        
-        // Use mermaid.init instead of mermaid.run
-        mermaid.init(undefined, mermaidElements);
-        console.log('Mermaid diagrams processed successfully');
-      }
-    } catch (error) {
-      console.error('Error initializing mermaid diagrams:', error);
-    }
-  } else {
-    console.warn('Mermaid library not loaded');
-  }
-}
-
-// Simple initialization function
-function initVisualizations() {
-  console.log('Initializing visualizations...');
-  
-  // Initialize charts and diagrams
-  initDataCenterCharts();
-  initMermaidDiagrams();
-  drawPodSankey();
-  
-  chartsInitialized = true;
-  console.log('Visualization initialization completed');
-}
-
-// Initialize when DOM is ready
-document.addEventListener('DOMContentLoaded', function() {
-  console.log('DOM Content Loaded');
-  
-  // Wait a bit for libraries to load
-  setTimeout(() => {
-    console.log('Chart.js available:', typeof Chart !== 'undefined');
-    console.log('Mermaid available:', typeof mermaid !== 'undefined');
-    
-    // Try to initialize immediately if elements exist (though they might not be visible)
-    if (document.querySelector('#performanceChart') || document.querySelector('.mermaid')) {
-      console.log('Found chart elements, will initialize when modal opens');
-    }
-  }, 1000);
-});
-
-// If Mermaid is loaded, initialize with startOnLoad: false
-if (typeof mermaid !== 'undefined') {
-  mermaid.initialize({ startOnLoad: false });
-}
-
 // Extras Image Data
 const extrasData = {
   fsae: {
     title: "FSAE Team: Formula Car R&D",
     images: [
       { src: "achievement-imgs/ASU-FASE/Main-img.jpg", caption: "Main FSAE Team Image" },
-      { src: "achievement-imgs/ASU-FASE/1743372661272.jpg", caption: "FSAE Team - Image 2" },
+      { src: "achievement-imgs/ASU-FASE/1743372661272.webp", caption: "FSAE Team - Image 2" },
       { src: "achievement-imgs/ASU-FASE/1743372661883.jpg", caption: "FSAE Team - Image 3" },
-      { src: "achievement-imgs/ASU-FASE/1743372662101.jpg", caption: "FSAE Team - Image 4" },
-      { src: "achievement-imgs/ASU-FASE/1743372663105.jpg", caption: "FSAE Team - Image 5" }
+      { src: "achievement-imgs/ASU-FASE/1743372662101.webp", caption: "FSAE Team - Image 4" },
+      { src: "achievement-imgs/ASU-FASE/1743372663105.webp", caption: "FSAE Team - Image 5" }
     ]
   },
   space: {
@@ -1277,38 +830,53 @@ const extrasData = {
   career: {
     title: "Career Development Panel",
     images: [
-      { src: "achievement-imgs/Career-advancement-seminar/Main-img.jpg", caption: "Career Development - Main Image" },
-      { src: "achievement-imgs/Career-advancement-seminar/Main-img2.jpg", caption: "Career Development - Image 2" },
-      { src: "achievement-imgs/Career-advancement-seminar/1736625775794.jpg", caption: "Career Development - Image 3" },
-      { src: "achievement-imgs/Career-advancement-seminar/1736625777370.jpg", caption: "Career Development - Image 4" }
+      { src: "achievement-imgs/Career-advancement-seminar/Main-img.webp", caption: "Career Development - Main Image" },
+      { src: "achievement-imgs/Career-advancement-seminar/Main-img2.webp", caption: "Career Development - Image 2" },
+      { src: "achievement-imgs/Career-advancement-seminar/1736625775794.webp", caption: "Career Development - Image 3" },
+      { src: "achievement-imgs/Career-advancement-seminar/1736625777370.webp", caption: "Career Development - Image 4" }
     ]
   },
   mrs: {
     title: "MRS Spokesperson",
     images: [
       { src: "achievement-imgs/MRS-spokesperson/main-img.jpg", caption: "MRS Spokesperson - Main Image" },
-      { src: "achievement-imgs/MRS-spokesperson/main-img2.jpg", caption: "MRS Spokesperson - Image 2" },
-      { src: "achievement-imgs/MRS-spokesperson/1714423012287.jpg", caption: "MRS Spokesperson - Image 3" }
+      { src: "achievement-imgs/MRS-spokesperson/main-img2.webp", caption: "MRS Spokesperson - Image 2" },
+      { src: "achievement-imgs/MRS-spokesperson/1714423012287.webp", caption: "MRS Spokesperson - Image 3" }
     ]
   },
   nasa: {
     title: "NASA L'SPACE Internship",
     images: [
-      { src: "achievement-imgs/NASA-intern/main-img.jpg", caption: "NASA Internship - Main Image" },
-      { src: "achievement-imgs/NASA-intern/main-img2.jpg", caption: "NASA Internship - Image 2" },
+      { src: "achievement-imgs/NASA-intern/main-img.webp", caption: "NASA Internship - Main Image" },
+      { src: "achievement-imgs/NASA-intern/main-img2.webp", caption: "NASA Internship - Image 2" },
       { src: "achievement-imgs/NASA-intern/1663826593795.jpg", caption: "NASA Internship - Image 3" }
     ]
   },
   innovation: {
     title: "ASU Innovation Feature",
     images: [
-      { src: "achievement-imgs/innovation-asu-feature/main-img.jpg", caption: "ASU Innovation - Main Image" },
+      { src: "achievement-imgs/innovation-asu-feature/main-img.webp", caption: "ASU Innovation - Main Image" },
       { src: "achievement-imgs/innovation-asu-feature/1668374354865.jpg", caption: "ASU Innovation - Image 2" },
       { src: "achievement-imgs/innovation-asu-feature/1668374358730.jpg", caption: "ASU Innovation - Image 3" },
-      { src: "achievement-imgs/innovation-asu-feature/1668374361111.jpg", caption: "ASU Innovation - Image 4" }
+      { src: "achievement-imgs/innovation-asu-feature/1668374361111.webp", caption: "ASU Innovation - Image 4" }
     ]
   }
 };
+
+// Open an Extras photo in the shared image viewer
+function openImageModal(key, index) {
+  const entry = extrasData[key] && extrasData[key].images[index];
+  if (entry) openImageLightbox({ src: entry.src, alt: entry.caption || extrasData[key].title });
+}
+
+document.querySelectorAll('.extras-post-item > a').forEach(function (card) {
+  card.addEventListener('click', function (e) {
+    e.preventDefault();
+    if (e.target.closest('button, img')) return;
+    const firstImage = card.querySelector('.extras-image-scroll img');
+    if (firstImage) firstImage.click();
+  });
+});
 
 // Horizontal scroll functionality for extras images
 function scrollExtrasImages(button, direction) {

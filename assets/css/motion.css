@@ -1,0 +1,289 @@
+/*-----------------------------------*\
+  #MOTION
+  Entrance reveals, tab transitions, sliding nav indicator,
+  cursor-follow card glow. Loaded after style.css.
+  The hidden start states only apply once motion.js adds .m-ready,
+  so the page is fully visible without JavaScript.
+\*-----------------------------------*/
+
+:root {
+  --m-spring: cubic-bezier(0.34, 1.45, 0.64, 1);
+  --m-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --m-gold-soft: hsla(45, 100%, 72%, 0.14);
+  --m-gold-line: hsla(45, 100%, 72%, 0.38);
+}
+
+
+
+/**
+ * REVEAL
+ */
+
+.m-ready .m-reveal {
+  opacity: 0;
+  transform: translateY(18px) scale(0.985);
+  filter: blur(6px);
+  transition:
+    opacity 0.6s var(--m-out) var(--m-delay, 0ms),
+    transform 0.75s var(--m-spring) var(--m-delay, 0ms),
+    filter 0.6s var(--m-out) var(--m-delay, 0ms);
+}
+
+.m-ready .m-reveal.m-in {
+  opacity: 1;
+  transform: none;
+  filter: none;
+}
+
+/* after the entrance, interactions respond without the stagger delay */
+.m-ready .m-reveal.m-done {
+  transition:
+    opacity 0.3s var(--m-out),
+    transform 0.35s var(--m-spring),
+    filter 0.3s var(--m-out),
+    box-shadow 0.35s var(--m-out);
+}
+
+
+
+/**
+ * ARTICLE TITLE UNDERLINE draws in
+ */
+
+.m-ready .article-title::after {
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.7s var(--m-spring) 0.25s;
+}
+
+.m-ready .article-title.m-in::after { transform: scaleX(1); }
+
+
+
+/**
+ * SIDEBAR NAME gold sheen on load
+ */
+
+.m-ready .sidebar .name {
+  background: linear-gradient(100deg,
+    var(--white-2) 35%, var(--orange-yellow-crayola) 50%, var(--white-2) 65%);
+  background-size: 300% 100%;
+  background-position: 100% 0;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: m-sheen 2.4s var(--m-out) 0.5s forwards;
+}
+
+@keyframes m-sheen {
+  to { background-position: 0 0; }
+}
+
+
+
+/**
+ * TIMELINE line draws down, dot pops
+ */
+
+.m-ready .timeline-item.m-reveal::before {
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: transform 0.9s var(--m-out) calc(var(--m-delay, 0ms) + 0.15s);
+}
+
+.m-ready .timeline-item.m-reveal::after {
+  transform: scale(0);
+  transition: transform 0.5s var(--m-spring) calc(var(--m-delay, 0ms) + 0.1s);
+}
+
+.m-ready .timeline-item.m-in::before { transform: scaleY(1); }
+
+.m-ready .timeline-item.m-in::after { transform: scale(1); }
+
+
+
+/**
+ * NAV INDICATOR — one gold capsule that glides between tabs
+ */
+
+.navbar-list { position: relative; }
+
+.m-nav-pill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 34px;
+  border-radius: 999px;
+  background: var(--m-gold-soft);
+  border: 1px solid var(--m-gold-line);
+  box-shadow: 0 0 18px hsla(45, 100%, 72%, 0.12);
+  pointer-events: none;
+  opacity: 0;
+  transition:
+    transform 0.55s var(--m-spring),
+    width 0.55s var(--m-spring),
+    opacity 0.3s ease;
+}
+
+.m-nav-pill.m-on { opacity: 1; }
+
+.m-nav-pill.m-instant { transition: none; }
+
+.navbar-link { position: relative; }
+
+
+
+/**
+ * CARD GLOW — soft gold light follows the cursor
+ */
+
+.service-item::after,
+.content-card::after {
+  content: "";
+  position: absolute;
+  inset: 1px;
+  border-radius: inherit;
+  background: radial-gradient(260px circle at var(--mx, 50%) var(--my, 50%),
+    hsla(45, 100%, 72%, 0.10), transparent 60%);
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.service-item:hover::after,
+.content-card:hover::after { opacity: 1; }
+
+.service-item.m-done:hover,
+.content-card:hover {
+  box-shadow: var(--shadow-2), 0 0 0 1px var(--m-gold-line), 0 10px 30px hsla(45, 100%, 72%, 0.08);
+}
+
+.service-item.m-done:hover { transform: translateY(-4px); }
+
+.project-item > a.m-done:hover,
+.extras-post-item.m-done:hover { transform: translateY(-4px); }
+
+
+
+/**
+ * ENLARGEABLE IMAGES in project pop-ups and Extras cards
+ */
+
+.project-modal .project-img,
+.project-modal .hepa-img,
+.project-modal .chart-image,
+.project-modal .diagram-image,
+.extras-image-scroll img { cursor: zoom-in; }
+
+
+
+/**
+ * LINKS inside project pop-ups stay readable on the dark background
+ */
+
+#project-modal-body a:not(:has(img)) {
+  color: var(--orange-yellow-crayola);
+  text-decoration: underline;
+  overflow-wrap: anywhere;
+}
+
+
+
+/**
+ * COUNT-UP numbers keep their width while ticking
+ */
+
+.m-counting { font-variant-numeric: tabular-nums; }
+
+
+
+/**
+ * MORE BELOW: a soft blurred edge and a small chevron while content continues
+ * past the bottom of the screen or a project pop-up
+ */
+
+.m-more {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 110px;
+  z-index: 4;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  background: linear-gradient(to top, hsla(0, 0%, 7%, 0.9), hsla(0, 0%, 7%, 0));
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
+  -webkit-mask-image: linear-gradient(to top, #000 45%, transparent);
+  mask-image: linear-gradient(to top, #000 45%, transparent);
+}
+
+.m-more.is-on { opacity: 1; }
+
+/* the mask would fade the chevron, so it lives in its own element */
+.m-more-chevron {
+  position: fixed;
+  left: 50%;
+  bottom: 18px;
+  z-index: 4;
+  width: 12px;
+  height: 12px;
+  margin-left: -6px;
+  pointer-events: none;
+  opacity: 0;
+  border-right: 2px solid var(--orange-yellow-crayola);
+  border-bottom: 2px solid var(--orange-yellow-crayola);
+  transform: rotate(45deg);
+  transition: opacity 0.35s ease;
+  animation: m-bob 1.7s ease-in-out infinite;
+}
+
+.m-more-chevron.is-on { opacity: 0.9; }
+
+@keyframes m-bob {
+  0%, 100% { transform: translateY(-3px) rotate(45deg); }
+  50% { transform: translateY(3px) rotate(45deg); }
+}
+
+/* phones: the bar sits at the bottom, so the hint rests just above it */
+@media (max-width: 1249px) {
+  .m-more { bottom: calc(56px + env(safe-area-inset-bottom)); }
+
+  .m-more-chevron { bottom: calc(72px + env(safe-area-inset-bottom)); }
+}
+
+.project-modal-wrapper { position: relative; }
+
+.project-modal-wrapper .m-more,
+.project-modal-wrapper .m-more-chevron {
+  position: absolute;
+  z-index: 2;
+}
+
+.project-modal-wrapper .m-more { height: 74px; }
+
+
+
+/**
+ * REDUCED MOTION — motion.js skips everything; this is a safety net
+ */
+
+@media (prefers-reduced-motion: reduce) {
+  .m-ready .m-reveal,
+  .m-ready .article-title::after,
+  .m-ready .timeline-item.m-reveal::before,
+  .m-ready .timeline-item.m-reveal::after {
+    opacity: 1;
+    transform: none;
+    filter: none;
+    transition: none;
+  }
+
+  .m-ready .sidebar .name { animation: none; color: var(--white-2); background: none; }
+
+  .m-nav-pill { transition: none; }
+
+  .m-more-chevron { animation: none; }
+}

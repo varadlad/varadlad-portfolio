@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+  <meta charset="UTF-8">
   <!-- Open Graph Meta Tags -->
   <meta property="og:title" content="Varad Lad Portfolio" />
   <meta property="og:description" content="A showcase of Varad Lad's engineering projects, skills, and professional achievements" />
@@ -13,10 +14,10 @@
   <meta name="twitter:title" content="Varad Lad Portfolio" />
   <meta name="twitter:description" content="A showcase of Varad Lad's engineering projects, skills, and professional achievements" />
   <meta name="twitter:image" content="https://varadlad.github.io/varadlad-portfolio/project-images/avatar-1.png" />
-  <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Varad Lad Portfolio Website | Updated</title>
+  <title>Varad Lad | Senior Mechanical Engineer, Google</title>
+  <meta name="description" content="Varad Lad, Senior Mechanical Engineer at Google. Portfolio of data center cooling, semiconductor, CFD and mechanical design projects.">
 
   <!--
     - favicon
@@ -27,7 +28,19 @@
     - custom css link
   -->
   <link rel="stylesheet" href="./assets/css/style.css">
-  <link href="lightbox.css" rel="stylesheet" />
+  <link rel="stylesheet" href="./assets/css/motion.css">
+  <link rel="stylesheet" href="./assets/css/hero.css">
+  <script>
+    // hold the page behind the landing journey before anything paints (see assets/js/hero.js)
+    (function () {
+      try {
+        var seen = sessionStorage.getItem('heroSeen') && location.search.indexOf('intro') < 0;
+        if (!seen && window.WebGL2RenderingContext && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+          document.documentElement.classList.add('hero-boot');
+        }
+      } catch (e) {}
+    })();
+  </script>
 
   <style>
     /* Products Section Styling */
@@ -707,7 +720,6 @@
               <a href="https://www.linkedin.com/in/varadlad/" class="contact-link" target="_blank">Varad Lad</a>
           </div>
         </li>
-        </li>
                   </ul>
 
       </div>
@@ -761,7 +773,7 @@
           </p>
 
           <p>
-            From Microsoft N₂ pods Data Centers and TSMC Semiconductor fabs to NASA mission ready systems, I own the mechanics nailing GD&T per ASME, taming airflow to ASHRAE limits, and lighting dashboards for teams to follow. Hardware I design and test runs cooler, fails less, and sips energy more efficiently. Turning bold visions into reality.
+            From Microsoft-inspired N₂ pod data centers and TSMC semiconductor fabs to NASA mission-ready systems, I own the mechanics nailing GD&T per ASME, taming airflow to ASHRAE limits, and lighting dashboards for teams to follow. Hardware I design and test runs cooler, fails less, and sips energy more efficiently. Turning bold visions into reality.
           </p>
         </section>
 
@@ -783,7 +795,7 @@
               <div class="service-content-box">
                 <h4 class="h4 service-item-title">Mechanical & Product Design</h4>
                 <p class="service-item-text">
-                  2D/3D CAD • FEA • GD&T • Opto-electronics • DFM • Prototyping • 
+                  2D/3D CAD • FEA • GD&T • Opto-electronics • DFM • Prototyping 
                 </p>
               </div>
             </li>
@@ -865,7 +877,7 @@
               <div class="content-card" data-testimonials-item>
 
                 <figure class="testimonials-avatar-box">
-                  <img src="./assets/images/avatar-2.png" alt="Nicole Ray" width="60" data-testimonials-avatar>
+                  <img src="./assets/images/avatar-2.png" alt="Nicole Ray" width="60" data-testimonials-avatar loading="lazy" decoding="async">
                 </figure>
 
                 <h4 class="h4 testimonials-item-title" data-testimonials-title>
@@ -887,7 +899,7 @@
                     <a href="https://www.linkedin.com/in/varadlad/details/recommendations/" target="_blank" style="color: #fbd109; text-decoration: underline; display: inline-block; margin-right: 1em;">
                       View on LinkedIn  ↗️
                     </a>
-                    <a href="https://cdn.jsdelivr.net/gh/varadlad/VaradLadDocuments-/Rayn%20Innovation%20LOR%20.pdf" target="_blank" style="color: #fbd109; text-decoration: underline;">
+                    <a href="documents/rayn-innovation-recommendation.pdf" target="_blank" style="color: #fbd109; text-decoration: underline;">
                       View LOR  ↗️ 
                     </a>
                   </p>
@@ -900,7 +912,7 @@
               <div class="content-card" data-testimonials-item>
 
                 <figure class="testimonials-avatar-box">
-                  <img src="./assets/images/avatar-1.png" alt="Travis Hand" width="60" data-testimonials-avatar>
+                  <img src="./assets/images/avatar-1.png" alt="Travis Hand" width="60" data-testimonials-avatar loading="lazy" decoding="async">
                 </figure>
 
                 <h4 class="h4 testimonials-item-title" data-testimonials-title>
@@ -920,7 +932,7 @@
                     <a href="https://www.linkedin.com/in/varadlad/details/recommendations/" target="_blank" style="color: #fbd109; text-decoration: underline; display: inline-block; margin-right: 1em;">
                       View on LinkedIn ↗️
                     </a>
-                    <a href="https://cdn.jsdelivr.net/gh/varadlad/VaradLadDocuments-/MICU%20LOR%20.pdf" target="_blank" style="color: #fbd109; text-decoration: underline;">
+                    <a href="documents/marketech-recommendation.pdf" target="_blank" style="color: #fbd109; text-decoration: underline;">
                       View LOR ↗️ 
                     </a>
                   </p>
@@ -933,7 +945,7 @@
               <div class="content-card" data-testimonials-item>
 
                 <figure class="testimonials-avatar-box">
-                  <img src="./assets/images/avatar-1.png" alt="Dr. Pankaj Gavali" width="60" data-testimonials-avatar>
+                  <img src="./assets/images/avatar-1.png" alt="Dr. Pankaj Gavali" width="60" data-testimonials-avatar loading="lazy" decoding="async">
                 </figure>
 
                 <h4 class="h4 testimonials-item-title" data-testimonials-title>
@@ -977,22 +989,19 @@
 
             <div class="modal-img-wrapper">
               <figure class="modal-avatar-box">
-                <img src="./assets/images/avatar-1.png" alt="Daniel lewis" width="80" data-modal-img>
+                <img src="./assets/images/avatar-1.png" alt="" width="80" data-modal-img loading="lazy" decoding="async">
               </figure>
 
-              <img src="./assets/images/icon-quote.svg" alt="quote icon">
+              <img src="./assets/images/icon-quote.svg" alt="quote icon" loading="lazy" decoding="async">
             </div>
 
             <div class="modal-content">
 
-              <h4 class="h3 modal-title" data-modal-title>Daniel lewis</h4>
+              <h4 class="h3 modal-title" data-modal-title></h4>
 
               
 
               <div data-modal-text>
-                <p>
-                  I mentored and supervised Varad Lad during his R&D internship at Rayn Innovations (Jan–May 2024). He was diligent, safety-minded, and eager to tackle new challenges—whether running routine chemical analyses, keeping a meticulous lab notebook, or troubleshooting process issues. Varad’s main charge was a DOE on aluminum-doped ZnO thin films: he planned the experiments, carried out SEM/TEM characterization, and delivered a working deposition process while drafting prototypes and proposals. He collaborated smoothly with our senior engineer and never hesitated to suggest improvements. Varad’s mix of problem-solving, initiative, and clear communication will be an asset to any team. For questions, please email nicoleray@rayninnovations.com.
-                </p>
               </div>
 
             </div>
@@ -1014,10 +1023,6 @@
 
         <header class="header-with-download">
           <h2 class="h2 article-title">Projects</h2>
-          <a href="https://cdn.jsdelivr.net/gh/varadlad/VaradLadDocuments-/Varad%20Lad%20Portfolio.pdf" download title="Download Portfolio" target="_blank" rel="noopener noreferrer">
-            <ion-icon name="document-outline"></ion-icon>
-            <span style="position: absolute; left: -9999px;">Download Portfolio PDF</span>
-          </a>
         </header>
 
         <section class="Projects">
@@ -1097,7 +1102,7 @@
               <a href="#">
                 <!-- Wrap each project image in a .project-card container -->
                 <figure class="project-card">
-                  <img src="project-images/DC-thumbnail.png" alt="Data Center Thermal Management System" loading="lazy">
+                  <img src="project-images/DC-thumbnail.webp" alt="Data Center Thermal Management System" loading="lazy">
                   <div class="project-overlay">
                     <ion-icon name="eye-outline"></ion-icon>
                   </div>
@@ -1122,10 +1127,10 @@
                     <h5>Current Energy Usage Challenge</h5>
                     <div class="pie-charts-row">
                       <div class="pie-chart-container">
-                        <img src="project-images/air-cooled-pie-chart.png" alt="Traditional Air-Cooled System Energy Breakdown" class="chart-image">
+                        <img src="project-images/air-cooled-pie-chart.png" alt="Traditional Air-Cooled System Energy Breakdown" class="chart-image" loading="lazy" decoding="async">
                       </div>
                       <div class="pie-chart-container">
-                        <img src="project-images/liquid-cooled-pie-chart.png" alt="Target Liquid-Cooled Hybrid Energy Breakdown" class="chart-image">
+                        <img src="project-images/liquid-cooled-pie-chart.png" alt="Target Liquid-Cooled Hybrid Energy Breakdown" class="chart-image" loading="lazy" decoding="async">
                       </div>
                     </div>
                   </div>
@@ -1145,12 +1150,12 @@
                 <div class="diagrams-container">
                   <div class="diagram-item">
                     <h5>Airflow Architecture</h5>
-                    <img src="project-images/airflow-architecture-diagram.svg" alt="Airflow Architecture Diagram" class="diagram-image">
+                    <img src="project-images/airflow-architecture-diagram.svg" alt="Airflow Architecture Diagram" class="diagram-image" loading="lazy" decoding="async">
                   </div>
                   
                   <div class="diagram-item">
                     <h5>Liquid Cooling Loop</h5>
-                    <img src="project-images/liquid-cooling-diagram.svg" alt="Liquid Cooling Loop Diagram" class="diagram-image">
+                    <img src="project-images/liquid-cooling-diagram.svg" alt="Liquid Cooling Loop Diagram" class="diagram-image" loading="lazy" decoding="async">
                   </div>
                 </div>
               </div>
@@ -1209,7 +1214,7 @@
                 <div class="charts-container">
                   <div class="chart-item">
                     <h5>Cooling Performance Comparison</h5>
-                    <img src="project-images/performance-comparison-chart.png" alt="Cooling Performance Comparison Chart" class="chart-image">
+                    <img src="project-images/performance-comparison-chart.png" alt="Cooling Performance Comparison Chart" class="chart-image" loading="lazy" decoding="async">
                   </div>
                 </div>
               </div>
@@ -1220,7 +1225,7 @@
                 <div class="diagrams-container">
                   <div class="diagram-item">
                     <h5>Hybrid System Integration</h5>
-                    <img src="project-images/hybrid-system-integration-diagram.svg" alt="Hybrid System Integration Diagram" class="diagram-image">
+                    <img src="project-images/hybrid-system-integration-diagram.svg" alt="Hybrid System Integration Diagram" class="diagram-image" loading="lazy" decoding="async">
                   </div>
                 </div>
                 
@@ -1238,7 +1243,7 @@
             <li class="project-item active" data-filter-item data-category="data-center cad-cfd-fea">
               <a href="#">
                 <figure class="project-card">
-                  <img src="project-images/underwater-dc-thumbnail.png" alt="Land-Based Cooling Pod (Natick-Inspired)" loading="lazy">
+                  <img src="project-images/underwater-dc-thumbnail.webp" alt="Land-Based Cooling Pod (Natick-Inspired)" loading="lazy">
                   <div class="project-overlay">
                     <ion-icon name="eye-outline"></ion-icon>
                   </div>
@@ -1270,18 +1275,18 @@
                 <div class="diagrams-container">
   <div class="diagram-item">
     <h5>Nitrogen Pod Life-Cycle State Diagram</h5>
-    <img src="project-images/pod-lifecycle-diagram.svg" alt="Nitrogen pod life-cycle state diagram" class="chart-image" />
+    <img src="project-images/pod-lifecycle-diagram.svg" alt="Nitrogen pod life-cycle state diagram" class="chart-image" loading="lazy" decoding="async" />
     <div class="diagram-caption" style="margin-top:0.5em; font-size:0.98em; color:#b48be0;">Figure 2. Nitrogen pod life-cycle state diagram.</div>
   </div>
   <div class="diagram-item">
     <h5>Sankey Energy Flow: Pod vs Air Cooling</h5>
-    <img src="project-images/pod-sankey.svg" alt="Sankey energy flow: pod vs air cooling" class="chart-image" />
+    <img src="project-images/pod-sankey.svg" alt="Sankey energy flow: pod vs air cooling" class="chart-image" loading="lazy" decoding="async" />
     <div class="diagram-caption" style="margin-top:0.5em; font-size:0.98em; color:#b48be0;">Figure 3. Sankey energy flow: pod vs air cooling.</div>
   </div>
                 </div>
               </div>
               <div class="modal-page" data-page="2" style="display:none;">
-                <h4>Result?</h4>
+                <h4>Results?</h4>
                 <ul style="list-style-type: disc; margin-left: 0; padding-left: 1.2em; margin-bottom: 1.2em;">
                   <li><strong>Temperature swings were dramatically reduced</strong> in the sealed pod (see Figure 4), with daily fluctuations dropping from ±6°C in open racks to just ±1°C, helping to extend hardware lifespan.</li>
                   <li><strong>Thermal reliability improved by 25%</strong> and projected failure rates dropped by 35–40% (see Figure 5), as shown by the reliability gauge and KPI table.</li>
@@ -1291,12 +1296,12 @@
                 <div class="charts-container" style="margin-bottom:2em;">
   <div class="chart-item">
     <h5>Daily Temperature Swing: Open Rack vs Pod</h5>
-    <img src="project-images/acfd3-temp-line.svg" alt="Daily temperature swing: open rack vs pod" class="chart-image" />
+    <img src="project-images/acfd3-temp-line.svg" alt="Daily temperature swing: open rack vs pod" class="chart-image" loading="lazy" decoding="async" />
     <div class="chart-caption" style="margin-top:0.5em; font-size:0.98em; color:#b48be0;">Figure 4. Daily temperature swing: open rack vs pod.</div>
   </div>
   <div class="chart-item">
     <h5>Reliability Gauge: Projected Failure-Rate Drop</h5>
-    <img src="project-images/acfd3-gauge.svg" alt="Reliability gauge: projected failure-rate drop" class="chart-image" />
+    <img src="project-images/acfd3-gauge.svg" alt="Reliability gauge: projected failure-rate drop" class="chart-image" loading="lazy" decoding="async" />
     <div class="chart-caption" style="margin-top:0.5em; font-size:0.98em; color:#b48be0;">Figure 5. Reliability gauge: projected failure-rate drop.</div>
   </div>
                 </div>
@@ -1328,7 +1333,7 @@
             <li class="project-item active" data-filter-item data-category="semiconductor data-analytics all">
               <a href="#">
                 <figure class="project-card">
-                  <img src="project-images/thin-film-thumbnail.png" alt="Thin-Film PV Efficiency & Manufacturing Roadmap" loading="lazy">
+                  <img src="project-images/thin-film-thumbnail.webp" alt="Thin-Film PV Efficiency & Manufacturing Roadmap" loading="lazy">
                   <div class="project-overlay">
                     <ion-icon name="eye-outline"></ion-icon>
                   </div>
@@ -1342,11 +1347,11 @@
                 <ul style="list-style-type: none; margin-left: 0; padding-left: 1.2em;">
                   <li>•  Investigation into the potential of thin-film solar photovoltaic technologies to achieve over 30% cell efficiency and large-scale manufacturing by 2035.</li>
                   <li>•  Focus on advances in semiconductor materials, device engineering, and fabrication processes to enable scaled manufacturing of high-tech solar devices.</li>
-                  <li>•  The 30% efficiency target is significant as it doubles the efficiency of current commercial panels and approaches the theoretical limits for single-junction solar cells.</li>
+                  <li>•  The 30% efficiency target is significant because it sits well above current commercial panels and approaches the theoretical limit for single-junction solar cells.</li>
                   <li>•  Global scope aligns with energy agencies’ 2035 renewable energy cost reduction milestones.</li>
                 </ul>
                 <div class="image-row">
-                  <img src="project-images/thin-film-pv-efficiency-img-1.png" alt="Thin-Film PV Efficiency - What?" class="project-img">
+                  <img src="project-images/thin-film-pv-efficiency-img-1.webp" alt="Thin-Film PV Efficiency - What?" class="project-img" loading="lazy" decoding="async">
                 </div>
               </div>
               <div class="modal-page" data-page="1" style="display:none;">
@@ -1367,19 +1372,19 @@
                   <li>•  Contributes to global decarbonization trajectories.</li>
                 </ul>
                 <div class="image-row">
-                  <img src="project-images/thin-film-pv-efficiency-img-2.png" alt="Thin-Film PV Efficiency - Results" class="project-img">
+                  <img src="project-images/thin-film-pv-efficiency-img-2.png" alt="Thin-Film PV Efficiency - Results" class="project-img" loading="lazy" decoding="async">
                 </div>
               </div>
             </li>
              <li class="project-item active" data-filter-item data-category="all robotics data-analytics">
               <a href="#">
                 <figure class="project-card">
-                  <img src="project-images/outreach-bot-thumbnail.png" alt="AI Powered Outreach Automation Bot for Gmail" loading="lazy">
+                  <img src="project-images/outreach-bot-thumbnail.webp" alt="AI Powered Outreach Automation Bot for Gmail" loading="lazy">
                   <div class="project-overlay">
                     <ion-icon name="eye-outline"></ion-icon>
                   </div>
                 </figure>
-                <h3 class="project-title">AI Powered – Outreach Automation Bot for Gmail</h3>
+                <h3 class="project-title">AI-Powered Outreach Automation Bot for Gmail</h3>
                 <p class="project-category">Robotics, Data Analytics & Coding</p>
               </a>
               <!-- WHAT? -->
@@ -1392,7 +1397,7 @@
                   <li>•  Building this bot let me reclaim my time for what matters most—applying on career pages, preparing for interviews, and growing my skills—while the automation handled the busywork. It’s about working smarter, not just harder.</li>
                 </ul>
                 <div class="image-row">
-                  <img src="project-images/charts/time_savings_pie.png" alt="Time Savings Graph" class="project-img">
+                  <img src="project-images/charts/time_savings_pie.png" alt="Time Savings Graph" class="project-img" loading="lazy" decoding="async">
                 </div>
               </div>
               <!-- HOW? -->
@@ -1405,7 +1410,7 @@
                   <li>•  v3.5: CSV bulk export automation: Python parses Apollo CSVs, Gmail API + OAuth 2.0 for secure, multi-account draft creation, async drafting for speed, CLI interface prompts for company, position, template, and Gmail account, personalized drafts with resume/cover letter attachments, multi-account support and job-title input, file export for tracking outreach per company.</li>
                 </ul>
                 <div class="image-row">
-                  <img src="project-images/charts/time_efficiency.png" alt="Time Efficiency Graph" class="project-img">
+                  <img src="project-images/charts/time_efficiency.png" alt="Time Efficiency Graph" class="project-img" loading="lazy" decoding="async">
                 </div>
                 <div style="margin-top: 1.5em;">
                   <h5 style="color: #FFD600; font-weight: bold; margin-bottom: 0.5em;">TOOLS</h5>
@@ -1424,13 +1429,12 @@
                   <li>•  To avoid spam risks and ensure deliverability, the safest workflow is to generate drafts and send them manually—this keeps control in your hands and prevents bulk-sending flags.</li>
                   <li>•  This approach saves significant time and effort compared to manual drafting, and can easily replace $400–$800/month SaaS or recruiter tools for similar outreach volume.</li>
                   <li>•  The dashboard and logs provide clear visibility into campaign progress, helping you iterate on templates and targeting for better results over time. <br>
-                    <a href="https://outreach-bot-dashboard-demo.varadlad.com" target="_blank" style="color: #FFD600; text-decoration: underline; font-weight: 500;">🔗 View Dashboard Demo</a>
                   </li>
                   <li>•  While automation speeds up the process, it’s designed to support—not replace—thoughtful, targeted outreach and follow-up.</li>
                 </ul>
                 <div class="image-row">
-                  <img src="project-images/charts/cost_savings.png" alt="Cost Savings Graph" class="project-img">
-                  <img src="project-images/charts/version_evolution.png" alt="Version Evolution" class="project-img">
+                  <img src="project-images/charts/cost_savings.png" alt="Cost Savings Graph" class="project-img" loading="lazy" decoding="async">
+                  <img src="project-images/charts/version_evolution.png" alt="Version Evolution" class="project-img" loading="lazy" decoding="async">
                 </div>
                 <!-- Removed project document download link as requested -->
               </div>
@@ -1438,7 +1442,7 @@
             <li class="project-item active" data-filter-item data-category="semiconductor data-analytics all">
               <a href="#">
                 <figure class="project-card">
-                  <img src="project-images/deposition-thumbnail.png" alt="Deposition Rate Optimization For Semiconductor Materials" loading="lazy">
+                  <img src="project-images/deposition-thumbnail.webp" alt="Deposition Rate Optimization For Semiconductor Materials" loading="lazy">
                   <div class="project-overlay">
                     <ion-icon name="eye-outline"></ion-icon>
                   </div>
@@ -1457,8 +1461,8 @@
                   <li>•  Implemented two-phase strategy: Design of Experiments (DOE) followed by Bayesian optimization for efficient parameter space exploration.</li>
                 </ul>
                 <div class="image-row">
-                  <a href="project-images/process_flow_diagram.png" data-lightbox="Deposition-Rate-Optimization">
-                    <img src="project-images/process_flow_diagram.png" alt="deposition-rate-optimization-img-1.png" class="project-img">
+                  <a href="project-images/process_flow_diagram.webp" data-lightbox="Deposition-Rate-Optimization">
+                    <img src="project-images/process_flow_diagram.webp" alt="Deposition process flow diagram" class="project-img" loading="lazy" decoding="async">
                   </a>
                 </div>
               </div>
@@ -1473,21 +1477,21 @@
                   <li>•  Python automation integrated with lab equipment for streamlined parameter setting and data collection.</li>
                 </ul>
                 <div class="image-row">
-                  <a href="project-images/deposition-rate-optimization-img-1.png" data-lightbox="Deposition-Rate-Optimization">
-                    <img src="project-images/deposition-rate-optimization-img-1.png" alt="deposition-rate-optimization-img-1.png" class="project-img">
+                  <a href="project-images/deposition-rate-optimization-img-1.webp" data-lightbox="Deposition-Rate-Optimization">
+                    <img src="project-images/deposition-rate-optimization-img-1.webp" alt="Deposition rate optimization overview" class="project-img" loading="lazy" decoding="async">
                   </a>
                 </div>
                 <div class="image-row">
-                  <a href="project-images/parameter_ranges_table.png" data-lightbox="Deposition-Rate-Optimization">
-                    <img src="project-images/parameter_ranges_table.png" alt="deposition-rate-optimization-img-1.png" class="project-img">
+                  <a href="project-images/parameter_ranges_table.webp" data-lightbox="Deposition-Rate-Optimization">
+                    <img src="project-images/parameter_ranges_table.webp" alt="Table of DOE parameter ranges" class="project-img" loading="lazy" decoding="async">
                   </a>
                 </div>
               </div>
               <div class="modal-page" data-page="2" style="display:none;">
                 <h4>Results?</h4>
                 <div class="image-row">
-                  <a href="project-images/deposition-rate-optimization-img-2.png" data-lightbox="Deposition-Rate-Optimization">
-                    <img src="project-images/deposition-rate-optimization-img-2.png" alt="deposition-rate-optimization-img-2.png" class="project-img">
+                  <a href="project-images/deposition-rate-optimization-img-2.webp" data-lightbox="Deposition-Rate-Optimization">
+                    <img src="project-images/deposition-rate-optimization-img-2.webp" alt="Deposition rate optimization method" class="project-img" loading="lazy" decoding="async">
                   </a>
                 </div>
                 <ul style="list-style-type: none; margin-left: 0; padding-left: 1.2em;">
@@ -1500,13 +1504,13 @@
                   <li>•  Maintained all quality specifications while achieving speed improvements.</li>
                 </ul>
                 <div class="image-row">
-                  <a href="project-images/slide8_code_and_results.png" data-lightbox="Deposition-Rate-Optimization">
-                    <img src="project-images/slide8_code_and_results.png" alt="deposition-rate-optimization-img-1.png" class="project-img">
+                  <a href="project-images/slide8_code_and_results.webp" data-lightbox="Deposition-Rate-Optimization">
+                    <img src="project-images/slide8_code_and_results.webp" alt="Python optimization code and results" class="project-img" loading="lazy" decoding="async">
                   </a>
                 </div>
                 <div class="image-row">
-                  <a href="project-images/validation_spider_chart.png" data-lightbox="Deposition-Rate-Optimization">
-                    <img src="project-images/validation_spider_chart.png" alt="deposition-rate-optimization-img-1.png" class="project-img">
+                  <a href="project-images/validation_spider_chart.webp" data-lightbox="Deposition-Rate-Optimization">
+                    <img src="project-images/validation_spider_chart.webp" alt="Validation spider chart" class="project-img" loading="lazy" decoding="async">
                   </a>
                 </div>
               </div>
@@ -1515,7 +1519,7 @@
             <li class="project-item active" data-filter-item data-category="cad-cfd-fea">
               <a href="#">
                 <figure class="project-card">
-                  <img src="project-images/ufo-thumbnail.png" alt="UFO Aerodynamics CFD Analysis" loading="lazy">
+                  <img src="project-images/ufo-thumbnail.webp" alt="UFO Aerodynamics CFD Analysis" loading="lazy">
                   <div class="project-overlay">
                     <ion-icon name="eye-outline"></ion-icon>
                   </div>
@@ -1533,7 +1537,7 @@
                 </ul>
                 <div class="image-row">
                   <div class="image-with-caption">
-                    <img src="project-images/acfd3-mesh.jpg" alt="Mesh along plane of symmetry" class="project-img">
+                    <img src="project-images/acfd3-mesh.jpg" alt="Mesh along plane of symmetry" class="project-img" loading="lazy" decoding="async">
                     <p class="image-caption">Mesh along plane of symmetry</p>
                   </div>
                 </div>
@@ -1542,7 +1546,7 @@
                 <h4>How?</h4>
                 <div class="image-row">
                   <div class="image-with-caption">
-                    <img src="project-images/acfd3-velocity-0.jpg" alt="X-velocity contour at 0° tilt" class="project-img">
+                    <img src="project-images/acfd3-velocity-0.jpg" alt="X-velocity contour at 0° tilt" class="project-img" loading="lazy" decoding="async">
                     <p class="image-caption">X-velocity contour at 0° tilt</p>
                   </div>
                 </div>
@@ -1553,7 +1557,7 @@
                 </ul>
                 <div class="image-row">
                   <div class="image-with-caption">
-                    <img src="project-images/acfd3-velocity-22.jpg" alt="X-velocity contour at 22.5° tilt" class="project-img">
+                    <img src="project-images/acfd3-velocity-22.jpg" alt="X-velocity contour at 22.5° tilt" class="project-img" loading="lazy" decoding="async">
                     <p class="image-caption">X-velocity contour at 22.5° tilt</p>
                   </div>
                 </div>
@@ -1567,20 +1571,20 @@
                 </ul>
                 <div class="image-row">
                   <div class="image-with-caption">
-                    <img src="project-images/acfd3-velocity-45.jpg" alt="X-velocity contour at 45° tilt" class="project-img">
+                    <img src="project-images/acfd3-velocity-45.webp" alt="X-velocity contour at 45° tilt" class="project-img" loading="lazy" decoding="async">
                     <p class="image-caption">X-velocity contour at 45° tilt</p>
                   </div>
                   <div class="image-with-caption">
-                    <img src="project-images/acfd3-outlet-45.jpg" alt="X-velocity over outlet at 45° tilt" class="project-img">
+                    <img src="project-images/acfd3-outlet-45.jpg" alt="X-velocity over outlet at 45° tilt" class="project-img" loading="lazy" decoding="async">
                     <p class="image-caption">X-velocity over outlet at 45° tilt</p>
                   </div>
                   <div class="image-with-caption">
-                    <img src="project-images/acfd3-lift-drag.jpg" alt="Lift and drag force summary chart" class="project-img">
+                    <img src="project-images/acfd3-lift-drag.webp" alt="Lift and drag force summary chart" class="project-img" loading="lazy" decoding="async">
                     <p class="image-caption">Lift and drag force summary chart</p>
                   </div>
                 </div>
                 <p style="margin-top: 1.5em; text-align: center;">
-                  <a href="https://cdn.jsdelivr.net/gh/varadlad/VaradLadDocuments-@149a5e12b7788a1d9685c106e2d0fa541f38e173/MAE%20560%20Project%203%20Varad%20Lad.pdf" target="_blank" style="color: #ffd600; text-decoration: none; font-weight: 500;">🔗 View Full Report (PDF)</a>
+                  <a href="documents/ufo-aerodynamics-cfd-report.pdf" target="_blank" style="color: #ffd600; text-decoration: none; font-weight: 500;">🔗 View Full Report (PDF)</a>
                 </p>
               </div>
             </li>
@@ -1588,7 +1592,7 @@
             <li class="project-item active" data-filter-item data-category="cad-cfd-fea all">
               <a href="#">
                 <figure class="project-card">
-                  <img src="project-images/acfd2-thumbnail.png" alt="CFD Explorations: From Earth's Gravity to Supersonic Jets" loading="lazy">
+                  <img src="project-images/acfd2-thumbnail.webp" alt="CFD Explorations: From Earth's Gravity to Supersonic Jets" loading="lazy">
                   <div class="project-overlay">
                     <ion-icon name="eye-outline"></ion-icon>
                   </div>
@@ -1606,21 +1610,21 @@
                 </ul>
                 <div class="image-row">
                   <div class="image-with-caption">
-                    <img src="project-images/acfd2-earth-velocity.jpg" alt="Y-velocity contour at t = 5 min (Earth)" class="project-img">
+                    <img src="project-images/acfd2-earth-velocity.jpg" alt="Y-velocity contour at t = 5 min (Earth)" class="project-img" loading="lazy" decoding="async">
                     <p class="image-caption">Y-velocity contour at t = 5 min (Earth)</p>
                   </div>
                   <div class="image-with-caption">
-                    <img src="project-images/acfd2-earth-temp.jpg" alt="Temperature contour at t = 5 min (Earth)" class="project-img">
+                    <img src="project-images/acfd2-earth-temp.jpg" alt="Temperature contour at t = 5 min (Earth)" class="project-img" loading="lazy" decoding="async">
                     <p class="image-caption">Temperature contour at t = 5 min (Earth)</p>
                   </div>
                 </div>
                 <div class="image-row">
                   <div class="image-with-caption">
-                    <img src="project-images/acfd2-moon-temp.jpg" alt="Temperature contour at t = 1 min (Moon)" class="project-img">
+                    <img src="project-images/acfd2-moon-temp.jpg" alt="Temperature contour at t = 1 min (Moon)" class="project-img" loading="lazy" decoding="async">
                     <p class="image-caption">Temperature contour at t = 1 min (Moon)</p>
                   </div>
                   <div class="image-with-caption">
-                    <img src="project-images/acfd2-avg-temp-line.jpg" alt="Avg. temperature vs. time plot" class="project-img">
+                    <img src="project-images/acfd2-avg-temp-line.jpg" alt="Avg. temperature vs. time plot" class="project-img" loading="lazy" decoding="async">
                     <p class="image-caption">Avg. temperature vs. time plot</p>
                   </div>
                 </div>
@@ -1634,17 +1638,17 @@
                 </ul>
                 <div class="image-row">
                   <div class="image-with-caption">
-                    <img src="project-images/acfd2-CAD.jpg" alt="Helical Spring/Bar CAD Model" class="project-img">
+                    <img src="project-images/acfd2-CAD.jpg" alt="Helical Spring/Bar CAD Model" class="project-img" loading="lazy" decoding="async">
                     <p class="image-caption">Helical Spring/Bar CAD Model</p>
                   </div>
                   <div class="image-with-caption">
-                    <img src="project-images/acfd2-helix-outer-temp.jpg" alt="Outlet temperature contour (0.01 m/s)" class="project-img">
+                    <img src="project-images/acfd2-helix-outer-temp.jpg" alt="Outlet temperature contour (0.01 m/s)" class="project-img" loading="lazy" decoding="async">
                     <p class="image-caption">Outlet temperature contour (0.01 m/s)</p>
                   </div>
                 </div>
                 <div class="image-row">
                   <div class="image-with-caption">
-                    <img src="project-images/acfd2-helix-skin-temp.jpg" alt="Skin temperature of helical pipe" class="project-img">
+                    <img src="project-images/acfd2-helix-skin-temp.jpg" alt="Skin temperature of helical pipe" class="project-img" loading="lazy" decoding="async">
                     <p class="image-caption">Skin temperature of helical pipe</p>
                   </div>
                 </div>
@@ -1658,26 +1662,26 @@
                 </ul>
                 <div class="image-row">
                   <div class="image-with-caption">
-                    <img src="project-images/acfd2-jet-mach-line.jpg" alt="Mach number along jet / nozzle axis" class="project-img">
+                    <img src="project-images/acfd2-jet-mach-line.webp" alt="Mach number along jet / nozzle axis" class="project-img" loading="lazy" decoding="async">
                     <p class="image-caption">Mach number along jet / nozzle axis</p>
                   </div>
                   <div class="image-with-caption">
-                    <img src="project-images/acfd2-jet-velocity-line.jpg" alt="Velocity along jet / nozzle axis" class="project-img">
+                    <img src="project-images/acfd2-jet-velocity-line.jpg" alt="Velocity along jet / nozzle axis" class="project-img" loading="lazy" decoding="async">
                     <p class="image-caption">Velocity along jet / nozzle axis</p>
                   </div>
                 </div>
                 <div class="image-row">
                   <div class="image-with-caption">
-                    <img src="project-images/acfd2-nozzle-temp-contour.jpg" alt="Nozzle static temperature contour" class="project-img">
+                    <img src="project-images/acfd2-nozzle-temp-contour.jpg" alt="Nozzle static temperature contour" class="project-img" loading="lazy" decoding="async">
                     <p class="image-caption">Nozzle static temperature contour</p>
                   </div>
                   <div class="image-with-caption">
-                    <img src="project-images/acfd2-nozzle-density-contour.jpg" alt="Nozzle density contour" class="project-img">
+                    <img src="project-images/acfd2-nozzle-density-contour.jpg" alt="Nozzle density contour" class="project-img" loading="lazy" decoding="async">
                     <p class="image-caption">Nozzle density contour</p>
                   </div>
                 </div>
                 <p style="margin-top: 1.5em; text-align: center;">
-                  <a href="https://cdn.jsdelivr.net/gh/varadlad/VaradLadDocuments-@149a5e12b7788a1d9685c106e2d0fa541f38e173/MAE%20560%20ACFD%20Project%201.pdf" target="_blank" style="color: #ffd600; text-decoration: none; font-weight: 500;">🔗 View Full Report (PDF)</a>
+                  <a href="documents/cfd-explorations-report.pdf" target="_blank" style="color: #ffd600; text-decoration: none; font-weight: 500;">🔗 View Full Report (PDF)</a>
                 </p>
               </div>
             </li>
@@ -1702,18 +1706,19 @@
                   <li>•  Studied how inlet size affects thermal performance and flow behavior.</li>
                 </ul>
                 <div class="image-row">
-                  <img src="project-images/acfd1-thumbnai.jpg" alt="Half-pipe geometry used in CFD simulation" class="project-img">
+                  <img src="project-images/acfd1-thumbnai.jpg" alt="Half-pipe geometry used in CFD simulation" class="project-img" loading="lazy" decoding="async">
               </div>
+</div>
               <div class="modal-page" data-page="1" style="display:none;">
                 <h4>How?</h4>
                 <ul style="list-style-type: disc; margin-left: 0; padding-left: 1.2em;">
-                  <li>•  Created half-pipe model and boundary conditions in ANSYS Fluent (or equivalent CFD tool).</li>
+                  <li>•  Created half-pipe model and boundary conditions in ANSYS Fluent.</li>
                   <li>•  Simulated large and small inlet configurations and analyzed pressure outlet conditions.</li>
                   <li>•  Used custom field functions and surface integrals to compute heat transfer rates at key surfaces.</li>
                   <li>•  Generated contour plots for velocity, static temperature, and Y velocity to study flow and thermal fields.</li>
                 </ul>
                 <div class="image-row">
-                  <img src="project-images/acfd1-static-temp.jpg" alt="Static temperature distribution in half-pipe geometry" class="project-img">
+                  <img src="project-images/acfd1-static-temp.jpg" alt="Static temperature distribution in half-pipe geometry" class="project-img" loading="lazy" decoding="async">
                 </div>
                 <p>Figure. Static temperature profile of the simulation domain.</p>
               </div>
@@ -1726,15 +1731,15 @@
                   <li>•  Results showed clear thermal and flow differences with varying inlet sizes.</li>
                 </ul>
                 <div class="image-row">
-                  <img src="project-images/acfd1-yvelo.jpg" alt="Y velocity distribution in half-pipe geometry" class="project-img">
-                  <img src="project-images/acfd1-result1.jpg" alt="Heat transfer rate summary table" class="project-img">
+                  <img src="project-images/acfd1-yvelo.jpg" alt="Y velocity distribution in half-pipe geometry" class="project-img" loading="lazy" decoding="async">
+                  <img src="project-images/acfd1-result1.jpg" alt="Heat transfer rate summary table" class="project-img" loading="lazy" decoding="async">
                 </div>
                 <div class="image-row">
-                  <img src="project-images/acfd1-result2.jpg" alt="Heat transfer comparison chart" class="project-img">
-                  <img src="project-images/acfd1-result3.jpg" alt="Additional results visualization" class="project-img">
+                  <img src="project-images/acfd1-result2.jpg" alt="Heat transfer comparison chart" class="project-img" loading="lazy" decoding="async">
+                  <img src="project-images/acfd1-result3.jpg" alt="Additional results visualization" class="project-img" loading="lazy" decoding="async">
                 </div>
                 <div style="margin-top: 1.2em; text-align: left;">
-                  <a href="https://cdn.jsdelivr.net/gh/varadlad/VaradLadDocuments-@149a5e12b7788a1d9685c106e2d0fa541f38e173/Varad%20Lad%20MAE%20560%20Homework%201-1.pdf" target="_blank" style="color: #fbd109; text-decoration: underline;">
+                  <a href="documents/half-pipe-cfd-report.pdf" target="_blank" style="color: #fbd109; text-decoration: underline;">
                     🔗 View Full Report (PDF)
                   </a>
                 </div>
@@ -1744,7 +1749,7 @@
             <li class="project-item active" data-filter-item data-category="cad-cfd-fea">
               <a href="#">
                 <figure class="project-card">
-                  <img src="project-images/cad-model/cad-thumbnail.png" alt="CAD Models Collection Thumbnail" loading="lazy">
+                  <img src="project-images/cad-model/cad-thumbnail.webp" alt="CAD Models Collection Thumbnail" loading="lazy">
                   <div class="project-overlay">
                     <ion-icon name="eye-outline"></ion-icon>
                   </div>
@@ -1763,112 +1768,112 @@
                   <li>•  Design for manufacturing principles</li>
                 </ul>
                 <div class="image-row" style="display: flex; flex-wrap: wrap; gap: 1em; justify-content: center; align-items: flex-start; min-height: 120px;">
-                  <a href="project-images/cad-model/cad1.png" data-lightbox="CAD-Models" data-title="Pump Motor" style="display:inline-block; background:#222; border-radius:8px; padding:4px; box-shadow:0 2px 8px #0002;">
+                  <a href="project-images/cad-model/cad1.webp" data-lightbox="CAD-Models" data-title="Pump Motor" style="display:inline-block; background:#222; border-radius:8px; padding:4px; box-shadow:0 2px 8px #0002;">
                     <div class="cad-caption">Pump Motor Assembly</div>
-                    <img src="project-images/cad-model/cad1.png" alt="Pump Motor Assembly" class="project-img" style="max-width:120px; max-height:90px; object-fit:contain; display:block; background:#222; border-radius:6px;">
+                    <img src="project-images/cad-model/cad1.webp" alt="Pump Motor Assembly" class="project-img" style="max-width:120px; max-height:90px; object-fit:contain; display:block; background:#222; border-radius:6px;" loading="lazy" decoding="async">
                   </a>
-                  <a href="project-images/cad-model/cad2.png" data-lightbox="CAD-Models" data-title="Pump Housing" style="display:inline-block; background:#222; border-radius:8px; padding:4px; box-shadow:0 2px 8px #0002;">
+                  <a href="project-images/cad-model/cad2.webp" data-lightbox="CAD-Models" data-title="Pump Housing" style="display:inline-block; background:#222; border-radius:8px; padding:4px; box-shadow:0 2px 8px #0002;">
                     <div class="cad-caption">Pump Housing Component</div>
-                    <img src="project-images/cad-model/cad2.png" alt="Pump Housing Component" class="project-img" style="max-width:120px; max-height:90px; object-fit:contain; display:block; background:#222; border-radius:6px;">
+                    <img src="project-images/cad-model/cad2.webp" alt="Pump Housing Component" class="project-img" style="max-width:120px; max-height:90px; object-fit:contain; display:block; background:#222; border-radius:6px;" loading="lazy" decoding="async">
                   </a>
-                  <a href="project-images/cad-model/cad3.png" data-lightbox="CAD-Models" data-title="Pump Exploded" style="display:inline-block; background:#222; border-radius:8px; padding:4px; box-shadow:0 2px 8px #0002;">
+                  <a href="project-images/cad-model/cad3.webp" data-lightbox="CAD-Models" data-title="Pump Exploded" style="display:inline-block; background:#222; border-radius:8px; padding:4px; box-shadow:0 2px 8px #0002;">
                     <div class="cad-caption">Pump Assembly - Exploded View</div>
-                    <img src="project-images/cad-model/cad3.png" alt="Pump Assembly - Exploded View" class="project-img" style="max-width:120px; max-height:90px; object-fit:contain; display:block; background:#222; border-radius:6px;">
+                    <img src="project-images/cad-model/cad3.webp" alt="Pump Assembly - Exploded View" class="project-img" style="max-width:120px; max-height:90px; object-fit:contain; display:block; background:#222; border-radius:6px;" loading="lazy" decoding="async">
                   </a>
-                  <a href="project-images/cad-model/cad4.png" data-lightbox="CAD-Models" data-title="Pipe Manifold" style="display:inline-block; background:#222; border-radius:8px; padding:4px; box-shadow:0 2px 8px #0002;">
+                  <a href="project-images/cad-model/cad4.webp" data-lightbox="CAD-Models" data-title="Pipe Manifold" style="display:inline-block; background:#222; border-radius:8px; padding:4px; box-shadow:0 2px 8px #0002;">
                     <div class="cad-caption">Pipe Manifold System</div>
-                    <img src="project-images/cad-model/cad4.png" alt="Pipe Manifold System" class="project-img" style="max-width:120px; max-height:90px; object-fit:contain; display:block; background:#222; border-radius:6px;">
+                    <img src="project-images/cad-model/cad4.webp" alt="Pipe Manifold System" class="project-img" style="max-width:120px; max-height:90px; object-fit:contain; display:block; background:#222; border-radius:6px;" loading="lazy" decoding="async">
                   </a>
-                  <a href="project-images/cad-model/cad5.png" data-lightbox="CAD-Models" data-title="Pipe Manifold (Alt)" style="display:inline-block; background:#222; border-radius:8px; padding:4px; box-shadow:0 2px 8px #0002;">
+                  <a href="project-images/cad-model/cad5.webp" data-lightbox="CAD-Models" data-title="Pipe Manifold (Alt)" style="display:inline-block; background:#222; border-radius:8px; padding:4px; box-shadow:0 2px 8px #0002;">
                     <div class="cad-caption">Pipe Manifold - Alternate Design</div>
-                    <img src="project-images/cad-model/cad5.png" alt="Pipe Manifold - Alternate Design" class="project-img" style="max-width:120px; max-height:90px; object-fit:contain; display:block; background:#222; border-radius:6px;">
+                    <img src="project-images/cad-model/cad5.webp" alt="Pipe Manifold - Alternate Design" class="project-img" style="max-width:120px; max-height:90px; object-fit:contain; display:block; background:#222; border-radius:6px;" loading="lazy" decoding="async">
                   </a>
                   <a href="project-images/cad-model/cad6.png" data-lightbox="CAD-Models" data-title="Jack Exploded" style="display:inline-block; background:#222; border-radius:8px; padding:4px; box-shadow:0 2px 8px #0002;">
                     <div class="cad-caption">Screw Jack - Exploded View</div>
-                    <img src="project-images/cad-model/cad6.png" alt="Screw Jack - Exploded View" class="project-img" style="max-width:120px; max-height:90px; object-fit:contain; display:block; background:#222; border-radius:6px;">
+                    <img src="project-images/cad-model/cad6.png" alt="Screw Jack - Exploded View" class="project-img" style="max-width:120px; max-height:90px; object-fit:contain; display:block; background:#222; border-radius:6px;" loading="lazy" decoding="async">
                   </a>
-                  <a href="project-images/cad-model/cad7.png" data-lightbox="CAD-Models" data-title="Screw Jack" style="display:inline-block; background:#222; border-radius:8px; padding:4px; box-shadow:0 2px 8px #0002;">
+                  <a href="project-images/cad-model/cad7.webp" data-lightbox="CAD-Models" data-title="Screw Jack" style="display:inline-block; background:#222; border-radius:8px; padding:4px; box-shadow:0 2px 8px #0002;">
                     <div class="cad-caption">Screw Jack Assembly</div>
-                    <img src="project-images/cad-model/cad7.png" alt="Screw Jack Assembly" class="project-img" style="max-width:120px; max-height:90px; object-fit:contain; display:block; background:#222; border-radius:6px;">
+                    <img src="project-images/cad-model/cad7.webp" alt="Screw Jack Assembly" class="project-img" style="max-width:120px; max-height:90px; object-fit:contain; display:block; background:#222; border-radius:6px;" loading="lazy" decoding="async">
                   </a>
-                  <a href="project-images/cad-model/cad8.png" data-lightbox="CAD-Models" data-title="Clamp" style="display:inline-block; background:#222; border-radius:8px; padding:4px; box-shadow:0 2px 8px #0002;">
+                  <a href="project-images/cad-model/cad8.webp" data-lightbox="CAD-Models" data-title="Clamp" style="display:inline-block; background:#222; border-radius:8px; padding:4px; box-shadow:0 2px 8px #0002;">
                     <div class="cad-caption">Mechanical Clamp</div>
-                    <img src="project-images/cad-model/cad8.png" alt="Mechanical Clamp" class="project-img" style="max-width:120px; max-height:90px; object-fit:contain; display:block; background:#222; border-radius:6px;">
+                    <img src="project-images/cad-model/cad8.webp" alt="Mechanical Clamp" class="project-img" style="max-width:120px; max-height:90px; object-fit:contain; display:block; background:#222; border-radius:6px;" loading="lazy" decoding="async">
                   </a>
-                  <a href="project-images/cad-model/cad9.png" data-lightbox="CAD-Models" data-title="Clamp Exploded" style="display:inline-block; background:#222; border-radius:8px; padding:4px; box-shadow:0 2px 8px #0002;">
+                  <a href="project-images/cad-model/cad9.webp" data-lightbox="CAD-Models" data-title="Clamp Exploded" style="display:inline-block; background:#222; border-radius:8px; padding:4px; box-shadow:0 2px 8px #0002;">
                     <div class="cad-caption">Clamp - Exploded View</div>
-                    <img src="project-images/cad-model/cad9.png" alt="Clamp - Exploded View" class="project-img" style="max-width:120px; max-height:90px; object-fit:contain; display:block; background:#222; border-radius:6px;">
+                    <img src="project-images/cad-model/cad9.webp" alt="Clamp - Exploded View" class="project-img" style="max-width:120px; max-height:90px; object-fit:contain; display:block; background:#222; border-radius:6px;" loading="lazy" decoding="async">
                   </a>
-                  <a href="project-images/cad-model/cad10.png" data-lightbox="CAD-Models" data-title="V Block" style="display:inline-block; background:#222; border-radius:8px; padding:4px; box-shadow:0 2px 8px #0002;">
+                  <a href="project-images/cad-model/cad10.webp" data-lightbox="CAD-Models" data-title="V Block" style="display:inline-block; background:#222; border-radius:8px; padding:4px; box-shadow:0 2px 8px #0002;">
                     <div class="cad-caption">V-Block Fixture</div>
-                    <img src="project-images/cad-model/cad10.png" alt="V-Block Fixture" class="project-img" style="max-width:120px; max-height:90px; object-fit:contain; display:block; background:#222; border-radius:6px;">
+                    <img src="project-images/cad-model/cad10.webp" alt="V-Block Fixture" class="project-img" style="max-width:120px; max-height:90px; object-fit:contain; display:block; background:#222; border-radius:6px;" loading="lazy" decoding="async">
                   </a>
-                  <a href="project-images/cad-model/cad11.png" data-lightbox="CAD-Models" data-title="Vane Rotor" style="display:inline-block; background:#222; border-radius:8px; padding:4px; box-shadow:0 2px 8px #0002;">
+                  <a href="project-images/cad-model/cad11.webp" data-lightbox="CAD-Models" data-title="Vane Rotor" style="display:inline-block; background:#222; border-radius:8px; padding:4px; box-shadow:0 2px 8px #0002;">
                     <div class="cad-caption">Vane Rotor Assembly</div>
-                    <img src="project-images/cad-model/cad11.png" alt="Vane Rotor Assembly" class="project-img" style="max-width:120px; max-height:90px; object-fit:contain; display:block; background:#222; border-radius:6px;">
+                    <img src="project-images/cad-model/cad11.webp" alt="Vane Rotor Assembly" class="project-img" style="max-width:120px; max-height:90px; object-fit:contain; display:block; background:#222; border-radius:6px;" loading="lazy" decoding="async">
                   </a>
-                  <a href="project-images/cad-model/cad12.png" data-lightbox="CAD-Models" data-title="Toggle Clamp">
+                  <a href="project-images/cad-model/cad12.webp" data-lightbox="CAD-Models" data-title="Toggle Clamp">
                     <div class="cad-caption">Toggle Clamp Mechanism</div>
-                    <img src="project-images/cad-model/cad12.png" alt="Toggle Clamp Mechanism" class="project-img">
+                    <img src="project-images/cad-model/cad12.webp" alt="Toggle Clamp Mechanism" class="project-img" loading="lazy" decoding="async">
                   </a>
-                  <a href="project-images/cad-model/cad13.png" data-lightbox="CAD-Models" data-title="Toggle Clamp Exploded">
+                  <a href="project-images/cad-model/cad13.webp" data-lightbox="CAD-Models" data-title="Toggle Clamp Exploded">
                     <div class="cad-caption">Toggle Clamp - Exploded View</div>
-                    <img src="project-images/cad-model/cad13.png" alt="Toggle Clamp - Exploded View" class="project-img">
+                    <img src="project-images/cad-model/cad13.webp" alt="Toggle Clamp - Exploded View" class="project-img" loading="lazy" decoding="async">
                   </a>
-                  <a href="project-images/cad-model/cad14.png" data-lightbox="CAD-Models" data-title="Mount Bracket">
+                  <a href="project-images/cad-model/cad14.webp" data-lightbox="CAD-Models" data-title="Mount Bracket">
                     <div class="cad-caption">Mount Bracket</div>
-                    <img src="project-images/cad-model/cad14.png" alt="Mount Bracket" class="project-img">
+                    <img src="project-images/cad-model/cad14.webp" alt="Mount Bracket" class="project-img" loading="lazy" decoding="async">
                   </a>
-                  <a href="project-images/cad-model/cad15.png" data-lightbox="CAD-Models" data-title="Housing Cover">
+                  <a href="project-images/cad-model/cad15.webp" data-lightbox="CAD-Models" data-title="Housing Cover">
                     <div class="cad-caption">Housing Cover</div>
-                    <img src="project-images/cad-model/cad15.png" alt="Housing Cover" class="project-img">
+                    <img src="project-images/cad-model/cad15.webp" alt="Housing Cover" class="project-img" loading="lazy" decoding="async">
                   </a>
-                  <a href="project-images/cad-model/cad16.png" data-lightbox="CAD-Models" data-title="Bearing Block">
+                  <a href="project-images/cad-model/cad16.webp" data-lightbox="CAD-Models" data-title="Bearing Block">
                     <div class="cad-caption">Bearing Block Assembly</div>
-                    <img src="project-images/cad-model/cad16.png" alt="Bearing Block Assembly" class="project-img">
+                    <img src="project-images/cad-model/cad16.webp" alt="Bearing Block Assembly" class="project-img" loading="lazy" decoding="async">
                   </a>
-                  <a href="project-images/cad-model/cad17.png" data-lightbox="CAD-Models" data-title="Bearing Block Exploded">
+                  <a href="project-images/cad-model/cad17.webp" data-lightbox="CAD-Models" data-title="Bearing Block Exploded">
                     <div class="cad-caption">Bearing Block - Exploded View</div>
-                    <img src="project-images/cad-model/cad17.png" alt="Bearing Block - Exploded View" class="project-img">
+                    <img src="project-images/cad-model/cad17.webp" alt="Bearing Block - Exploded View" class="project-img" loading="lazy" decoding="async">
                   </a>
-                  <a href="project-images/cad-model/cad18.png" data-lightbox="CAD-Models" data-title="Hair Dryer Handle Grip (Surface Modeling)">
+                  <a href="project-images/cad-model/cad18.webp" data-lightbox="CAD-Models" data-title="Hair Dryer Handle Grip (Surface Modeling)">
                     <div class="cad-caption">Hair Dryer Handle (Surface Modeling)</div>
-                    <img src="project-images/cad-model/cad18.png" alt="Hair Dryer Handle - Surface Modeling" class="project-img">
+                    <img src="project-images/cad-model/cad18.webp" alt="Hair Dryer Handle - Surface Modeling" class="project-img" loading="lazy" decoding="async">
                   </a>
-                  <a href="project-images/cad-model/cad19.png" data-lightbox="CAD-Models" data-title="Piston Head">
+                  <a href="project-images/cad-model/cad19.webp" data-lightbox="CAD-Models" data-title="Piston Head">
                     <div class="cad-caption">Piston Head Assembly</div>
-                    <img src="project-images/cad-model/cad19.png" alt="Piston Head Assembly" class="project-img">
+                    <img src="project-images/cad-model/cad19.webp" alt="Piston Head Assembly" class="project-img" loading="lazy" decoding="async">
                   </a>
-                  <a href="project-images/cad-model/cad20.png" data-lightbox="CAD-Models" data-title="Water Jug (Surface Modeling)">
+                  <a href="project-images/cad-model/cad20.webp" data-lightbox="CAD-Models" data-title="Water Jug (Surface Modeling)">
                     <div class="cad-caption">Water Jug (Surface Modeling)</div>
-                    <img src="project-images/cad-model/cad20.png" alt="Water Jug - Surface Modeling" class="project-img">
+                    <img src="project-images/cad-model/cad20.webp" alt="Water Jug - Surface Modeling" class="project-img" loading="lazy" decoding="async">
                   </a>
-                  <a href="project-images/cad-model/cad21.png" data-lightbox="CAD-Models" data-title="Water Jug (Surface Modeling) 2">
+                  <a href="project-images/cad-model/cad21.webp" data-lightbox="CAD-Models" data-title="Water Jug (Surface Modeling) 2">
                     <div class="cad-caption">Water Jug - Alternate View</div>
-                    <img src="project-images/cad-model/cad21.png" alt="Water Jug - Alternate View" class="project-img">
+                    <img src="project-images/cad-model/cad21.webp" alt="Water Jug - Alternate View" class="project-img" loading="lazy" decoding="async">
                   </a>
-                  <a href="project-images/cad-model/cad22.png" data-lightbox="CAD-Models" data-title="Machining Block 1">
+                  <a href="project-images/cad-model/cad22.webp" data-lightbox="CAD-Models" data-title="Machining Block 1">
                     <div class="cad-caption">Machining Block - Front View</div>
-                    <img src="project-images/cad-model/cad22.png" alt="Machining Block - Front View" class="project-img">
+                    <img src="project-images/cad-model/cad22.webp" alt="Machining Block - Front View" class="project-img" loading="lazy" decoding="async">
                   </a>
-                  <a href="project-images/cad-model/cad23.png" data-lightbox="CAD-Models" data-title="Machining Block 2">
+                  <a href="project-images/cad-model/cad23.webp" data-lightbox="CAD-Models" data-title="Machining Block 2">
                     <div class="cad-caption">Machining Block - Isometric View</div>
-                    <img src="project-images/cad-model/cad23.png" alt="Machining Block - Isometric View" class="project-img">
+                    <img src="project-images/cad-model/cad23.webp" alt="Machining Block - Isometric View" class="project-img" loading="lazy" decoding="async">
                   </a>
-                  <a href="project-images/cad-model/cad24.png" data-lightbox="CAD-Models" data-title="Machining Block 3">
+                  <a href="project-images/cad-model/cad24.webp" data-lightbox="CAD-Models" data-title="Machining Block 3">
                     <div class="cad-caption">Machining Block - Top View</div>
-                    <img src="project-images/cad-model/cad24.png" alt="Machining Block - Top View" class="project-img">
+                    <img src="project-images/cad-model/cad24.webp" alt="Machining Block - Top View" class="project-img" loading="lazy" decoding="async">
                   </a>
-                  <a href="project-images/cad-model/cad25.png" data-lightbox="CAD-Models" data-title="Drainer Sink">
+                  <a href="project-images/cad-model/cad25.webp" data-lightbox="CAD-Models" data-title="Drainer Sink">
                     <div class="cad-caption">Drainer Sink (Surface Modeling)</div>
-                    <img src="project-images/cad-model/cad25.png" alt="Drainer Sink - Surface Modeling" class="project-img">
+                    <img src="project-images/cad-model/cad25.webp" alt="Drainer Sink - Surface Modeling" class="project-img" loading="lazy" decoding="async">
                   </a>
-                  <a href="project-images/cad-model/cad26.png" data-lightbox="CAD-Models" data-title="Bearing Cap">
+                  <a href="project-images/cad-model/cad26.webp" data-lightbox="CAD-Models" data-title="Bearing Cap">
                     <div class="cad-caption">Bearing Cap</div>
-                    <img src="project-images/cad-model/cad26.png" alt="Bearing Cap" class="project-img">
+                    <img src="project-images/cad-model/cad26.webp" alt="Bearing Cap" class="project-img" loading="lazy" decoding="async">
                   </a>
                 </div>
-                <p style="margin-top:1em; text-align:center; color:#FFD600; font-weight:500;">Click any image to open, zoom, and browse the full CAD gallery.</p>
+                <p style="margin-top:1em; text-align:center; color:#FFD600; font-weight:500;">Click any image to open and zoom.</p>
               </div>
               <div class="modal-page" data-page="1" style="display:none;">
                 <h4>Engineering Excellence in Action</h4>
@@ -1896,7 +1901,7 @@
             <li class="project-item active" data-filter-item data-category="cad-cfd-fea">
               <a href="#">
                 <figure class="project-card">
-                  <img src="project-images/brick-making-machine-thumbnail.png" alt="Industrial-Grade Brick-Making Machine" loading="lazy">
+                  <img src="project-images/brick-making-machine-thumbnail.webp" alt="Industrial-Grade Brick-Making Machine" loading="lazy">
                   <div class="project-overlay">
                     <ion-icon name="eye-outline"></ion-icon>
                   </div>
@@ -1910,14 +1915,14 @@
                 <ul style="list-style-type: none; margin-left: 0; padding-left: 1.2em;">
                   <li>•  For this Diploma major project, we wanted to develop something which is sustainable for small manufacturers.</li>
                   <li>•  Small manufacturers used conventional processes which had drawbacks such as it required more time for production, a greater number of workers, and hence more space for production.</li>
-                  <li>•  The “Brick Making Machine” (Sold as “Paving Block Making Machine”) was made for small-scale industries to manufacture bricks and paving blocks at a lesser time with qualitative production in less effort.</li>
-                  <li>•  The goal was to make Brick Making Machine in a minimum cost so that it can be afforded to small-scale industries.</li>
+                  <li>•  The “Brick Making Machine” (sold as “Paving Block Making Machine”) was made for small-scale industries to manufacture bricks and paving blocks in less time, with less effort and consistent quality.</li>
+                  <li>•  The goal was to build the machine at minimum cost so that small-scale industries could afford it.</li>
                   <li>•  The design of each part was also especially important, the design should be such that the machine can withstand continuous operations. We used CATIA V5-R2019 for part designing purposes.</li>
                   <li>•  Knowledge of the Theory of Machines, Heat and Mass transfer, testing and measurements, and strength of the material was used while developing ‘Brick Making Machine’.</li>
                 </ul>
                 <div class="image-row">
-                  <a href="project-images/brick-making-machine-img-1.png" data-lightbox="Brick-Making-Machine">
-                    <img src="project-images/brick-making-machine-img-1.png" alt="brick-making-machine-img-1.png" class="project-img">
+                  <a href="project-images/brick-making-machine-img-1.webp" data-lightbox="Brick-Making-Machine">
+                    <img src="project-images/brick-making-machine-img-1.webp" alt="Brick-making machine design, view 1" class="project-img" loading="lazy" decoding="async">
                   </a>
                 </div>
               </div>
@@ -1925,7 +1930,7 @@
                 <h4>How?</h4>
                 <ul style="list-style-type: none; margin-left: 0; padding-left: 1.2em;">
                   <li>•  While selecting the material we considered the following factors: Availability of Material, Suitability of Material for working conditions, and the cost of the material.</li>
-                  <li>•  After considering all the factors we decided to use Mild Steel as it is a type of steel alloy that contains a high amount of carbon.</li>
+                  <li>•  After considering all the factors we decided to use Mild Steel, a low-carbon steel that is affordable, easy to weld, and easy to machine.</li>
                   <li>•  For the manufacturing process we used Lathe Machine, Grinding Machine, Drilling Machine, and Welding Machine, etc.</li>
                   <li>•  The Brick making machine has four main parts: hopper, slider box, mold box, and pressing mechanism.</li>
                   <li>•  The hopper is designed for easy pouring of raw material into the slider box and to prevent any residue from remaining in the hopper.</li>
@@ -1934,27 +1939,27 @@
                   <li>•  Pulling back the lever and pressing down again removes the paving block from the mold box.</li>
                 </ul>
                 <div class="image-row">
-                  <a href="project-images/brick-making-machine-img-2.png" data-lightbox="Brick-Making-Machine">
-                    <img src="project-images/brick-making-machine-img-2.png" alt="brick-making-machine-img-2.png" class="project-img">
+                  <a href="project-images/brick-making-machine-img-2.webp" data-lightbox="Brick-Making-Machine">
+                    <img src="project-images/brick-making-machine-img-2.webp" alt="Brick-making machine design, view 2" class="project-img" loading="lazy" decoding="async">
                   </a>
-                  <a href="project-images/brick-making-machine-img-3.png" data-lightbox="Brick-Making-Machine">
-                    <img src="project-images/brick-making-machine-img-3.png" alt="brick-making-machine-img-3.png" class="project-img">
+                  <a href="project-images/brick-making-machine-img-3.webp" data-lightbox="Brick-Making-Machine">
+                    <img src="project-images/brick-making-machine-img-3.webp" alt="Brick-making machine design, view 3" class="project-img" loading="lazy" decoding="async">
                   </a>
                 </div>
               </div>
               <div class="modal-page" data-page="2" style="display:none;">
                 <h4>Results?</h4>
                 <ul style="list-style-type: none; margin-left: 0; padding-left: 1.2em;">
-                  <li>•  The main important thing is that the number of skilled workers required for the production of brick and paving blocks was less than the number of semiskilled and unskilled workers required to use this machine.</li>
-                  <li>•  In the conventional method six skilled workers were required for production of brick and paving blocks whereas in this machine maximum of 2 workers, efforts required by the worker are also reduced.</li>
+                  <li>•  The main benefit is a smaller crew: the machine needs fewer workers, and they can be semi-skilled or unskilled.</li>
+                  <li>•  The conventional method needed six skilled workers; this machine needs at most two, with less physical effort.</li>
                   <li>•  The time required for a single brick in the conventional method is about 15-18 minutes which is reduced to less than 5 minutes per brick.</li>
                   <li>•  The initial investment of the machine is slightly higher than the conventional method, but this investment is a one-time investment, not paid monthly or yearly.</li>
                   <li>•  Machine saves the monthly worker expenses at the same output. The only thing required is the small maintenance of the machine.</li>
                   <li>•  The Brick Making Machine (Sold as: ‘Paving Block Making Machine’) was sold to the same industry for 11,540Rs (INR).</li>
                 </ul>
                 <div class="image-row">
-                  <a href="project-images/brick-making-machine-img-4.png" data-lightbox="Brick-Making-Machine">
-                    <img src="project-images/brick-making-machine-img-4.png" alt="brick-making-machine-img-4.png" class="project-img">
+                  <a href="project-images/brick-making-machine-img-4.webp" data-lightbox="Brick-Making-Machine">
+                    <img src="project-images/brick-making-machine-img-4.webp" alt="Brick-making machine result" class="project-img" loading="lazy" decoding="async">
                   </a>
                 </div>
               </div>
@@ -1963,7 +1968,7 @@
             <li class="project-item active" data-filter-item data-category="cad-cfd-fea">
               <a href="#">
                 <figure class="project-card">
-                  <img src="project-images/hepa-filter-thumbnail.png" alt="Sustainable 3 Stage HEPA Air Filter" loading="lazy">
+                  <img src="project-images/hepa-filter-thumbnail.webp" alt="Sustainable 3 Stage HEPA Air Filter" loading="lazy">
                   <div class="project-overlay">
                     <ion-icon name="eye-outline"></ion-icon>
                   </div>
@@ -1975,23 +1980,23 @@
     <h4>What?</h4>
     <ul style="list-style-type: disc; margin-left: 0; padding-left: 1.2em;">
       <li>•  Environmental pollution was recognized as one of the major problems of the modern world.</li>
-      <li>•  After visiting small-scale industries such as foundry, jaggery industries, and textile industries we found that the small black color particles are present everywhere near these industries. These are the solid pollutants emitted from the chimneys of small-scale industries.</li>
+      <li>•  After visiting small-scale industries such as foundries, jaggery plants, and textile mills, we found small black particles everywhere around them. These are solid pollutants emitted from the chimneys of these industries.</li>
       <li>•  Air pollution can cause long-term damage to people’s nerves, brain, kidneys, liver, and other organs.</li>
       <li>•  Considering all these issues we can use air filtration technology in these industries to reduce the emission of solid pollutants and achieve a sustainable and healthy environment.</li>
     </ul>
     <div class="hepa-image-row">
-      <img src="project-images/hepa-filter-img-3.png" alt="HEPA Filter Design 3" class="hepa-img">
+      <img src="project-images/hepa-filter-img-3.png" alt="HEPA Filter Design 3" class="hepa-img" loading="lazy" decoding="async">
     </div>
   </div> 
   <div class="modal-page" data-page="1" style="display:none;">
     <h4>Design Features</h4>
         <!-- DESIGN FEATURES images before text -->
     <div class="hepa-image-row">
-      <img src="project-images/hepa-filter-img-1.png" alt="HEPA Filter Design 1" class="hepa-img">
+      <img src="project-images/hepa-filter-img-1.png" alt="HEPA Filter Design 1" class="hepa-img" loading="lazy" decoding="async">
     </div>
     <ul style="list-style-type: disc; margin-left: 0; padding-left: 1.2em;">
       <li>•  We used Mild Steel because it has a melting point of 1350 to 1500 degrees Celsius.</li>
-      <li>•  We provided a door on one side of the air filter for maintenance purposes to easily access over the replacement of the HEPA/ MANN filter and clean the filter from the inside.</li>
+      <li>•  We provided a door on one side of the air filter for easy replacement of the HEPA/MANN filter and cleaning from the inside.</li>
       <li>•  Packing material on joints and doors of the air filter to minimize air leakages.</li>
       <li>•  We used high-temperature packing material (Champion Sheet). A high-temperature packing sheet is used because in case the temperature of flue gas is high it should be sustained at that temperature for a longer period.</li>
       <li>•  Zinc chromate yellow primer coating is used. It is an odorless chemical compound primarily used as an industrial paint coating. The compound is a beneficial coating because it is an anti-corrosive and an anti-rust primer.</li>
@@ -1999,38 +2004,38 @@
       <li>•  Maximum continuous operating temperature 350°C, efficiency 99.99% at 0.3 μm.</li>
     </ul>
     <div class="hepa-image-row">
-      <img src="project-images/hepa-filter-img-2.png" alt="HEPA Filter Design 1" class="hepa-img">
+      <img src="project-images/hepa-filter-img-2.png" alt="HEPA Filter Design 1" class="hepa-img" loading="lazy" decoding="async">
     </div>
-
+</div>
   <div class="modal-page" data-page="2" style="display:none;">
     <h4>How?</h4>
     <ul style="list-style-type: disc; margin-left: 0; padding-left: 1.2em;">
-      <li>•  Firstly, we are done with all the dimensions on the M.S sheet and cut down all required sides.</li>
+      <li>•  First, we marked all the dimensions on the M.S. sheet and cut all the required sides.</li>
       <li>•  Then we formed a structure by using an L angle & welded all the sides on it.</li>
       <li>•  Thereafter we made the inlet portion by using a 5-inch M.S pipe mounted on an M.S sheet.</li>
       <li>•  Then we built the first chamber and placed the 1st HEPA/ MANN air Filter with a range of 10 microns.</li>
       <li>•  In the Second chamber we arranged 12 MS pipes with a diameter of 1 inch each.</li>
-      <li>•  In the third chamber, we have arranged HEPA air Filter with a range of 2.5 microns on its outlet.</li>
-      <li>•  After that we set the outlet portion on it then we provide a door fully sealed to prevent air leakages by using a high-temperature packing sheet.</li>
+      <li>•  In the third chamber, we arranged a HEPA air filter with a range of 2.5 microns on its outlet.</li>
+      <li>•  After that, we fitted the outlet and added a door, fully sealed with a high-temperature packing sheet to prevent air leaks.</li>
     </ul>
         <!-- HOW? image after text -->
     <div class="hepa-image-row">
-      <img src="project-images/hepa-filter-img-5.png" alt="HEPA Filter Assembly 5" class="hepa-img">
+      <img src="project-images/hepa-filter-img-5.webp" alt="HEPA Filter Assembly 5" class="hepa-img" loading="lazy" decoding="async">
     </div>
     <div class="hepa-image-row">
-      <img src="project-images/hepa-filter-img-6.png" alt="HEPA Filter Assembly 4" class="hepa-img">
+      <img src="project-images/hepa-filter-img-6.webp" alt="HEPA Filter Assembly 4" class="hepa-img" loading="lazy" decoding="async">
     </div>
         <!-- HOW? image below img-4 -->
   </div>
   <div class="modal-page" data-page="3" style="display:none;">
-    <h4>Result?</h4>
+    <h4>Results?</h4>
         <!-- RESULTS? images before text -->
     <div class="hepa-image-row">
-      <img src="project-images/hepa-filter-img-7.png" alt="HEPA Filter Result 9" class="hepa-img">
-      <img src="project-images/hepa-filter-img-8.png" alt="HEPA Filter Result 8" class="hepa-img">
+      <img src="project-images/hepa-filter-img-7.webp" alt="HEPA Filter Result 9" class="hepa-img" loading="lazy" decoding="async">
+      <img src="project-images/hepa-filter-img-8.webp" alt="HEPA Filter Result 8" class="hepa-img" loading="lazy" decoding="async">
     </div>
     <ul style="list-style-type: disc; margin-left: 0; padding-left: 1.2em;">
-      <li>•  After doing an Experiment for 8 hours per day we trapped soot, dusty particles, and PM (particulate matter) which will expose us to air and harm the environment around us.</li>
+      <li>•  After running the filter 8 hours per day, we trapped soot, dust, and particulate matter (PM) that would otherwise reach the air around us.</li>
       <li>•  The amount of collected solid pollutants on 1st day is 382.5 gm. On the 2nd day, the amount is 370.29 gm and on the 3rd day, the amount is 389.43 gm.</li>
       <li>•  The PM concentration on the 1st day was 20 mg/m3, on the 2nd day it was 19.3 mg/m3 and on the 3rd day it was 20.36 mg/m3. Thus, the average PM concentration is 19.88 mg/m3.</li>
       <li>•  The Project was designed and analyzed and satisfies all the necessary conditions for an efficient, economical air filter. The different layers of filters used are quite simple and easily available materials (filtrates). The three-layer filtration makes an effective filtration process.</li>
@@ -2038,15 +2043,15 @@
         <!-- RESULTS? images after text -->
     <div class="hepa-image-row">
   
-      <img src="project-images/hepa-filter-img-9.png" alt="HEPA Filter Result 9" class="hepa-img">
+      <img src="project-images/hepa-filter-img-9.webp" alt="HEPA Filter Result 9" class="hepa-img" loading="lazy" decoding="async">
     </div>
   </div>
             </li>
             <!-- Hydraulic Ram Pump -->
-            <li class="project-item active" data-filter-item data-category="cad-cfd-fea data-center">
+            <li class="project-item active" data-filter-item data-category="cad-cfd-fea">
               <a href="#">
                 <figure class="project-card">
-                  <img src="project-images/ram-pump-thumbnail.png" alt="Hydraulic Ram Pump for Rural Water Supply" loading="lazy">
+                  <img src="project-images/ram-pump-thumbnail.webp" alt="Hydraulic Ram Pump for Rural Water Supply" loading="lazy">
                   <div class="project-overlay">
                     <ion-icon name="eye-outline"></ion-icon>
                   </div>
@@ -2068,22 +2073,22 @@
                 <ul style="list-style-type: none; margin-left: 0; padding-left: 1.2em;">
                   <li>•  To make this project, we conducted extensive research on the concept and design of hydraulic ram pumps.</li>
                   <li>•  We studied the various components and materials that would be suitable for the construction of the pump.</li>
-                  <li>•  After considering the customer's requirements, we decided to use lightweight materials such as aluminum, PVC, and stainless steel, to keep the pump light, in weight and low in cost.</li>
+                  <li>•  After considering the customer's requirements, we decided to use lightweight materials such as aluminum, PVC, and stainless steel to keep the pump light and low in cost.</li>
                   <li>•  To make the pump easy to use, we designed it to have a simple mechanism with only a few moving parts.</li>
                   <li>•  The pump was designed with a closed-loop system that would prevent water from entering the pump's internal components, making it durable and long-lasting.</li>
                 </ul>
-                <img src="project-images/ram-pump-img-1.png" alt="ram-pump-img-1.png" class="project-img">
+                <img src="project-images/ram-pump-img-1.png" alt="Hydraulic ram pump, view 1" class="project-img" loading="lazy" decoding="async">
               </div>
               <div class="modal-page" data-page="2" style="display:none;">
-                <h4>Result?</h4>
+                <h4>Results?</h4>
                 <ul style="list-style-type: none; margin-left: 0; padding-left: 1.2em;">
                   <li>•  The results of this project were successful. We were able to design and develop a hydraulic ram pump that met the customer's requirements.</li>
                   <li>•  The pump was simple in mechanism, light in weight, low in cost, easy to use, and strong enough to withstand the demands of pumping water in rural areas and villages.</li>
                   <li>•  The pump was assessed in different environments and performed well, proving to be an effective and sustainable solution for water pumping and transportation in areas without a constant electricity supply.</li>
                 </ul>
                 <div class="image-row">
-                  <img src="project-images/ram-pump-img-3.png" alt="ram-pump-img-3.png" class="project-img">
-                  <img src="project-images/ram-pump-img-2.png" alt="ram-pump-img-2.png" class="project-img">
+                  <img src="project-images/ram-pump-img-3.webp" alt="Hydraulic ram pump, view 3" class="project-img" loading="lazy" decoding="async">
+                  <img src="project-images/ram-pump-img-2.webp" alt="Hydraulic ram pump, view 2" class="project-img" loading="lazy" decoding="async">
                 </div>
               </div>
               <!-- ...existing code... -->
@@ -2092,7 +2097,7 @@
             <li class="project-item active" data-filter-item data-category="robotics cad-cfd-fea">
               <a href="#">
                 <figure class="project-card">
-                  <img src="project-images/packaging-machine-thumbnail.png" alt="Advanced PLC-Controlled Automatic Packaging Machine" loading="lazy">
+                  <img src="project-images/packaging-machine-thumbnail.webp" alt="Advanced PLC-Controlled Automatic Packaging Machine" loading="lazy">
                   <div class="project-overlay">
                     <ion-icon name="eye-outline"></ion-icon>
                   </div>
@@ -2119,7 +2124,7 @@
                 </ul>
               <!-- HOW? images after text -->
                 <div class="image-row">
-                  <img src="project-images/packaging-machine-img-1.png" alt="Packaging Machine Prototype 1" class="project-img">
+                  <img src="project-images/packaging-machine-img-1.png" alt="Packaging Machine Prototype 1" class="project-img" loading="lazy" decoding="async">
                 </div>
               </div>
               <div class="modal-page" data-page="2" style="display:none;">
@@ -2138,7 +2143,7 @@
             <li class="project-item active" data-filter-item data-category="data-center cad-cfd-fea">
               <a href="#">
                 <figure class="project-card">
-                  <img src="project-images/miste-thumbnail.png" alt="Mister-Enhanced Vapor-Compression System to Improve Cooling Capacity" loading="lazy">
+                  <img src="project-images/miste-thumbnail.webp" alt="Mister-Enhanced Vapor-Compression System to Improve Cooling Capacity" loading="lazy">
                   <div class="project-overlay">
                     <ion-icon name="eye-outline"></ion-icon>
                   </div>
@@ -2151,7 +2156,7 @@
                 <ul style="list-style-type: '👉 '; margin-left: 0; padding-left: 1.2em;">
                   <li>•  The performance of the central AC system will decrease when the outdoor temperature increases.</li>
                   <li>•  This is the case in Arizona where the ambient temperature increases up to 41°C with low humidity.</li>
-                  <li>•  The chart below shows how the AC cooling capacity gets derated when the outdoor temperature gets high, which is the case of the weather in Arizona State during the summer season.</li>
+                  <li>•  The chart below shows how AC cooling capacity gets derated as the outdoor temperature rises, which is the case in Arizona during the summer.</li>
                 </ul>
                 <div style="margin-top: 1.2em; text-align: left;">
                   <a 
@@ -2164,8 +2169,9 @@
                   </a>
                 </div>
                 <div class="image-row">
-                  <img src="project-images/mister-img-1.png" alt="Mister System Schematic" class="project-img">
+                  <img src="project-images/mister-img-1.webp" alt="Mister System Schematic" class="project-img" loading="lazy" decoding="async">
                 </div>
+</div>
               <div class="modal-page" data-page="1" style="display:none;">
                 <h4>How?</h4>
                 <ul style="list-style-type: '👉 '; margin-left: 0; padding-left: 1.2em;">
@@ -2175,38 +2181,38 @@
                   <li>•  The psychrometric chart below shows how adding water to the air can reduce its temperature.</li>
                 </ul>
                 <div class="image-row">
-                  <img src="project-images/mister-img-2.png" alt="Mister System Installation" class="project-img">
+                  <img src="project-images/mister-img-2.png" alt="Mister System Installation" class="project-img" loading="lazy" decoding="async">
                 <div class="image-row">
-                  <img src="project-images/mister-img-3.png" alt="Mister System Detail 1" class="project-img">
+                  <img src="project-images/mister-img-3.webp" alt="Mister System Detail 1" class="project-img" loading="lazy" decoding="async">
                 </div>
                 </div>
               </div>
-              </div>
+              
               <div class="modal-page" data-page="2" style="display:none;">
                 <h4>Results?</h4>
                 <ul style="list-style-type: '👉 '; margin-left: 0; padding-left: 1.2em;">
                   <li>•  Based on United States Census there are 3,138,871 houses in Arizona as of July 1st, 2021.</li>
-                  <li>•  We considered only 70% of that falls in our assumption of house size of 1900 SQFT and AC size of 4 Ton unit. We have 2,197,209.70 houses.</li>
+                  <li>•  We assumed 70% of those homes match our model of a 1,900 sq ft house with a 4-ton AC unit, which gives about 2,197,210 houses.</li>
                   <li>•  The energy saving is 540,290,302 KWh per month which is a cost saving of $69,319,245.77 per month.</li>
                 </ul>
                 <div class="image-row">
-                  <img src="project-images/mister-img-5.png" alt="Mister System Results 1" class="project-img">
+                  <img src="project-images/mister-img-5.png" alt="Mister System Results 1" class="project-img" loading="lazy" decoding="async">
                 </div>
                 <div class="image-row">
-                  <img src="project-images/mister-img-6.png" alt="Mister System Results 2" class="project-img">
+                  <img src="project-images/mister-img-6.webp" alt="Mister System Results 2" class="project-img" loading="lazy" decoding="async">
                 </div>
               </div>
             </li>
-            <!-- DOE-Driven Pour-Over Coffee Optimisation (JMP) -->
+            <!-- DOE-Driven Pour-Over Coffee Optimization (JMP) -->
             <li class="project-item active" data-filter-item data-category="data-analytics">
               <a href="#">
                 <figure class="project-card">
-                  <img src="project-images/coffee-thumbnail.png" alt="DOE-Driven Pour-Over Coffee Optimisation (JMP)" loading="lazy">
+                  <img src="project-images/coffee-thumbnail.webp" alt="DOE-Driven Pour-Over Coffee Optimization (JMP)" loading="lazy">
                   <div class="project-overlay">
                     <ion-icon name="eye-outline"></ion-icon>
                   </div>
                 </figure>
-                <h3 class="project-title">DOE-Driven Pour-Over Coffee Optimisation (JMP)</h3>
+                <h3 class="project-title">DOE-Driven Pour-Over Coffee Optimization (JMP)</h3>
                 <p class="project-category">Data Analytics & Coding</p>
               </a>
               <!-- WHAT? -->
@@ -2218,14 +2224,14 @@
                   <li>•  Thus, the aims of this experiment were to determine which factors and their levels in the brewing of pour-over coffee lead to both greater satisfaction from consumers and lie closest to an optimal pH value.</li>
                 </ul>
                 <!-- WHAT? image after text -->
-                <img src="project-images/coffee-project-img-1.png" alt="DOE Coffee Project Design Factors Table" class="project-img">
+                <img src="project-images/coffee-project-img-1.png" alt="DOE Coffee Project Design Factors Table" class="project-img" loading="lazy" decoding="async">
                 <p>Table 1. Design Factors for Coffee Optimization Experiment</p>
               </div>
               <!-- HOW? -->
               <div class="modal-page" data-page="1" style="display:none;">
                 <h4>How?</h4>
                 <!-- HOW? image before text -->
-                <img src="project-images/coffee-project-img-2.png" alt="Coffee Experiment Response Tool" class="project-img">
+                <img src="project-images/coffee-project-img-2.webp" alt="Coffee Experiment Response Tool" class="project-img" loading="lazy" decoding="async">
                 <ul style="list-style-type: disc; margin-left: 0; padding-left: 1.2em;">
                   <li>•  Jars of coffee grounds were pre-weighed (10 g) for each of the three grind-time settings defined in the design, ensuring every treatment started with the correct grind size and dose.</li>
                   <li>•  A calibrated scale and timers governed all water/coffee ratios, grind times, bloom intervals, and total brew times; all containers were washed between trials to prevent cross-contamination.</li>
@@ -2234,7 +2240,7 @@
                   <li>•  All scores, ranks, and pH readings were logged immediately in both the JMP experiment file and a backup Excel sheet for later DOE analysis.</li>
                 </ul>
                 <!-- HOW? image after text -->
-                <img src="project-images/coffee-project-img-3.png" alt="Experiment Data Table" class="project-img">
+                <img src="project-images/coffee-project-img-3.webp" alt="Experiment Data Table" class="project-img" loading="lazy" decoding="async">
                 <p>Figure 4. Experiment Data Table</p>
               </div>
               <!-- RESULTS? -->
@@ -2242,8 +2248,8 @@
                 <h4>Results?</h4>
                 <!-- RESULTS? images before text (side-by-side) -->
                 <div class="image-row">
-                  <img src="project-images/coffee-project-img-4.png" alt="Coffee Results Graph 1" class="project-img">
-                  <img src="project-images/coffee-project-img-5.png" alt="Coffee Results Graph 2" class="project-img">
+                  <img src="project-images/coffee-project-img-4.png" alt="Coffee Results Graph 1" class="project-img" loading="lazy" decoding="async">
+                  <img src="project-images/coffee-project-img-5.webp" alt="Coffee Results Graph 2" class="project-img" loading="lazy" decoding="async">
                 </div>
                 <ul style="list-style-type: disc; margin-left: 0; padding-left: 1.2em;">
                   <li>•  Running an analysis considering both the average Forced Rank data and the standard deviation for Forced Rank data, a predicted optimal cup of coffee is found.</li>
@@ -2252,15 +2258,15 @@
                 </ul>
                 <!-- RESULTS? images after text (side-by-side) -->
                 <div class="image-row">
-                  <img src="project-images/coffee-project-img-6.png" alt="Coffee Results Table 1" class="project-img">
-                  <img src="project-images/coffee-project-img-7.png" alt="Coffee Results Table 2" class="project-img">
+                  <img src="project-images/coffee-project-img-6.webp" alt="Coffee Results Table 1" class="project-img" loading="lazy" decoding="async">
+                  <img src="project-images/coffee-project-img-7.webp" alt="Coffee Results Table 2" class="project-img" loading="lazy" decoding="async">
                 </div>
               </div>
             </li>
             <li class="project-item active" data-filter-item data-category="data-analytics">
               <a href="#">
                 <figure class="project-card">
-                  <img src="project-images/matlab-thumbnail.png" alt="Image Compression via Singular-Value Decomposition (MATLAB)" loading="lazy">
+                  <img src="project-images/matlab-thumbnail.webp" alt="Image Compression via Singular-Value Decomposition (MATLAB)" loading="lazy">
                   <div class="project-overlay">
                     <ion-icon name="eye-outline"></ion-icon>
                   </div>
@@ -2288,9 +2294,9 @@
                   <li>•  The number of singular values kept determines the balance between compression ratio and image quality.</li>
                   <li>•  Both the original and compressed images are displayed for visual comparison and analysis.</li>
                 </ul>
-                <img src="project-images/matlab-img-1.png" alt="Original grayscale image in MATLAB" class="project-img">
+                <img src="project-images/matlab-img-1.webp" alt="Original grayscale image in MATLAB" class="project-img" loading="lazy" decoding="async">
                 <p>Figure 1. Original grayscale image loaded in MATLAB</p>
-                <img src="project-images/matlab-img-2.png" alt="SVD decomposition and compression process" class="project-img">
+                <img src="project-images/matlab-img-2.webp" alt="SVD decomposition and compression process" class="project-img" loading="lazy" decoding="async">
                 <p>Figure 2. SVD decomposition and image compression process</p>
               </div>
               <!-- RESULTS? -->
@@ -2302,9 +2308,9 @@
                   <li>•  Visual comparison shows minor loss of detail, which can be adjusted by varying the number of singular values retained.</li>
                   <li>•  This approach provides a practical introduction to matrix-based image compression and its trade-offs.</li>
                 </ul>
-                <img src="project-images/matlab-img-3.png" alt="Compressed image using SVD" class="project-img">
+                <img src="project-images/matlab-img-3.png" alt="Compressed image using SVD" class="project-img" loading="lazy" decoding="async">
                 <p>Figure 3. Compressed image reconstructed from limited singular values</p>
-                <img src="project-images/matlab-img-4.png" alt="Comparison of original and compressed images" class="project-img">
+                <img src="project-images/matlab-img-4.webp" alt="Comparison of original and compressed images" class="project-img" loading="lazy" decoding="async">
                 <p>Figure 4. Side-by-side comparison of original and compressed images</p>
               </div>
             </li>
@@ -2312,7 +2318,7 @@
             <li class="project-item active" data-filter-item data-category="data-analytics">
               <a href="#">
                 <figure class="project-card">
-                  <img src="project-images/password-thumbnail.png" alt="Automatic Password Generator with Python" loading="lazy">
+                  <img src="project-images/password-thumbnail.webp" alt="Automatic Password Generator with Python" loading="lazy">
                   <div class="project-overlay">
                     <ion-icon name="eye-outline"></ion-icon>
                   </div>
@@ -2340,22 +2346,22 @@
                   <li>•  The generated password is printed using the <code>print</code> function.</li>
                 </ul>
                 <div class="image-row">
-                  <img src="project-images/password-img-1.png" alt="Password Generator Python Code" class="project-img">
+                  <img src="project-images/password-img-1.webp" alt="Password Generator Python Code" class="project-img" loading="lazy" decoding="async">
                 </div>
               </div>
               <!-- RESULTS? -->
               <div class="modal-page" data-page="2" style="display:none;">
-                <h4>Result?</h4>
+                <h4>Results?</h4>
                 <ul style="list-style-type: disc; margin-left: 0; padding-left: 1.2em;">
                   <li>•  The password generator is a simple and efficient solution for generating random and secure passwords.</li>
                   <li>•  It can generate passwords of varying lengths and complexity, depending on the input provided by the user.</li>
                 <div class="image-row">
-                  <img src="project-images/password-img-2.png" alt="Password Generator Output Example 1" class="project-img">
-                  <img src="project-images/password-img-3.png" alt="Password Generator Output Example 2" class="project-img">
-                  <img src="project-images/password-img-4.png" alt="Password Generator Output Example 3" class="project-img">
+                  <img src="project-images/password-img-2.png" alt="Password Generator Output Example 1" class="project-img" loading="lazy" decoding="async">
+                  <img src="project-images/password-img-3.png" alt="Password Generator Output Example 2" class="project-img" loading="lazy" decoding="async">
+                  <img src="project-images/password-img-4.png" alt="Password Generator Output Example 3" class="project-img" loading="lazy" decoding="async">
                 </div>
                   <li>•  The combination of letters, digits, and punctuation characters ensures that the generated passwords are strong and secure. </li>
-                  <li>•  The code can be easily modified to include additional characters or constraints, such as excluding similar characters or
+                  <li>•  The code can be easily modified to include additional characters or constraints, such as excluding similar characters or setting a minimum length.</li>
                 </ul>
               </div>
             </li>
@@ -2370,7 +2376,7 @@
             <div class="project-modal-wrapper" role="dialog" aria-modal="true">
               <button class="project-modal-close" data-project-close aria-label="Close">&times;</button>
               <div class="project-modal-header">
-                <img src="" alt="" class="project-modal-image" data-project-image>
+                <img src="" alt="" class="project-modal-image" data-project-image loading="lazy" decoding="async">
                 <h3 class="project-modal-title" data-project-title></h3>
               </div>
               <div class="project-modal-body">
@@ -2640,7 +2646,7 @@
             <div class="icon-box">
               <ion-icon name="book-outline"></ion-icon>
             </div>
-            <h3 class="h3">Full-Time Experience <span class="exp-badge"><b>4 yrs</b></span></h3>
+            <h3 class="h3">Full-Time Experience <span class="exp-badge"><b>5 yrs</b></span></h3>
           </div>
           <ol class="timeline-list">
             <li class="timeline-item">
@@ -2796,7 +2802,7 @@
       <span style="background: #E4C15D; color: #000; padding: 0.3em 0.6em; border-radius: 0.6em;">SimScale cloud solver</span>
       <span style="background: #E4C15D; color: #000; padding: 0.3em 0.6em; border-radius: 0.6em;">MATLAB</span>
       <span style="background: #E4C15D; color: #000; padding: 0.3em 0.6em; border-radius: 0.6em;">Heat-transfer models</span>
-      <span style="background: #E4C15D; color: #000; padding: 0.3em 0.6em; border-radius: 0.6em;">Liquid- vs-air & nitrogen-pod cooling studies</span>
+      <span style="background: #E4C15D; color: #000; padding: 0.3em 0.6em; border-radius: 0.6em;">Liquid-vs-air & nitrogen-pod cooling studies</span>
       <span style="background: #E4C15D; color: #000; padding: 0.3em 0.6em; border-radius: 0.6em;">Load / vibration analysis</span>
     </div>
   </div>
@@ -2934,7 +2940,7 @@
                   <div class="extras-image-carousel double-image">
                     <div class="extras-image-scroll">
                       <img src="achievement-imgs/ASU-FASE/Main-img.jpg" alt="FSAE Team Achievement" loading="lazy" onclick="openImageModal('fsae', 0)">
-                      <img src="achievement-imgs/ASU-FASE/1743372661272.jpg" alt="FSAE Team Achievement" loading="lazy" onclick="openImageModal('fsae', 1)">
+                      <img src="achievement-imgs/ASU-FASE/1743372661272.webp" alt="FSAE Team Achievement" loading="lazy" onclick="openImageModal('fsae', 1)">
                     </div>
                     <button class="extras-scroll-btn prev" onclick="scrollExtrasImages(this, -1)">‹</button>
                     <button class="extras-scroll-btn next" onclick="scrollExtrasImages(this, 1)">›</button>
@@ -3003,8 +3009,8 @@
                 <figure class="extras-banner-box">
                   <div class="extras-image-carousel double-image">
                     <div class="extras-image-scroll">
-                      <img src="achievement-imgs/Career-advancement-seminar/Main-img.jpg" alt="Career Development Achievement" loading="lazy" onclick="openImageModal('career', 0)">
-                      <img src="achievement-imgs/Career-advancement-seminar/Main-img2.jpg" alt="Career Development Achievement" loading="lazy" onclick="openImageModal('career', 1)">
+                      <img src="achievement-imgs/Career-advancement-seminar/Main-img.webp" alt="Career Development Achievement" loading="lazy" onclick="openImageModal('career', 0)">
+                      <img src="achievement-imgs/Career-advancement-seminar/Main-img2.webp" alt="Career Development Achievement" loading="lazy" onclick="openImageModal('career', 1)">
                     </div>
                     <button class="extras-scroll-btn prev" onclick="scrollExtrasImages(this, -1)">‹</button>
                     <button class="extras-scroll-btn next" onclick="scrollExtrasImages(this, 1)">›</button>
@@ -3039,8 +3045,8 @@
                   <div class="extras-image-carousel triple-image">
                     <div class="extras-image-scroll">
                       <img src="achievement-imgs/MRS-spokesperson/main-img.jpg" alt="MRS Spokesperson Achievement" loading="lazy" onclick="openImageModal('mrs', 0)">
-                      <img src="achievement-imgs/MRS-spokesperson/main-img2.jpg" alt="MRS Spokesperson Achievement" loading="lazy" onclick="openImageModal('mrs', 1)">
-                      <img src="achievement-imgs/MRS-spokesperson/1714423012287.jpg" alt="MRS Spokesperson Achievement" loading="lazy" onclick="openImageModal('mrs', 2)">
+                      <img src="achievement-imgs/MRS-spokesperson/main-img2.webp" alt="MRS Spokesperson Achievement" loading="lazy" onclick="openImageModal('mrs', 1)">
+                      <img src="achievement-imgs/MRS-spokesperson/1714423012287.webp" alt="MRS Spokesperson Achievement" loading="lazy" onclick="openImageModal('mrs', 2)">
                     </div>
                     <button class="extras-scroll-btn prev" onclick="scrollExtrasImages(this, -1)">‹</button>
                     <button class="extras-scroll-btn next" onclick="scrollExtrasImages(this, 1)">›</button>
@@ -3074,8 +3080,8 @@
                 <figure class="extras-banner-box">
                   <div class="extras-image-carousel triple-image">
                     <div class="extras-image-scroll">
-                      <img src="achievement-imgs/NASA-intern/main-img.jpg" alt="NASA Internship Achievement" loading="lazy" onclick="openImageModal('nasa', 0)">
-                      <img src="achievement-imgs/NASA-intern/main-img2.jpg" alt="NASA Internship Achievement" loading="lazy" onclick="openImageModal('nasa', 1)">
+                      <img src="achievement-imgs/NASA-intern/main-img.webp" alt="NASA Internship Achievement" loading="lazy" onclick="openImageModal('nasa', 0)">
+                      <img src="achievement-imgs/NASA-intern/main-img2.webp" alt="NASA Internship Achievement" loading="lazy" onclick="openImageModal('nasa', 1)">
                       <img src="achievement-imgs/NASA-intern/1663826593795.jpg" alt="NASA Internship Achievement" loading="lazy" onclick="openImageModal('nasa', 2)">
                     </div>
                     <button class="extras-scroll-btn prev" onclick="scrollExtrasImages(this, -1)">‹</button>
@@ -3090,7 +3096,7 @@
 
                     <span class="dot"></span>
 
-                    <time datetime="2023">2023</time>
+                    <time datetime="2022">2022</time>
                   </div>
 
                   <h3 class="h3 extras-item-title">NASA L'SPACE Internship</h3>
@@ -3110,7 +3116,7 @@
                 <figure class="extras-banner-box">
                   <div class="extras-image-carousel double-image">
                     <div class="extras-image-scroll">
-                      <img src="achievement-imgs/innovation-asu-feature/main-img.jpg" alt="ASU Innovation Achievement" loading="lazy" onclick="openImageModal('innovation', 0)">
+                      <img src="achievement-imgs/innovation-asu-feature/main-img.webp" alt="ASU Innovation Achievement" loading="lazy" onclick="openImageModal('innovation', 0)">
                       <img src="achievement-imgs/innovation-asu-feature/1668374358730.jpg" alt="ASU Innovation Achievement" loading="lazy" onclick="openImageModal('innovation', 2)">
                     </div>
                     <button class="extras-scroll-btn prev" onclick="scrollExtrasImages(this, -1)">‹</button>
@@ -3155,13 +3161,6 @@
           <h2 class="h2 article-title">Contact</h2>
         </header>
 
-        <section class="mapbox" data-mapbox>
-          <figure>
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d199666.5651251294!2d-121.58334177520186!3d38.56165006739519!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x809ac672b28397f9%3A0x921f6aaa74197fdb!2sSacramento%2C%20CA%2C%20USA!5e0!3m2!1sen!2sbd!4v1647608789441!5m2!1sen!2sbd"
-              width="400" height="300" loading="lazy"></iframe>
-          </figure>
-        </section>
 
         <section class="contact-form">
 
@@ -3195,14 +3194,13 @@
   <!--
     - external libraries
   -->
-  <script src="https://cdn.jsdelivr.net/npm/mermaid@10.9.0/dist/mermaid.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/d3@7.8.5/dist/d3.min.js"></script>
   
   <!--
     - custom js link
   -->
   <script src="./assets/js/script.js"></script>
-  <script src="lightbox.js"></script>
+  <script src="./assets/js/motion.js"></script>
+  <script src="./assets/js/hero.js"></script>
   <script>
     // Pin CAD Models Collection to top of CAD, CFD & FEA category only, restore after Applied CFD otherwise
     document.addEventListener('DOMContentLoaded', function() {

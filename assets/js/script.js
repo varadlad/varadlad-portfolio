@@ -736,11 +736,11 @@ const addTouchFeedback = function() {
   touchElements.forEach(element => {
     element.addEventListener('touchstart', function() {
       this.style.transform = this.style.transform + ' scale(0.98)';
-    });
+    }, { passive: true });
     
     element.addEventListener('touchend', function() {
       this.style.transform = this.style.transform.replace(' scale(0.98)', '');
-    });
+    }, { passive: true });
   });
 };
 
@@ -1126,26 +1126,34 @@ document.addEventListener('keydown', function(e) {
 function initExtrasTouchSupport(carousel) {
   const scrollContainer = carousel.querySelector('.extras-image-scroll');
   let startX = 0;
+  let startY = 0;
   let startScrollLeft = 0;
   let isDragging = false;
   
   scrollContainer.addEventListener('touchstart', function(e) {
     startX = e.touches[0].clientX;
+    startY = e.touches[0].clientY;
     startScrollLeft = scrollContainer.scrollLeft;
-    isDragging = true;
-  });
+    isDragging = scrollContainer.scrollWidth > scrollContainer.clientWidth;
+  }, { passive: true });
   
+  // only a sideways swipe on a carousel that can scroll is captured;
+  // anything else scrolls the page as normal
   scrollContainer.addEventListener('touchmove', function(e) {
     if (!isDragging) return;
+    const dx = startX - e.touches[0].clientX;
+    const dy = startY - e.touches[0].clientY;
+    if (Math.abs(dy) > Math.abs(dx)) {
+      isDragging = false;
+      return;
+    }
     e.preventDefault();
-    const x = e.touches[0].clientX;
-    const walk = (startX - x) * 2;
-    scrollContainer.scrollLeft = startScrollLeft + walk;
-  });
+    scrollContainer.scrollLeft = startScrollLeft + dx * 2;
+  }, { passive: false });
   
   scrollContainer.addEventListener('touchend', function() {
     isDragging = false;
-  });
+  }, { passive: true });
 }
 
 /* ===== IMAGE POSITIONING SYSTEM ===== */

@@ -902,7 +902,7 @@
 
     const rail = STAGES.map(function (stage, i) {
       if (!stage) return '';
-      return '<button class="hero-rail-node" type="button" data-stage="' + i + '">' +
+      return '<button class="hero-rail-node" type="button" aria-label="' + stage.label + ', ' + stage.year + '" data-stage="' + i + '">' +
         '<span class="hero-rail-dot"></span>' +
         '<span class="hero-rail-label">' + stage.label + '<small>' + stage.year + '</small></span>' +
         '</button>';
@@ -971,13 +971,13 @@
 
     if (!gl) { abort(); return; }
 
-    // the name is drawn with the site's font, so give it a moment to arrive
-    try {
-      await Promise.race([
-        document.fonts.load('600 230px Poppins'),
-        new Promise(function (resolve) { setTimeout(resolve, 1500); })
-      ]);
-    } catch (e) { /* fall back to a system font */ }
+    // the name is drawn with the site's font; the opening starts without
+    // waiting for it, and the name is built once the font arrives
+    let fontReady = false;
+    Promise.race([
+      document.fonts.load('600 230px Poppins'),
+      new Promise(function (resolve) { setTimeout(resolve, 1500); })
+    ]).catch(function () { /* fall back to a system font */ }).then(function () { fontReady = true; });
 
     const portrait = window.innerWidth < window.innerHeight;
     const small = Math.min(window.innerWidth, window.innerHeight) < 600;
@@ -1013,12 +1013,19 @@
       google: buildGoogle
     };
 
-    const shapes = SHAPES.map(function (name) { return builders[name](total); }).map(function (data) {
-      const buffer = gl.createBuffer();
-      gl.bindBuffer(gl.ARRAY_BUFFER, buffer);
-      gl.bufferData(gl.ARRAY_BUFFER, data, gl.STATIC_DRAW);
-      return buffer;
-    });
+    // only the opening is built up front; the rest are built between frames
+    // so phones show the first frame sooner
+    const shapes = new Array(SHAPES.length);
+    const buildShape = function (i) {
+      if (!shapes[i]) {
+        const buffer = gl.createBuffer();
+        gl.bindBuffer(gl.ARRAY_BUFFER, buffer);
+        gl.bufferData(gl.ARRAY_BUFFER, builders[SHAPES[i]](total), gl.STATIC_DRAW);
+        shapes[i] = buffer;
+      }
+      return shapes[i];
+    };
+    buildShape(0);
 
     const vao = gl.createVertexArray();
     gl.bindVertexArray(vao);
@@ -1032,14 +1039,17 @@
     gl.vertexAttribPointer(6, 2, gl.FLOAT, false, 0, 0);
     for (let i = 0; i < 6; i++) gl.enableVertexAttribArray(i);
 
-    let boundPair = -1;
-    const bindPair = function (index) {
-      if (boundPair === index) return;
-      boundPair = index;
+    // at rest the next shape isn't needed yet, so it can still be building
+    let boundPair = '';
+    const bindPair = function (index, morphing) {
+      const next = morphing || shapes[index + 1] ? index + 1 : index;
+      const key = index + '>' + next;
+      if (boundPair === key) return;
+      boundPair = key;
       const stride = FLOATS_PER_POINT * 4;
-      [index, index + 1].forEach(function (shape, side) {
+      [index, next].forEach(function (shape, side) {
         const base = side * 3;
-        gl.bindBuffer(gl.ARRAY_BUFFER, shapes[shape]);
+        gl.bindBuffer(gl.ARRAY_BUFFER, buildShape(shape));
         gl.vertexAttribPointer(base, 3, gl.FLOAT, false, stride, 0);
         gl.vertexAttribPointer(base + 1, 3, gl.FLOAT, false, stride, 12);
         gl.vertexAttribPointer(base + 2, 1, gl.FLOAT, false, stride, 24);
@@ -1391,7 +1401,8 @@
         autoPause -= dt;
       } else {
         holdLeft -= dt;
-        if (holdLeft <= 0 && target < LAST_STAGE) {
+        // the name waits for its font before the opening moves on
+        if (holdLeft <= 0 && target < LAST_STAGE && (target >= 1 || shapes[1])) {
           target = Math.round(target) + 1;
           holdLeft = target === 1 ? INTRO_SECONDS : STOP_SECONDS;
         }
@@ -1444,7 +1455,7 @@
       gl.blendFunc(gl.ONE, gl.ONE);
       gl.useProgram(pointProgram);
       gl.bindVertexArray(vao);
-      bindPair(index);
+      bindPair(index, mix > 0.0001);
       gl.uniform1f(u.uMix, mix);
       gl.uniform1f(u.uTime, time);
       gl.uniform1f(u.uCamZ, camZ);
@@ -1493,6 +1504,19 @@
       gl.uniform1f(uComposite.uGlowGain, 1.55);
       quad(null);
     };
+
+    let nextShape = 1;
+    const buildInBackground = function () {
+      if (finished || nextShape >= SHAPES.length) return;
+      if (nextShape === 1 && !fontReady) {
+        setTimeout(buildInBackground, 60);
+        return;
+      }
+      buildShape(nextShape);
+      nextShape++;
+      setTimeout(buildInBackground, 16);
+    };
+    setTimeout(buildInBackground, 60);
 
     frame = requestAnimationFrame(tick);
     root.classList.add('is-ready');

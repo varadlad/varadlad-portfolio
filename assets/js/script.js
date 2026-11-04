@@ -809,6 +809,28 @@ document.addEventListener('DOMContentLoaded', function() {
 // Data Center Project Charts and Diagrams - Simplified Version
 // Extras Image Data
 const extrasData = {
+  google: {
+    title: "One Year at Google",
+    images: [
+      { src: "achievement-imgs/google/office-ohio.webp", caption: "Google office, Ohio" },
+      { src: "achievement-imgs/google/office-lobby.webp", caption: "Google office lobby" },
+      { src: "achievement-imgs/google/office-wall.webp", caption: "Google office" }
+    ]
+  },
+  sun: {
+    title: "ASU SUN Award",
+    images: [
+      { src: "achievement-imgs/ASU-sun-award/Main-img.png", caption: "ASU SUN Award certificate" }
+    ]
+  },
+  marathons: {
+    title: "Marathons & Medals",
+    images: [
+      { src: "achievement-imgs/marathons/hot-chocolate-finish.webp", caption: "Marathon finish" },
+      { src: "achievement-imgs/marathons/pumpkin-run.webp", caption: "On the course" },
+      { src: "achievement-imgs/marathons/medals-2026.webp", caption: "Finisher medals" }
+    ]
+  },
   fsae: {
     title: "FSAE Team: Formula Car R&D",
     images: [

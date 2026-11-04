@@ -4316,6 +4316,21 @@ article.resume.active {
     border-radius: 8px;
 }
 
+/* Single image - fills the box */
+.extras-image-carousel.single-image .extras-image-scroll {
+    display: flex;
+    height: 200px;
+    width: 100%;
+}
+
+.extras-image-carousel.single-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+    background: #fff;
+}
+
 /* Triple images - each takes third */
 .extras-image-carousel.triple-image .extras-image-scroll {
     display: flex;
@@ -4338,6 +4353,7 @@ article.resume.active {
 
 /* Mobile responsiveness */
 @media (max-width: 768px) {
+    .extras-image-carousel.single-image .extras-image-scroll,
     .extras-image-carousel.double-image .extras-image-scroll,
     .extras-image-carousel.triple-image .extras-image-scroll {
         height: 150px;
